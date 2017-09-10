@@ -1,0 +1,105 @@
+# Haskell Idioms
+
+## \#
+
+
+## A
+
+
+## B
+
+
+
+## C
+
+
+## D
+
+
+
+## E
+
+
+## F
+
+
+
+## G
+
+
+## H
+
+
+
+## I
+
+
+
+## J
+
+
+
+## K
+
+
+## L
+
+
+
+## M
+
+
+
+## N
+
+
+
+## O
+
+
+## P
+
+
+
+## Q
+
+
+
+## R
+
+
+
+## S
+
+
+
+## T
+
+
+
+## U
+* UndecidedInstance
+* + Paterson condition
+* + - [ref](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#instance-termination)
+* + Coverage condition
+* + - [ref](https://stackoverflow.com/questions/13538937/the-coverage-condition-fails)
+
+
+## V
+
+
+
+## W
+
+
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+

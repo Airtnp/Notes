@@ -1,0 +1,109 @@
+# Linux Idioms
+
+## \#
+
+* | : pipe
+* + command1 | command2 : command1 -> content -> command2
+* >/</>>/<< 输出输入重定向
+* >&/2>/2>> 错误重定向
+
+## A
+
+
+## B
+
+
+
+## C
+
+
+## D
+
+
+
+## E
+
+
+## F
+
+* file descriptor
+* + 0 : stdin
+* + 1 : stdout
+* + 2 : stderr
+* + process independent
+
+## G
+
+
+## H
+
+
+
+## I
+
+
+
+## J
+
+
+
+## K
+
+
+## L
+
+
+
+## M
+
+
+
+## N
+
+
+
+## O
+
+
+## P
+
+
+
+## Q
+
+
+
+## R
+
+
+
+## S
+
+
+
+## T
+
+
+
+## U
+
+* user-level statically defined tracing (USDT) 
+
+## V
+
+
+
+## W
+
+
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+

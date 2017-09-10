@@ -1,0 +1,111 @@
+# Cpp Quiz
+
+## aggr-init vs. delete function
+* [dis](https://stackoverflow.com/q/33988297/8563711)
+```c++
+struct Foo
+{
+Foo(const Foo &) = delete;
+};
+int main() { Foo bar{}, b2{ Foo{} }; } // OK
+
+struct Foo
+{
+Foo(const Foo &) = delete;
+};
+int main() { Foo bar{}, b2{ Foo{} }; } // Error
+
+struct Foo
+{
+explicit Foo(const Foo &) = delete;
+};
+int main() { Foo bar{}, b2{ Foo{} }; } // Error
+
+struct Foo
+{
+Foo() = delete;
+};
+int main() { Foo bar{}; } // OK
+
+struct Foo
+{
+Foo() = delete;
+Foo(int);
+};
+int main() { Foo bar{}; } // Error
+
+struct Foo
+{
+private:
+Foo();
+};
+int main() { Foo bar{}; } // Error
+
+```
+
+## return initializer_list?
+```c++
+static int a = 1;
+static int b = 2;
+
+initializer_list<int> foo() {
+    return {a, b} // copy first, return (assign by pointer)
+}
+
+int main() {
+    auto p = foo(); // Error: dangling pointer
+}
+
+```
+
+## void()
+```c++
+template <typename T>
+T foo1() {
+    return T();
+}
+
+template <typename T>
+T foo2() {
+    return T{};
+}
+
+template <typename T>
+void foo3() {
+    auto p = new T{};
+    delete p;
+}
+
+void bar() {
+    return void(); // OK
+}
+
+void baz() {
+    return void{}; // Error
+}
+```
+* std::invoke with return void
+
+## Unicode support
+```c++
+char* \U0001f431 = "cat" // OK
+char* 😺 = "cat" // Error in GCC
+```
+
+## Lambda capture forwarding and universal reference
+* [dis](https://stackoverflow.com/questions/46118564/alternative-for-stdbind-in-modern-c)
+```c++
+template<class T>
+template<typename F, typename ...Args>
+T Container<T>::addTask(F&& func, Args&&... args)
+{
+    container.emplace_back( [func = std::forward<F>(func),
+                             args = std::make_tuple(std::forward<ARGS>(args)...)                                 ] 
+                             ()  mutable // make mutable if you want to move the args in to func
+                             {
+                                 return std::apply(func, std::move(args));
+                             });
+
+    //.....
+}
+```

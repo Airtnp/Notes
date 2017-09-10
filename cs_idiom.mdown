@@ -1,0 +1,231 @@
+# Computer Science Idioms
+
+## \#
+
+
+
+## A
+
+* AOT
+* Applicator
+
+## B
+
+* BCNF (3NF) Database
+
+## C
+
+* Cypto
+* + OTP
+* + 凯撒
+* + DH
+* + - RSA
+* + - ECC -> ECDH
+* + - Oakley
+* + AES
+* + 中间人攻击
+* + IV
+* + Nonce
+* + 彩虹表
+* + Block cipher
+* + - CFB
+* + - CTR
+* + - CBC
+* + - OFB
+* + - GCM
+* + - XEX
+* + - ECB
+* + - OCB
+* + - XTS
+* + ROT26
+* + BASE64
+* + Hill cipher
+* + Rabin cryptosystem
+* + Category
+* + - Public Key Infrastructure
+* + - Steganography and Cryptography
+* + - The Random Oracle Model
+* + - Lattice-based Cryptography
+* + - Shannon's Theory and Cryptography
+* + - Multivariate Cryptography
+* + - Error Correcting Codes and Cryptography
+* + - Message Authentication Code
+* currying
+* CPS
+* Curry Howard同构
+* + Curry-Howard correspondence 中 Pierce 律（等价 XM）对应 call/cc，coroutine 是 call/cc 的较弱形式。
+* call/cc
+* CPU
+* + cache
+* + MMU
+* + page
+* + - virtual memory page
+* Category theory
+* CIC (Calculus of Inductive Constructions)
+* Concurrency
+* + 线程(thread)
+* + - thread pool
+* + 协程(coroutine)
+* + 自旋锁(spin-lock)
+* + - 互斥(mutex)
+* + - 栅栏(barrier)
+* + - - `fetch_and_decrement`
+* + - `test_and_set`
+* + condition variable
+* + lock-free
+* + - CAS `compare_and_swap`/`load_linked`/`store_conditional`
+* + 竞态(data race)
+* + 信号量(semaphore)
+* + 管程(monitor)
+* + - signal
+* + 条件临界区域(critical section)
+* + synchronized
+* + CSP
+* + pi-calculus
+* + Fiber
+* + Job
+* Collision Detection
+* + aabb
+* + obb
+
+## D
+
+* domain
+* + application domain
+* + implementation domain
+
+## E
+
+* evaluation
+* + eager evaluation
+* + lazy evaluation
+* Endian
+* + big
+* + middle
+* + little
+
+## F
+
+* Functor
+
+## G
+
+* Graphics
+* + DX
+* + OpenGL
+* + shaders
+* + - HLSL
+* + - - ShaderModel 
+
+## H
+
+* Hoare logic
+* HOL (Higher-Order Logic)
+
+## I
+
+* IoC 控制反转
+
+## J
+
+* JIT
+
+## K
+
+
+## L
+
+* lambda calculus
+* LCF (Logic for Computable Functions)
+* Liskov替换原则
+
+
+## M
+
+* monad
+* MVVM
+* MVC
+* memory network
+* ML
+* + SVM
+* + RNN
+* + CNN
+* + LSTM
+* + 
+
+## N
+
+
+
+## O
+
+* OLTP/OLAP Database
+* Optim
+* + SIMD
+* + GPU
+
+## P
+
+* proxy class
+* pumping lemma
+* Prefer composition over inheritance 
+* PowerPC 移位按照least six bits
+
+## Q
+
+* QPS (query per second)
+
+## R
+
+* reference counting
+
+## S
+
+* side-effect
+
+## T
+
+* Trampoline
+* Type
+* + first class : can be return-type, parameter-type, assigned to variables
+* + second class : can be type of parameters, none of the other
+* + third class : none of all
+* 同步
+* type system
+* + λPω
+* + HM
+* + HOAS
+* + λ2
+* + lambda cube
+* + System F
+* + HOTT
+* 图灵机-lambda演算-柯里s-m-n递归论-Markov算法-Post机 这几个model都是等价的
+
+## U
+
+* Unicode -> UCS-2/UCS-4 (code point) (encoding/map)
+* + ASCII
+* + Latin-1
+* UTF -> UTF-8(not fix length)/16/32 (code unit) (bytes)
+* + BMP (basic multilingual plane)
+* + BOM
+
+## V
+
+
+
+## W
+
+
+
+## X
+
+
+
+## Y
+
+* 异步
+* Yoda condition
+
+## Z
+

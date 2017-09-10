@@ -1,0 +1,296 @@
+# Python Idioms
+
+## \#
+
+* \*args : tuple
+* \*\*kwargs : dict
+* [[]]*10 创建对同一个列表5次引用的列表
+* `__slots__`: compile-time restrict attribute
+* `@`/`__matmul__` in py3
+
+## A
+
+* abc module : virtual (abstact) base class
+* + register
+* + __subclasshook__
+* + @abstractmethod (compare to @classmethod, @staticmethod, __slots__)
+* async/await
+* + async with
+* + - `__aenter__`/`__aexit__`/`__aiter__`
+* + async def
+* analyzer
+* + inspect module
+* + - signature
+* + ast module
+* + parser module
+* + pdb module
+* + dis module (python bytecode)
+
+## B
+
+* bound
+* + unbound
+
+## C
+
+* c3 algorithm
+* + 查找: instance.__dict__ -> Parentest.__dict__ -> instance.__class__.__dict__ (instance.__class__.__mro__顺序)
+* contextlib module
+* + _enter_ + __exit__ => try + yield
+* collection module
+* + namedtuple
+* + OrderDict
+* + heapq
+* coroutine : yield (from)
+* callback / delegate
+* closure
+* + nonlocal
+* compare
+* + in Python 2, you can < compare anything to anything.
+* ctypes
+* comprehension
+* + list
+* + dict
+* + - `print {i : chr(65+i) for i in range(4)}` -> `{0 : 'A', 1 : 'B', 2 : 'C', 3 : 'D'}`
+
+## D
+
+* descriptor
+* + __get__
+* + __set__
+* + __delete__
+* decorator (AOP)
+* duck typing
+* Database ORM
+* 单例
+* + __new__
+* + 模块常量
+* Decimal
+* Default parameter
+* + 默认列表只在函数被定义的那一刻创建一次 `def func(l = [])`
+* __del__ 循环引用 => gc 不工作
+
+## E
+
+* Exception
+* + rethrow: `raise ... from ...`
+* + sys.exceptionhook
+
+## F
+
+* functools module
+* + @lru_cache
+* + total_ordering : `#include <boost/operator.hpp>`
+* + partial : bind
+* + fp method
+* + - reduce/map/filter
+* + singleddispatch (overload without type hinting)
+* + wrapper
+* + - @wraps : save __name__, __doc__
+* faulthandler in py3
+* format
+* + [ref](https://pyformat.info/)
+* + align/padding/named-variable(Formatted string literals)
+* + F-string
+* + - `name = "Test" f"My app name is {name}."`
+
+## G
+
+* __get__ : descriptor
+* __getattr__ : class/base property (for unfound instance or base tree)
+* __getattribute__ : instance property
+* __get__ -> __getattr__ -> __getattribute__
+* generator : yield/next
+* + GeneratorExit
+
+## H
+
+
+
+## I
+
+* iterator
+* + __iter__ : return self
+* + __next__ : return data | StopIteration
+* itertools modules : just like `#include <numeric>`
+* import hacking
+* + module q
+* + sys.modules[__name__] = Class
+* + __module__/__package__/__loader__
+* + __path__/__file__/__name__
+* + __all__/__version__
+* + PEP 302
+* + importlib
+* + _temp = __import__('spam.ham', globals(), locals(), ['eggs', 'sausage'], -1)
+* __init_subclass__
+* + [ref](https://stackoverflow.com/questions/45400284/understanding-init-subclass)
+
+
+## J
+
+
+
+## K
+
+* Keyword only arguments
+* + `def foo(*, arg1=1, arg2=None)` in python3 (force named params)
+
+
+## L
+
+* logging module
+* LEGB
+* + locals->enclosing->globals->builtins
+* + - assignment will make variables local (copy) (use global/nonlocal to prevent)
+
+## M
+
+* mro (method resolution order)
+* metaclass <-> class <-> instance
+* + __prepare__
+* + __new__/__init__
+* + __call__
+* + [ref](https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python)
+* mutable / immutuble
+* + reference problem
+* magic method
+* + __xxx__ => xxx(class)
+* Mixin
+* method wrapper (slot wrapper)
+* + [Cython implementation](https://stackoverflow.com/questions/10401935/python-method-wrapper-type)
+
+## N
+
+
+
+## O
+
+* os module
+
+## P
+
+* PyObject
+* PyType
+* @property (public type name {get; set;})
+* + .getter
+* + .setter
+* + `__property`: private => `_classname__property`
+* + `_property`: protect => `_property`
+
+## Q
+
+
+
+## R
+
+* re module: regex (no unicode property \p{CN})
+* + lookaround ?= ?! ?<= ?<!
+* + capture ?:
+* + name ?P<name> ?P=name
+* + greedy .*?
+* + comment ?#
+* + \number group
+* + Regular expression -> NFA (POSIX NFA) -> DFA(BNF)
+* Resize strategy
+* + 8->32->...-> >50000 x2->x2 (set, dict)
+* + (size+1 >> 3) + (size+1 < 9 ? 3 : 6) (list, 0, 4, 8, 16, 25, 35, 46, 58, 72, 88, ...) （\approx 1.125)
+
+## S
+
+* science modules
+* + numpy
+* + sympy
+* + matplotlib
+* sys module
+* + sys._getframe()
+* + - |  f_back        # 上一个栈帧对象(谁调用自己)
+* + - |  f_builtins    # 内置名字空间
+* + - |  f_locals      # local名字空间
+* + - |  f_globals     # 全局名字空间
+* + - |  f_code        # 帧指向的 codeObject对象
+* + - |  f_cellvars    # 内部闭包使用的freevar
+* + - |  f_freevars    # 闭包引用的freevar
+* + - |  f_localsplus  # 局部变量 + cell对象 + free对象 + 运行时栈
+* + - - [closure](http://mp.weixin.qq.com/s?__biz=MzA4MjEyNTA5Mw==&mid=2652564992&idx=2&sn=630b9a5b43a0afcac9d38f13a048b6d0&chksm=8464c64ab3134f5c60e476746bc136c91518c87c3872af4893fd180089f78adec87eae62fff9&mpshare=1&scene=23&srcid=0404KP99Huc0Y5R2pERYY5Xv#rd)
+* + - - |  co_name    # code block的名字, 通常是类名或者函数名 /* string (name, for reference) */
+* + - - |  co_names   # code block中所有的名字 /* list of strings (names used) */
+* + sys.getrefcount()
+* + - [ref](http://stackoverflow.com/questions/7544395/sys-getrefcount-return-value)
+* super()
+* + new-style class
+* + just call the next function in the mro links (generated by C3)
+* + will continue call if super() in base classes
+* small integer pool : -5~257
+* Recursive stack overflow
+* + trampoline
+* + continuation-pass-style (callback)
+* + raise exception and pass value
+* str (py3)
+* + wchar_t
+* + utf-8 bytes (unicodedata_db) : UCS-1/UCS-2/UCS-4
+* star expression
+* + `_1, *_, _5 = [1, 2, 3, 4, 5]`
+* + `_1, _2, * = range(10)`
+
+## T
+
+* typing module
+* + List
+* + Callable[..., ReturnType]
+* + Generics
+* + - Mapping
+* + - Sequence
+* + - TypeVar (template <typename T>)
+* + - Type (Covariant, inheritance)
+* + - Optional
+* + - Union (Variant)
+* + introspect `T = TypeVar('T')  # Can be anything` `A = TypeVar('A', str, bytes)  # Must be str or bytes`
+* + - T.__name__ == 'T'
+* + - T.__constraints__ == ()
+* + - T.__covariant__ == False
+* + - T.__contravariant__ = False
+* + - A.__constraints__ == (str, bytes)
+* + Iterable
+* + Iterator
+* + Reversible
+* + Supports__
+* + collectIons.abc
+* + ContextManager
+* + Any
+* + [all-type](https://docs.python.org/3/library/typing.html)
+* + __annotations__ (dict of type hinting)
+* type module
+* + get frame/global vars
+* + co_xxx
+* type<->object relation
+* type hinting
+* tuple
+* + `(1, 2, [3, 4])[2] += [1, 2] -> error + (1, 2, [1, 2, 3, 4])`
+* + check is after the assignment
+
+
+## U
+
+* User data-type
+* + inheritance from
+* + avoid c-api (list/dict) error
+
+
+## V
+
+
+
+## W
+
+* warnings module
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+

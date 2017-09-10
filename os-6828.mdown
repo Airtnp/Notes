@@ -1,0 +1,15 @@
+# JOS
+
+## Lab1
+
+### Exercise 2
+* BIOS init
+```asm
+[f000:fff0] 0xffff0: ljmp $0xf000, $0xe05b
+[f000:e05b] 0xfe05b: cmpl $0x0, %cs:0x6ac8
+[f000:e062] 0xfe062: jne 0xfd2e1
+....
+
+```
+
+* BIOS -> boot loader -> 

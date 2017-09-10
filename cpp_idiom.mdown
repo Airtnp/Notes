@@ -1,0 +1,1092 @@
+# Cpp Idioms
+
+## \#
+
+* [[...]] attribute
+* + [[using namespace : attribute_list]]
+* + [[noreturn]]
+* + - std::exit/terminate/abort, throw, infinite loop
+* + - never return to previous control flow, the next control flow never execute
+* __asm__ __volatile__ (
+, =A...
+) in __GNUC__
+* __asm  {
+	out, in
+} in _MSC_VER
+* __attribute__((...)) in __GNUC__
+* Preprocessor Output in __GNUC__
+* <cxxabi.h> in __GNUC__
+* + `abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, nullptr);`
+* + \# lineum filename flags
+* __gnu_cxx:... in __GNUC__
+* Designated Initializers in __GNUC__
+* + array index in __GNUC__
+* + - `int a[6] = {[4] = 29, [2] = 15};`
+* + class member
+* + - `A{.x = 1, .y = 2}`
+* __declspec(...) in _MSC_VER
+* pesudovariabtles in _MSC_VER
+* + https://msdn.microsoft.com/en-us/library/ms164891.aspx
+* `std::_Ph` in _MSC_VER
+* + placeholder
+* `define A /* define B */` will comment in _MSC_VER (un-standard phase)
+* `namespace stdext` is _MSC_VER
+* + `hash_map`
+* + `checked_array_iterator`
+* `++`
+* + prefix : `T& operator++ ()` return lvalue
+* + postfix : `T operator++ (int)` return rvalue, prior to prefix
+* #pragma
+* + #pragma STDC
+* + #pragma once
+* + #pragma pack
+* + `#pragma GCC optimize("-ftemplate-depth=1000000")`
+* _Pragma {}
+* __cplusplus version
+* `!!` integral/float -> boolean
+* #include
+* + #include <h-char-sequence> new-line
+* + #include "q-char-sequence" new-line
+* For C89, you must declare all of your variables at the beginning of a scope block.
+* Cpp1z
+* + new
+* + - std::byte (different from char/unsigned char, special for location unit) storage of bits
+* + - - like char, obey strict aliasing to any type
+* + - 类模板参数推导
+* + - - `Thingy(const char *) -> Thingy<std::string>;` (user-defined deduction guide)
+* + - - `pair<int, string> is1 = pair(17, "hello");`
+* + - std::is_aggregate
+* + - std::any/std::variant/std::optional
+* + - - std::any -> visitor (dispatch)
+* + - new sequence before (evaluation order)
+* + - inline variable
+* + - structured binding (decomposition declaration)
+* + - std::void_t
+* + - guaranteed copy elision
+* + - if statement with initializer (like for, while)
+* + - string_view
+* + - if constexpr
+* + - nested namespace `a::b`
+* + - fold expression
+* + - noexcept参与类型系统
+* + - enumeration initializer_list ctor
+* + - 可以简化初始化列表格式
+* + - 对继承构造函数的调用照顾优化 (using ...)
+* + - aggregate initialization with base
+* + - `template <auto C>` (non-type parameter)
+* + - constexpr lambda closure
+* + - Aligned dynamic allocation
+* + - memory (uninitialized_move/copy / destroy/...)
+* + - lambda capture of `*this` (copy whole object)
+* + - new attributes [[fallthrough/maybe_used/nodiscard]]
+* + - std::uncaught_exceptions
+* + - extend `typename` usage
+* + - [[using namespace : attribute_list]]
+* + - [[fallthrough]]/[[nodiscard]]/[[maybe_unused]]
+* + - execution_policy
+* + - std::pmr (Polymorphic memory allocators)
+* + - std::apply (std::transform for tuple)
+* + - std::advance now return InputIt (different from std::next, which is constexpr void)
+* + - static_assert
+* + - - single-param: `static_assert(sizeof(short) == 2, "sizeof(short) == 2") = static_assert(sizeof(short) == 2)`
+* + - `__has_include()`
+* + - constexpr addressof
+* + - Make exception specifications part of the type system
+* + - Aggregate initialization of classes with base classes
+* + - transform_reduce
+* + - unordered_set.extract/merge
+* + - is_base_of_v (inline variable)
+* + - `using Ts::operator()...`
+* + - - [proposal](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0195r2.html)
+* + - `std::shared_ptr<T[]>`
+* + - std::function SFINAE
+* + - - non-deduced context
+* + - `string.data()`
+* + - differing begin and end types in range-based for
+* + - dynamic memory allocation for over-aligned data
+* + deprecated
+* + - codecvt
+* + - result_of -> invoke_result
+* + - trigraphs
+* + - register
+* + - bool increment `bool& operator++(bool&) -> true`
+* + - `mem_fun` -> std::bind/std::mem_fn
+* + - `ptr_fun` -> std::function/std::ref (add argument_type/...)
+* + - `random_shuffle`
+* + - auto_ptr
+* + - is_literal_type
+* + - std::allocator::construct
+* + - `#include <stdio.h>`
+* + - `std::iterator` as base
+* TS
+* + - filesystem
+* + - detection idiom
+* + - propagate const `p->f() = C::f() -> propagate_const<p>->f() = C::f() const`
+* + - observer_ptr (just like raw pointer)
+* + - Range
+* + - Parallelism
+* + - - execution/reduce/{in,ex}clusive_scan
+* + - Concurrency
+* + - Network
+* + - Module
+* + - Concept
+* + - Contracts
+* + - Coroutine
+* + - Transactional Memory
+* + - Library Fundamentals
+* + - 2D Graphics
+* bugs (cwg + compiler)
+* + [Bugzilla](https://bugs.llvm.org/)
+* + [CWG](http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_active.html)
+* + MSVC: lvalue reference can bind to rvalue
+* + - `g()->string, f(string& s), f(g())` is valid
+* + MSVC: `__LINE__,...` macros cannot expanding on compile time
+* + GCC: `std::less<shared_ptr<T>>` will not compare `operator<(const shared_ptr<T> r, l)`
+* + GCC: ambiguous overload with closure, ref: `sn_overload::make_overload`
+* + MSVC: __cplusplus = 199711L
+* + - [ref](https://connect.microsoft.com/VisualStudio/feedback/details/763051/a-value-of-predefined-macro-cplusplus-is-still-199711l)
+* + MSVC: explicit specialization in class (non-namespace scope)
+* + MSVC: expression template
+* + MSVC: two phase name lookup
+
+
+## A
+
+* ADL (argument-dependent lookup) / Koenig
+* + `f(N::e1) = N::f(N::e1) | ::f(N::e1)`
+* + see c++ coding standard
+* AOP (aspect-oriented programming)
+* + Execute-Around Pointer
+* + - Provide a smart pointer object that transparently executes actions before and after each function call on an object, given that the actions performed are the same for all functions.
+* Allocator
+* aggregate type
+* + list init `{}`
+* + array
+* + class with no user-defined ctor/no private/protected non-static data member/no base class/no virtual function/no data member with {}|= init `{ double y = 0.0; }`
+* addressof (std::addressof)
+* + `reinterpret_cast<T *>(& const_cast<char&>(reinterpret_cast<const volatile char &>(v)));`
+* auto
+* + auto -> type (C++14 deduction)
+* align
+* + aligned_union
+* + aligned_storage
+* + alignas
+* + alignof
+* as-if rule
+* + Accesses (reads and writes) to volatile objects occur strictly according to the semantics of the expressions in which they occur. In particular, they are not reordered with respect to other volatile accesses on the same thread.
+* async model
+* + iocp
+* + epoll
+* + kqueue
+* + coroutine
+* array-like type
+* + rank
+* + extent
+* + decay
+* ABI (Application Binary Interface)
+* + Itanium ABI
+* Algebric Hierarchy
+* + （虚）基类封装子类虚函数操作 带引用计数
+* atomic -> volatile in java -> not volatile in Cpp
+* assert
+* + static_assert
+* as-if
+* + Allows any and all code transformations that do not change the observable behavior of the program
+* + exception: copy/move-elision
+* + - observable behavior
+* + - - Accessing a volatile object, modifying an object, modifying a file, or calling a function that does any of those operations are all side effects
+* + - - Any behaviour that changes the state of the abstract machine (so, something that changes a variable passed in or global variable, or reads and writes to I/O devices)
+* atexit
+* + at_quick_exit
+* `assert(exp && str)`
+* + expand to `(void)( (exp) || (_assert(#exp, __FILE__, __LINE__), 0) )`
+* array
+* + soft array
+* + ragged array
+
+## B
+
+* boxing/unboxing type
+* bitset/bitmap
+* bound (type bound)
+* + static bound (default parameters)
+* + dynamic bound 
+* + - Base* p = make_shared(Derived())), p: static Base*,  dynamic Derived*
+* blob
+* bit-field
+* Barton-Nackman trick
+* + 类模板友元非成员模板函数 （不支持函数模板重载的编译器）
+* + 和CRTP组合->boost::operator
+* Boost library
+* + mpl
+* + proto
+* + fusion
+* + preprocessor
+* + spirit
+* + asio
+* + interprocess
+* + typeindex
+* + context
+* + fiber
+* + dll
+* buddy allocator
+* 编译期排序
+* + 用继承关系
+* + Modern C++ Design 3.12
+* bound friend template
+
+## C
+
+* constant expression
+* + core constant expression
+* + integral constant expression
+* + converted constant expression
+* + literal constant expression
+* + reference constant expression
+* + address constant expression
+* Copy elision
+* CRTP (curious recursive template pattern)
+* + 静多态
+* + Mixin from above
+```c++
+
+class Curious : public CuriousBase<Curious> {
+	void foo() {static_cast<T*/T&>(this/*this)->foo();}
+	void bar() {virtual do_bar = 0}
+	void baz() {static T::do_baz}
+}
+
+```
+* Compile time
+* + typeof(gcc spec)
+* + decltype
+* + auto
+* + type_traits
+* + sizeof/alignof
+* + complie-time polymorphism （模板具现化，不同于运行期继承多态）
+* + operator precedence
+* + static_assert
+* + expression template
+* + - EDSL
+* + - lazy evaluation
+* + - pass an expression as a parameter to a function (not a result!)
+* + enum
+* + string_view
+* + non-type template parameters
+* + integer sequence / index sequence
+* + integral constant
+* constexpr
+* + constexpr constructor
+* + constexpr function
+* + - accept LiteralType, return LiteralType
+* + - violation
+* + - - asm
+* + - - goto
+* + - - try-catch
+* + - - label
+* + - - non-literal type definition
+* + - - static/thread-storage-duration
+* + - - no initialization var (like undefined bool, both T/F)
+* concept
+* C3 algorithm (to search mro)
+* conditional (std::conditional)
+* + enable_if_t...
+* cv-quanlified
+* + top level cv-qualifier 
+* + - `T const *volatile q` -> `volatile` (not const)
+* + - `const T&` -> none
+* + - [const] T (* [const]\(top level\) | &) p
+* cast
+* + static_cast := force implicit conversion
+* + - static_casting a pointer to and from void* preserves the address.
+* + dynamic_cast := inherit
+* + const_cast := cv-un_cv
+* + reinterpret_cast := --force
+* + - reinterpret_cast only guarantees that if you cast a pointer to a different type, and then reinterpret_cast it back to the original type, you get the original value
+* conversion
+* + implicit conversion
+* + http://en.cppreference.com/w/cpp/language/implicit_conversion
+* + - U->T
+* + - - typeid(U) == typeid(T)
+* + - - T is an unambiguous public base of U (upcasting)
+* + - - T is void
+* + - - unambiguous implicit converson sequence
+* context-free/context-sensitive
+* chrono
+* closure type
+* COW (string copy on write)
+* + implemented by insert refcount at `&c_str()[-1]`
+* + change operator=, copy ctor
+* compiler-related`
+* + msvc
+* + - __if_exists
+* + - __declspec
+* + gcc
+* + - __attribute__(())
+* + - `<bits/stdc++.h>`
+* + - `<ext/pb_ds/...>` policy based algorithm libraru
+* + clang
+* + icc
+* container
+* + random access
+* + forward
+* + bidirectional
+* + associative
+* + SGI Impl
+* + - vector: 连续内存
+* + - - `std::move_if_noexcept` used in resize (if exception there will be performance problems)
+* + - - move ctor -> vector performance
+* + - list: 环形双向节点链表
+* + - deque: 接口逻辑连续，实际维护内存块映射列表
+* + - map: rb-tree
+* + - - `operator[]` vs insert (consider ctor effect, move effect, emplace-like)
+* Coersion
+* + Helper<T> = Helper<U>
+* common_type(std::common_type)
+* + find common type that all template parameters can do conversion to
+* clockwise rule
+* contracts
+* + Expects()
+* + Ensures
+* + not_null
+* Coroutine
+* + stackful
+* + stackless
+* + 切换context
+* Currying (not bind/partial)
+* + [ref](https://en.wikipedia.org/wiki/Currying#Contrast_with_partial_function_application)
+* covariant
+
+## D
+
+* dependent name
+* Deleter (of smart pointers)
+* detected (std::is_detected std::detected_if_t)
+* decay (std::decay)
+* + lvalue-to-rvalue
+* + array-to-pointer
+* + function-to-pointer
+* + removes cv-qualifiers
+* + remove reference (sometimes) `remove_cv<remove_reference<const T&>>::type`
+* decltype/declval
+* + declval: Converts any type T to a reference type, making it possible to use member functions in decltype expressions without the need to go through constructors.
+* + auto vs. decltype(auto)
+* + - auto follows the template argument deduction rules and is always an object type; decltype(auto) follows the decltype rules for deducing reference types based on value categories.
+* dispatch
+* + single- : virtual function
+* + multi- : manually 2d-virtual table/pointer
+* dangling pointer
+* declaration
+* + C Right-Left
+* + Spiral
+* dynamic exception specification (throw(...)) (deprecated)
+* deduced-context
+* + SFINAE
+* + alias template
+* default arguments
+* + can redefine in function scope
+* + as well as template parameters
+
+## E
+
+* EBO/EBCO (empty base class optimization)
+* + private inherit a empty base class
+* + or sizeof(same_class_with_ebo) < sizeof(same_class_without_ebo)
+* enum
+* + scoped `enum class`
+* + unscoped
+* + underlying_type
+* + unnamed
+* enable_if (std::enable_if)
+* emplace
+* explicit
+* expression template
+* + lazy evaluation
+* + reduce intermediate object -> TBCO
+* + compile time computation
+* Exception
+* + std::current_exception
+* + rethrow
+* + std::uncaught_exception
+* + see YSlib-convention
+* + [boost-exception-safety](http://www.boost.org/community/exception_safety.html)
+* + user-defined should derived from std::exception
+* enable_shared_from_this
+* export
+* + symbols
+* + - If an exported class inherits from a template instantiation that is not explicitly exported, then the compiler implicitly exports this template instantiation. (__dllexport)
+* 二段构造
+* + 确保构造成功
+* + 确保可用性
+
+## F
+
+* Function object
+* + std::less...
+* + std::plus...
+* + std::search (searcher, default, boyer-moore)
+* + negators(std::not1, std::not_fn, std::unary_negate)
+* + std::logical_and/std::bit_xor
+* + reference_wrapper
+* friend
+* + friend function
+* + friend template
+* forward (std::forward)
+* functional
+* + bind
+* + function
+* + ref
+* + invoke
+* + placeholder
+* fold expression
+* + (Args op ... op init)
+* + (init op ... op Args)
+* + (Args op ...)
+* + (... op Args)
+* + for other callable, [ref](http://stackoverflow.com/questions/27582862/fold-expressions-with-arbitrary-callable), namely made a wrapper_type, overload operator on wrapper_type
+* function overloading resolution
+* + eg: [`is_base_of`](http://blog.csdn.net/hooked/article/details/3394720)
+* + eg: [`is_convertible`](http://www.cnblogs.com/tangzhenqiang/p/4136728.html) (together with `sizeof(helper)`)
+* + 函数模板特化不参与重载决议（仅当主模板选中，才会匹配）
+* flexible array (struct hack)
+* functor
+* fancy pointer
+* + 仿指针
+* future/promise
+* + future: reader/consumer
+* + promise: writer/producer
+* function-try-catch-block
+* + always rethrow (exception main())
+* + 
+
+
+## G
+
+* (bi|tri)graph
+* gc-wrapper (RAII for singleton)
+* + `static singleton_gc`, destruction at end of program, though static objects destroy at intermediate sequence, can release parent singleton resource.
+* GOT: global offset table
+
+## H
+
+* hot-patching
+* + `nop`, `mov edi edi`
+
+## I
+
+* Initialization
+* + zero init
+* + - static/TLS
+* + default init
+* + - T object
+* + - new T
+* + direct init
+* + value init
+* + - 任何情况下都不可以使用T object()这样的方式构造对象 (编译器拓展)
+* + list init
+* + - member init list
+* + - - can handle try-catch block
+* + - - order: dfs-virtual base -> direct base -> non-static data (by declaration order in class / undefined) -> body
+* + copy init
+* + - copy list init
+* + - - In copy-list-initialization, if an explicit constructor is chosen, the initialization is ill-formed.
+* + aggregate init
+* + - no ctor (std::array)
+* + - no base classes
+* + reference init
+* + static non-local init
+* + dynamic non-local init
+* + brace init
+* + - no narrowing
+* + - `std::initializer_list`
+* + parenthesis init
+* + - allow narrowing
+* + [ref](https://blog.tartanllama.xyz/c++/2017/01/20/initialization-is-bonkers/)
+* Identifier
+* Intrusive
+* integral_constant (compile time integral constant sequence)
+* invoke (std::invoke)
+* implemented-defined behavior
+* + Certain aspects and operations of the abstract machine are described in this International Standard as implementation-defined (for example, `sizeof(int)`). These constitute the parameters of the abstract machine. Each implementation shall include documentation describing its characteristics and behavior in these respects.
+* + implementation documents how the choice is made
+* + `int t = '12132132131'`
+* inline
+* + function (class (without incomplete type) function)
+* + variable (C++17)
+* inheritance
+* + public: is-a
+* + protected:
+* + private: implemented-in-terms-of maxin/AOP
+* + is-implemented-in-terms-of: use same interfaces/mixin
+* + has-a: containing member func/variable
+* + interface/implementation
+* + multiple inheritance (diamond problem => virtual inheritance)
+* + purpose: reuse interface/behavior
+* + inherit from std::exception, for other better not (not virtual dtor) (composition/extension instead) [ref](http://stackoverflow.com/questions/10477839/c-inheriting-from-stdmap)
+* + - std::fstream/std::streambuf is ready to be derived
+* + Idioms
+* + - Base-from-member (solve `C(a) : A(a), B(&C::t)` to `C(a) : A'(a),B(&A'::t) `)
+* + - Calling-Virtuals-During-Initialization (wrap a `void init()` and use non=member function)
+* Introsort
+* instantiation units
+* initializer_list
+* + only save the reference/readonly
+* + initializer_list side effect hack
+* + - `std::initializer_list<int> { (v += Signature<Args>::get_signature(), 0)...};`
+* ISA (Instuction Set Architecture)
+* incomplete type
+* + ODR
+* + no-defined struct/array
+* in-class definition
+* + c++11: non-static
+* + static const
+* + - out-class definition: take address of static const class variable (or only can be used as rvalue)
+* + - if odr-used, then we need out-class in namespace declaration
+```c++
+class AE {
+    // ...
+public:
+    static const int c6 = 7;
+    static const int c7 = 31;
+};
+
+const int AE::c7;   // definition
+
+int f()
+{
+    const int* p1 = &AE::c6;    // error: c6 not an lvalue
+    const int* p2 = &AE::c7;    // ok
+    // ...
+}
+```
+* iterator invalidate
+* injective class name
+
+## J
+
+
+
+## K
+
+
+## L
+
+* linkage
+* + inner linkage
+* + external linkage
+* lambda expression
+* + generic/polymorphic lambda : [](auto x)
+* + closure lambda : [this, varname]
+* + init capture : [dis = dis(this->dis)]
+* + mutable (capture by value is default const)
+* + - mutable lambda -> closure
+* + convert a lambda to a function pointer using unary +
+* literal
+* + decimal: none suffix: int -> long int -> long long int
+* + binary/octal/hex: none suffix: int -> unsigned int -> long int -> unsigned long int -> long long int -> unsigned long long int
+* lifetime (compare to storage duration)
+* lock-free
+* + Tagged pointers
+* + Lock Free Reference Counting
+* + Hazard Pointer (RefCounting)
+* + Epoch Based Reclamation
+* + Quescent State Based Reclamation
+* + Pass the Buck
+* LTO (Link time optimization)
+* + inline
+
+## M
+
+* Move semantics
+* move (std::move)
+* mangling/demangling
+* macro
+* + multi-statement macro -> do {} while(0)
+* + - avoid semicolon error
+* + - avoid scope error (like if... (if...) else...)
+* + recursively expansion
+* + \#: 对应变量字符串化
+* + \#\#：把宏参数名与宏定义代码序列中的标识符连接在一起，形成一个新的标识符
+* + solve MSVC macro bugs
+```c++
+#define TOKENPASTE(x, y) x ## y
+#define TOKENPASTE2(x, y) TOKENPASTE(x, y)
+#define UNIQUE static void TOKENPASTE2(Unique_, __LINE__)(void) {}
+```
+* + builtin macros
+* + - __LINE__/__FILE__/__DATE__/__TIME__/_INCLUDE_LEVEL_/_BASE_FILE_
+* + - _TIMESTAMP_/_COUNTER_/_has_xxxx(Clang)/_MODULE_(Cpp1z-Clang)
+* + func-like
+* + - expand args -> re-scan after replace -> not expand(painted-blue, #, ##) -> examine ()
+```c++
+BAR () () () // 蓝色集合 {}
+-> BAR_I () () // 蓝色集合 {BAR}
+-> BAR () // 蓝色集合 {BAR_I} 注意！在执行上一步的展开时，蓝色集合更新了
+-> BAR_I // 蓝色集合 {BAR} 此处也更新了蓝色集合
+```
+* + obj-like
+* + - painted-blue (parent token + expand token)
+* most vexing parse
+* + https://en.wikipedia.org/wiki/Most_vexing_parse
+* + Class Func(AnotherClass()) -> function declaration rather than variable definition
+* make_...
+* + template generator
+* + perfect forwarding
+* + no extra new cost (can caught exception in making)
+* + parenthesis init -> pass initializzer_list explicitly
+* + - `make_*ptr<T[]>(a, b) -> vector<T> vec(a, b)` vec of size `a` and init value `b`
+* member function
+* + 调用成员函数不能脱离对象
+* + - `template<typename F, typename C> Bar(F f, C c)` 无法调用 `Bar(&Foo::foo, i)`, 需要`template<typename T, typename F, typename C> Bar(T t, F f, C c) t.*f`
+* + member template function specialization
+* + - Explicitly specialized members need their surrounding class templates to be explicitly specialized （无法特化一个未指定的模板类的模板成员函数） (use helper struct)
+* + 特化成员函数模板 需要写在namespace scope
+* + - An explicit specialization shall be declared in the namespace of which the template is a member, or, for member templates, in the namespace of which the enclosing class or enclosing class template is a member.
+* + - An explicit specialization of a member function, member class or static data member of a class template shall be declared in the namespace of which the class template is a member.
+* memory order
+* + [ref](http://en.cppreference.com/w/cpp/atomic/memory_order)
+* + [ref](https://www.zhihu.com/question/24301047)
+* + carries dependency
+* + happens before
+* + visible side effect
+* + synchronized-with
+* multi defintion
+* + static template class member
+* + inline
+
+## N
+
+* non-dependent name
+* noexcept
+* name-hiding
+* name mangling
+* NVI (non-virtual interface)
+* + decorator of virtual function
+* + friend (strategy design pattern)
+* narrowing conversion
+* + {} init avoid narrowing
+* name
+* + name resolution
+* + name mangling (name decoration)
+* + name masking
+
+## O
+
+* ODR (one-definition rule)
+* + odr-used
+* + - 当表达式在非求值上下文（作为非求值操作符如sizeof等的操作数以及其子表达式）以外使用时称为potentionally used。
+对于变量，除了作为常量表达式且立即应用lvalue-to-rvalue conversion时，即为odr-used。
+对于this，potentionally used就是odr-used。
+对于虚函数，除了纯虚函数以外都是odr-used。
+函数名出现在potentially-evaluated表达式的，或者作为重载候选函数的，函数是odr-used，除了非限定类名修饰的纯虚函数。
+……分配函数、去配函数、复制赋值、转移赋值……（中略）
+一个析构函数是否odr-used由12.4定义。
+* ODL (ordinary lookup)
+* + unquanlified lookup with (::) ignore the same-name variable
+* optional (std::optional)
+* operator overloading
+* + member-func
+* + non-member-func
+* overhead
+* ownership
+* one-past-end pointer
+* + for example, `C::end()` cannot be deferenced but useful
+* + invalidate last
+* + 
+```c++
+int a[] = { 1, 2 };
+float b;
+(void *) &a[2] == (void *) &b //can be true, &a[2] is valid
+```
+* over-
+* + overwrite: name-hiding
+* + override: virtual function
+* + overload: parametric polymorphism
+* one-pass compile
+* operator
+* + `,`: delimiter/operator
+
+## P
+
+* Policy
+* + classes -> aspects -> compositions of policies
+* Parameter-like virtualization
+* + 
+```c++
+
+template <typename VBase>
+class Base : private VBase
+
+```
+* POI (position of instantiation)
+* POD (plain old data)
+* + only contain public buildin data & POD
+* + C-style struct
+* + =scalar types
+* + is union of standard layout and trivial type
+* preprocesser
+* + #include (text)
+* + #ifdef, #ifndef, #define, #undef
+* + #: 对应变量字符串化 
+* + ##: %:%: 把宏参数名与宏定义代码序列中的标识符连接在一起，形成一个新的标识符
+* pointer_to (std::pointer_to)
+* pimpl
+* + "Pointer to implementation" or "pImpl" is a C++ programming technique[1] that removes implementation details of a class from its object representation by placing them in a separate class, accessed through an opaque pointer
+* + (almost inevitable) own swap/copy/move function + rule of 3/5/6 in private.h (actual impl)
+* + class X { XImpl* x_impl} in public.h with X::XImpl in private.h
+* + note: pimpl like `unique_ptr<impl> pimpl` needs customized `~base()`, otherwise default one needs a complete declaration of `foo::impl` | Or write `unique_ptr<impl, impl_deleter> pimpl`
+* + ABI-compatibility
+* promotion
+* + integer promotion
+* proxy reference
+* + `vector<bool>`
+* pch in __GNUC__
+* pointer
+* + semantics
+* + - indirect-resource (`unique_ptr/shared_ptr`) -> Linear logic in Rust
+* + - non owning-resource view (`observer_ptr`)
+* + - reference (builtin/`std::ref`)
+* + - nullable type (`std::optional`)
+* + - iterative operation (`T::iterator`)
+* + fancy pointer
+* + dangling pointer
+* + observer_ptr
+* + smart pointer
+* + - shared_ptr
+* + - - stored pointer
+* + - - control block
+* + - - - refcount/allocator/deleter/weakcount
+* + - - 移动一个std::shared_ptr因此要比拷贝要快：拷贝需要增加引用计数，而移动不需要。赋值操作也是同样的。因此，移动构造比拷贝构造要快，移动赋值比拷贝赋值也快。
+* + - - aliasing constructor `template< class Y > 
+shared_ptr( const shared_ptr<Y>& r, element_type* ptr )`
+* + - - - 共享r引用计数，指向ptr
+* + - `enable_shared_from_this`
+* + - - 一种实现： `weak_ptr`
+* + fat pointer (Dlang) 
+* pmr
+* + type-erases allocator
+* + allocator属于模板类型一部分->Coersion额外写
+* + 泛型allocator
+* placement (已有内存而无有效对象) (construct without malloc)
+* + placement new -> new(pointer) T
+* + placement copy -> uninitialized_copy
+* + - commit or rollback (so move will not ensure)
+* + placement fill -> uninitialized_fill/uninitialized_fill_n
+* polymorphism
+* + ad-hoc (重载/特设)
+* + - `add(int, int)/add(double, double)`
+* + parametric (参数化/类型参数化)
+* + - `template<> void class<int>()`
+* + subtying (子类型/包含)
+* + - `static_cast<Base*>(this)->foo()` (Derived<->Base)
+* + coersion (强制/单态)
+* + - `int+double`
+* + Implemented-Specific
+* + - Dynamic
+* + - Static
+* + - - CRTP
+* pointer-to-member
+* + The size of a pointer-to-member-function of a class that uses multiple inheritance is the size of a pointer plus the size of a size_t.
+* + The size of a pointer-to-member-function can change depending on the class
+* + [ref](https://blogs.msdn.microsoft.com/oldnewthing/20040209-00/?p=40713)
+* post-constructor
+
+## Q
+
+* quanlified-id
+* qualifier
+* + const: (const) type func(parameter-list) (const) : don't change *this 
+* + ref: func() & : function which only can be called on lvalues, forbidden: `temp().ref_func()`
+* + r-ref: func() & : function which only can be called on lvalues, forbidden: `Temp temp, temp.ref_func()`
+
+
+## R
+
+* Runtime
+* + typeinfo (typeid)
+* + runtime polymorphism: overload/virtual
+* + RTTI
+* + order of evaluation (sequence before)
+* + assert
+* + TBCO
+* Reflection
+* RTTI
+* result_of (std::result_of)
+* ranged_based_for
+* Range
+* regex
+* rule of 3/5/6
+* RVO/NRVO ((named) return value optimization)
+* + construct in func, copy on return, copy on assignment
+* + RVO: rewrite in reference parameters, pass-by-reference. construct in func, copy in func (directly assign to reference)
+> C++11/14解决的是这样的问题：
+```c++
+struct A {
+  int m;
+};
+
+A f1() {
+  return 0;
+}
+
+A f2() {
+  return{ 0 };  // RVO
+}
+
+auto && x1 = f1(), && x2 = f2();
+```
+f1有一次A(A)但是被削减掉，而f2将在语义上也不会有A(A)
+* + NRVO: rewrite in reference parameters, pass-by-reference and no-copy (move/copy elision). construct in func (directly assign to reference) 函数的所有路径都返回同一个非匿名变量 -> 保证copy elision(不强制)
+* + URVO: 函数的所有执行路径都返回同一个类型的匿名变量 -> 保证copy elision(c++17)
+* + If rvo then no move/forward
+* + copy elision
+> 17解决的则是
+auto x(f2());/auto x = f2();的时候<17会有一次A(A)但是可能被削减掉，17开始将在语义上也不会有了.
+* reference collapsing
+* Range
+* + string_span
+* + array_span
+* restrict-qualified
+
+
+## S
+
+* Strict aliasing rule
+* + T2可alising T1的类型
+* + - 相互之间具有继承关系的类型
+* + - 差一个 const 或 volatile 或 restrict 的类型 (`decay_t<T2> = T1`) 
+* + - 差一个 signed 或 unsigned 的类型
+* + - 包含上面所说的所有类型的聚合类型的静态成员或非静态成员之间
+* + - 有一个是 char 或者 unsigned char 类型
+* SSO (short string optimization) 
+* + < 15 chars in string buffer
+* Sequence before
+* + value computation  (like get value of right expression in `=`)
+* + - calculation of the value that is returned by the expression. This may involve determination of the identity of the object (glvalue evaluation, e.g. if the expression returns a reference to some object) or reading the value previously assigned to an object (prvalue evaluation, e.g. if the expression returns a number, or some other value)
+* + side effect (like change the value of `++i`)
+* + -  access (read or write) to an object designated by a volatile glvalue, modification (writing) to an object, calling a library I/O function, or calling a function that does any of those operations.
+* + - (STL)类的非const成员函数都是属于副作用
+* + - (STL)类的const成员函数中改写了mutable成员的也属于副作用
+* + - 单例类的具有getInstance作用的成员函数也是副作用
+* + function call
+* SFINAE
+* + expression SFINAE
+* + `-> decltype(xxx, T)` is part of function
+* + 仅对于函数参数和函数模板参数
+* string_view
+* singleton
+* static
+* + For C, `int [static 2]`(more than 2 element)
+* structured binding (decomposition declaration)
+* + `auto [a, b] = std::tuple<T1, T2>(a1, a2)`
+* + originally `std::tie(std::ignore, result) = set.insert(value)/tuple<T1, T2>;`
+* + implement `templte <int N> auto get()` for supporting
+* + `auto [a, b] = struct C {int a, int b}` (pod reflect)
+* strict weak ordering - STL - operator<
+* scalar object
+* scope
+* small-object allocation
+* Singleton
+* + phoneix singleton
+* + longevity singleton
+* + double check
+* + Meryer's singleton
+* swallow idiom
+* + `func(args...)` is not supported
+* + use `void swallow(args...), swallow(func(args)...)` instead (however, return void is not supported)
+* + or fold expression `(func(args), ...)`
+* + or `using Dummy = int[]; Dummy{((void)func(params), 1)...};`
+* standard layout
+* + [ref](http://en.cppreference.com/w/cpp/concept/StandardLayoutType)
+* + [force-standard-layout](https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.structlayoutattribute(v=vs.110).aspx)
+* SEH
+* + __try 
+* + __catch 
+* + __finally 
+* synchronized
+* + transactional mem
+* system_error
+* + std::errc
+* size_t
+* + `for (std::size_t i = n; i-- > 0;) `
+* shell code
+* slicing
+* string
+* + data() can be invalidate by
+* + - passing a non-const reference to the string to any standard library function
+* + - calling non-const member functions on the string
+* + - - modifying the character array accessed through the const overload of data has undefined behavior
+* + - - modifying the past-the-end null terminator stored at data()+size() has undefined behavior
+
+
+## T
+
+* Traits
+* type_traits
+* + add_...
+* + remove_...
+* + is_...
+* Template
+* + Template-id
+* + template specialization (total/partial) （函数模板没有偏特化->重载） (偏特化
+时，模板参数列表并不代表匹配顺序，它们只是为偏特化的模式提供的声明)
+* + - `template <typename T> T func(T*)`
+* + - `template <typename T, typename C> T func(T C::*)`
+* + - `template <typename T, typename ... Args> struct struct_name<T(*)(L...)>`   (function pointer, return type `T`, parameter list `L...`)
+* + - `template <typename T, int N> class class_name<const T(&)[N]>` (array reference with type `const T`, size `N`)
+* + template parameters
+* + - non-type
+* + - pack
+* + - - for pattern, expanding to p(arg1), p(arg2)
+* + - - swallow idiom
+* + - - `template <typename First, typename ...Rest>`
+* + - - `class Derived : Derived<First, Rest...>`
+* + variable template
+* + 嵌套类模板在类的定义中不允许被显示特化声明，只允许偏特化
+* TMP (template metaprogramming)
+* tuple
+* thread
+* + conditional variable
+* + call_once / once_flag
+* + atomic
+* + - data race
+* + promise
+* + future
+* + async
+* + memory order
+* + memory fence
+* + naive_thread
+* thread storage duration (TLS)
+* translation unit
+* + http://en.cppreference.com/w/cpp/language/translation_phases
+* trivial type
+* + trivial constructor
+* + - only buildin member (no matter public/private)
+* + - derived from POD
+* + trivial copyable
+* typename
+* two phase lookup
+* + 1-> ODL+ADL parser
+* + 2-> dependent name, POI, template instantiation
+* Type Erasing
+* + overload
+* + polymorphic (derived->base, dispatch from base, boost::any)
+* + template
+* + closure (lambda)
+* + std::variant std::any
+* + container
+* + boxing
+* {c, d}tor
+* + noexcept (should in ctor, default in dtor)
+* + single parameter ctor -> copy constructor
+* + scalar type can have T::~T(), like int::~int()
+* Temporary Base Class (TBCO)
+* + reduce temp obj in a1 + a2 + a3 + a4
+
+
+## U
+
+* unquanlified-id
+* using 
+* + type alias
+* + declare func
+* + introduce namespace
+* + break private/public/protected
+* undefined behavior
+* + signed integer overflow (unsigned is defined)
+* + indeterminated value (like bool, can be both T/F)
+* + side effect on a memory location is unsequenced relative to either another side effect on the same memory location or a value computation using the value of any object in the same memory location (`(i++) + i`)
+* +  a side effect on a scalar object is unsequenced relative to another side effect on the same scalar object. (`i = ++i + i++;`)
+* + a side effect on a scalar object is unsequenced relative to a value computation using the value of the same scalar object. (`n = ++i + i`)
+* + Modifying a const object through a non-const access path and referring to a volatile object through a non-volatile glvalue results in undefined behavior. (`const_cast<int*>(&const int i)`)
+* + over bound of pointer operation
+* + break strict aliasing
+* + access out of bounds
+* + uninitialized scalar
+* + access to pointer passed to realloc
+* + Assume to be P (ub or not)
+* + - infinite loop without side-effects
+* + Infinite recursion in the instantiation of templates
+* + [common-ub](https://stackoverflow.com/questions/367633/what-are-all-the-common-undefined-behaviours-that-a-c-programmer-should-know-a)
+* unspecified behavior
+* + Certain other aspects and operations of the abstract machine are described in this International Standard as unspecified (for example, order of evaluation of arguments to a function). Where possible, this International Standard defines a set of allowable behaviors. These define the nondeterministic aspects of the abstract machine.
+* + International Standard provides two or more possibilities and imposes no further requirements on which is chosen in any instance.
+* UFCS (func(obj, params) <-> obj->func(params))
+* Uniform initialization syntax
+* universal reference
+* + auto&&
+* + f(T&& params)
+* user defined literal
+* + operator"" _T
+* + 233_T
+* upcasting
+* underlying_type
+* + enum class T : Type {}
+* union
+* + unrestricted
+* user-defined
+
+
+## V
+
+* valarray (with map wrapper function)
+* variant (std::variant)
+* void_t (std::void_t)
+* + void_t是偏特化匹配
+* volatile
+* + C和C++中的volatile并不是用来解决多线程竞争问题的，而是用来修饰一些因为程序不可控因素导致变化的变量，比如访问底层硬件设备的变量，以提醒编译器不要对该变量的访问擅自进行优化。
+* value
+* + glvalue 
+* + - const T& <- T&& (兼容Fortran)
+* + prvalue
+* + xvalue
+* virtual
+* + pure virtual = 0 (interface)
+* + impure virtual (mixin/interface+default impl)
+* + non virutal (interface+force impl)
+* + virtual dtor (order of ctor, dtor)
+* + vtable/vpointer (first 4 byte of class)
+* + - vbptr in _MSC_VER (to calculate the virtual base position, pointer to global offset table, which recording vbptr - vb)
+* + virtual base should be initialized before any non-virtual base 
+* void type
+* + std::ignore
+* + std::void_t
+* + std::experimental::nonesuch
+* + std::optional
+* void* pointer
+* + not change value of original
+* variable
+* + static data member -> is
+* + non-static data member -> not
+
+## W
+
+* well-formed
+* + syntax rules
+* + diagnosable semantic rules
+* + One Definition Rule
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+
+* zero-cost abstraction
+
+
+## Further Reading
+* ISO/IEC 14882 2014
+* ISO/IEC 9899 2011
+* [CppRef-Concept](http://en.cppreference.com/w/cpp/concept)
+* [CppRef-Init](http://en.cppreference.com/w/cpp/language/initialization)
+* [YSlib-Convention](https://github.com/FrankHB/YSLib/blob/master/doc/LanguageConvention.txt)
+* [CppCoreGuideline](https://github.com/isocpp/CppCoreGuidelines)
+* [More-Cpp-Idioms](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms)
+* Effective Modern C++
+* Cpp API Design
+* Inside C++ Object Model
