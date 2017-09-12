@@ -97,7 +97,8 @@
 ## G
 
 * __get__ : descriptor
-* __getattr__ : class/base property (for unfound instance or base tree)
+* __getattr__ : class/base property (for unfound instance or base tree) (. for attribute)
+* __getitem__ : Called to implement evaluation of self[key]
 * __getattribute__ : instance property
 * __get__ -> __getattr__ -> __getattribute__
 * generator : yield/next
@@ -194,6 +195,8 @@
 * Resize strategy
 * + 8->32->...-> >50000 x2->x2 (set, dict)
 * + (size+1 >> 3) + (size+1 < 9 ? 3 : 6) (list, 0, 4, 8, 16, 25, 35, 46, 58, 72, 88, ...) （\approx 1.125)
+* __repr__ vs __str__
+* + [dis](https://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python?rq=1)
 
 ## S
 

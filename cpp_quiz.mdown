@@ -109,3 +109,36 @@ T Container<T>::addTask(F&& func, Args&&... args)
     //.....
 }
 ```
+
+## Delete element in Cpp
+* vector erase-remove
+* remove_if
+* [dis](https://stackoverflow.com/questions/38468844/erasing-elements-from-unordered-map-in-a-loop)
+```c++
+std::unordered_map<...> m;
+auto it = m.begin();
+while (it != m.end())
+{
+    if (pred(*it))
+        it = m.erase(it);
+    else
+        ++it;
+} // UB before Cpp14
+
+std::unordered_map<...> mymap;
+std::vector<decltype(mymap)::key_type> vec;
+for (auto&& i : mymap)
+    if (/*compare i*/)
+        vec.emplace_back(i.first);
+for (auto&& key : vec)
+    mymap.erase(key);
+```
+
+## Nested using 
+```c++
+template <typename T>
+template <typename U>
+using P = std::is_same<T, U>; // Usable in gcc, failed in clang
+                              // ill-formed
+
+```

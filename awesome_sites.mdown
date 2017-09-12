@@ -175,6 +175,7 @@
         - [2017-9-8](#2017-9-8)
         - [2017-9-9](#2017-9-9)
         - [2017-9-10](#2017-9-10)
+        - [2017-9-11](#2017-9-11)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -328,6 +329,7 @@ Order of items is just based on Nothing :: Maybe.
 * [LLVM-project-blog](http://blog.llvm.org/)
 * [VCBlog](https://blogs.msdn.microsoft.com/vcblog)
 * [Usenet-Archive](http://yarchive.net/home.html)
+* [WG21](https://wg21.cmeerw.net/)
 
 
 
@@ -2067,6 +2069,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Mixing-x86-and-x64](http://blog.rewolf.pl/blog/?p=102)
 * [Execute-x64-under-WOW64](https://int0h.wordpress.com/2009/12/24/the-power-of-wow64/)
 * [lambda-capture-forwarding-and-universal-reference](https://stackoverflow.com/questions/46118564/alternative-for-stdbind-in-modern-c)
+* [LTO-wrapper](https://stackoverflow.com/questions/19807107/what-is-gcc-lto-wrapper)
+* [Working-with-binary-Python](http://www.devdungeon.com/content/working-binary-data-python)
+
+### 2017-9-11
+* [What's-bad-POSIX-IO](https://www.nextplatform.com/2017/09/11/whats-bad-posix-io/)
+* [2-Phase-lookup-come-to-MSVC](https://blogs.msdn.microsoft.com/vcblog/2017/09/11/two-phase-name-lookup-support-comes-to-msvc/)
+* [dll-共享节](http://blog.csdn.net/mydreamremindme/article/details/10311075)
 
 ## Tools
 * [Repl.it](https://repl.it/)
