@@ -609,7 +609,7 @@ struct element {
 * radix-2/4/...
 * + FFT/NTT butterfly operator size=2
 * std::rotate 队列rotate操作
-* Rosser theorem (nthprime)
+* Rosser theorem (nth prime)
 * + [ref](https://math.stackexchange.com/questions/1270814/bounds-for-n-th-prime)
 * RRB Vector
 

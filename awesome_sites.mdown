@@ -176,6 +176,10 @@
         - [2017-9-9](#2017-9-9)
         - [2017-9-10](#2017-9-10)
         - [2017-9-11](#2017-9-11)
+        - [2017-9-12](#2017-9-12)
+        - [2017-9-13](#2017-9-13)
+        - [2017-9-14](#2017-9-14)
+        - [2017-9-15-2017-9-17](#2017-9-15-2017-9-17)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2076,6 +2080,30 @@ Order of items is just based on Nothing :: Maybe.
 * [What's-bad-POSIX-IO](https://www.nextplatform.com/2017/09/11/whats-bad-posix-io/)
 * [2-Phase-lookup-come-to-MSVC](https://blogs.msdn.microsoft.com/vcblog/2017/09/11/two-phase-name-lookup-support-comes-to-msvc/)
 * [dll-共享节](http://blog.csdn.net/mydreamremindme/article/details/10311075)
+* [ARM-immediate-number-encoding](https://alisdair.mcdiarmid.org/arm-immediate-value-encoding/)
+* [ARM-constant-expresssion](https://www.bbsmax.com/A/LPdobBE53a/)
+
+### 2017-9-12
+* [gcc-optimization-guide](https://stackoverflow.com/questions/14492436/g-optimization-beyond-o3-ofast)
+* [fast-io-in-C](http://abhisharlives.blogspot.com/2012/06/really-fast-io-methods-for-programming.html)
+* [backslash-in-Cpp-include](https://stackoverflow.com/questions/5790161/is-the-backslash-acceptable-in-c-and-c-include-directives)
+* [POSIX-detect](https://stackoverflow.com/questions/11350878/how-can-i-determine-if-the-operating-system-is-posix-in-c)
+
+### 2017-9-13
+* [Monoid](https://deque.blog/2017/09/13/monoids-what-they-are-why-they-are-useful-and-what-they-teach-us-about-software/)
+* [march-mtune](http://sdf.org/~riley/blog/2014/10/30/march-mtune/)
+* [template-template-template](https://stackoverflow.com/questions/6484484/template-template-parameters/6485439#6485439)
+* [apostrophe-and-quotation](https://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html)
+* [python-__slots__](https://www.chrisbarra.xyz/posts/let-me-introduce-slots/)
+* [ARM-conditional-codes](https://community.arm.com/processors/b/blog/posts/condition-codes-1-condition-flags-and-codes)
+
+### 2017-9-14
+* [Performance-equation](https://www.d.umn.edu/~gshute/arch/performance-equation.xhtml)
+
+### 2017-9-15-2017-9-17
+* [Python并行编程 中文版](http://python-parallel-programmning-cookbook.readthedocs.io/en/latest/index.html)
+* [What's-new-in-Py3.7](https://docs.python.org/3.7/whatsnew/3.7.html)
+
 
 ## Tools
 * [Repl.it](https://repl.it/)

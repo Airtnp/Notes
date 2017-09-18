@@ -6,6 +6,7 @@
 * \*\*kwargs : dict
 * [[]]*10 创建对同一个列表5次引用的列表
 * `__slots__`: compile-time restrict attribute
+* + [ref](https://www.chrisbarra.xyz/posts/let-me-introduce-slots/)
 * `@`/`__matmul__` in py3
 
 ## A
@@ -93,6 +94,7 @@
 * + align/padding/named-variable(Formatted string literals)
 * + F-string
 * + - `name = "Test" f"My app name is {name}."`
+* __future__: not virusly
 
 ## G
 
@@ -286,6 +288,9 @@
 ## W
 
 * warnings module
+* with (context manager)
+* + `A as t` === `t = A.__enter__()`
+* + `__exit__(self, exception_type, exception_value, traceback)`
 
 ## X
 
