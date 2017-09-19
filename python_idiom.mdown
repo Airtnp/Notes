@@ -15,6 +15,7 @@
 * + register
 * + __subclasshook__
 * + @abstractmethod (compare to @classmethod, @staticmethod, __slots__)
+* + [dis](https://stackoverflow.com/questions/40764347/python-subclasscheck-subclasshook)
 * async/await
 * + async with
 * + - `__aenter__`/`__aexit__`/`__aiter__`

@@ -180,6 +180,7 @@
         - [2017-9-13](#2017-9-13)
         - [2017-9-14](#2017-9-14)
         - [2017-9-15-2017-9-17](#2017-9-15-2017-9-17)
+        - [2017-9-18](#2017-9-18)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2103,6 +2104,14 @@ Order of items is just based on Nothing :: Maybe.
 ### 2017-9-15-2017-9-17
 * [Python并行编程 中文版](http://python-parallel-programmning-cookbook.readthedocs.io/en/latest/index.html)
 * [What's-new-in-Py3.7](https://docs.python.org/3.7/whatsnew/3.7.html)
+* [Universal-Charset-Detection](http://www-archive.mozilla.org/projects/intl/UniversalCharsetDetection.html)
+* [Python-super](https://stackoverflow.com/questions/15896265/python-super-inheritance-and-needed-arguments)
+* [Python-dict-implementation](https://www.laurentluce.com/posts/python-dictionary-implementation/)
+
+### 2017-9-18
+* [memory-usage-cpp](https://stackoverflow.com/questions/669438/how-to-get-memory-usage-at-run-time-in-c)
+* [libstdcxx-allocator](https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html#std.util.memory.allocator)
+* [rvalue-ref-lvalue-ref-T-overload-resolution](https://stackoverflow.com/questions/17961719/overload-resolution-between-object-rvalue-reference-const-reference)
 
 
 ## Tools
