@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23)
+        - [2017-7-23](#2017-7-23-1)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -181,6 +181,8 @@
         - [2017-9-14](#2017-9-14)
         - [2017-9-15-2017-9-17](#2017-9-15-2017-9-17)
         - [2017-9-18](#2017-9-18)
+        - [2017-9-19](#2017-9-19)
+        - [2017-9-20](#2017-9-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2112,6 +2114,26 @@ Order of items is just based on Nothing :: Maybe.
 * [memory-usage-cpp](https://stackoverflow.com/questions/669438/how-to-get-memory-usage-at-run-time-in-c)
 * [libstdcxx-allocator](https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html#std.util.memory.allocator)
 * [rvalue-ref-lvalue-ref-T-overload-resolution](https://stackoverflow.com/questions/17961719/overload-resolution-between-object-rvalue-reference-const-reference)
+
+### 2017-9-19
+* [gcc-memory-usage](https://stackoverflow.com/questions/29853981/how-can-i-optimize-gcc-compilation-for-memory-usage)
+* [Hindley-Milner-in-Vivint](http://goc.vivint.com/problems/hm)
+* [macro-lisp/Rust](https://github.com/JunSuzukiJapan/macro-lisp)
+* [CHiso-1](http://cgnail.github.io/academic/lambda-7/)
+* [CHiso-Haskell](https://wiki.haskell.org/Curry-Howard-Lambek_correspondence)
+* [C++-Allocator](https://zhuanlan.zhihu.com/p/29345773)
+* [W3C-DRM-EFF](https://boingboing.net/2017/09/18/antifeatures-for-all.html)
+* [crates-io-security](https://users.rust-lang.org/t/security-advisory-for-crates-io-2017-09-19/12960)
+* [difference-between-IVT-IDT](https://stackoverflow.com/questions/11540095/what-is-the-difference-between-ivt-and-idt)
+* [x86-syscall-better-than-int](https://stackoverflow.com/questions/12806584/what-is-better-int-0x80-or-syscall)
+* [x86-syscall-optimization-vDSO](https://en.wikipedia.org/wiki/VDSO)
+* [MOVK-example](https://stackoverflow.com/questions/27938768/moving-a-32-bit-constant-in-arm-arch64-register)
+* [program-in-memory](http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/)
+* [__builtin_expect](https://stackoverflow.com/questions/15468042/how-far-does-gccs-builtin-expect-go)
+
+### 2017-9-20
+* [gcc-prefetch](https://gcc.gnu.org/projects/prefetch.html)
+* [PEP-0393-Unicode-flexible-length](https://www.python.org/dev/peps/pep-0393/)
 
 
 ## Tools

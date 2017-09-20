@@ -448,9 +448,10 @@
 ## L
 
 * LCT (link-cut tree)
+* + [严格logn](https://zhuanlan.zhihu.com/p/29221551)
 * 链剖
 * 连通分量
-* + 强连通分量
+* + 强连通分量 (tarjan)
 * + 双连通分量
 * 离线算法
 * LCA 最近公共祖先
@@ -584,6 +585,7 @@ struct element {
 * Quad tree
 * Quick Hull
 * （盲填）骑士跳
+* quadratic sieve (大素数二次筛选法)
 
 ## R
 
