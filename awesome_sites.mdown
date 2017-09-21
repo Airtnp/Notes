@@ -183,6 +183,7 @@
         - [2017-9-18](#2017-9-18)
         - [2017-9-19](#2017-9-19)
         - [2017-9-20](#2017-9-20)
+        - [2017-9-21](#2017-9-21)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2134,6 +2135,16 @@ Order of items is just based on Nothing :: Maybe.
 ### 2017-9-20
 * [gcc-prefetch](https://gcc.gnu.org/projects/prefetch.html)
 * [PEP-0393-Unicode-flexible-length](https://www.python.org/dev/peps/pep-0393/)
+* [wchar_t-Unicode](https://stackoverflow.com/questions/2259544/is-wchar-t-needed-for-unicode-support)
+* [syscall-made-by-malloc](https://sploitfun.wordpress.com/2015/02/11/syscalls-used-by-malloc/)
+* [computers-are-fast](https://jvns.ca/blog/2014/05/12/computers-are-fast/)
+* [Haswell-CPU](https://www.realworldtech.com/haswell-cpu/)
+* [XZR-ignore-write](https://community.arm.com/processors/f/discussions/3185/wzr-xzr-register-s-purpose)
+
+### 2017-9-21
+* [Python-hash(1)==hash(1.0)](https://stackoverflow.com/questions/32209155/why-can-a-floating-point-dictionary-key-overwrite-an-integer-key-with-the-same-v/32211042#32211042)
+* [Python-scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#1-lg---local-and-global-scopes)
+* [left-right-hand-matrix](https://ask.helplib.com/1357913)
 
 
 ## Tools
