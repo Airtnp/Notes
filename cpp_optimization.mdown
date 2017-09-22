@@ -1,0 +1,362 @@
+# Optimization in C++
+
+## Time Optimization
+
+**Notice that: no multithread/coroutine**
+
+### 1. Program
+
+#### rvalue reference and move semantics
+
+### 2. IO, especially Input
+
+Lab1 is surely a IO-heavy program. C and Cpp have a lots of IO functions and there are various methods to optimize them.
+
+#### iostream (cin, cout)
+
+```c++
+// Stop using endl, using << nl;
+template <class CharT, class Traits>
+std::basic_ostream<CharT, Traits>& nl(std::basic_ostream<CharT, Traits>& os) {
+    os.put('\n');
+    // os.flush() endl does this!
+    return os;
+}
+
+std::ios_base::sync_with_stdio(false); // disable synchronization of stdio and iostream  (This will allocae ~120000 bytes streambuf, unable to stop that for wide-char stream since encoded in gcc/confdefs.h while compiling)
+std::cin.tie(nullptr); // untie cin and cout to disable flush between switching cin and cout
+// This can be wrote as std::cout << std::nounitbuf;
+// unitbuf is just mean make the buffer size 1. AKA. turn off
+std::cout.unsetf(std::ios_base::unit_buf); // disable the automatic output flush, then you should flush it manually. Or by dtor
+```
+
+
+#### scanf/printf
+
+Just using them. glibc writes them in hundreds of macros ([vfprintf](https://sourceware.org/git/?p=glibc.git;a=blob;f=stdio-common/vfprintf.c;h=fc370e8cbc4e9652a2ed377b1c6f2324f15b1bf9;hb=3321010338384ecdc6633a8b032bb0ed6aa9b19a)). However, C lacks of compile-time parsing of format string. That's bad because we need to parse the format in runtime (unlike rust and dlang!).
+
+#### DIY using getchar/putchar
+
+Sometimes (in Lab1), we just need simple positive integer reader/writer.
+```c++
+inline bool read_int_eof(size_t& x) {
+    char c = getchar(); x = 0;
+    if (c == EOF) return false;
+    while (c < '0' || c > '9') {
+        c = getchar();
+        if (c == EOF) return false;        
+    }
+    while (c <= '9' && c >= '0') {
+        x = (x << 3) + (x << 1) + c - 48;
+        c = getchar();
+    }
+    return true;
+}
+
+inline void write_szt(size_t x) {
+    int cnt = 0;
+    char c[15];
+    while (x) {
+        ++cnt;
+        c[cnt] = (x % 10) + 48;
+        x /= 10;
+    }
+    while (cnt) {
+        putchar(c[cnt]);
+        --cnt;
+    }
+}
+```
+
+That's fast. However, there is still some space to optimize. `getchar()/putchar()` is multithread safe (MT-safe). There are MT-unsafe version called `getchar_unlocked()/putchar_unlocked()`. `getchar_unlocked()` is much faster than `getchar()`!. Notably, `_unlocked()` version are POSIX-specfic (just like `getopt`!)
+
+Note: in MSVC `#define _CRT_DISABLE_PERFCRIT_LOCKS` will do the same things.
+
+#### fgets/fputs/gets/puts
+
+Use it and its `_unlocked` version simply. It's convenient and fast to read/write a line.
+
+#### Buffering and fread/setvbuf
+
+For large non-integer input and reading them totally, using global char array for buffering (Competitive Programming players just like that!) instead of default buffer using `setbuf/setvbuf` (glibc-x64 using 64k). Also, `fread()` and `feof()` have their `_unlocked()` version (MT-safe, slightly improvement).
+
+For `std::stringstream` as buffer
+```c++
+ostringstream oss{"Some Text"};
+cout << oss.str();
+stringstream ss{"Some Text"};
+cout << ss.rdbuf();
+```
+
+Note: I don't test performance of `read()` but `fread_unlocked` with global char array is the best among all of those.
+
+Update: `fread` actually mmap the file
+
+#### Specific file? (Redirection)
+
+`freopen`
+```c++
+#ifdef _WIN32
+#define NULL_DEVICE "NUL:"
+#else
+#define NULL_DEVICE "/dev/null"
+#endif
+
+#ifdef _WIN32
+#define STANDARD_OUT_DEVICE "CON"
+#else
+#define STANDARD_OUT_DEVICE "/dev/tty"  // Or use dup to store fileno of stdio
+#endif
+
+
+#if defined(FREOPEN_FILE_IN) && defined(FREOPEN_FILE_OUT)
+    freopen(FREOPEN_FILE_IN, "r", stdin);
+    freopen(FREOPEN_FILE_OUT, "w", stdout);
+#endif
+
+#if defined(FREOPEN_FILE_IN) && defined(FREOPEN_FILE_OUT)
+    fclose(FREOPEN_FILE_IN);
+    fclose(FREOPEN_FILE_OUT);
+#endif
+```
+
+`splice/sendfiles/ftruncate`
+
+#### Too too large?
+
+`read/write/mmap` (Lab1 will cause MLE)
+```c++
+int fd = fileno(stdin);
+struct stat sb;
+fstat(fd, &sb);
+size_t file_sz = sb.st_size;
+char* buf = reinterpret_cast<char*>(mmap(0, file_sz, PROT_READ, MAP_PRIVATE, fd, 0)); // I do not really understand this, just ref your linux/glibc manual. Anyway, though crazy like me, that's too much crazy.
+char* p = buf; // read from it;
+
+char buffer[LARGE_SZ];
+while ((int sz = read(fileno(stdin), buffer, LARGE_SZ)) > 0) {
+    write(fileno(stdout), buffer, sz)
+}
+```
+
+Note: for small input, too much optimization may be overhead.
+
+#### Why Output is a problem
+
+Because output needs to be dealt with, so it may have much calculation and difference for output data.
+
+Basically, using `printf()`, then `putchar/puts` and it's unlocked version.
+
+Some advanced options can be (and `_unlocked` of course)
+```c++
+std::fill_n(std::ostream_iterator<const char*>(std::cout, '\n'), count, cstring);
+std::cout.write(cppstr.data(), cppstr.size());
+fwrite(cstring, 1, length, stdout);
+write(fileno(stdout), cstring, length);
+``` 
+
+
+### Others
+
+#### Makefile or GCC options
+
+##### `-O3` vs. `-Ofast`
+
+Though little use in Lab1, `-Ofast` enables some non-standard-compliant options, eg. `-ffast-math` (enables unsafe floating-number operation)
+
+##### `-march=native` (`-mtune=native`)
+
+Also, little use in Lab1 (IO simply cannot use SIMD to speed up). `-march=native` select current chipset instruction set (eg. SSE AVX MMX) and likely break compatibility of this program on older chipsets
+
+##### `-fwhole-program` `-flto`
+
+Zero use in Lab1, since Lab1 is a single file program and don't apply to LTO (link time optimization (eg. inline functions in different transition units).
+
+##### `-fprofile`
+
+`-fprofile-generate` generates gcda files and then if you pack your gcda file, and `-fprofile-use -Wno-coverage-mismatch` then compiler will profile the usage for you.
+
+##### `-fprefetch-loop-arrays`
+
+You can see it below at cache section.
+
+#### Arrange your switch
+
+switch can derive 2 kinds of code. Naive if and jump table. If you place your label orderly, it's easy to form a jump table.
+
+#### Using ternary operator?
+
+`cmov` vs. `cmp + jcc` actually that's a argument about whether it would be quicker to write it into ternary form. [linus-on-cmov](http://yarchive.net/comp/linux/cmov.html)
+
+#### keyword: `register` and `restrict`
+
+`register` hints the compiler to put the value on register instead of stack. However, this is deprecated in Cpp17.
+
+`restrict` is one qualifier which C has and Cpp not. It indicates that no other access through this pointer in this function body is valid, so the compiler can do more aggressive optimiziation. However, Cpp DON'T have it. (Rust always does it, only one mutable borrow exists)
+
+#### cache, pipeline and inline asm?
+
+Some optimization tricks on CPU architectures including using `__builtin_expect` (optimize branch prediction), `__builtin_prefetch` and adjusting the array size, expanding the loop, using things like Duff's device to speed up. I have little knowledge about that (Maybe after I finish my EECS370, ha). Also, It's possible, but hard to write better assembler code than compiler does.
+
+...But always you can add `-fprefetch-loop-arrays` to let compiler does it. [reference](https://gcc.gnu.org/projects/prefetch.html)
+
+Update: after profiling your code, you can add `__builtin_expect` for time-consuming branch condition codes. (eg. gperftools)
+
+#### syscall (together with mmap)?
+
+`madvise/posix_fadvise`
+
+`madvise(p, size, MADV_WILLNEED || MADV_SEQUENTIAL)`
+
+#### vector intrinistics
+
+`<emmintrin.h>` and `__m128`
+`_mm_xxxxx`
+
+A live example I found here [computers-are-fast](https://jvns.ca/blog/2014/05/12/computers-are-fast/)
+
+#### Miscs
+
+##### No virtual, no RTTI
+
+Take something instead. Like CRTP or variant. `-fno-rtti`
+Compilers may do some devirtualization for you.
+
+##### Lazy evaluation
+
+TBO (temporary base optimization) idiom and Expression Template idiom
+
+##### Remove unnessary branch condition
+
+branch condition costs CPU much. And failing branch prediction has loss of many CPU cycles
+
+##### Lock-free (CAS)
+
+copy-and-swap to abandon locks
+
+## Space Optimization
+
+### Arrange member sequence
+
+From EECS370 we can learn alignment and know how to arrange member sequence to minimize the total memory usage. (Just arrange it from smallest to biggest).
+
+### Bit field
+```c++
+union {
+    struct Foo {
+        char a : 6;
+        bool b : 1;
+        bool c : 1;
+    } w,
+    uint8_t v;
+}; // Access non-active member (or casting) is valid in C, but may UB in C++
+```
+
+### Set alignment
+
+```c++
+#pragma pack(push, n)
+strut Baz {
+    
+};
+#pragma pack(pop)
+```
+
+```
+struct Foo {
+    uint32_t a;
+    uint16_t b;
+} __attribute__((pack, aligned(1))); // Some other choices like __attribute__((gcc_struct))
+```
+
+### -fpack-struct
+
+I just cannot figure out how to use it and STL container together. It errors.
+
+### Use difference container/allocator, or use C-style array
+
+`vector<T>` -> `set<T>/map<T>` (small number of objects)
+
+`vector<vector<T>>` -> `new T[N * M]` (24 bytes of extra `vector<T>`)
+
+`vector<vector<T>> vec(n, vector<T>(m))` costs `sizeof(vector<T>) + n * sizeof(vector<T>) + n * m * sizeof(T)`
+
+```c++
+// Default
+template <typename T>
+using V = vector<T, __gnu_cxx::new_allocator<T>> // Look at the extension allocator part in [ref](https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html);
+// boost::alignment::aligned_allocator<T, 16>
+```
+
+### Bit representation
+
+Just pack `n` conditions to `log_2(n) + 1` bits with complex mapping table
+
+
+### When Using `std::pair` and `std::tuple`?
+
+#### EBO (Empty Base Optimization) for `pair`
+
+Actually, empty struct in C/Cpp costs 1 byte. However, as base classes, they acts like not-exists.
+
+When it meets `std::pair<int, empty_struct>`, the size is `8` rather than `4`. You can use `boost::compressed_pair` to do EBO here.
+
+#### Space and EBO 2, what kind of implementation the `tuple` is?
+
+Actually, there are two kinds of `tuple` implementation. One is naive inheritance. 
+```
+template <typename T>
+struct tuple_element {
+    T value;
+};
+template <typename ...Args>
+struct tuple : tuple_element<T>... {};
+```
+This acts just like arranging members in order inside struct. The alignemnt should be the largest among base classes and members variables.
+
+However, another implementation of `tuple` may be composition
+```c++
+template <size_t N, typename ...Args>
+struct tuple_element;
+
+template <typename T>
+struct tuple_element<1, T> { T value; };
+
+template <size_t N, typename T, typename ...Args>
+struct tuple_element<N, T, Args...>{
+    T value;
+    tuple_element<N-1, Args...> rest;
+};
+
+template <typename ...Args>
+struct tuple {
+    tuple_element<sizeof...(Args), Args...> elem;
+};
+```
+
+That's a difference. AFAIK, MSVC use the first one and libstdcxx/libcxx use the second one.
+
+Thus, 
+```c++
+using T = std::tuple<bool, char, size_t, bool>;
+std::cout << sizeof(T); // return 16 in x86-cl and 24 in gcc-6 & clang-4.0 (on godbolt)
+```
+
+### Releasing STL containers
+
+Actually, `vector<T>::resize/vector<T>::shrink_to_fit` is implemented-defined and will not release your memory immediately. Then, we have swap idiom
+
+```c++
+vector<T>{}.swap(vec);
+```
+
+### Algorithm & Data structure
+
+* Beat `std::sort`
+* + stable: timsort
+* + unstable: pattern-defeating sort
+* rolling array for DP space optimization
+
+## Epilogue
+
+**FOCUS ON YOUR DS & ALG!**

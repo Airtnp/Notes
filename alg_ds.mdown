@@ -797,6 +797,7 @@ struct element {
 * 线索二叉树
 * X tree
 * 线索树
+* xor (as binary addition)
 
 ## Y
 

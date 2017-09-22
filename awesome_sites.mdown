@@ -184,6 +184,7 @@
         - [2017-9-19](#2017-9-19)
         - [2017-9-20](#2017-9-20)
         - [2017-9-21](#2017-9-21)
+        - [2017-9-22](#2017-9-22)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2145,6 +2146,18 @@ Order of items is just based on Nothing :: Maybe.
 * [Python-hash(1)==hash(1.0)](https://stackoverflow.com/questions/32209155/why-can-a-floating-point-dictionary-key-overwrite-an-integer-key-with-the-same-v/32211042#32211042)
 * [Python-scope](http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#1-lg---local-and-global-scopes)
 * [left-right-hand-matrix](https://ask.helplib.com/1357913)
+
+### 2017-9-22
+* [mmap() vs. reading blocks](https://stackoverflow.com/questions/45972/mmap-vs-reading-blocks)
+* [Numba-GPU-Python](https://devblogs.nvidia.com/parallelforall/numba-python-cuda-acceleration/)
+* [Find-missing-numbers-from-1-N](https://stackoverflow.com/questions/3492302/easy-interview-question-got-harder-given-numbers-1-100-find-the-missing-numbe)
+* [register-allocation](https://www.zhihu.com/question/29355187)
+* [dyncast](https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/libsupc%2B%2B/dyncast.cc)
+* [FP-Events](https://blog.qfpl.io/posts/reflex/basics/events/)
+* [FP-Behavior](https://blog.qfpl.io/posts/reflex/basics/behaviors/)
+* [malloc-MT-safety-reentrant](https://stackoverflow.com/questions/855763/is-malloc-thread-safe)
+* [TLB-cache-page-miss](https://stackoverflow.com/questions/37825859/cache-miss-a-tlb-miss-and-page-fault)
+
 
 
 ## Tools
