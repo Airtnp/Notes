@@ -8,6 +8,13 @@
 
 #### rvalue reference and move semantics
 
+#### Avoid dynamic memory
+
+#### Compile-time calculation
+
+* For C `__builtin_choose_expr/__buitlin_constant_p`
+
+
 ### 2. IO, especially Input
 
 Lab1 is surely a IO-heavy program. C and Cpp have a lots of IO functions and there are various methods to optimize them.
@@ -174,7 +181,7 @@ Zero use in Lab1, since Lab1 is a single file program and don't apply to LTO (li
 
 ##### `-fprofile`
 
-`-fprofile-generate` generates gcda files and then if you pack your gcda file, and `-fprofile-use -Wno-coverage-mismatch` then compiler will profile the usage for you.
+`-fprofile-generate` and running program generates `.gcda` files and then if you pack your `.gcda` file, and `-fprofile-use -Wno-coverage-mismatch` then compiler will profile the usage for you.
 
 ##### `-fprefetch-loop-arrays`
 
@@ -201,6 +208,8 @@ Some optimization tricks on CPU architectures including using `__builtin_expect`
 ...But always you can add `-fprefetch-loop-arrays` to let compiler does it. [reference](https://gcc.gnu.org/projects/prefetch.html)
 
 Update: after profiling your code, you can add `__builtin_expect` for time-consuming branch condition codes. (eg. gperftools)
+
+Ref: 骆可强《论程序底层优化的一些方法与技巧》
 
 #### syscall (together with mmap)?
 

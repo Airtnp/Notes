@@ -626,6 +626,8 @@ struct element {
 * + SLF：Small Label First
 * + LLL：Large Label Last
 * + Shuffle边表
+* + 维护动态加边的图的最短路
+* + [ref](http://mindlee.com/2011/11/18/shortest-paths-algorithm/)
 * 随机化
 * 扫描线算法
 * 树套树

@@ -185,6 +185,7 @@
         - [2017-9-20](#2017-9-20)
         - [2017-9-21](#2017-9-21)
         - [2017-9-22](#2017-9-22)
+            - [2017-9-23](#2017-9-23)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2157,6 +2158,21 @@ Order of items is just based on Nothing :: Maybe.
 * [FP-Behavior](https://blog.qfpl.io/posts/reflex/basics/behaviors/)
 * [malloc-MT-safety-reentrant](https://stackoverflow.com/questions/855763/is-malloc-thread-safe)
 * [TLB-cache-page-miss](https://stackoverflow.com/questions/37825859/cache-miss-a-tlb-miss-and-page-fault)
+* [virtual-function-call-assembly](https://stackoverflow.com/questions/4464144/does-c-virtual-function-call-on-derived-object-go-through-vtable)
+
+#### 2017-9-23
+* [Link-Cut-Tree](http://blog.csdn.net/Sunshine_cfbsl/article/details/52199415)
+* [Bootstrapper](http://www.tldp.org/LDP/LG/issue70/ghosh.html)
+* [网络流](http://sunshine-cfbsl.com/2017/02/12/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E6%B5%81-%EF%BC%88%E8%BD%AC%EF%BC%89/#comment-77)
+* [glibc-malloc](https://sploitfun.wordpress.com/2015/02/10/understanding-glibc-malloc/)
+* [va-args-overload-last](https://stackoverflow.com/questions/24876550/how-does-overload-resolution-work-with-variadic-functions)
+* [PyPI-malicious-package](https://arstechnica.com/information-technology/2017/09/devs-unknowingly-use-malicious-modules-put-into-official-python-repository/)
+* [Cpp-Zero-width](https://twitter.com/randal_olson/status/744169075497123840?lang=en)
+* [dos2unix-to-stderr](https://stackoverflow.com/questions/24720429/why-does-dos2unix-print-to-stderr/24720454)
+* [Intro-to-Webrender](https://mozillagfx.wordpress.com/2017/09/21/introduction-to-webrender-part-1-browsers-today/)
+
+#### 2017-9-23
+* [clear_cache](https://stackoverflow.com/questions/35741814/how-does-builtin-clear-cache-work)
 
 
 

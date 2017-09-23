@@ -90,6 +90,11 @@ void baz() {
 ```c++
 char* \U0001f431 = "cat" // OK
 char* 😺 = "cat" // Error in GCC
+
+int abc = 1;
+int ab\u200c = 1;
+int a\u200bc = 1;
+int abc\u200 = 1;
 ```
 
 ## Lambda capture forwarding and universal reference
