@@ -312,6 +312,8 @@ When it meets `std::pair<int, empty_struct>`, the size is `8` rather than `4`. Y
 
 #### Space and EBO 2, what kind of implementation the `tuple` is?
 
+EBO: libstdc++-v3 does `__empty_not_final` optimization here
+
 Actually, there are two kinds of `tuple` implementation. One is naive inheritance. 
 ```
 template <typename T>
@@ -334,7 +336,8 @@ struct tuple_element<1, T> { T value; };
 template <size_t N, typename T, typename ...Args>
 struct tuple_element<N, T, Args...>{
     T value;
-    tuple_element<N-1, Args...> rest;
+    tuple_element<N - 1, Args...> rest;
+    // Or write T value here
 };
 
 template <typename ...Args>
@@ -343,12 +346,36 @@ struct tuple {
 };
 ```
 
-That's a difference. AFAIK, MSVC use the first one and libstdcxx/libcxx use the second one.
+That's a difference. AFAIK, MSVC use the second one and libstdcxx/libcxx use the first one.
+
+Note: libstdc++-v3 uses 
+```c++
+struct _Tuple_impl<Idx, Head, Tails...>
+    : public _Tuple_impl<Idx + 1, Tails...>, 
+    private _Head_base<Idx, Head> // act as laying on reverse order
+```
+
+libvc++ uses
+```c++
+struct tuple<This, Rest...>
+    : public tuple<Rest...> {
+    // ...
+    _Tuple_val<This> val; // just as T
+}; // act as laying on original order
+```
+
+Though it seems just a order-problem, 
+The Standard says (ISO/IEC 14882::2017 draft N4660)
+
+> [ Note: The order of derivation is not significant except as specified by the semantics of initialization by
+constructor (15.6.2), cleanup (15.4), and storage layout (12.2, 14.1). — end note ]
+
+So the order of base classes are implemented-defined. Then gcc can do optimization to behave like the first one (so as Clang)
 
 Thus, 
 ```c++
 using T = std::tuple<bool, char, size_t, bool>;
-std::cout << sizeof(T); // return 16 in x86-cl and 24 in gcc-6 & clang-4.0 (on godbolt)
+std::cout << sizeof(T); // return 32 in x86-64-cl and 24 in gcc-6 & clang-4.0 (on godbolt)
 ```
 
 ### Releasing STL containers

@@ -186,6 +186,7 @@
         - [2017-9-21](#2017-9-21)
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
+            - [2017-9-23](#2017-9-23-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2173,6 +2174,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-9-23
 * [clear_cache](https://stackoverflow.com/questions/35741814/how-does-builtin-clear-cache-work)
+* [01背包-伪多项式](https://www.zhihu.com/question/20686504)
+* [JS-Emulator](https://gist.github.com/creaktive/978540)
+* [What's-new-in-Cpython-0.27](http://blog.behnel.de/posts/whats-new-in-cython-027.html)
+* [2-variable-recurrence-generating-function](https://math.stackexchange.com/questions/206158/solving-recurrence-relation-in-2-variables)
+* [multivariable-generating-function](http://www.kylem.net/math/recurrence.html)
+* [clobber-list-inline-asm](https://stackoverflow.com/questions/15815901/explanation-for-clobber-list-in-extended-gcc-inline-assembly-executing-the-x87-f)
+* [parallel-processing-with-Unix](http://www.pixelbeat.org/docs/unix-parallel-tools.html)
+* [MathML-is-a-failed-standard](https://www.peterkrautzberger.org/0186/)
 
 
 
