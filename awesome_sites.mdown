@@ -186,7 +186,8 @@
         - [2017-9-21](#2017-9-21)
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
-            - [2017-9-23](#2017-9-23-1)
+            - [2017-9-24](#2017-9-24)
+            - [2017-9-24](#2017-9-24-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2172,7 +2173,7 @@ Order of items is just based on Nothing :: Maybe.
 * [dos2unix-to-stderr](https://stackoverflow.com/questions/24720429/why-does-dos2unix-print-to-stderr/24720454)
 * [Intro-to-Webrender](https://mozillagfx.wordpress.com/2017/09/21/introduction-to-webrender-part-1-browsers-today/)
 
-#### 2017-9-23
+#### 2017-9-24
 * [clear_cache](https://stackoverflow.com/questions/35741814/how-does-builtin-clear-cache-work)
 * [01背包-伪多项式](https://www.zhihu.com/question/20686504)
 * [JS-Emulator](https://gist.github.com/creaktive/978540)
@@ -2182,6 +2183,33 @@ Order of items is just based on Nothing :: Maybe.
 * [clobber-list-inline-asm](https://stackoverflow.com/questions/15815901/explanation-for-clobber-list-in-extended-gcc-inline-assembly-executing-the-x87-f)
 * [parallel-processing-with-Unix](http://www.pixelbeat.org/docs/unix-parallel-tools.html)
 * [MathML-is-a-failed-standard](https://www.peterkrautzberger.org/0186/)
+* [Basic-category-for-scala-I](https://blog.scalents.com/2017/09/22/basic-category-theory-for-scala-programmers-part-i/)
+
+#### 2017-9-24
+* [strrchr-compile-time-BASEFILE](https://stackoverflow.com/questions/8487986/file-macro-shows-full-path)
+* [Bessel-glibc](https://www.zhihu.com/question/52901649/answer/132560490)
+* [Paxos-intro](https://zhuanlan.zhihu.com/p/29522440)
+* [fast-output-cpp](https://stackoverflow.com/questions/1924530/mixing-cout-and-printf-for-faster-output/1926432#1926432)
+* [C-externel-inline](https://www.zhihu.com/question/65633138)
+* [C-Type](https://zhuanlan.zhihu.com/p/25380214)
+* [Cat-Initial-Algebra](https://zhuanlan.zhihu.com/p/24161398)
+* [ML-derivation-type-unification](https://zhuanlan.zhihu.com/p/28300506)
+* [Algorithm-W-Step-by-Step](https://zhuanlan.zhihu.com/p/26076902)
+* [C++-nested-exception-dtor](https://stackoverflow.com/questions/37227300/why-doesnt-c-use-stdnested-exception-to-allow-throwing-from-destructor)
+* [Precise-GC-by-Stateful-Metaprogramming](https://medium.com/@bhuztez/precise-garbage-collection-for-c-with-stateful-metaprogramming-726c7b3972fd)
+* [Garbage Collection for Python](http://arctrix.com/nas/python/gc/)
+* [Emulate GLSL in C++ with stateful metaprogramming](https://medium.com/@bhuztez/emulate-glsl-in-c-with-stateful-metaprogramming-e77640d10d4d)
+* [Emulate borrow checker in C++ with stateful metaprogramming](https://medium.com/@bhuztez/emulate-borrow-checker-in-c-with-stateful-metaprogramming-db4b5e94449f)
+* [Notation as a Tool of Thought-Convolution](http://www.jsoftware.com/papers/tot.htm)
+* [Python-closure-1](https://stackoverflow.com/questions/14413946/what-exactly-is-contained-within-a-obj-closure/14414638#14414638)
+* [Python-closure-2](https://stackoverflow.com/questions/26094700/cell-contents-in-python-closure/26094746#26094746)
+* [Comparison-of-NTP](https://chrony.tuxfamily.org/comparison.html)
+* [Python-MRO-1](http://xymlife.com/2016/05/22/python_mro/)
+* [Python-MRO-2](https://laike9m.com/blog/li-jie-python-super,70/)
+* [Graphviz](https://www.worthe-it.co.za/programming/2017/09/19/quick-introduction-to-graphviz.html)
+
+#### 2017-9-25
+* [Linux-C10K](https://www.urbanairship.com/blog/linux-kernel-tuning-for-c500k)
 
 
 
