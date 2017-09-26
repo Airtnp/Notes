@@ -188,6 +188,7 @@
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
             - [2017-9-24](#2017-9-24-1)
+            - [2017-9-25](#2017-9-25)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2210,6 +2211,7 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-9-25
 * [Linux-C10K](https://www.urbanairship.com/blog/linux-kernel-tuning-for-c500k)
+* [gcc-get-overflow](https://stackoverflow.com/questions/2340259/how-to-turn-off-gcc-compiler-optimization-to-enable-buffer-overflow)
 
 
 
