@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23-1)
+        - [2017-7-23](#2017-7-23)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,8 +187,9 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24-1)
+            - [2017-9-24](#2017-9-24)
             - [2017-9-25](#2017-9-25)
+            - [2017-9-26](#2017-9-26)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2212,6 +2213,23 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-9-25
 * [Linux-C10K](https://www.urbanairship.com/blog/linux-kernel-tuning-for-c500k)
 * [gcc-get-overflow](https://stackoverflow.com/questions/2340259/how-to-turn-off-gcc-compiler-optimization-to-enable-buffer-overflow)
+* [Intel-i9-Review](https://www.anandtech.com/show/11839/intel-core-i9-7980xe-and-core-i9-7960x-review)
+* [Hooking-LuaJIT](https://nickcano.com/hooking-luajit/)
+* [Aggregation-in-Haskell](http://tech.frontrowed.com/2017/09/22/aggregations/)
+* [SML-and-Ocaml](http://adam.chlipala.net/mlcomp/)
+* [let-vs-let*](https://stackoverflow.com/questions/15003518/confused-by-the-difference-between-let-and-let-in-scheme)
+* [Pierce-Law-call/cc](https://www.zhihu.com/question/21954238)
+
+#### 2017-9-26
+* [falign-gcc](https://stackoverflow.com/questions/19470873/why-does-gcc-generate-15-20-faster-code-if-i-optimize-for-size-instead-of-speed)
+* [Omit-the-frame-pointer](https://stackoverflow.com/questions/1942801/when-should-i-omit-the-frame-pointer)
+* [Link-register-and-Frame-pointer](https://stackoverflow.com/questions/15752188/arm-link-register-and-frame-pointer)
+* [Dijkstra-with-negative-edge](https://www.zhihu.com/question/21620069)
+* [BL-in-arm-ins](https://stackoverflow.com/questions/34091898/bl-instruction-arm-how-does-it-work)
+* [Abseil-cpp-google](https://opensource.googleblog.com/2017/09/introducing-abseil-new-common-libraries.html)
+* [ARM-C-Calling-Convention](https://stackoverflow.com/questions/261419/arm-to-c-calling-convention-registers-to-save)
+* [permutation-python](https://stackoverflow.com/questions/104420/how-to-generate-all-permutations-of-a-list-in-python)
+* [You-are-not-expect-to-understand-pdp-linux](https://www.bell-labs.com/usr/dmr/www/odd.html)
 
 
 
