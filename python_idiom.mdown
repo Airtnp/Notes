@@ -112,7 +112,7 @@
 * __getattr__ : class/base property (for unfound instance or base tree) (. for attribute)
 * __getitem__ : Called to implement evaluation of self[key]
 * __getattribute__ : instance property
-* __getattribute__ -> data descriptor (__get__ / @property) -> __dict__ -> non-data desciptor (only __get__ no __set__ nor __delete__ nor __set_name__) -> __getattr__
+* type(T).__mro__ -> __getattribute__ -> data descriptor (__get__ / @property) -> __dict__ -> non-data desciptor (only __get__ no __set__ nor __delete__ nor __set_name__) -> __getattr__
 * __setattr__ -> data descriptor (__set__ / @property) -> __dict__
 * __delattr__ -> data descriptor (__delete__ / @property) -> __dict__
 * generator : yield/next

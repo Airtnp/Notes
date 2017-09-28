@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23)
+        - [2017-7-23](#2017-7-23-1)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,9 +187,10 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24)
+            - [2017-9-24](#2017-9-24-1)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
+            - [2017-9-27](#2017-9-27)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2230,6 +2231,14 @@ Order of items is just based on Nothing :: Maybe.
 * [ARM-C-Calling-Convention](https://stackoverflow.com/questions/261419/arm-to-c-calling-convention-registers-to-save)
 * [permutation-python](https://stackoverflow.com/questions/104420/how-to-generate-all-permutations-of-a-list-in-python)
 * [You-are-not-expect-to-understand-pdp-linux](https://www.bell-labs.com/usr/dmr/www/odd.html)
+
+#### 2017-9-27
+* [.NET-runtime](https://www.hanselman.com/blog/TheBookOfTheRuntimeTheInternalsOfTheNETRuntimeThatYouWontFindInTheDocumentation.aspx)
+* [Rust-TiKV-why](https://pingcap.github.io/blog/2017/09/26/whyrust/)
+* [Free-Monad-harmful](https://markkarpov.com/post/free-monad-considered-harmful.html)
+* [TreeListRecursion](http://cslibrary.stanford.edu/109/TreeListRecursion.html)
+* [STL-thread-safety](https://stackoverflow.com/questions/12931787/c11-stl-containers-and-thread-safety)
+* 
 
 
 
