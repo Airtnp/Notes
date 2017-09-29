@@ -1,0 +1,19 @@
+# EECS370
+
+## Symbol table | Relocation table
+* symbol table
+* + .data
+* + - .rodata "String Literal"
+* + - .bss (common) global variable
+* + - .data
+* + .text
+* + - function (unused may not appear)
+* + .undefined
+* + - external
+* relocation table
+* + load
+* + store
+* + branch
+* + get address
+* + everything except static function
+* -2^6 * 1.01011001 = -1010110.01 = -86.25

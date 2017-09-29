@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23-1)
+        - [2017-7-23](#2017-7-23)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,10 +187,11 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24-1)
+            - [2017-9-24](#2017-9-24)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
+            - [2017-9-28](#2017-9-28)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2238,7 +2239,19 @@ Order of items is just based on Nothing :: Maybe.
 * [Free-Monad-harmful](https://markkarpov.com/post/free-monad-considered-harmful.html)
 * [TreeListRecursion](http://cslibrary.stanford.edu/109/TreeListRecursion.html)
 * [STL-thread-safety](https://stackoverflow.com/questions/12931787/c11-stl-containers-and-thread-safety)
-* 
+
+#### 2017-9-28
+* [Underhanded-Rust-contest](http://blog.community.rs/underhanded/2016/12/15/underhanded-rust.en-US.html)
+* [Microsoft-SAL(source-code-annotation-language)](https://docs.microsoft.com/en-us/visualstudio/code-quality/understanding-sal)
+* [Decision Trees Are Free Monads](http://clathomasprime.github.io/hask/freeDecision)
+* [Python-get-set-attribute](https://stackoverflow.com/questions/14787334/confused-with-getattribute-and-setattribute-in-python/14787509)
+* [__get__-and-__set__](https://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors/34554353)
+* [Knapsack-NPC](https://www.zhihu.com/question/20686504/answer/230840120)
+* [C++-POD-I](https://zhuanlan.zhihu.com/p/29734547)
+* [C++-POD-II](https://zhuanlan.zhihu.com/p/29746508)
+* [Wiener-RSA-attack](https://sagi.io/2016/04/crypto-classics-wieners-rsa-attack/)
+* [Derbycon-2017-writeup](https://labs.nettitude.com/blog/derbycon-2017-ctf-write-up/)
+* + tar with symbol link
 
 
 

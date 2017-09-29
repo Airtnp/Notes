@@ -352,6 +352,7 @@
 * + [ref](https://en.wikipedia.org/wiki/Rolling_hash)
 * + Zobrist
 * + Rabin Hood hash
+* + Cockoo hash
 * Hamilton-Cayley 定理
 * 哈夫曼树
 * 合并线性基
