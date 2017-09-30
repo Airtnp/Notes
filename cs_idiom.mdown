@@ -182,6 +182,31 @@
 ## S
 
 * side-effect
+* Synchronization
+* + Waiting for multiple objects
+* + - `CreateEvent` - `WaitForMultipleObjects`
+* + Named Object
+* + - `CreateMutex`
+* + Event Object
+* + - `CreateEvent/CreateThread` - `WaitForSingleObject`
+* + Mutex Object
+* + - `CreateMutex` - `ReleaseMutex` - `WaitForSingleObject` - `TerminateThread`
+* + Semaphore Object
+* + - `CreateSemaphore` - `ReleaseSemaphore` - `WaitForSingleObject`
+* + Waitable Timer Object
+* + - `CreateWaitableTimer` - `SetWaitableTimer` - `WaitForSingleObject`
+* + - Waitable Timer with Async
+* + - - APC queue
+* + Critical section object
+* + - `InitializeCriticalSectionAndSpinCount` - `EnterCriticalSection` - `LeaveCriticalSection` - `DeleteCriticalSection` - `InterlockedIncrement`
+* + Condition Variable
+* + - `InitializeConditionVariable` - `SleepConditionVariableCS` - `WakeConditionVariable` - `WakeAllConditionVariable` - `-CS`(version)
+* + One-Time Initialization
+* + - `InitOnceExecuteOnce` - `InitOnceBeginInitialize`
+* + Singly Linked List
+* + - `InitializeSListHead` - `InterlockedPushEntrySList` - `InterlockedPopEntrySList` - `InterlockedFlushSList`
+* + Timer Queue
+* + - `CreateTimerQueue` - `CreateTimerQueueTimer` - `DeleteTimerQueue` - `WaitOrTimerCallback`
 
 ## T
 

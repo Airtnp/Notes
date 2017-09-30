@@ -192,6 +192,7 @@
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
             - [2017-9-28](#2017-9-28)
+            - [2017-9-29](#2017-9-29)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2253,6 +2254,11 @@ Order of items is just based on Nothing :: Maybe.
 * [Derbycon-2017-writeup](https://labs.nettitude.com/blog/derbycon-2017-ctf-write-up/)
 * + tar with symbol link
 
+#### 2017-9-29
+* [Floating-point-visually-explained](http://fabiensanglard.net/floating_point_visually_explained/)
+* [Call-by](https://courses.cs.washington.edu/courses/cse341/98sp/general/parameters.html)
+* [Call-by-VResult-Ref](https://stackoverflow.com/questions/32794008/call-by-reference-and-call-by-value-result)
+* 
 
 
 ## Tools

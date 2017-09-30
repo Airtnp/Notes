@@ -16,4 +16,3 @@
 * + branch
 * + get address
 * + everything except static function
-* -2^6 * 1.01011001 = -1010110.01 = -86.25
