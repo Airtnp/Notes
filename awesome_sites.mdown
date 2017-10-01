@@ -193,6 +193,7 @@
             - [2017-9-27](#2017-9-27)
             - [2017-9-28](#2017-9-28)
             - [2017-9-29](#2017-9-29)
+            - [2017-9-30](#2017-9-30)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2258,7 +2259,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Floating-point-visually-explained](http://fabiensanglard.net/floating_point_visually_explained/)
 * [Call-by](https://courses.cs.washington.edu/courses/cse341/98sp/general/parameters.html)
 * [Call-by-VResult-Ref](https://stackoverflow.com/questions/32794008/call-by-reference-and-call-by-value-result)
+
+#### 2017-9-30
+* [Visualize-Ruby-Heap](http://tenderlovemaking.com/2017/09/27/visualizing-your-ruby-heap.html)
+* [Top-10-Py-Sept](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-sep-2017-e42c26816ab9)
+* [remove-last-\n-POSIX](https://stackoverflow.com/questions/1654021/how-can-i-delete-a-newline-if-it-is-the-last-character-in-a-file)
+* [C-extern-static-global-variable](https://stackoverflow.com/questions/11055802/static-and-extern-global-variables-in-c-and-c)
 * 
+
 
 
 ## Tools
