@@ -216,6 +216,8 @@
 * + 柏林噪声
 * + 随机游离(圆)
 * 电梯算法（linux调度）
+* deterministic selection
+* + median of medians
 
 ## E
 

@@ -194,6 +194,7 @@
             - [2017-9-28](#2017-9-28)
             - [2017-9-29](#2017-9-29)
             - [2017-9-30](#2017-9-30)
+            - [2017-10-1](#2017-10-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2265,7 +2266,16 @@ Order of items is just based on Nothing :: Maybe.
 * [Top-10-Py-Sept](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-sep-2017-e42c26816ab9)
 * [remove-last-\n-POSIX](https://stackoverflow.com/questions/1654021/how-can-i-delete-a-newline-if-it-is-the-last-character-in-a-file)
 * [C-extern-static-global-variable](https://stackoverflow.com/questions/11055802/static-and-extern-global-variables-in-c-and-c)
+
+#### 2017-10-1
+* [merge-string-literal](https://stackoverflow.com/questions/6281835/how-do-c-compilers-merge-identical-string-literals)
+* [successful-git-branching](http://nvie.com/posts/a-successful-git-branching-model/)
+* [Alice-in-Python-projectland](https://veekaybee.github.io/2017/09/26/python-packaging/)
+* [Attacking-Bluetooth-BLE](https://www.pentestpartners.com/security-blog/screwdriving-locating-and-exploiting-smart-adult-toys/)
+* [ARMv8-vs-v7](https://community.arm.com/cn/f/discussions/2471/armv7-armv8)
 * 
+
+
 
 
 
