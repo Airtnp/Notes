@@ -195,6 +195,7 @@
             - [2017-9-29](#2017-9-29)
             - [2017-9-30](#2017-9-30)
             - [2017-10-1](#2017-10-1)
+            - [2017-10-2](#2017-10-2)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2273,6 +2274,9 @@ Order of items is just based on Nothing :: Maybe.
 * [Alice-in-Python-projectland](https://veekaybee.github.io/2017/09/26/python-packaging/)
 * [Attacking-Bluetooth-BLE](https://www.pentestpartners.com/security-blog/screwdriving-locating-and-exploiting-smart-adult-toys/)
 * [ARMv8-vs-v7](https://community.arm.com/cn/f/discussions/2471/armv7-armv8)
+
+#### 2017-10-2
+* [Diminishing returns of static typing](https://blog.merovius.de/2017/09/12/diminishing-returns-of-static-typing.html)
 * 
 
 
