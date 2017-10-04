@@ -210,6 +210,7 @@ Some optimization tricks on CPU architectures including using `__builtin_expect`
 Update: after profiling your code, you can add `__builtin_expect` for time-consuming branch condition codes. (eg. gperftools)
 
 Ref: 骆可强《论程序底层优化的一些方法与技巧》
+Ref: CSAPP MIT Lab 4/5/6
 
 #### syscall (together with mmap)?
 

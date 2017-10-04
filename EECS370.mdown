@@ -1,10 +1,14 @@
 # EECS370
 
 ## Symbol table | Relocation table
-* symbol table
+* data section
+* + .rodata "String Literal" (__TEXT.__cstring)
+* + .bss (common) global variable
 * + .data
-* + - .rodata "String Literal"
-* + - .bss (common) global variable
+* symbol table
+* + .symtab
+* + .data
+* + - .bss
 * + - .data
 * + .text
 * + - function (unused may not appear)
@@ -33,3 +37,5 @@
 
 
 ## LC2K
+
+logical shift

@@ -196,6 +196,8 @@
             - [2017-9-30](#2017-9-30)
             - [2017-10-1](#2017-10-1)
             - [2017-10-2](#2017-10-2)
+            - [2017-10-3](#2017-10-3)
+            - [2017-10-4](#2017-10-4)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2277,8 +2279,18 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-10-2
 * [Diminishing returns of static typing](https://blog.merovius.de/2017/09/12/diminishing-returns-of-static-typing.html)
-* 
 
+#### 2017-10-3
+* [rbp-4-clang-implicit-return-from-main](https://stackoverflow.com/questions/31149806/why-is-0-moved-to-stack-when-using-return-value)
+* [Build-a-CPU-with-Haskell](http://yager.io/CPU/CPU1.html)
+* [Strong-weak-global-gcc](https://leondong1993.github.io/2017/04/15/strong-weak-symbol/)
+* [weak-symbol-uninitialized-global-tentative-definition-Appendix-J](https://stackoverflow.com/questions/3691835/why-uninitialized-global-variable-is-weak-symbol)
+* [branch-return-address](https://community.arm.com/processors/b/blog/posts/branch-and-call-sequences-explained)
+* [Are-switch-jump-table-the-fastest](http://www.cipht.net/2017/10/03/are-jump-tables-always-fastest.html)
+* [A-lesson-in-shortcuts](https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp)
+
+#### 2017-10-4
+* [Reverse-trickbot](https://qmemcpy.github.io/post/reverse-engineering-malware-trickbot-part-2-loader)
 
 
 
