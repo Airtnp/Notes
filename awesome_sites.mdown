@@ -2291,6 +2291,12 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-10-4
 * [Reverse-trickbot](https://qmemcpy.github.io/post/reverse-engineering-malware-trickbot-part-2-loader)
+* [CppCon2017-Trip-Report](https://deque.blog/2017/10/04/my-cppcon-2017-trip-report-10-great-talks-to-watch-and-learn-from/)
+* [Useful-gcc-warning-options-not-by-Wall](https://kristerw.blogspot.com/2017/09/useful-gcc-warning-options-not-enabled.html)
+* [Interactive-vim](http://www.openvim.com/)
+* [Determine-word-size](https://stackoverflow.com/questions/2301007/determine-word-size-of-my-processor)
+* [From-design-patterns-to-Category-theory](http://blog.ploeh.dk/2017/10/04/from-design-patterns-to-category-theory/)
+* [An Internship on Laziness](https://v8project.blogspot.com/2017/10/lazy-unlinking.html)
 
 
 
@@ -2334,3 +2340,4 @@ Order of items is just based on Nothing :: Maybe.
 * [XSS'OR](http://xssor.io/)
 * [VirusTotal](https://www.virustotal.com/en/)
 * [CloudConvert](https://cloudconvert.com)
+* [Discover-tech-stack-sitestack](https://sitestacks.com/?ref=nyc)
