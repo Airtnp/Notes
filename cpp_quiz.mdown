@@ -147,3 +147,13 @@ using P = std::is_same<T, U>; // Usable in gcc, failed in clang
                               // ill-formed
 
 ```
+
+## vector.resize()
+* [discuss](https://www.zhihu.com/question/65997834/answer/237364710)
+
+## tie and tie
+```c++
+int a = 1, b = 2, c = 3;
+std::tie(a, b, c) = {c, a, b};
+cout << a << ' ' << b; // 3 3 well-defined?
+```

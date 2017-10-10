@@ -721,6 +721,8 @@ struct element {
 * 四平方和构造算法
 * simplex (三维线性规划)
 * stein gcd
+* Shunting-yard (调度场)
+* + infix -> postfix
 
 ## T
 

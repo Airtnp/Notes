@@ -55,6 +55,7 @@
 * compare
 * + in Python 2, you can < compare anything to anything.
 * ctypes
+* + ctypes.pythonapi.Py_DecRef(ctypes.py_object(t)) # Call Py_DECREF(t)
 * comprehension
 * + list
 * + dict

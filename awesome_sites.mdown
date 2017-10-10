@@ -198,6 +198,9 @@
             - [2017-10-2](#2017-10-2)
             - [2017-10-3](#2017-10-3)
             - [2017-10-4](#2017-10-4)
+            - [2017-10-5](#2017-10-5)
+            - [2017-10-6 - 2017-10-8](#2017-10-6---2017-10-8)
+            - [2017-10-9 - 2017-10-10](#2017-10-9---2017-10-10)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2297,6 +2300,42 @@ Order of items is just based on Nothing :: Maybe.
 * [Determine-word-size](https://stackoverflow.com/questions/2301007/determine-word-size-of-my-processor)
 * [From-design-patterns-to-Category-theory](http://blog.ploeh.dk/2017/10/04/from-design-patterns-to-category-theory/)
 * [An Internship on Laziness](https://v8project.blogspot.com/2017/10/lazy-unlinking.html)
+
+#### 2017-10-5
+* [why-python-not-del-large-object](http://effbot.org/pyfaq/why-doesnt-python-release-the-memory-when-i-delete-a-large-object.htm)
+* [py-ctypes-tutorial](http://starship.python.net/crew/theller/ctypes/tutorial.html)
+
+
+#### 2017-10-6 - 2017-10-8
+* [Visual-sorting](https://caspervonb.github.io/toneofsorting/)
+* [Rust-container-cheat-sheet](https://www.reddit.com/r/rust/comments/74yrdp/rust_container_cheat_sheet_reposted/)
+* [C++-compiler-bench-mark](https://imagine-rt.blogspot.com/2017/10/c-compiler-benchmarks-v2.html)
+* [Security.txt](https://securitytxt.org/)
+* [Learn-NoSQL](http://hn.premii.com/#/comments/15427932)
+* [Visual-ML-dataset](https://github.com/PAIR-code/facets)
+* [LivePython](https://github.com/agermanidis/livepython)
+* [Runtime-bound-decidable?](https://cstheory.stackexchange.com/questions/5004/are-runtime-bounds-in-p-decidable-answer-no)
+
+#### 2017-10-9 - 2017-10-10
+* [printf-long-long](https://stackoverflow.com/questions/6400180/how-to-printf-long-long)
+* [CSV-injection](http://georgemauer.net/2017/10/07/csv-injection.html)
+* [TrickBot-reverse-loader](http://qmemcpy.io/post/reverse-engineering-malware-trickbot-part-2-loader)
+* [TrickBot-reverse-core](http://qmemcpy.io/post/reverse-engineering-malware-trickbot-part-3-core)
+* [Linux-Windows-driver-difference](https://linux.cn/article-7943-1.html)
+* [Hello-world-without-...](https://www.zhihu.com/question/66088898/answer/238099435)
+* [Sequence-point-in-printf-%n](https://stackoverflow.com/questions/34637712/sequence-points-in-printf/34637823#34637823)
+* [SIMD-via-C#](https://zhuanlan.zhihu.com/p/29842129)
+* [Python-exec-2-3-change-global](https://stackoverflow.com/questions/12484706/assignment-order-matters-unexpectedly-with-exec-expr-in-globals-locals/12484830#12484830)
+* [ARM-naming-AArch-Thumb](https://stackoverflow.com/questions/28669905/arm-thumb-and-thumb-2-instructions-confusion/28670713#28670713)
+* [MSVC-BitScan-intrinin](https://stackoverflow.com/questions/355967/how-to-use-msvc-intrinsics-to-get-the-equivalent-of-this-gcc-code/20468180#20468180)
+* [log2-bsr](https://stackoverflow.com/questions/994593/how-to-do-an-integer-log2-in-c/994709#994709)
+* [Rust-to-Cpp](https://github.com/bhuztez/porus)
+* [gcc-fPIC](https://stackoverflow.com/questions/5311515/gcc-fpic-option)
+* [Intel-Tick-Tock](https://zh.m.wikipedia.org/zh-hans/Intel_Tick-Tock)
+* [Not-join-on-thread-terminate](https://stackoverflow.com/questions/27392743/c11-what-happens-if-you-dont-call-join-for-stdthread/27392989#27392989)
+* [Tensorflow-sucks](http://nicodjimenez.github.io/2017/10/08/tensorflow.html)
+* 
+
 
 
 

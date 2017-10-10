@@ -187,6 +187,14 @@ Zero use in Lab1, since Lab1 is a single file program and don't apply to LTO (li
 
 You can see it below at cache section.
 
+##### Some others
+
+`-fomit-frame-pointer`
+
+`-falign-functions=16` / `-falign-loops=16`
+
+`-fno-rtti`
+
 #### Arrange your switch
 
 switch can derive 2 kinds of code. Naive if and jump table. If you place your label orderly, it's easy to form a jump table.
