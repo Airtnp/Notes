@@ -781,6 +781,8 @@ struct element {
 * wu manber
 * wheel sieve
 * Wythoff Game
+* Wilson
+* + uniform spanning tree
 
 ## X
 

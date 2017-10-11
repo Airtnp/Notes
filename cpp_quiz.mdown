@@ -157,3 +157,38 @@ int a = 1, b = 2, c = 3;
 std::tie(a, b, c) = {c, a, b};
 cout << a << ' ' << b; // 3 3 well-defined?
 ```
+
+## integer conversion
+```c++
+sizeof('a' + ' ') == sizeof(int) // true (C even char/bool literal = int)
+-1L < 1U // long > int -> convert to long 1 | long == int -> convert to unsigned long 0
+```
+
+## default function argument
+* ref: SuperNaiveCppLib/notes/CppCon2017/Notes
+
+## launder
+* make compiler remove const assumption
+```c++
+struct X {
+    const int n;
+    const double d;
+};
+X* p = new X{7, 8.8};
+new (p) X{42, 9.9}; // place new value into p
+int b = std::launder(p)->n; // OK, b is 42
+int c = p->n; // undefined behavior!
+double d = p->d; // undefined behavior!
+```
+
+## copy=elision
+```c++
+struct foo {
+    foo() = default;
+    foo(cosnt foo&) = delete;
+};
+
+int main() {
+    auto x = foo(); // prev-17: error! | 17: prvalue copy elision
+}
+```
