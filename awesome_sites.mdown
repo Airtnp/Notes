@@ -201,6 +201,8 @@
             - [2017-10-5](#2017-10-5)
             - [2017-10-6 - 2017-10-8](#2017-10-6---2017-10-8)
             - [2017-10-9 - 2017-10-10](#2017-10-9---2017-10-10)
+            - [2017-10-11](#2017-10-11)
+            - [2017-10-12](#2017-10-12)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2355,7 +2357,16 @@ Order of items is just based on Nothing :: Maybe.
 * [slow-power-glibc](http://entropymine.com/imageworsener/slowpow/)
 * [DLL-best-practice](https://msdn.microsoft.com/en-us/library/windows/desktop/dn633971.aspx)
 * [Killing-Module-TS](https://izzys.casa/posts/millennials-are-killing-the-modules-ts.html)
-* 
+* [Little-story-about-the-yes-Linux-command](https://matthias-endler.de/2017/yes/)
+* [implicit-constexpr-virtual-bug](https://stackoverflow.com/questions/46696247/implicitly-virtual-constexpr-function)
+* [phantom-type-alignment-not layout-compatitible](https://stackoverflow.com/questions/46425250/does-a-phantom-type-have-the-same-alignment-as-the-original-one)
+
+#### 2017-10-12
+* [Rust-1.21](https://blog.rust-lang.org/2017/10/12/Rust-1.21.html)
+* [git-bomb](https://kate.io/blog/git-bomb/)
+* [Kernel-ASLR-and-amd64](http://blog.netbsd.org/tnf/entry/kernel_aslr_on_amd64)
+* [large-arg-to-sine](https://stackoverflow.com/questions/46711285/sine-result-depends-on-c-compiler-used)
+*  
 
 
 

@@ -192,3 +192,35 @@ int main() {
     auto x = foo(); // prev-17: error! | 17: prvalue copy elision
 }
 ```
+
+## copy-and-swap without customize swap
+```c++
+class A {
+    A(const A&) = default;
+    A& operator(const A& rhs) {
+        delete();
+        A temp(rhs);
+        std::swap(*this, temp); // infinite loop! will call copy ctor
+        return *this;
+    }  
+};
+
+```
+
+## string literal is anonymous lvalue
+```c++
+const_cast<char*>("WTF")[0] = 'd'; // OK, though segmentation fault
+true = false; // Failed, 1 is prvalue. <del>Python 2 will allow this</del>
+```
+
+## func-macro and identifier
+```c++
+class A {};
+
+#define A(x) _
+
+int main() {
+    A a{}; // OK
+    A(a{}); // Error
+}
+```
