@@ -161,6 +161,11 @@
 * compile-optimizations
 * [ref](https://en.wikipedia.org/wiki/Optimizing_compiler)
 * cipolla
+* Cache
+* + LRU (LRU-K)
+* + Two queue (MQ)
+* + LFU
+* + 
 
 ## D
 

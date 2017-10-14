@@ -203,6 +203,7 @@
             - [2017-10-9 - 2017-10-10](#2017-10-9---2017-10-10)
             - [2017-10-11](#2017-10-11)
             - [2017-10-12](#2017-10-12)
+            - [2017-10-13](#2017-10-13)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2366,7 +2367,17 @@ Order of items is just based on Nothing :: Maybe.
 * [git-bomb](https://kate.io/blog/git-bomb/)
 * [Kernel-ASLR-and-amd64](http://blog.netbsd.org/tnf/entry/kernel_aslr_on_amd64)
 * [large-arg-to-sine](https://stackoverflow.com/questions/46711285/sine-result-depends-on-c-compiler-used)
-*  
+* [atomic-with-multiple-CPU](https://software.intel.com/zh-cn/blogs/2010/01/14/cpucpu)
+* [Cache-coherence](https://en.wikipedia.org/wiki/Cache_coherence)
+* [Musing-on-Cython](http://notes-on-cython.readthedocs.io/en/latest/index.html)
+
+#### 2017-10-13
+* [Cache-swap-alg](http://www.cnblogs.com/-OYK/archive/2012/12/05/2803317.html)
+* [CFG-decidable](https://cs.stackexchange.com/questions/315/are-all-context-free-and-regular-languages-efficiently-decidable)
+* [OMG-a-lisp-runs-python](http://kitchingroup.cheme.cmu.edu/blog/2016/03/30/OMG-A-Lisp-that-runs-python/)
+* [Computational-Geometry-Set-Operations-on-Polytopes](https://maxow.github.io/posts/computational-geometry-set-operations-on-polytopes.html)
+* 
+
 
 
 

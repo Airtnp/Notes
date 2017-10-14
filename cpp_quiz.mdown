@@ -224,3 +224,22 @@ int main() {
     A(a{}); // Error
 }
 ```
+
+## Reference bind to different integer
+```c++
+char c = 'X';
+int& i = c; // Error: promotion causes a prvalue
+i = 'J';
+
+void foo(long long int& r) {}
+foo(i) // Error
+foo(reinterpret_cast<long long int&>(i)) // Potential problem
+// same as *reinterpret_cast<T*>(&(i))
+```
+
+## rdbuf()
+```c++
+std::cout << std::cin.rdbuf(); // consume
+std::stringstream ss{"TEST"};
+std::cin.rdbuf(ss.rdbuf()); // shallow copy
+```
