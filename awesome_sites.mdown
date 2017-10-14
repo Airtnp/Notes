@@ -2376,6 +2376,8 @@ Order of items is just based on Nothing :: Maybe.
 * [CFG-decidable](https://cs.stackexchange.com/questions/315/are-all-context-free-and-regular-languages-efficiently-decidable)
 * [OMG-a-lisp-runs-python](http://kitchingroup.cheme.cmu.edu/blog/2016/03/30/OMG-A-Lisp-that-runs-python/)
 * [Computational-Geometry-Set-Operations-on-Polytopes](https://maxow.github.io/posts/computational-geometry-set-operations-on-polytopes.html)
+* [SmallerC](https://github.com/alexfru/SmallerC)
+* [Shell-operator](https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators)
 * 
 
 

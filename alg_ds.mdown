@@ -290,6 +290,10 @@
 * Fermat 平方和定理
 * fat node 持久化手段
 * 分形树
+* 分流算法
+* + LALB (locality-aware load balancing)
+* + round robin
+* + 随机
 
 
 
@@ -360,6 +364,13 @@
 * + Zobrist
 * + Rabin Hood hash
 * + Cockoo hash
+* + Murmur hash
+* + Conflict
+* + - open hashing - close addressing
+* + - closed hashing - open addressing
+* + - hopscotch hashing
+* + - coalesced hashing
+* + - cuckoo hashing
 * Hamilton-Cayley 定理
 * 哈夫曼树
 * 合并线性基
@@ -525,6 +536,8 @@ struct element {
 * Myers Diff
 * + [ref](http://blog.robertelder.org/diff-algorithm/)
 * Moment Generating Function
+* MD5
+* + HDMA
 
 ## N
 

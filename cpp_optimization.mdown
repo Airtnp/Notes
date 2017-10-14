@@ -79,9 +79,11 @@ That's fast. However, there is still some space to optimize. `getchar()/putchar(
 
 Note: in MSVC `#define _CRT_DISABLE_PERFCRIT_LOCKS` will do the same things.
 
-#### fgets/fputs/gets/puts
+#### fgets/fputs/<del>gets</del>/puts
 
 Use it and its `_unlocked` version simply. It's convenient and fast to read/write a line.
+
+No `gets` the security problem.
 
 #### Buffering and fread/setvbuf
 
