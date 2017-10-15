@@ -205,6 +205,7 @@
             - [2017-10-12](#2017-10-12)
             - [2017-10-13](#2017-10-13)
             - [2017-10-14](#2017-10-14)
+            - [2017-10-15](#2017-10-15)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2385,7 +2386,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Cost-of-Kotlin](http://oneeyedmen.com/cost-of-kotlin-preliminary-results-part3-invocation.html)
 * [Impossible-dream-of-USB-C](https://marco.org/2017/10/14/impossible-dream-of-usb-c)
 * [Xbox360-to-Win-Exec](https://github.com/rexdex/recompiler#porting-xbox360-executables-to-windows)
-* 
+
+#### 2017-10-15
+* [Why-physicists-still-use-Fortran](http://moreisdifferent.com/2015/07/16/why-physicsts-still-use-fortran/)
+* [What-is-Nix](https://yakking.branchable.com/posts/what-and-why-nix/)
+* [From-CL-to-Julia](https://tpapp.github.io/post/common-lisp-to-julia/)
+* [No-Y-in-Haskell-HM](https://stackoverflow.com/questions/4273413/y-combinator-in-haskell)
+*  
 
 
 
