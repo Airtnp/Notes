@@ -204,6 +204,7 @@
             - [2017-10-11](#2017-10-11)
             - [2017-10-12](#2017-10-12)
             - [2017-10-13](#2017-10-13)
+            - [2017-10-14](#2017-10-14)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2378,6 +2379,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Computational-Geometry-Set-Operations-on-Polytopes](https://maxow.github.io/posts/computational-geometry-set-operations-on-polytopes.html)
 * [SmallerC](https://github.com/alexfru/SmallerC)
 * [Shell-operator](https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators)
+* [Lambda-cubde](http://www.rbjones.com/rbjpub/logic/cl/tlc001.htm)
+
+#### 2017-10-14
+* [Cost-of-Kotlin](http://oneeyedmen.com/cost-of-kotlin-preliminary-results-part3-invocation.html)
+* [Impossible-dream-of-USB-C](https://marco.org/2017/10/14/impossible-dream-of-usb-c)
+* [Xbox360-to-Win-Exec](https://github.com/rexdex/recompiler#porting-xbox360-executables-to-windows)
 * 
 
 
