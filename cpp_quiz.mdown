@@ -243,3 +243,13 @@ std::cout << std::cin.rdbuf(); // consume
 std::stringstream ss{"TEST"};
 std::cin.rdbuf(ss.rdbuf()); // shallow copy
 ```
+
+## sizeof?
+* [discussion](https://stackoverflow.com/questions/46653406/why-does-sizeofmy-arr0-compile-and-equal-sizeofmy-arr0)
+* `sizeof(arr)[0] === sizeof(arr[0])` (when `sizeof expression`)
+```c++
+static uint32_t my_arr[2];
+static_assert(sizeof(my_arr) == 8, "");
+static_assert(sizeof(my_arr[0]) == 4, "");
+static_assert(sizeof(my_arr)[0] == 4, "");
+```

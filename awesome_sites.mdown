@@ -206,6 +206,8 @@
             - [2017-10-13](#2017-10-13)
             - [2017-10-14](#2017-10-14)
             - [2017-10-15](#2017-10-15)
+            - [2017-10-16](#2017-10-16)
+            - [2017-10-17](#2017-10-17)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2392,7 +2394,35 @@ Order of items is just based on Nothing :: Maybe.
 * [What-is-Nix](https://yakking.branchable.com/posts/what-and-why-nix/)
 * [From-CL-to-Julia](https://tpapp.github.io/post/common-lisp-to-julia/)
 * [No-Y-in-Haskell-HM](https://stackoverflow.com/questions/4273413/y-combinator-in-haskell)
-*  
+* [Why-PostgreSQL-is-better-than-MySQL](https://blog.2ndquadrant.com/postgresql-better-mysql-1/)
+* [Good/Bad-Math-Lambda-Calculus](http://cgnail.github.io/academic/lambda-index/)
+
+#### 2017-10-16
+* [Teach Youself Scheme in Fixnum Days](http://tiankonguse.com/manual/t-y-scheme/zh/)
+* [Yet Another Scheme Tutorial](https://deathking.github.io/yast-cn)
+* [Security-Public-RSS](https://www.zhihu.com/question/66470538/answer/242568128)
+* [剖析Haskell应用架构/DDD](https://zhuanlan.zhihu.com/p/21898460)
+* [Programming-with-Algebra](https://developer.atlassian.com/blog/2016/03/programming-with-algebra/)
+* [DLL-UEFI-1](https://zhuanlan.zhihu.com/p/30000572)
+* [DLL-UEFI-2](https://zhuanlan.zhihu.com/p/30106517)
+* [Real-qsort-in-Haskell](http://augustss.blogspot.com/2007/08/quicksort-in-haskell-quicksort-is.html)
+* + normally it's deforested tree sort
+* [Haskell-mapM-mapM_](https://stackoverflow.com/questions/27609062/what-is-the-difference-between-mapm-and-mapm-in-haskell)
+* [Reverse-Luac](https://zhuanlan.zhihu.com/p/30094117)
+* [Rust-overflow-usize](https://zhuanlan.zhihu.com/p/30117447)
+* [read()-depends-on-files](https://stackoverflow.com/questions/8975521/read-from-stdin/8975733#8975733)
+* [McCarthy-91-verification-decreasing-termination](https://en.wikipedia.org/wiki/McCarthy_91_function)
+* [Kan-extension](https://www.zhihu.com/question/65645659)
+* [Perceptually uniform color spaces](https://programmingdesignsystems.com/color/perceptually-uniform-color-spaces/)
+* [Rust-embedded](https://github.com/rust-embedded/)
+* [WPA2-KRACK](https://www.zhihu.com/question/66736864)
+* [Is-Haskell-right-language-teach-FP-PLT](http://profsjt.blogspot.com/2017/10/is-haskell-right-language-for-teaching.html)
+* [std::string-optimization](https://shaharmike.com/cpp/std-string/)
+* [std::string-concatentation-+=/append](https://stackoverflow.com/questions/18892281/most-optimized-way-of-concatenation-in-strings)
+
+#### 2017-10-17
+* [SMP-NUMA](https://www.quora.com/What-is-the-difference-between-SMP-and-NUMA-architectures)
+* 
 
 
 

@@ -679,6 +679,7 @@ struct element {
 * + 0/1分数规划
 * + 度限制
 * + [Dynamic-MST](https://zhuanlan.zhihu.com/p/28644481)
+* + [Dynamic-MST-2](https://zhuanlan.zhihu.com/p/30003071)
 * 树分治
 * 随机增量算法
 * + 最小圆覆盖
