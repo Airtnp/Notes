@@ -253,3 +253,10 @@ static_assert(sizeof(my_arr) == 8, "");
 static_assert(sizeof(my_arr[0]) == 4, "");
 static_assert(sizeof(my_arr)[0] == 4, "");
 ```
+
+## std::string and SSO
+* FBString
+> Small strings (<= 23 chars) are stored in-situ without memory allocation. (align as 24 bytes data type)
+> Medium strings (24 - 255 chars) are stored in malloc-allocated memory and copied eagerly.
+> Large strings (> 255 chars) are stored in malloc-allocated memory and copied lazily.
+

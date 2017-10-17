@@ -2422,7 +2422,10 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-10-17
 * [SMP-NUMA](https://www.quora.com/What-is-the-difference-between-SMP-and-NUMA-architectures)
-* 
+* [Falling through the KRACKs](https://blog.cryptographyengineering.com/2017/10/16/falling-through-the-kracks/)
+* [Keyboard-latency](https://danluu.com/keyboard-latency/)
+* [Grok-the-GIL](https://opensource.com/article/17/4/grok-gil)
+* [x86-64-canonical-form-addresses](https://stackoverflow.com/questions/38977755/address-canonical-form-and-pointer-arithmetic)
 
 
 
