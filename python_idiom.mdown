@@ -123,6 +123,7 @@
 * __delattr__ -> data descriptor (__delete__ / @property) -> __dict__
 * generator : yield/next
 * + GeneratorExit
+* + gi_code/gi_frame/gi_running/gi_yieldfrom/send/throw/close
 
 ## H
 
@@ -181,7 +182,7 @@
 * + [Cython implementation](https://stackoverflow.com/questions/10401935/python-method-wrapper-type)
 
 ## N
-
+* nested-if => `itertools.product(for, repeat=n)`
 
 
 ## O
@@ -296,6 +297,10 @@ def super(cls, inst):
 * tuple
 * + `(1, 2, [3, 4])[2] += [1, 2] -> error + (1, 2, [1, 2, 3, 4])`
 * + check is after the assignment
+* temporary file fd `open(to_file, 'w').write(open(from_file).read())`
+* + [discussion](https://stackoverflow.com/questions/38660609/when-how-does-an-anonymous-file-object-close)
+* + 在语句结束时丢失引用被垃圾回收，CPython 和 IPython 会刷新并且关闭文件。而 PyPy 和 JPython 采用不同的垃圾回收机制所以会有不同的情况出现。
+* 
 
 
 ## U
@@ -315,6 +320,7 @@ def super(cls, inst):
 * with (context manager)
 * + `A as t` === `t = A.__enter__()`
 * + `__exit__(self, exception_type, exception_value, traceback)`
+* + No new scope (so defined as outer scope)
 
 ## X
 

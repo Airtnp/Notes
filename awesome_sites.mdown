@@ -2426,6 +2426,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Keyboard-latency](https://danluu.com/keyboard-latency/)
 * [Grok-the-GIL](https://opensource.com/article/17/4/grok-gil)
 * [x86-64-canonical-form-addresses](https://stackoverflow.com/questions/38977755/address-canonical-form-and-pointer-arithmetic)
+* [iterative-copy-tree](https://stackoverflow.com/questions/9647559/make-a-copy-of-a-binary-tree-in-an-iterative-manner-i-e-no-recursion-is-allowe)
+* [Continuation-develop](http://www.ccidnet.com/2005/0722/292705.shtml)
+* [Coroutine-and-Continuation](http://simple-is-better.com/news/697)
+* [Pentium-FDIV-bug](https://en.wikipedia.org/wiki/Pentium_FDIV_bug)
+* [Hot-swapping-Haskell](http://simonmar.github.io/posts/2017-10-17-hotswapping-haskell.html)
+* [Haskell Typeclasses vs. C++ Classes](http://www.michaelburge.us/2017/10/15/haskell-typeclasses-vs-cpp-classes.html)
+* [MTBF](https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%9D%87%E6%95%85%E9%9A%9C%E9%96%93%E9%9A%94)
+* 
 
 
 

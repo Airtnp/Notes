@@ -207,6 +207,8 @@
 * + - `InitializeSListHead` - `InterlockedPushEntrySList` - `InterlockedPopEntrySList` - `InterlockedFlushSList`
 * + Timer Queue
 * + - `CreateTimerQueue` - `CreateTimerQueueTimer` - `DeleteTimerQueue` - `WaitOrTimerCallback`
+* + Countdown Event
+* + Barrier
 
 ## T
 

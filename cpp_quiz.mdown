@@ -260,3 +260,44 @@ static_assert(sizeof(my_arr)[0] == 4, "");
 > Medium strings (24 - 255 chars) are stored in malloc-allocated memory and copied eagerly.
 > Large strings (> 255 chars) are stored in malloc-allocated memory and copied lazily.
 
+## auto and private
+```c++
+class Foo {
+    struct Bar { int i; };
+public:
+    Bar Baz() { return Bar(); }
+};
+
+int main() {
+    Foo f;
+    // Foo::Bar b = f.Baz();  // error
+    auto b = f.Baz();         // ok
+    std::cout << b.i;
+}
+```
+* [discussion](https://stackoverflow.com/questions/13532784/why-can-i-use-auto-on-a-private-type/13532821#13532821)
+
+## __has_trivial_copy
+```c++
+#include <type_traits>
+
+using namespace std;
+
+struct A {
+    A(int v) : a(v) {}
+    A(A&&) {a = 1;}
+    // A(const A&) { a = 1; }
+private:
+    A(const A&) = delete;
+    int a;
+};
+
+int main() {
+    A a{1};
+    // A b{a};
+    cout << is_trivially_copyable<A>::value; // 0 user-defined move ctor
+    cout << __has_trivial_copy(A); // 1
+    cout << __is_pod(A); // 0
+}
+```
+* before CWG-1734, trivial = implicit + delete
