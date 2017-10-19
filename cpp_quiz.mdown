@@ -301,3 +301,46 @@ int main() {
 }
 ```
 * before CWG-1734, trivial = implicit + delete
+
+## ambiguous
+```c++
+1++1; // error
+1+ +1 // 2
+```
+
+## push_back self element?
+* [discussion](https://www.zhihu.com/question/66847606)
+* [discussion](https://www.reddit.com/r/cpp/comments/vog1p/a_commonly_unknown_stdvector_pitfall/)
+```c++
+std::vector<X> vec;
+vec.push_back(v.front()); // reallocation may happen before construct new element?
+// emplace_back -> new space -> new element -> move/copy
+```
+
+## implicit function definition?
+* only c90 allows this
+```c
+#include<stdio.h>
+
+int main() {
+    int a = sum(4,6);
+    printf("%d",a);
+    return 0;
+}
+
+int sum(int a,int b) {
+    return a + b;
+}
+```
+
+## injected class name
+* The injected class name means that X is declared as a member of X, so that name lookup inside X always finds the current class, not another X that might be declared at the same enclosing scope.
+```c++
+class X { 
+    using T = typename A::A; // However, this fails because A::A implies constructor // though constructor address should not be taken 
+    // and constructor cannot be directly call by A::A(...))
+};
+X x1;
+class X::X x2; // class X::X is equal to X
+class X::X::X x3; // ...and so on...
+```

@@ -3,6 +3,8 @@
 ## \#
 
 * \*args : tuple
+* + a, b, *c = t ==> type(c) == list
+* + c = t[x:] ==> type(c) = tuple
 * \*\*kwargs : dict
 * [[]]*10 创建对同一个列表5次引用的列表
 * `__slots__`: compile-time restrict attribute
@@ -13,7 +15,10 @@
 * + otherwise, B.a is A.a ? wrong!
 * id(A.a) == id(A.a) (same memory address)
 * + a = A() \ ida = id(a) \ del(a) \ b = A() \ idb = id(b) \ del(b) \ ida == idb
-* 
+* a[i, j] ==> a.__getitem__((i, j))
+* [] * n ==> generate n reference to mutable [] instead of copy
+* `{}` ==> empty dict
+* `set()` ==> empty set
 
 ## A
 
@@ -44,7 +49,6 @@
 * + [SO](https://stackoverflow.com/questions/8169001/why-is-bool-a-subclass-of-int/8169049#8169049)
 
 ## C
-
 * c3 algorithm
 * + 查找: instance.__dict__ -> Parentest.__dict__ -> instance.__class__.__dict__ (instance.__class__.__mro__顺序)
 * contextlib module
@@ -53,6 +57,10 @@
 * + namedtuple
 * + OrderDict
 * + heapq
+* + ChainMap
+* + Defaultdict
+* + UserDict (inherit)
+* + Counter
 * coroutine : yield (from)
 * callback / delegate
 * closure
@@ -64,7 +72,9 @@
 * comprehension
 * + list
 * + dict
-* + - `print {i : chr(65+i) for i in range(4)}` -> `{0 : 'A', 1 : 'B', 2 : 'C', 3 : 'D'}`
+* + - `{i : chr(65+i) for i in range(4)}` -> `{0 : 'A', 1 : 'B', 2 : 'C', 3 : 'D'}`
+* + set
+* + - `{chr(i) for i in range(32, 256)}`
 * trailing comma
 * + [Issue](https://bugs.python.org/issue9232#msg248399)
 * + [PEP448](https://www.python.org/dev/peps/pep-0448/)
@@ -85,6 +95,9 @@
 * Default parameter
 * + 默认列表只在函数被定义的那一刻创建一次 `def func(l = [])`
 * __del__ 循环引用 => gc 不工作
+* dict
+* + defaultdict
+* + `__missing__` + `__contains__`
 
 ## E
 
@@ -92,6 +105,8 @@
 * + rethrow: `raise ... from ...`
 * + sys.exceptionhook
 * `else`: `for-else/try-except-else`
+* ellipsis: singleton => Ellipsis (...)
+* + so, x[i, ...] = x.__getitem__((i, Ellipsis))
 
 ## F
 
@@ -292,6 +307,8 @@ def super(cls, inst):
 * type module
 * + get frame/global vars
 * + co_xxx
+* types
+* + MappingProxyType == const map
 * type<->object relation
 * type hinting
 * tuple

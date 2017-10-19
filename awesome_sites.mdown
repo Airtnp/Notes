@@ -208,6 +208,7 @@
             - [2017-10-15](#2017-10-15)
             - [2017-10-16](#2017-10-16)
             - [2017-10-17](#2017-10-17)
+            - [2017-10-18](#2017-10-18)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2433,9 +2434,31 @@ Order of items is just based on Nothing :: Maybe.
 * [Hot-swapping-Haskell](http://simonmar.github.io/posts/2017-10-17-hotswapping-haskell.html)
 * [Haskell Typeclasses vs. C++ Classes](http://www.michaelburge.us/2017/10/15/haskell-typeclasses-vs-cpp-classes.html)
 * [MTBF](https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%9D%87%E6%95%85%E9%9A%9C%E9%96%93%E9%9A%94)
+
+#### 2017-10-18
+* [Stop-using-word2vec](http://multithreaded.stitchfix.com/blog/2017/10/18/stop-using-word2vec/)
+* [TiDB-1.0](https://pingcap.github.io/blog/2017/10/17/announcement/)
+* [FE=Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+* [KRACK-test](https://github.com/vanhoefm/krackattacks-test-ap-ft)
+* [let-let*-letrec](https://www.reddit.com/r/Racket/comments/778qkf/let_let_and_letrec/)
+* [browser-security-beyond-sandboxing](https://blogs.technet.microsoft.com/mmpc/2017/10/18/browser-security-beyond-sandboxing/)
+* [symmetric-difference-of-recognizable-not-closed](https://cs.stackexchange.com/questions/9760/non-turing-recognizable-from-symmetric-difference?rq=1)
+* + [but with finite language](https://cs.stackexchange.com/questions/44091/symmetric-difference-of-turing-recognizable-and-finite-languages)
+* [practical-public-crypto](https://hackaday.com/2017/10/18/practical-public-key-cryptography/)
+* [set-of-R-and-2^N](https://math.stackexchange.com/questions/553526/the-set-of-real-numbers-and-power-set-of-the-natural-numbers)
+* [Gentle-introducion-to-parsec](https://www.barrucadu.co.uk/posts/etc/2013-05-27-a-gentle-introduction-to-parsec.html)
+* [Python-sandbox-exploiting](https://zhuanlan.zhihu.com/p/30169159)
+* [角点检测](https://www.cnblogs.com/ronny/p/4009425.html)
+* [AlphaGo Zero](https://www.zhihu.com/question/66861516)
+* [some-tools-of-PFE](https://blogs.msdn.microsoft.com/daviddasneves/2017/10/15/some-tools-of-a-pfe/)
+* [C90-implicit-function-definition](https://stackoverflow.com/questions/46645399/why-is-c-more-restrictive-regarding-forward-declaration-of-function-prototypes)
+* [Creating rows vs. columns performance](https://stackoverflow.com/questions/4988915/mysql-creating-rows-vs-columns-performance)
+* [Python-basic-NN](http://iamtrask.github.io/2015/07/12/basic-python-network/)
+* [Why-windows-10-sucks](http://itvision.altervista.org/why-windows-10-sucks.html)
+* [bool-macro-int-typedef](https://stackoverflow.com/questions/46797609/why-do-major-compilers-use-typedef-for-stdint-h-but-use-define-for-stdbool-h)
+* [p=27a^2+27a+7-RSA-is-unsafe](https://mathoverflow.net/questions/283767/conjecturally-unsafe-rsa-primes-p-27a227a7)
+* [Less-copy-in-memoryview](https://eli.thegreenplace.net/2011/11/28/less-copies-in-python-with-the-buffer-protocol-and-memoryviews)
 * 
-
-
 
 
 
@@ -2482,3 +2505,4 @@ Order of items is just based on Nothing :: Maybe.
 * [Discover-tech-stack-sitestack](https://sitestacks.com/?ref=nyc)
 * [Quick-Bench-Cpp](http://quick-bench.com/)
 * [高匿IP](https://proxy.coderbusy.com/zh-cn/classical/anonymous-type/highanonymous.aspx)
+* [PythonTutor](http://pythontutor.com/)
