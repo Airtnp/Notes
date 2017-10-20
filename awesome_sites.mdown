@@ -209,6 +209,8 @@
             - [2017-10-16](#2017-10-16)
             - [2017-10-17](#2017-10-17)
             - [2017-10-18](#2017-10-18)
+            - [2017-10-19](#2017-10-19)
+            - [2017-10-20](#2017-10-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2458,8 +2460,33 @@ Order of items is just based on Nothing :: Maybe.
 * [bool-macro-int-typedef](https://stackoverflow.com/questions/46797609/why-do-major-compilers-use-typedef-for-stdint-h-but-use-define-for-stdbool-h)
 * [p=27a^2+27a+7-RSA-is-unsafe](https://mathoverflow.net/questions/283767/conjecturally-unsafe-rsa-primes-p-27a227a7)
 * [Less-copy-in-memoryview](https://eli.thegreenplace.net/2011/11/28/less-copies-in-python-with-the-buffer-protocol-and-memoryviews)
-* 
 
+#### 2017-10-19
+* [Blockchain-visually](https://unwttng.com/what-is-a-blockchain)
+* [x86-LFENCE-SFENCE-MFENCE](https://stackoverflow.com/questions/20316124/does-it-make-any-sense-instruction-lfence-in-processors-x86-x86-64)
+* [How-x86-implement-atomic-operation](https://stackoverflow.com/questions/38447226/atomicity-on-x86)
+* [Modern-JS-explained-to-dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
+* [Why do we need atomic_shared_ptr?](https://www.justsoftwaresolutions.co.uk/threading/why-do-we-need-atomic_shared_ptr.html)
+* [shared_ptr-vs-atomic_shared_ptr](https://www.justsoftwaresolutions.co.uk/threading/why-do-we-need-atomic_shared_ptr.html)
+* [shared_ptr-thread-safety](https://stackoverflow.com/questions/9127816/stdshared-ptr-thread-safety-explained)
+* [std::string-memory-overhead](https://stackoverflow.com/questions/5058676/stdstring-implementation-in-gcc-and-its-memory-overhead-for-short-strings)
+* [PyPy, Garbage Collection, and a Deadlock](https://emptysqua.re/blog/pypy-garbage-collection-and-a-deadlock/)
+* [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/blog/2013/guide-python-static-class-abstract-methods)
+* [The definitive guide to Python exceptions](https://julien.danjou.info/blog/2016/python-exceptions-guide)
+* [pythonthreads-and-the-global-interpreter-lock](http://jessenoller.com/blog/2009/02/01/python-threads-and-the-global-interpreter-lock)
+* [using-cgroups-to-limit-IO](https://andrestc.com/post/cgroups-io/)
+* [Faster, more memory efficient and more ordered dictionaries on PyPy](https://morepypy.blogspot.com/2015/01/faster-more-memory-efficient-and-more.html)
+* [EternalBlue-everything](https://research.checkpoint.com/eternalblue-everything-know/)
+* [Nim-GC](https://nim-lang.org/araq/destructors.html)
+
+#### 2017-10-20
+* [threadpool-c++14](http://roar11.com/2016/01/a-platform-independent-thread-pool-using-c14/)
+* [kernel-101](http://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel)
+* [Object-Oriented-Haskell-SQL](https://programming.tobiasdammers.nl/blog/2017-10-17-object-oriented-haskell)
+* [First-PS4-exploit-adieu](https://fail0verflow.com/blog/2017/ps4-namedobj-exploit/)
+* [HolyJIT](https://blog.mozilla.org/javascript/2017/10/20/holyjit-a-new-hope/)
+* [Simplifiy-build-c++](https://mropert.github.io/2017/10/19/simplifying_build-part1/)
+* [lptable-tutorial](https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html)
 
 
 

@@ -9,13 +9,17 @@
 * [[]]*10 创建对同一个列表5次引用的列表
 * `__slots__`: compile-time restrict attribute
 * + [ref](https://www.chrisbarra.xyz/posts/let-me-introduce-slots/)
-* `@`/`__matmul__` in py3
+* + `__weakref__`
+* + Not inherited
+* `@`/`__matmul__` and `@=`/`__imatmul__` in py3
 * A op1 B op2 C === (A op1 B) and (B op2 C)
 * @classmethod a => A.a is not A.a (proxy object A) | Normal method => true! | A() is A() == False
 * + otherwise, B.a is A.a ? wrong!
 * id(A.a) == id(A.a) (same memory address)
 * + a = A() \ ida = id(a) \ del(a) \ b = A() \ idb = id(b) \ del(b) \ ida == idb
 * a[i, j] ==> a.__getitem__((i, j))
+* + `...` ==> `Ellipsis`
+* + `:` ==> `slice(start, end, step)`
 * [] * n ==> generate n reference to mutable [] instead of copy
 * `{}` ==> empty dict
 * `set()` ==> empty set
@@ -27,6 +31,10 @@
 * + __subclasshook__
 * + @abstractmethod (compare to @classmethod, @staticmethod, __slots__)
 * + [dis](https://stackoverflow.com/questions/40764347/python-subclasscheck-subclasshook)
+* + virtual base
+* + - Mutable Sequence/Mapping/Set
+* + - Items/Keys/Values/Mapping View
+* + - Iterable/Container/Sized/Callable/Hashable
 * async/await
 * + async with
 * + - `__aenter__`/`__aexit__`/`__aiter__`
@@ -78,6 +86,9 @@
 * trailing comma
 * + [Issue](https://bugs.python.org/issue9232#msg248399)
 * + [PEP448](https://www.python.org/dev/peps/pep-0448/)
+* copy
+* + copy / `__copy__`
+* + deepcopy / `__deepcopy__`
 
 ## D
 
@@ -104,7 +115,7 @@
 * Exception
 * + rethrow: `raise ... from ...`
 * + sys.exceptionhook
-* `else`: `for-else/try-except-else`
+* `else`: `for-else/try-except-else/while-else`
 * ellipsis: singleton => Ellipsis (...)
 * + so, x[i, ...] = x.__getitem__((i, Ellipsis))
 
@@ -125,7 +136,21 @@
 * + align/padding/named-variable(Formatted string literals)
 * + F-string
 * + - `name = "Test" f"My app name is {name}."`
+* + `__format__(self, fmt_spec)`
+* + `%r !r` (printf `%n`)
 * __future__: not virusly
+* function
+* + `__closure__`
+* + `__annotations__`
+* + `__call__`
+* + `__code__`
+* + `__defaults__`
+* + `__get__`
+* + `__globals__`
+* + `__kwdefaults__`
+* + `__name__`
+* + `__qualname__`
+* + `__module__`
 
 ## G
 
@@ -150,12 +175,6 @@
 * + __iter__ : return self
 * + __next__ : return data | StopIteration
 * itertools modules : just like `#include <numeric>`
-* import hacking
-* + module q
-* + sys.modules[__name__] = Class
-* + __module__/__package__/__loader__
-* + __path__/__file__/__name__
-* + __all__/__version__
 * + PEP 302
 * + importlib
 * + _temp = __import__('spam.ham', globals(), locals(), ['eggs', 'sausage'], -1)
@@ -184,8 +203,8 @@
 
 * mro (method resolution order)
 * metaclass <-> class <-> instance
-* + __prepare__
-* + __new__/__init__
+* + __prepare__(cls, name, bases)
+* + __new__/__init__(cls, name, bases, attr_dict)
 * + __call__
 * + [ref](https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python)
 * mutable / immutuble
@@ -195,14 +214,68 @@
 * Mixin
 * method wrapper (slot wrapper)
 * + [Cython implementation](https://stackoverflow.com/questions/10401935/python-method-wrapper-type)
+* module
+* + `_x` not imported
+* + import hacking
+* + - module q
+* + - sys.modules[__name__] = Class
+* + __module__/__package__/__loader__
+* + __path__/__file__/__name__
+* + __all__/__version__
+
 
 ## N
 * nested-if => `itertools.product(for, repeat=n)`
+* nonlocal (immutable type assignment)
+* 
 
 
 ## O
 
 * os module
+* object
+* + `__new__(cls, ...)`
+* + `__init__(self, ...)`
+* + `__del__(self)`
+* + `__repr__(self)`
+* + `__str__(self)`
+* + `__bytes__(self)`
+* + `__format__(sef, format_spec)`
+* + `__lt__(self, other)` and ...
+* + `__hash__(self)`
+* + `__bool__(self)`
+* + `__getattr__(self, name)` and ... and set and del
+* + descriptor
+* + - `__objclass__`
+* + `__slots__`
+* + `__init_subclass__(cls)`
+* + `__prepare__`
+* + `__class__`
+* + `__classcell__`
+* + class `__instancecheck__(self, ins)`
+* + class `__subclasscheck__(self, subclass)`
+* + class `__bases__`
+* + class `__qualname__`
+* + class `__subclasses__()`
+* + class `.mro()`
+* + `__call__(self, ...)`
+* + `__len__(self)`
+* + `__length_hint__(self)`
+* + `__missing__(self, key)`
+* + `__xxitem__(self, key, [v])`
+* + `__reversed__(self)` 
+* + `__contains__(self, key)`
+* + `__iter__(self)`
+* + operations (`__index__(self)`)
+* + `__enter__(self)` / `__exit__(self, exc_type, exc_value, traceback)`
+* + `__await__(self)`
+* + coroutine
+* + - `send(value)`
+* + - `throw(type, value=, traceback=)`
+* + - `close()`
+* + `__aiter__(self)` / `__anext__(self)`
+* + `__aenter__(self)` / `__aexit__(self, exc_type, exc_value, traceback)` (`async with`)
+* + `__dir__(self)`
 
 ## P
 
@@ -213,6 +286,7 @@
 * + .setter
 * + `__property`: private => `_classname__property`
 * + `_property`: protect => `_property`
+* `print`: call twice `sys.stdout.write(text)` and `sys.stdout.write('\n')`
 
 ## Q
 
@@ -314,6 +388,7 @@ def super(cls, inst):
 * tuple
 * + `(1, 2, [3, 4])[2] += [1, 2] -> error + (1, 2, [1, 2, 3, 4])`
 * + check is after the assignment
+* + `t[:]` / `tuple(tp)` returns some object instead of deepcopy
 * temporary file fd `open(to_file, 'w').write(open(from_file).read())`
 * + [discussion](https://stackoverflow.com/questions/38660609/when-how-does-an-anonymous-file-object-close)
 * + 在语句结束时丢失引用被垃圾回收，CPython 和 IPython 会刷新并且关闭文件。而 PyPy 和 JPython 采用不同的垃圾回收机制所以会有不同的情况出现。
