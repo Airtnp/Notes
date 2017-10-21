@@ -211,6 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
+            - [2017-10-20](#2017-10-20-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -275,6 +276,7 @@ Order of items is just based on Nothing :: Maybe.
 * [RFX/VM](http://rednaxelafx.iteye.com/blog/492667)
 * [lihaoyi/Scala](http://www.lihaoyi.com/)
 * [ReWolf/Security](http://blog.rewolf.pl/blog/)
+* [Stupid-Python-Ideas](http://stupidpythonideas.blogspot.com/)
 
 
 ### OI/Alg
@@ -2487,6 +2489,23 @@ Order of items is just based on Nothing :: Maybe.
 * [HolyJIT](https://blog.mozilla.org/javascript/2017/10/20/holyjit-a-new-hope/)
 * [Simplifiy-build-c++](https://mropert.github.io/2017/10/19/simplifying_build-part1/)
 * [lptable-tutorial](https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html)
+* [Round-robin](http://blog.csdn.net/ytdxyhz/article/details/52760960)
+* [Top-20-C++-multithread-problem](http://www.acodersjourney.com/2017/08/top-20-cplusplus-multithreading-mistakes/)
+* [python-logging-multithread-to-single-file](https://www.v2ex.com/t/399193#reply3)
+* [Haskell-Any](https://stackoverflow.com/questions/6479444/is-there-a-type-any-in-haskell)
+
+#### 2017-10-20
+* [Dismissing-Python-GC](https://engineering.instagram.com/dismissing-python-garbage-collection-at-instagram-4dca40b29172)
+* [GHC-cross-platform](https://medium.com/@zw3rk/ghc-cross-compiler-binary-distributions-490bb2c0c411)
+* [C#-7.2-with-VS](http://www.c-sharpcorner.com/article/c-sharp-7-2-new-features-with-visual-studio-2017/)
+* [Write-a-bootloader](http://3zanders.co.uk/2017/10/13/writing-a-bootloader/)
+* [Squeezing Rust into production](http://www.tzaeru.com/squeezing-rust-into-production-part-2/)
+* [VIM-after-15yrs](https://statico.github.io/vim3.html)
+* [Type-Inference](https://medium.com/@dhruvrajvanshi/type-inference-for-beginners-part-1-3e0a5be98a4b)
+* [9-new-features-in-Java-9](https://www.pluralsight.com/blog/software-development/java-9-new-features)
+* [Dafny-intro](https://zhuanlan.zhihu.com/p/30321583)
+
+
 
 
 

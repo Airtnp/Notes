@@ -164,6 +164,7 @@
 * generator : yield/next
 * + GeneratorExit
 * + gi_code/gi_frame/gi_running/gi_yieldfrom/send/throw/close
+* + cannot be deepcopy
 
 ## H
 

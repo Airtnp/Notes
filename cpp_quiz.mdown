@@ -344,3 +344,10 @@ X x1;
 class X::X x2; // class X::X is equal to X
 class X::X::X x3; // ...and so on...
 ```
+
+## Inheritance function
+```c++
+struct X{ void func(); };
+struct Y : public X{};
+decltype(&Y::func) // void (X::*)()
+```
