@@ -223,6 +223,8 @@
 * 电梯算法（linux调度）
 * deterministic selection
 * + median of medians
+* DPLL
+* + CNF-SAT
 
 ## E
 
@@ -742,6 +744,7 @@ struct element {
 * stein gcd
 * Shunting-yard (调度场)
 * + infix -> postfix
+* smooth sort
 
 ## T
 
