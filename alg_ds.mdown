@@ -296,6 +296,8 @@
 * + LALB (locality-aware load balancing)
 * + round robin
 * + 随机
+* Fibonacci
+* + [mod p 循环节](http://blog.csdn.net/acdreamers/article/details/10983813)
 
 
 

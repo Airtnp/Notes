@@ -212,6 +212,8 @@
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
             - [2017-10-20](#2017-10-20-1)
+            - [2017-10-22](#2017-10-22)
+            - [2017-10-23](#2017-10-23)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -277,6 +279,7 @@ Order of items is just based on Nothing :: Maybe.
 * [lihaoyi/Scala](http://www.lihaoyi.com/)
 * [ReWolf/Security](http://blog.rewolf.pl/blog/)
 * [Stupid-Python-Ideas](http://stupidpythonideas.blogspot.com/)
+* [preshing/Cpp](http://preshing.com/archives/)
 
 
 ### OI/Alg
@@ -2504,7 +2507,35 @@ Order of items is just based on Nothing :: Maybe.
 * [Type-Inference](https://medium.com/@dhruvrajvanshi/type-inference-for-beginners-part-1-3e0a5be98a4b)
 * [9-new-features-in-Java-9](https://www.pluralsight.com/blog/software-development/java-9-new-features)
 * [Dafny-intro](https://zhuanlan.zhihu.com/p/30321583)
+* [Pipeline-prediction](http://www.cnblogs.com/yangecnu/p/4196026.html)
+* [Type-Inference-2](https://medium.com/@dhruvrajvanshi/type-inference-for-beginners-part-2-f39c33ca9513)
+* [L_REC-undecidable](https://math.stackexchange.com/questions/344545/is-this-undecidable-language-recognizable)
+* [pyc-files](http://www.curiousefficiency.org/posts/2011/04/benefits-and-limitations-of-pyc-only.html)
 
+#### 2017-10-22
+* [scrap-all-typeclasses-into-1](http://h2.jaguarpaw.co.uk/posts/scrap-all-your-typeclasses-but-one/)
+* [scrap-your-typeclass](http://www.haskellforall.com/2012/05/scrap-your-type-classes.html)
+* [kernel-exploitation-deferencing-nullptr](https://0x00sec.org/t/kernel-exploitation-dereferencing-a-null-pointer/3850)
+* [Rust-to-wasm](https://lord.io/blog/2017/wargo/)
+
+#### 2017-10-23
+* [Java-List<>](https://stackoverflow.com/questions/6231973/difference-between-list-list-listt-liste-and-listobject)
+* [game-developer-resources](https://unlikekinds.com/t/game-developer-resources)
+* [spin_lock](https://www.zhihu.com/question/66889164)
+* [analysis-malware-by-statistics](https://zhuanlan.zhihu.com/p/30291905)
+* [.volatile.iso/ms](https://msdn.microsoft.com/en-us/library/jj204392.aspx?f=255&MSPPError=-2147217396)
+* [acquire-and-release-sementics](http://preshing.com/20120913/acquire-and-release-semantics/)
+* [memory_order_consume](http://preshing.com/20140709/the-purpose-of-memory_order_consume-in-cpp11/)
+* [React-design](https://zhuanlan.zhihu.com/p/30277192)
+* [NLP-intro](https://zhuanlan.zhihu.com/p/30354720)
+* [goroutine-抢占](https://zhuanlan.zhihu.com/p/30353139)
+* [Timsort-verification](http://mp.weixin.qq.com/s/wEl7CY9dvY96M-0JrgqI0g)
+* [Covariance-Contravariance](https://extremegtr.github.io/2016/07/11/Covariance-And-Contravariance-In-Java/)
+* [IIFE-cpp](http://articles.emptycrate.com/2014/12/16/complex_object_initialization_optimization_with_iife_in_c11.html)
+* [C#-8-future](https://rubikscode.net/2017/10/23/c-8-the-shape-of-the-things-to-come/)
+* [stack-protector](http://www.productive-cpp.com/hardening-cpp-programs-stack-protector/)
+* [stack-smashing-protector(SSP)](http://wiki.osdev.org/Stack_Smashing_Protector)
+* [Magic-about-Websocket-CSS3](https://medium.com/outsystems-engineering/making-magic-with-websockets-and-css3-ec22c1dcc8a8)
 
 
 
