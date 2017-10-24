@@ -351,3 +351,31 @@ struct X{ void func(); };
 struct Y : public X{};
 decltype(&Y::func) // void (X::*)()
 ```
+
+## Bad, bad VLA
+```c++
+// Only valid in C99 and partly C11
+int a = 100;
+int v[a] = {0};
+sizeof(v); // 400! runtime evaluation
+```
+
+## Dependent name
+* [so]([Derived-template-class](https://stackoverflow.com/questions/4643074/why-do-i-have-to-access-template-base-class-members-through-the-this-pointer))
+```c++
+template <typename T>
+class base {
+
+protected:
+    int x;
+};
+
+template <typename T>
+class derived : public base<T> {
+
+public:
+    int f() { 
+        return this->x; // base<T>::x || using base<T>::x
+    }
+};
+```

@@ -280,6 +280,7 @@ Order of items is just based on Nothing :: Maybe.
 * [ReWolf/Security](http://blog.rewolf.pl/blog/)
 * [Stupid-Python-Ideas](http://stupidpythonideas.blogspot.com/)
 * [preshing/Cpp](http://preshing.com/archives/)
+* [GeoffChappel/SoftwareAnalysis](http://www.geoffchappell.com/index.htm)
 
 
 ### OI/Alg
@@ -2536,6 +2537,17 @@ Order of items is just based on Nothing :: Maybe.
 * [stack-protector](http://www.productive-cpp.com/hardening-cpp-programs-stack-protector/)
 * [stack-smashing-protector(SSP)](http://wiki.osdev.org/Stack_Smashing_Protector)
 * [Magic-about-Websocket-CSS3](https://medium.com/outsystems-engineering/making-magic-with-websockets-and-css3-ec22c1dcc8a8)
+* [Why-no-VLA-in-C++0x](https://groups.google.com/forum/#!topic/comp.std.c++/K_4lgA1JYeg)
+* [Why-no-VLA-in-C++](https://stackoverflow.com/questions/1887097/why-arent-variable-length-arrays-part-of-the-c-standard)
+* [OCaml-let-rec](https://stackoverflow.com/questions/900585/why-are-functions-in-ocaml-f-not-recursive-by-default)
+* [MSVC-d2cgsummary-compile-time](http://aras-p.info/blog/2017/10/23/Best-unknown-MSVC-flag-d2cgsummary/)
+* [MSVC-hidden-flags](https://www.reddit.com/r/cpp/comments/787lmw/best_unkown_msvc_flag_d2cgsummary_compile_time/)
+* [binomial-tail-recursive](https://stackoverflow.com/questions/28896626/tail-recursive-binomial-coefficient-function-in-haskell)
+* [Derived-template-class](https://stackoverflow.com/questions/4643074/why-do-i-have-to-access-template-base-class-members-through-the-this-pointer)
+* [Dis-interview](http://www.zenlife.tk/interview-for-distributed-storage.md)
+* [Multiple-def-of-spin_lock](http://locklessinc.com/articles/locks/)
+* [spin-lock-implementation](https://www.zhihu.com/question/55764216)
+*  
 
 
 
