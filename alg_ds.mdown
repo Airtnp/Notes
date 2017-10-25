@@ -614,6 +614,9 @@ struct element {
 * Quick Hull
 * （盲填）骑士跳
 * quadratic sieve (大素数二次筛选法)
+* quick sort
+* + dual pivot
+* + 3 way
 
 ## R
 

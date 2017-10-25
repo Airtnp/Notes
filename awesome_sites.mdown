@@ -214,6 +214,7 @@
             - [2017-10-20](#2017-10-20-1)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
+            - [2017-10-24](#2017-10-24)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2547,7 +2548,20 @@ Order of items is just based on Nothing :: Maybe.
 * [Dis-interview](http://www.zenlife.tk/interview-for-distributed-storage.md)
 * [Multiple-def-of-spin_lock](http://locklessinc.com/articles/locks/)
 * [spin-lock-implementation](https://www.zhihu.com/question/55764216)
-*  
+
+#### 2017-10-24
+* [Rust-1.21](https://www.infoq.com/news/2017/10/rust-1-21-released)
+* [Cpp17-interview-with-Herb-Sutter](https://www.infoq.com/news/2017/10/cpp-17-herb-sutter-interview)
+* [.NET-Core-2.0](https://weblog.west-wind.com/posts/2017/Oct/22/NET-Core-20-and-ASPNET-20-Core-are-finally-here)
+* [PWN2WIn2017-shift-register-reverse-integrated-circuits](http://blog.dragonsector.pl/2017/10/pwn2win-2017-shift-register.html)
+* [Counter-example-of-typeclass](http://blog.functorial.com/posts/2015-12-06-Counterexamples.html?repost)
+* [Games-Look-Bad-1](https://ventspace.wordpress.com/2017/10/20/games-look-bad-part-1-hdr-and-tone-mapping/)
+
+#### 2017-10-25
+* [VLA-speed](https://stackoverflow.com/questions/34847662/is-accessing-statically-or-dynamically-allocated-memory-faster)
+* [Why-Python-is-slow](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
+* [SciPy-1.0](https://mail.python.org/pipermail/scipy-user/2017-October/037357.html)
+* 
 
 
 

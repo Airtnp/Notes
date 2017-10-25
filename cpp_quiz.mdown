@@ -379,3 +379,21 @@ public:
     }
 };
 ```
+
+## most vexing parse
+* 
+
+
+## Attribute
+```c++
+void f() {
+  int y[3];
+  y[[] { return 0; }()] = 1;    // error
+  int i [[cats::meow([[]])]]; // OK
+}
+[[attr1]] class [[attr2]] c {...} [[attr3]] x [[attr4]], y;
+// attr1 applies to variables x and y
+// attr2 applies to class c
+// attr3 applies to x's and y's types
+// attr4 applies to variable x
+```
