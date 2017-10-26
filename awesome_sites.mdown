@@ -215,6 +215,8 @@
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
+            - [2017-10-25](#2017-10-25)
+            - [2017-10-26](#2017-10-26)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2561,6 +2563,13 @@ Order of items is just based on Nothing :: Maybe.
 * [VLA-speed](https://stackoverflow.com/questions/34847662/is-accessing-statically-or-dynamically-allocated-memory-faster)
 * [Why-Python-is-slow](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
 * [SciPy-1.0](https://mail.python.org/pipermail/scipy-user/2017-October/037357.html)
+* [Imperative-Haskell](http://vaibhavsagar.com/blog/2017/05/29/imperative-haskell/)
+* [Want-speed-passing-by-value](https://web.archive.org/web/20140205194657/http://cpp-next.com/archive/2009/08/want-speed-pass-by-value/)
+* [copy-elision-on-argument](https://stackoverflow.com/questions/33872026/copy-elision-for-pass-by-value-arguments)
+* [copy-elision-prvalue+xvalue](https://zhuanlan.zhihu.com/p/22821671)
+
+#### 2017-10-26
+* [Optimising-free-monad-using-Plate](https://qfpl.io/posts/optimising-free-with-plated/)
 * 
 
 

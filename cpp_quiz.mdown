@@ -384,7 +384,7 @@ public:
 * 
 
 
-## Attribute
+## Attribute parsing
 ```c++
 void f() {
   int y[3];
@@ -396,4 +396,13 @@ void f() {
 // attr2 applies to class c
 // attr3 applies to x's and y's types
 // attr4 applies to variable x
+```
+
+## Operation associativity and precedence
+```c++
+a = 1, 2, 3; // Evaluated as (a = 1), 2, 3. Comma operator is left to right
+if (c > b > a) // (c > b > a) is treated as ((c > b) > a), associativity of '>' is left to right.
+a = b = c; // Evaluated as a = (b = c). = operator is right to left
+int a;
+(a = 1) = 2; // Builtin assignment returns T& lvalue
 ```
