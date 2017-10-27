@@ -2570,7 +2570,12 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-10-26
 * [Optimising-free-monad-using-Plate](https://qfpl.io/posts/optimising-free-with-plated/)
-* 
+* [Learning-a-hierarchy](https://blog.openai.com/learning-a-hierarchy/)
+* [How-to-use-Zorn's-lemma](http://www.tricki.org/article/How_to_use_Zorns_lemma)
+* [recursion-tail-calls-and-trampolines](http://www.datchley.name/recursion-tail-calls-and-trampolines/)
+
+#### 2017-10-27
+* [Make-2+2=5](https://codegolf.stackexchange.com/questions/28786/write-a-program-that-makes-2-2-5)
 
 
 

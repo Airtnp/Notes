@@ -3,41 +3,36 @@
 ## aggr-init vs. delete function
 * [dis](https://stackoverflow.com/q/33988297/8563711)
 ```c++
-struct Foo
-{
-Foo(const Foo &) = delete;
+struct Foo {
+    Foo(const Foo &) = delete;
+};
+
+int main() { Foo bar{}, b2{ Foo{} }; } // OK
+
+class Foo {
+    Foo(const Foo &) = delete;
 };
 int main() { Foo bar{}, b2{ Foo{} }; } // OK
 
-struct Foo
-{
-Foo(const Foo &) = delete;
+struct Foo {
+    explicit Foo(const Foo &) = delete;
 };
 int main() { Foo bar{}, b2{ Foo{} }; } // Error
 
-struct Foo
-{
-explicit Foo(const Foo &) = delete;
-};
-int main() { Foo bar{}, b2{ Foo{} }; } // Error
-
-struct Foo
-{
-Foo() = delete;
+struct Foo {
+    Foo() = delete;
 };
 int main() { Foo bar{}; } // OK
 
-struct Foo
-{
-Foo() = delete;
-Foo(int);
+struct Foo {
+    Foo() = delete;
+    Foo(int);
 };
 int main() { Foo bar{}; } // Error
 
-struct Foo
-{
+struct Foo {
 private:
-Foo();
+    Foo();
 };
 int main() { Foo bar{}; } // Error
 
@@ -381,7 +376,11 @@ public:
 ```
 
 ## most vexing parse
-* 
+```c++
+void f(double adouble) {
+  int i(int(adouble)); // function declaration int i(int adouble);
+}
+```
 
 
 ## Attribute parsing
@@ -405,4 +404,28 @@ if (c > b > a) // (c > b > a) is treated as ((c > b) > a), associativity of '>' 
 a = b = c; // Evaluated as a = (b = c). = operator is right to left
 int a;
 (a = 1) = 2; // Builtin assignment returns T& lvalue
+```
+
+## Universal ? Rvalue ? Class template argument deduction ?
+```c++
+struct A {
+    template <typename T>
+    A(T&& v) {}
+};
+
+template <typename T>
+struct B {
+    B(T&& v) {};
+};
+
+int main() {
+    int i = 233;
+    auto&& v = i; // OK auto -> int&
+    int&& m = i; // Error
+    auto p = A{i}; // OK T -> int&
+    auto q = B<int&>{i}; // OK T -> int&
+    auto r = B{i}; // Error T -> int
+    T& & p = ... // Error not such grammar
+    // difference between class template deduction and template argument deduction
+}
 ```
