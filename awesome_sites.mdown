@@ -217,6 +217,8 @@
             - [2017-10-24](#2017-10-24)
             - [2017-10-25](#2017-10-25)
             - [2017-10-26](#2017-10-26)
+            - [2017-10-27](#2017-10-27)
+            - [2017-10-28](#2017-10-28)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2577,7 +2579,28 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-10-27
 * [Make-2+2=5](https://codegolf.stackexchange.com/questions/28786/write-a-program-that-makes-2-2-5)
 
-
+#### 2017-10-28
+* [Void-linux](https://www.linux.com/learn/intro-to-linux/2017/10/void-linux-salute-old-school-linux)
+* [GADT](https://www.zhihu.com/question/67043774)
+* [Linux-PLT-GOT](https://www.zhihu.com/question/21249496)
+* [From-object-algebra-to-finally-tagless-interpreter](https://oleksandrmanzyuk.wordpress.com/2014/06/18/from-object-algebras-to-finally-tagless-interpreters-2/)
+* [tagless-final-encoding-of-language](https://wickstrom.tech/programming/2017/06/05/tagless-final-encoding-of-a-test-language.html)
+* [Agda-intro](http://hawnzug.me/posts/2017-03-01-translation-agda-introduction.html)
+* [Max-size-of-IOS-app](https://stackoverflow.com/questions/19646205/maximum-size-for-ios-app)
+* [eval-apply-circle](https://mitpress.mit.edu/sicp/full-text/sicp/book/node77.html)
+* [Hack-webapp](https://zhuanlan.zhihu.com/p/30400096)
+* [parametricity-intro](https://www.well-typed.com/blog/2015/05/parametricity/)
+* [constexpr-captured-lambda](https://stackoverflow.com/questions/46900655/is-it-legal-to-use-a-const-value-captured-in-a-lambda-as-a-template-argument)
+* [Structure-encoding-editting](https://blog.isomorf.io/an-experiment-in-structured-code-editing-68b917a9157c)
+* [Enum-as-template-argument](https://stackoverflow.com/questions/46933091/is-it-allowed-to-specialize-a-template-with-enums-with-the-same-integral-value/46933478#46933478)
+* [language-implementing-null](https://softwareengineering.stackexchange.com/questions/237697/if-null-is-bad-why-do-modern-languages-implement-it)
+* [Monad-io-computational-order-temporal-order](https://www.reddit.com/r/haskell/comments/244gil/how_are_monads_not_about_orderingsequencing/)
+* [IO-not-satify-monad-laws](https://stackoverflow.com/questions/12617664/a-simple-example-showing-that-io-doesnt-satisfy-the-monad-laws)
+* [intel-lapicw-twice](https://twitter.com/johnregehr/status/923591402767900672)
+* [uint_fast32_t](https://stackoverflow.com/questions/46959685/why-would-uint32-t-be-preferred-rather-than-uint-fast32-t/46960509#46960509)
+* [understanding-FFT](http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/)
+* [C++-compile-time](https://www.zhihu.com/question/42964826)
+* 
 
 
 ## Tools
