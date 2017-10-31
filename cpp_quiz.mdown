@@ -429,3 +429,104 @@ int main() {
     // difference between class template deduction and template argument deduction
 }
 ```
+
+## Virtual memory exhausted
+```c++
+namespace std
+{
+  typedef long unsigned int size_t;
+}
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+  template<typename _Tp, std::size_t _Nm>
+    struct __array_traits
+    {
+      typedef _Tp _Type[_Nm];
+    };
+
+  template<typename _Tp, std::size_t _Nm>
+    struct array
+    {
+      typedef std::__array_traits<_Tp, _Nm> _AT_Type;
+      typename _AT_Type::_Type _M_elems;
+    };
+}
+
+namespace std __attribute__ ((__visibility__ ("default")))
+{
+  template<size_t _Nw>
+    struct _Base_bitset
+    {
+      typedef unsigned long _WordT;
+
+      _WordT _M_w[_Nw];
+
+      constexpr _Base_bitset() noexcept
+      : _M_w() { }
+    };
+
+  template<size_t _Nb>
+    class bitset
+    : private _Base_bitset<((_Nb) / (8 * 8) + ((_Nb) % (8 * 8) == 0 ? 0 : 1))>
+    {
+    };
+}
+
+constexpr std::size_t N = 100000;
+std::array<std::bitset<N>, N> elems; // The constexpr makes gcc to expand 100000 * 1563 wordT
+
+int main() {}
+```
+
+## Bad variant
+```c++
+#include <variant>
+#include <iostream>
+
+using namespace std;
+
+struct A{};
+struct B{};
+struct C{};
+/*
+struct D{};
+struct E{};
+struct F{};
+struct G{};
+struct H{};
+struct I{};
+struct J{};
+struct K{};
+struct L{};
+struct M{};
+struct N{};
+struct O{};
+*/
+
+int main() {
+  using T = variant<A, B, C/*, D, E, F, G, H, I, J, K, L, M, N, O*/>;
+  T a{A{}};
+  
+  auto p = std::visit( 
+    [](auto&& a, auto&&... args) -> T { return a; },
+    a, a, a, a
+  );
+}
+```
+
+## Member specialized (such a dick)
+```c++
+template <class C> class X
+{
+public:
+   template <class T> void get_as();
+   template <> void get_as(); // Error! full-specialization only allowed in namespace scope
+};
+
+template <class C> template<>
+void X<C>::get_as<double>() {} // Error! Explicitly specialized members need their surrounding class templates to be explicitly specialized as well.
+
+template <> template<>
+void X<int>::get_as<double>() {} // So why no just overload
+```

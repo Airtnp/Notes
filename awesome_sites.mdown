@@ -2604,8 +2604,15 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-10-29
 * [Docker-over-fat-binary](http://www.smashcompany.com/technology/why-would-anyone-choose-docker-over-fat-binaries)
-* 
+* [Gilectomy-GIL-less-python](https://lwn.net/Articles/723514/)
+* [PyPy-STM-GIL-less-python](http://pypy.org/tmdonate2.html)
+* [PyPy-remove-GIL](https://morepypy.blogspot.com/2017/08/lets-remove-global-interpreter-lock.html)
+* [Greg's-1.5-Python-remove-GIL](https://mail.python.org/pipermail/python-dev/2001-August/017099.html)
+* [PyPy-GIL](http://doc.pypy.org/en/latest/faq.html#does-pypy-have-a-gil-why)
 
+#### 2017-10-30
+* [Python-hardest-problem-GIL](https://jeffknupp.com/blog/2012/03/31/pythons-hardest-problem/)
+* [Python-hardest-problem-GIL-revisited](https://jeffknupp.com/blog/2013/06/30/pythons-hardest-problem-revisited/)
 
 ## Tools
 * [Repl.it](https://repl.it/)
