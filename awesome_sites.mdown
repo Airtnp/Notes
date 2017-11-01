@@ -2620,6 +2620,10 @@ Order of items is just based on Nothing :: Maybe.
 * [Do-you-need-a-VPN](https://blog.mozilla.org/internetcitizen/2017/08/29/do-you-need-a-vpn/)
 * [HTTP=103](https://datatracker.ietf.org/doc/draft-ietf-httpbis-early-hints/)
 * [So-you-want-to-write-a-type-checker](http://languagengine.co/blog/so-you-want-to-write-a-type-checker/)
+* [C++-Bestiary](http://videocortex.io/2017/Bestiary/)
+* [Persistent-RBT-Haskell](https://functional.works-hub.com/blog/Persistent-Red-Black-Trees-in-Haskell?utm_source=Reddit&utm_medium=post&utm_campaign=peter&utm_content=blog)
+* [Crafting-interpreter](http://www.craftinginterpreters.com/contents.html)
+* 
 
 ## Tools
 * [Repl.it](https://repl.it/)
