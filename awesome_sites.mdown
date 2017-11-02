@@ -222,6 +222,8 @@
             - [2017-10-29](#2017-10-29)
             - [2017-10-30](#2017-10-30)
             - [2017-10-31](#2017-10-31)
+            - [2017-11-1](#2017-11-1)
+            - [2017-11-2](#2017-11-2)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2623,7 +2625,16 @@ Order of items is just based on Nothing :: Maybe.
 * [C++-Bestiary](http://videocortex.io/2017/Bestiary/)
 * [Persistent-RBT-Haskell](https://functional.works-hub.com/blog/Persistent-Red-Black-Trees-in-Haskell?utm_source=Reddit&utm_medium=post&utm_campaign=peter&utm_content=blog)
 * [Crafting-interpreter](http://www.craftinginterpreters.com/contents.html)
-* 
+* [How-to-implement-dependent-type-theory](http://math.andrej.com/2012/11/08/how-to-implement-dependent-type-theory-i/)
+* [dependent-type-compiler](https://cstheory.stackexchange.com/questions/18777/is-compiler-for-dependent-type-much-harder-than-an-intepreter)
+
+#### 2017-11-1
+* [How-lazy-evaluation-in-Haskell](https://hackhands.com/lazy-evaluation-works-haskell/)
+* [Common-misconception-of-C++-TS-Modules](https://build2.org/article/cxx-modules-misconceptions.xhtml)
+
+#### 2017-11-2
+* [Minimal-guide-to-SQLite](http://tech.marksblogg.com/sqlite3-tutorial-and-guide.html)
+* [Fearlesss-Concurrency-in-Rust](https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)
 
 ## Tools
 * [Repl.it](https://repl.it/)
