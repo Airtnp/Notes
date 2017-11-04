@@ -89,6 +89,8 @@
 * copy
 * + copy / `__copy__`
 * + deepcopy / `__deepcopy__`
+* char
+* + no char in python, all string is str
 
 ## D
 

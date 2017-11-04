@@ -315,6 +315,10 @@ Just pack `n` conditions to `log_2(n) + 1` bits with complex mapping table
 
 ### When Using `std::pair` and `std::tuple`?
 
+#### standard layout and memcpy?
+
+* [discussion](https://stackoverflow.com/questions/46901697/is-returning-a-2-tuple-less-efficient-than-stdpair/46901813#46901813)
+
 #### EBO (Empty Base Optimization) for `pair`
 
 Actually, empty struct in C/Cpp costs 1 byte. However, as base classes, they acts like not-exists.

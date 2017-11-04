@@ -375,6 +375,8 @@
 * + - hopscotch hashing
 * + - coalesced hashing
 * + - cuckoo hashing
+* hash tree
+* + [ref](https://www.zhihu.com/question/32163076/answer/254075710)
 * Hamilton-Cayley 定理
 * 哈夫曼树
 * 合并线性基
@@ -475,6 +477,7 @@
 
 * LCT (link-cut tree)
 * + [严格logn](https://zhuanlan.zhihu.com/p/29221551)
+* + [严格logn-2](https://zhuanlan.zhihu.com/p/30704955)
 * 链剖
 * 连通分量
 * + 强连通分量 (tarjan)

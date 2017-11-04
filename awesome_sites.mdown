@@ -225,6 +225,7 @@
             - [2017-11-1](#2017-11-1)
             - [2017-11-2](#2017-11-2)
             - [2017-11-3](#2017-11-3)
+            - [2017-11-4](#2017-11-4)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2645,7 +2646,21 @@ Order of items is just based on Nothing :: Maybe.
 * [MySQL-vs-MariaDB](https://www.percona.com/blog/2017/11/02/mysql-vs-mariadb-reality-check/)
 * [Linux-container-in-500-lines](https://blog.lizzie.io/linux-containers-in-500-loc.html)
 * [Reverse-guitar-hero](https://hackaday.com/2017/09/25/reverse-engineering-guitar-hero/)
+
+#### 2017-11-4
+* [Cpp-Relaxed-template-argument](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0522r0.html)
+* [Write-line-in-C](https://zhuanlan.zhihu.com/p/30553006)
+* [Implement-coroutine-C](https://stackoverflow.com/questions/121757/how-do-you-implement-coroutines-in-c)
+* [Coroutine-in-C](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
+* [My-VM-is-lighter-than-you](https://zhuanlan.zhihu.com/p/30594040)
+* [Neural Language Modeling From Scratch](http://ofir.io/Neural-Language-Modeling-From-Scratch/?a=1)
+* [Why does using the same cache-line from multiple threads not cause serious slowdown?](https://stackoverflow.com/questions/46919032/why-does-using-the-same-cache-line-from-multiple-threads-not-cause-serious-slowd)
+* [x86-SSE-auto-acquire-release?](https://stackoverflow.com/questions/19093137/does-x86-sse-instructions-have-an-automatic-release-acquire-order/27302931#27302931)
+* [Cap'n Proto, FlatBuffers, and SBE](https://capnproto.org/news/2014-06-17-capnproto-flatbuffers-sbe.html)
 * 
+
+
+
 
 ## Tools
 * [Repl.it](https://repl.it/)

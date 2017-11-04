@@ -247,6 +247,7 @@ static uint32_t my_arr[2];
 static_assert(sizeof(my_arr) == 8, "");
 static_assert(sizeof(my_arr[0]) == 4, "");
 static_assert(sizeof(my_arr)[0] == 4, "");
+static_assert(sizeof(int)*p == p * 4, ""); // will not parse as size((int*)p);
 ```
 
 ## std::string and SSO
@@ -531,7 +532,7 @@ template <> template<>
 void X<int>::get_as<double>() {} // So why no just overload
 ```
 
-#### Asso container?
+## Asso container?
 ```c++
 std::set<T> val{...};
 struct MyClass {
@@ -543,3 +544,9 @@ for (auto& i: val) {
     MyClass{} << *i; // call #2, i -> const iterator
 }
 ```
+
+## Specialize namespace std
+* [discussion](https://stackoverflow.com/questions/8513417/what-can-and-cant-i-specialize-in-the-std-namespace)
+
+## Multiple declaration ? 
+* [discussion](https://stackoverflow.com/questions/27895689/declarations-of-a-class-name-and-a-variable-with-the-same-name)
