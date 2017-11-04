@@ -224,6 +224,7 @@
             - [2017-10-31](#2017-10-31)
             - [2017-11-1](#2017-11-1)
             - [2017-11-2](#2017-11-2)
+            - [2017-11-3](#2017-11-3)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2635,6 +2636,16 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-2
 * [Minimal-guide-to-SQLite](http://tech.marksblogg.com/sqlite3-tutorial-and-guide.html)
 * [Fearlesss-Concurrency-in-Rust](https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)
+* [Have-fun-with-Mach-O](https://www.pnfsoftware.com/blog/having-fun-with-obfuscated-mach-o-files/)
+* [Python-Parallelism](https://segmentfault.com/a/1190000000382873)
+
+#### 2017-11-3
+* [2FA-Hash](https://techblog.bozho.net/enabling-two-factor-authentication-web-application/)
+* [WPS-developing](http://bbs.wps.cn/thread-22332423-1-1.html)
+* [MySQL-vs-MariaDB](https://www.percona.com/blog/2017/11/02/mysql-vs-mariadb-reality-check/)
+* [Linux-container-in-500-lines](https://blog.lizzie.io/linux-containers-in-500-loc.html)
+* [Reverse-guitar-hero](https://hackaday.com/2017/09/25/reverse-engineering-guitar-hero/)
+* 
 
 ## Tools
 * [Repl.it](https://repl.it/)
@@ -2679,3 +2690,4 @@ Order of items is just based on Nothing :: Maybe.
 * [Quick-Bench-Cpp](http://quick-bench.com/)
 * [高匿IP](https://proxy.coderbusy.com/zh-cn/classical/anonymous-type/highanonymous.aspx)
 * [PythonTutor](http://pythontutor.com/)
+* [ODA](https://www.onlinedisassembler.com/odaweb/)

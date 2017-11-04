@@ -530,3 +530,16 @@ void X<C>::get_as<double>() {} // Error! Explicitly specialized members need the
 template <> template<>
 void X<int>::get_as<double>() {} // So why no just overload
 ```
+
+#### Asso container?
+```c++
+std::set<T> val{...};
+struct MyClass {
+    MyClass& operator<<(T& val); // #1
+    template <typename U>
+    MyClass& operator<<(U& val); // #2
+};
+for (auto& i: val) {
+    MyClass{} << *i; // call #2, i -> const iterator
+}
+```
