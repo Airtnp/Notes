@@ -550,3 +550,25 @@ for (auto& i: val) {
 
 ## Multiple declaration ? 
 * [discussion](https://stackoverflow.com/questions/27895689/declarations-of-a-class-name-and-a-variable-with-the-same-name)
+
+## Conversion Overload
+* [discussion](https://stackoverflow.com/questions/47110853/call-to-conversion-operator-instead-of-converting-constructor-in-c17-during-ov)
+```c++
+#define PRETTY(x) (std::cout << __PRETTY_FUNCTION__ << " : " << (x) << '\n')
+
+struct D;
+
+struct C {
+    C() { PRETTY(this);}
+    C(const C&) { PRETTY(this);}
+    C(const D&) { PRETTY(this);}
+};
+
+struct D {
+    D() { PRETTY(this);}
+    operator C() { PRETTY(this); return C();}
+};
+
+D d;
+C c(d); // conversion or exact match ?
+```
