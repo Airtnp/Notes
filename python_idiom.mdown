@@ -55,6 +55,8 @@
 * + unbound
 * bool is int
 * + [SO](https://stackoverflow.com/questions/8169001/why-is-bool-a-subclass-of-int/8169049#8169049)
+* builtins module
+* + `__build_class__`: create class
 
 ## C
 * c3 algorithm
