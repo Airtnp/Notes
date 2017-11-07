@@ -228,6 +228,7 @@
             - [2017-11-4](#2017-11-4)
             - [2017-11-5](#2017-11-5)
             - [2017-11-6](#2017-11-6)
+            - [2017-11-7](#2017-11-7)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2670,8 +2671,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-6
 * [Python-Packaging-user-guide](https://packaging.python.org/)
-* 
+* [MINIX-back-door-Intel](https://www.networkworld.com/article/3236064/servers/minix-the-most-popular-os-in-the-world-thanks-to-intel.html)
+* [libreboot](https://libreboot.org/faq.html#intel)
+* [GreenHoney](http://muyueh.com/greenhoney/)
+* [Difference-between-stack-and-frame](https://stackoverflow.com/questions/23848391/what-is-the-difference-between-a-stack-and-a-frame)
 
+#### 2017-11-7
+* [FP-Jargon](https://functional.works-hub.com/blog/Functional-Programming-Jargon)
+* [Virtual-memory-tricks](http://ourmachinery.com/post/virtual-memory-tricks/)
 
 
 
