@@ -2679,7 +2679,27 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-7
 * [FP-Jargon](https://functional.works-hub.com/blog/Functional-Programming-Jargon)
 * [Virtual-memory-tricks](http://ourmachinery.com/post/virtual-memory-tricks/)
+* [Advance-ctypes](https://dbader.org/blog/python-ctypes-tutorial-part-2)
+* [heap-to-stack-optimization](https://stackoverflow.com/questions/47075871/can-the-compiler-optimize-from-heap-to-stack-allocation/47076607#47076607)
+* [sort-and-universe](https://cs.stackexchange.com/questions/53674/difference-between-sort-and-universe)
+* [__del__-PEP484-Py](https://stackoverflow.com/questions/18971451/how-many-times-can-del-be-called-per-object-in-python)
+* [Race-condition-muduo](https://zhuanlan.zhihu.com/p/30522095)
+* [folly-Poly](https://github.com/facebook/folly/blob/master/folly/docs/Poly.md)
+* [type-family-dependency](https://stackoverflow.com/questions/11789552/type-keyword-in-class-and-instance-declarations/11791481#11791481)
+* [quick-sort-better](https://stackoverflow.com/questions/4289024/why-is-quicksort-faster-in-average-than-others/4292700#4292700)
+* [自相似函数](https://www.zhihu.com/question/35867114/answer/64865516)
+* [|-,|=,=>](https://www.zhihu.com/question/21191299)
+* [CSV-injection](https://zhuanlan.zhihu.com/p/30804904)
+* [Hash-Killer](http://vfleaking.blog.163.com/blog/static/1748076342013229102430789/)
+* [specifier-not-inherit](https://stackoverflow.com/questions/47104799/does-attribute-specifier-sequence-inherit/47105294#47105294)
+* [STATS-385-theory-of-ML](https://stats385.github.io/)
+* [Windows-TCP-winsocks](https://web.archive.org/web/20020322041909/http://www.kuro5hin.org/story/2001/6/19/05641/7357)
+* [乱序执行-内存屏障](http://blog.csdn.net/dd864140130/article/details/56494925)
 
+#### 2017-11-8 - 2017-11-9
+* [i386-i686-x86_64](https://serverfault.com/questions/610308/x86-i386-i686-amd64-i5-i7-archtecture-processor-confusion)
+* [F-Algebra](https://zhuanlan.zhihu.com/p/30833827)
+* 
 
 
 

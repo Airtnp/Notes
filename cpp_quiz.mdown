@@ -572,3 +572,18 @@ struct D {
 D d;
 C c(d); // conversion or exact match ?
 ```
+
+## Without struct/class
+```c++
+#include <iostream>
+#include <vector>
+#include <cstdint>
+#include <functional>
+#include <string>
+
+using namespace std;
+
+size_t hash(string s) {
+    return hash<string>{}(s);  // ambiguous 
+}
+```

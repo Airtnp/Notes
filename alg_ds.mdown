@@ -117,6 +117,8 @@
 * 布隆过滤器
 * Bellman–Held–Karp
 * + TSP
+* [波兰表](http://vfleaking.blog.163.com/blog/static/174807634201321981915529/)
+
 
 ## C
 
@@ -365,6 +367,7 @@
 * + ref:《SGI STL》
 * + Rabin-Karp rolling hash
 * + [ref](https://en.wikipedia.org/wiki/Rolling_hash)
+* + [卡掉自然溢出字典序hash](http://blog.163.com/cache_sillycross/blog/static/24827405720124181210725/)
 * + Zobrist
 * + Rabin Hood hash
 * + Cockoo hash
@@ -478,6 +481,7 @@
 * LCT (link-cut tree)
 * + [严格logn](https://zhuanlan.zhihu.com/p/29221551)
 * + [严格logn-2](https://zhuanlan.zhihu.com/p/30704955)
+* + ST-tree
 * 链剖
 * 连通分量
 * + 强连通分量 (tarjan)
@@ -648,6 +652,7 @@ struct element {
 * Rosser theorem (nth prime)
 * + [ref](https://math.stackexchange.com/questions/1270814/bounds-for-n-th-prime)
 * RRB Vector
+* RC Tree
 
 ## S
 
@@ -870,6 +875,7 @@ struct element {
 * + 函数式
 * + 区间k大
 * 字典树 (Trie Tree)
+* + x-fast trie / y-fast trie
 * 在线算法
 * zkw线段树
 * 状态机

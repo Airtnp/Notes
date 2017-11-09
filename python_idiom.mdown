@@ -23,6 +23,7 @@
 * [] * n ==> generate n reference to mutable [] instead of copy
 * `{}` ==> empty dict
 * `set()` ==> empty set
+* 任何缩进 任何缩进字符都被允许
 
 ## A
 
