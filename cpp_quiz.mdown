@@ -1,5 +1,26 @@
 # Cpp Quiz
 
+## Array is sure not pointer!
+```c++
+int arr[1]; 
+int *p;
+arr = xxx; // Error 
+p = xxx; // OK 
+
+int arr[10]; 
+int *p = (int*)malloc(sizeof(int)*10)； 
+size_t as = sizeof(arr); // 40 
+size_t ps = sizeof(p); // 4
+```
+
+## Bad, bad VLA
+```c++
+// Only valid in C99 and optional C11 (GNU11)
+int a = 100;
+int v[a] = {0};
+sizeof(v); // 400! runtime evaluation
+```
+
 ## aggr-init vs. delete function
 * [dis](https://stackoverflow.com/q/33988297/8563711)
 ```c++
@@ -261,7 +282,13 @@ static_assert(sizeof(int)*p == p * 4, ""); // will not parse as size((int*)p);
 class Foo {
     struct Bar { int i; };
 public:
-    Bar Baz() { return Bar(); }
+    Bar Baz() { return Bar(); } // Your problem...
+};
+
+class A {
+    class B {};
+public:
+    typedef B user_t; // Because you choose it
 };
 
 int main() {
@@ -346,14 +373,6 @@ class X::X::X x3; // ...and so on...
 struct X{ void func(); };
 struct Y : public X{};
 decltype(&Y::func) // void (X::*)()
-```
-
-## Bad, bad VLA
-```c++
-// Only valid in C99 and partly C11
-int a = 100;
-int v[a] = {0};
-sizeof(v); // 400! runtime evaluation
 ```
 
 ## Dependent name
@@ -585,5 +604,20 @@ using namespace std;
 
 size_t hash(string s) {
     return hash<string>{}(s);  // ambiguous 
+}
+```
+
+## unordered_map before 14
+* The order of the elements that are not erased is preserved (this makes it possible to erase individual elements while iterating through the container) (since C++14)
+* [discussion-and-solution](https://stackoverflow.com/questions/38468844/erasing-elements-from-unordered-map-in-a-loop)
+```c++
+std::unordered_map<...> m;
+auto it = m.begin();
+while (it != m.end())
+{
+    if (pred(*it))
+        it = m.erase(it); // UB before 14
+    else
+        ++it;
 }
 ```

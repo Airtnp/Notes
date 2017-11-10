@@ -229,6 +229,7 @@
             - [2017-11-5](#2017-11-5)
             - [2017-11-6](#2017-11-6)
             - [2017-11-7](#2017-11-7)
+            - [2017-11-8 - 2017-11-9](#2017-11-8---2017-11-9)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2699,7 +2700,15 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-8 - 2017-11-9
 * [i386-i686-x86_64](https://serverfault.com/questions/610308/x86-i386-i686-amd64-i5-i7-archtecture-processor-confusion)
 * [F-Algebra](https://zhuanlan.zhihu.com/p/30833827)
-* 
+* [Fast-typechecking-for-JS](https://blog.acolyer.org/2017/11/08/fast-and-precise-type-checking-for-javascript/)
+* [MIN-MAX-operator-UNIX-C](https://retrocomputing.stackexchange.com/questions/4965/why-were-the-min-and-the-max-operators-abandoned-in-the-c-language)
+* [Ten-modern-language-feature](https://medium.com/@kasperpeulen/10-features-from-various-modern-languages-that-i-would-like-to-see-in-any-programming-language-f2a4a8ee6727)
+* [boost-multi_index_map](https://stackoverflow.com/questions/4206349/how-boost-multi-index-is-implemented)
+* [real-time-ascii-decision-tree](https://art.pixlab.io/)
+
+
+
+
 
 
 
