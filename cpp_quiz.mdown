@@ -534,6 +534,9 @@ int main() {
   );
 }
 ```
+* another requirement: visitor of std::visit must be exhausive (some return type and can receive all kinds of input value)
+* + g++ directly use get<0>, the hinting was soooooooooo sabi
+* `variant<T, T>` is ill-formed but without diagnose
 
 ## Member specialized (such a dick)
 ```c++
@@ -619,5 +622,80 @@ while (it != m.end())
         it = m.erase(it); // UB before 14
     else
         ++it;
+}
+```
+
+## A real problem #1
+What's wrong with this?
+```c++
+#include <iostream>
+#include <vector>
+#include <cstdint>
+#include <string>
+#include <unordered_map>
+#include <functional>
+#include <tuple>
+#include <cassert>
+#include <variant>
+using namespace std;
+template <std::size_t I, typename ...Args>
+auto tuple_index_impl(size_t n, std::tuple<Args...>& tp) {
+    // compile-time decide/check return type will not notice runtime branch end conditon
+    // if you only write one if constexpr without else, still not notice
+    // only if constexpr { ... } else { ... }
+    // Also: the return type will deduce differently and failed
+    if (I >= sizeof...(Args)) {
+        throw std::out_of_range("Out of bound.");
+        return {};
+    } else {    
+        if (n == I) {
+            return std::get<I>(tp);
+        }
+        return tuple_index_impl<I + 1, Args...>(n, tp);
+    }
+}
+
+template <typename ...Args>
+auto tuple_index(size_t n, std::tuple<Args...>& tp) {
+    return tuple_index_impl<0, Args...>(n, tp);
+}
+
+
+int main() {
+    int i = 2;
+    tuple<int, long, int> tp{1, 233, 2};
+    /* Question 2: why variant failed (some type ill-formed)
+    std::visit(
+        [](long long&& c) { 
+            std::cout << c << std::endl; 
+        },
+        tuple_index(i, tp)
+    );
+    */
+}
+```
+
+## Short circuit ensure side-effect
+* [discussion](https://stackoverflow.com/questions/3635722/short-circuit-evaluation-and-side-effects)
+```c++
+int main() {
+    fork(); // (1 parent and 1 child) 
+    fork() && fork() || fork(); // 4(both fork) + 4(both fork) + 2(only child do this fork)
+    fork(); // x2 = 20
+}
+```
+
+## C/C++ about pointer
+```c++
+
+#include  <stdio.h>
+
+int main(void)
+{
+    int* x, *y;
+    x = &(y); // fail in C++, valid in C
+    y = &(x);
+    printf("Hello, world!\n");
+    return 0;
 }
 ```

@@ -2705,7 +2705,17 @@ Order of items is just based on Nothing :: Maybe.
 * [Ten-modern-language-feature](https://medium.com/@kasperpeulen/10-features-from-various-modern-languages-that-i-would-like-to-see-in-any-programming-language-f2a4a8ee6727)
 * [boost-multi_index_map](https://stackoverflow.com/questions/4206349/how-boost-multi-index-is-implemented)
 * [real-time-ascii-decision-tree](https://art.pixlab.io/)
+* [x86_64-JIT-python](https://csl.name/post/python-jit/)
 
+#### 2017-11-10
+* [8-yrs-of-Golang](https://blog.golang.org/8years)
+* [Apple-A11-core](https://www.mikeash.com/pyblog/friday-qa-2017-11-10-observing-the-a11s-heterogenous-cores.html)
+* [IME-JTAG-using-USB](https://thenextweb.com/security/2017/11/09/researchers-find-almost-every-computer-intel-skylake-cpu-can-owned-via-usb/?amp=1)
+
+#### 2017-11-11
+* [x86_64-TCP-bind-explain](https://pentesterslife.blog/2017/11/01/x86_64-tcp-bind-shellcode-with-basic-authentication-on-linux-systems/)
+* [Create-MIDI-from-scratch-in-C++](https://www.youtube.com/watch?v=6PFf6klllAE)
+* [buffer-overflow-attack](http://www.cnblogs.com/fanzhidongyzby/p/3250405.html)
 
 
 
