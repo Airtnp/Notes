@@ -230,6 +230,9 @@
             - [2017-11-6](#2017-11-6)
             - [2017-11-7](#2017-11-7)
             - [2017-11-8 - 2017-11-9](#2017-11-8---2017-11-9)
+            - [2017-11-10](#2017-11-10)
+            - [2017-11-11](#2017-11-11)
+            - [2017-11-12](#2017-11-12)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2716,6 +2719,12 @@ Order of items is just based on Nothing :: Maybe.
 * [x86_64-TCP-bind-explain](https://pentesterslife.blog/2017/11/01/x86_64-tcp-bind-shellcode-with-basic-authentication-on-linux-systems/)
 * [Create-MIDI-from-scratch-in-C++](https://www.youtube.com/watch?v=6PFf6klllAE)
 * [buffer-overflow-attack](http://www.cnblogs.com/fanzhidongyzby/p/3250405.html)
+* [Capsule-Network-explained](https://kndrck.co/posts/capsule_networks_explained/)
+* [Albuquerque-ISO-C++-Trip-Report](https://www.reddit.com/r/cpp/comments/7ca2sh/2017_albuquerque_iso_c_committee_reddit_trip/)
+
+#### 2017-11-12
+* [Linux-sandboxing-improvement-in-FF57](http://www.morbo.org/2017/11/linux-sandboxing-improvements-in.html)
+* [C-locale-MPV](https://github.com/mpv-player/mpv/commit/1e70e82baa9193f6f027338b0fab0f5078971fbe)
 
 
 
