@@ -699,3 +699,27 @@ int main(void)
     return 0;
 }
 ```
+
+## Ranged-based-for-loop pitfall
+* [proposal](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0614r0.html)
+```c++
+class T {
+  std::vector<int> data_;
+public:
+  std::vector<int>& items() { return data_; }
+  // ...
+};
+
+{
+  T thing = f();
+  for (auto& x : thing.items()) {
+    // Note: “for (auto& x : f().items())” is WRONG
+    mutate(&x);
+    log(x);
+  }
+}
+```
+* The wrong is because 
+```c++
+auto&& temp = f().items(); // This will not extend lifetime! Causes dangling reference
+```
