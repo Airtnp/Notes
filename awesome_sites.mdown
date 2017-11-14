@@ -233,6 +233,8 @@
             - [2017-11-10](#2017-11-10)
             - [2017-11-11](#2017-11-11)
             - [2017-11-12](#2017-11-12)
+            - [2017-11-13](#2017-11-13)
+            - [2017-11-14](#2017-11-14)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2725,7 +2727,22 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-12
 * [Linux-sandboxing-improvement-in-FF57](http://www.morbo.org/2017/11/linux-sandboxing-improvements-in.html)
 * [C-locale-MPV](https://github.com/mpv-player/mpv/commit/1e70e82baa9193f6f027338b0fab0f5078971fbe)
+* [HS-ABQ-Trip-report](https://herbsutter.com/2017/11/11/trip-report-fall-iso-c-standards-meeting-albuquerque/amp/)
+* [Careful-with-PyPI](https://glyph.twistedmatrix.com/2017/10/careful-with-that-pypi.html)
+* [PowerPC-block-diagram](https://www.powerpc-notebook.org/2017/11/powerpc-notebook-block-diagram-done/)
+* 
 
+#### 2017-11-13
+* [let-polymorphism](https://www.haskell.org/tutorial/pitfalls.html)
+* [Unification-ML-in-JS](https://zhuanlan.zhihu.com/p/24181997)
+* [Omega-in-Haskell](https://stackoverflow.com/questions/33546004/is-it-possible-to-define-omega-combinator-%CE%BBx-xx-in-modern-haskell)
+* [Universal-Existential-type-in-Haskell](https://stackoverflow.com/questions/14299638/existential-vs-universally-quantified-types-in-haskell)
+* [Existential-Type-in-Haskell](https://stackoverflow.com/questions/10753073/whats-the-theoretical-basis-for-existential-types/10753957#10753957)
+* [Existential-type-haskell](http://iveselov.info/posts/2012-08-30-existential-types.html)
+
+#### 2017-11-14
+* [FSM-Haskell](https://wickstrom.tech/finite-state-machines/2017/11/10/finite-state-machines-part-1-modeling-with-haskell.html)
+* 
 
 
 
