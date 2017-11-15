@@ -723,3 +723,81 @@ public:
 ```c++
 auto&& temp = f().items(); // This will not extend lifetime! Causes dangling reference
 ```
+
+## Non-dependent name
+* [discussion](https://stackoverflow.com/questions/47261553/non-dependent-name-lookup-and-lambda)
+```c++
+template <class T>
+struct Outer
+{
+    template <class U>
+    void f();
+
+    void bar(Outer outer) {
+        [outer](){ outer.f<int>(); };
+    }
+};
+
+int main() { }
+```
+
+## constexpr exchange (change in C++20 ABQ)
+```c++
+template<class T, class U = T>
+constexpr T exchange(T& obj, U&& new_value) // without constexpr, won't work
+{
+    T old_value = std::move(obj);
+    obj = std::forward<U>(new_value);
+    return old_value;
+}
+
+struct S
+{
+  int* p;
+  int n;
+ 
+  constexpr S(S&& other)
+    :p{std::exchange(other.p, nullptr)}
+    ,n{std::exchange(other.n, 0)}
+  {}
+ 
+  constexpr S& operator=(S&& other) {
+    p = std::exchange(other.p, nullptr); // move p, while leaving nullptr in other.p
+    n = std::exchange(other.n, 0); // move n, while leaving zero in other.n
+    return *this;
+  }
+};
+```
+
+## enable_shared_from_this
+```c++
+struct S
+{
+  shared_ptr<S> dangerous()
+  {
+     return shared_ptr<S>(this);   // don't do this!
+  }
+};
+
+int main()
+{
+   shared_ptr<S> sp1(new S); // They are seperate
+   shared_ptr<S> sp2 = sp1->dangerous();
+   return 0;
+}
+
+struct S : enable_shared_from_this<S>
+{
+    // enable_shared_from_this<T> adds a private weak_ptr<T> instance to T which holds the 'one true reference count' for the instance of T.
+    shared_ptr<S> not_dangerous()
+    {
+         return shared_from_this();
+    }
+}
+
+int main()
+{
+   S *p = new S;
+   shared_ptr<S> sp2 = p->not_dangerous();     // also bad.
+}
+```

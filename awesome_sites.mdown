@@ -2742,6 +2742,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-14
 * [FSM-Haskell](https://wickstrom.tech/finite-state-machines/2017/11/10/finite-state-machines-part-1-modeling-with-haskell.html)
+* [Executable-Space-protection-and-ASLR](http://www.productive-cpp.com/hardening-cpp-programs-executable-space-protection-address-space-layout-randomization-aslr/)
+* [Fearless-concurrency-in-rust](https://blog.rust-lang.org/2017/11/14/Fearless-Concurrency-In-Firefox-Quantum.html)
+* [Intel Microcode Extra Undocumented Header](https://github.com/platomav/MCExtractor/wiki/Intel-Microcode-Extra-Undocumented-Header)
+* [Haskell-WASM](https://dhc.dfinity.org/)
+
+#### 2017-11-15
+* [Cost-of-JS](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
+* [Haskell-survey](http://taylor.fausak.me/2017/11/15/2017-state-of-haskell-survey-results/)
 * 
 
 
