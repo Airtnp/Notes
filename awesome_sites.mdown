@@ -235,6 +235,8 @@
             - [2017-11-12](#2017-11-12)
             - [2017-11-13](#2017-11-13)
             - [2017-11-14](#2017-11-14)
+            - [2017-11-15](#2017-11-15)
+            - [2017-11-16](#2017-11-16)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2750,6 +2752,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-15
 * [Cost-of-JS](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
 * [Haskell-survey](http://taylor.fausak.me/2017/11/15/2017-state-of-haskell-survey-results/)
+* [Optimizing-Pandas-code](https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6)
+
+#### 2017-11-16
+* [Intro-to-Nullable-Reference-Types](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/nullable-reference-types-in-csharp/)
 * 
 
 
