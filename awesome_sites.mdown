@@ -237,6 +237,7 @@
             - [2017-11-14](#2017-11-14)
             - [2017-11-15](#2017-11-15)
             - [2017-11-16](#2017-11-16)
+            - [2017-11-17](#2017-11-17)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2756,7 +2757,18 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-16
 * [Intro-to-Nullable-Reference-Types](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/nullable-reference-types-in-csharp/)
-* 
+* [Digital-Securiry-Motherboard](https://motherboard.vice.com/en_us/article/d3devm/motherboard-guide-to-not-getting-hacked-online-safety-guide)
+* [Speed-up-Python-using-Rust](https://developers.redhat.com/blog/2017/11/16/speed-python-using-rust/)
+
+#### 2017-11-17
+* [Improving-debugging-of-std-function](https://blogs.msdn.microsoft.com/vcblog/2017/11/16/improving-the-debugging-experience-for-stdfunction/)
+* [C++-Interview](http://blog.csdn.net/shanghairuoxiao/article/details/72876248)
+* [Best-result-of-ML](https://github.com//RedditSota/state-of-the-art-result-for-machine-learning-problems)
+* [Graph-theorem](https://zhuanlan.zhihu.com/p/30947936)
+* [smart-pointer](https://zhuanlan.zhihu.com/p/30933682)
+* [Intro-to-ME](https://zhuanlan.zhihu.com/p/30971549)
+* [MIT-6.824-Intro](https://www.zhihu.com/question/29597104/answer/128443409)
+* [<=>-for-optional](https://medium.com/@barryrevzin/implementing-the-spaceship-operator-for-optional-4de89fc6d5ec)
 
 
 
