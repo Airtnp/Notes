@@ -801,3 +801,22 @@ int main()
    shared_ptr<S> sp2 = p->not_dangerous();     // also bad.
 }
 ```
+
+## value with name is lvalue (except enumeration)
+
+## ternary operator -> (l/rvalue)
+```c++
+int a=5, b=3;
+++(a > b ? a : b);
+
+int a=5;
+double b=3;
+++( a > b ? a : sb); // Error
+```
+* same type lvalue -> lvalue
+* otherwise -> do common_type -> rvalue
+
+## Abominable Function Types
+* [proposal](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0172r0.html)
+* `using abominable = void() const volatile &&;`
+* you cannot decay it! const/volatile decorates `this`

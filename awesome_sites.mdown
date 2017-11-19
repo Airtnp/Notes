@@ -238,6 +238,8 @@
             - [2017-11-15](#2017-11-15)
             - [2017-11-16](#2017-11-16)
             - [2017-11-17](#2017-11-17)
+            - [2017-11-18](#2017-11-18)
+            - [2017-11-19](#2017-11-19)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2770,6 +2772,12 @@ Order of items is just based on Nothing :: Maybe.
 * [MIT-6.824-Intro](https://www.zhihu.com/question/29597104/answer/128443409)
 * [<=>-for-optional](https://medium.com/@barryrevzin/implementing-the-spaceship-operator-for-optional-4de89fc6d5ec)
 
+#### 2017-11-18
+* [Fast-exact-interger-division-using-floating-point-operations](https://lemire.me/blog/2017/11/16/fast-exact-integer-divisions-using-floating-point-operations/)
+* [Wrong-way-for-benchmarking-integer-comparision](https://blogs.msdn.microsoft.com/oldnewthing/20171117-00/?p=97416)
+
+#### 2017-11-19
+* [内存断点/硬件断点](https://www.zhihu.com/question/52625624)
 
 
 
