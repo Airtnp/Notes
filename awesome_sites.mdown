@@ -240,6 +240,7 @@
             - [2017-11-17](#2017-11-17)
             - [2017-11-18](#2017-11-18)
             - [2017-11-19](#2017-11-19)
+            - [2017-11-20](#2017-11-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2778,6 +2779,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-19
 * [内存断点/硬件断点](https://www.zhihu.com/question/52625624)
+* [PE-files](http://www.4hou.com/system/7782.html)
+* [Windows-VEH](http://syprog.blogspot.com/2011/10/windows-structured-and-vectored.html)
+
+#### 2017-11-20
+* [Design-of-Python](https://zhuanlan.zhihu.com/p/26895103)
+* [Design-of-Python-2](https://zhuanlan.zhihu.com/p/27678351)
+* [Python-ASDL-load-store-del](https://bytes.com/topic/python/answers/845057-what-do-_ast-load-store-del-augload-augstore-param-mean)
+* + AugLoad/AugStore are not used in current implementation
 
 
 
