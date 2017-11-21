@@ -20,6 +20,7 @@
 * a[i, j] ==> a.__getitem__((i, j))
 * + `...` ==> `Ellipsis`
 * + `:` ==> `slice(start, end, step)`
+* + - `:` ==> `slice(None, None, None)`
 * [] * n ==> generate n reference to mutable [] instead of copy
 * `{}` ==> empty dict
 * `set()` ==> empty set

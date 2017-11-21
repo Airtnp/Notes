@@ -241,6 +241,7 @@
             - [2017-11-18](#2017-11-18)
             - [2017-11-19](#2017-11-19)
             - [2017-11-20](#2017-11-20)
+            - [2017-11-21](#2017-11-21)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2787,8 +2788,18 @@ Order of items is just based on Nothing :: Maybe.
 * [Design-of-Python-2](https://zhuanlan.zhihu.com/p/27678351)
 * [Python-ASDL-load-store-del](https://bytes.com/topic/python/answers/845057-what-do-_ast-load-store-del-augload-augstore-param-mean)
 * + AugLoad/AugStore are not used in current implementation
+* [Debugging-multiprocess-python](http://blog.ptsang.net/debugging_python_multiprocessing)
+* [TLB-context-switch](http://www.wowotech.net/process_management/context-switch-tlb.html)
+* [Inductive-Coinductive-Haskell](https://stackoverflow.com/questions/39854514/are-lists-inductive-or-coinductive-in-haskell)
+* [Linus-Security-are-Bugs](https://www.reddit.com/r/programming/comments/7ebpum/linus_tells_google_security_engineers_what_he/)
+* [Microservice-in-golang](http://ewanvalentine.io/microservices-in-golang-part-1/)
+* [Improve-math-in-glibc](https://developers.redhat.com/blog/2015/01/02/improving-math-performance-in-glibc/)
+* [block-rewriting-clang](https://techtalk.intersec.com/2014/11/blocks-rewriting-with-clang/)
+* [implementation-block](http://linlexus.com/implementation_of_block/)
+* [Implement-closure-in-C](http://hokstad.com/how-to-implement-closures)
 
-
+#### 2017-11-21
+* 
 
 
 ## Tools
