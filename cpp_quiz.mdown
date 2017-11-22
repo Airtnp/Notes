@@ -835,3 +835,37 @@ void fadd(double a[static restrict 10],
     }
 }
 ```
+
+#### Anonymous union with using
+```c++
+int main() {
+    using T = union {
+        int a;
+    };
+    // No valid a!
+    union {
+        int b;
+    }
+    b = 1; // OK
+}
+```
+
+#### constexpr function parameter?
+* [discussion](https://stackoverflow.com/questions/24580714/why-is-this-not-a-constant-expression)
+* [discussion](https://stackoverflow.com/questions/44995196/static-member-access-in-constant-expressions/44996066)
+```c++
+constexpr int incr(int& n) {
+  return ++n;
+}
+constexpr int g(int k) {
+  constexpr int x = incr(k); // error: incr(k) is not a core constant
+                             // expression because lifetime of k
+                             // began outside the expression incr(k)
+  return x;
+}
+constexpr int h(int k) {
+  int x = incr(k); // OK: x is not required to be initialized with a core
+                   // constant expression
+  return x;
+}
+```

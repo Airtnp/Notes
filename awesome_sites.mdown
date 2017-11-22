@@ -2799,7 +2799,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Implement-closure-in-C](http://hokstad.com/how-to-implement-closures)
 
 #### 2017-11-21
-* 
+* [Replacing x86 firmware with Linux and Go](https://lwn.net/SubscriberLink/738649/81007748bf15c1e5/)
+* [Hask-is-even-not-a-category](https://wiki.haskell.org/Hask#Is_Hask_even_a_category.3F)
+* [JIT-for-x86_64-Py](https://csl.name/post/python-compiler/)
+
+#### 2017-11-22
+* [deprecated-is_literal_type](https://stackoverflow.com/questions/40351816/deprecated-stdis-literal-type-in-c17)
+* [constexpr-function-parameter](https://mpark.github.io/programming/2017/05/26/constexpr-function-parameters/)
 
 
 ## Tools
