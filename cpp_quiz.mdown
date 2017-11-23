@@ -869,3 +869,28 @@ constexpr int h(int k) {
   return x;
 }
 ```
+
+## deduce first
+```c++
+template <typename R = int, typename U>
+R foo() {
+    return -0.1;
+}
+
+
+int main() {
+    foo<long long>(1); // return long long
+}
+```
+
+## template default parameter
+```c++
+template<typename T1, typename T2 = int> class A;
+template<typename T1 = int, typename T2> class A;
+// the above is the same as the following: (same as function default parameter)
+template<typename T1 = int, typename T2 = int> class A;
+
+// not same
+template<typename T = int> class X;
+template<typename T = int> class X {}; // error
+```
