@@ -242,6 +242,8 @@
             - [2017-11-19](#2017-11-19)
             - [2017-11-20](#2017-11-20)
             - [2017-11-21](#2017-11-21)
+            - [2017-11-22](#2017-11-22)
+            - [2017-11-23](#2017-11-23)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2068,6 +2070,7 @@ Order of items is just based on Nothing :: Maybe.
 
 ### 2017-9-1
 * [detecting-debugger-by-int3-behavior](http://www.triplefault.io/2017/08/detecting-debuggers-by-abusing-bad.html)
+* + 0xCD 0x03 not work in Windows (《软件调试》)
 * [ub-cause-nevercall-run](http://hn.premii.com/#/comments/15147335)
 * [redesign-python-namedtuple](https://lwn.net/Articles/731423/)
 * [package-fishing-pypi](http://blog.fatezero.org/2017/06/01/package-fishing/)
@@ -2812,8 +2815,13 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-23
 * [Rust-1.22](https://blog.rust-lang.org/2017/11/22/Rust-1.22.html)
 * [understanding-co_await](https://lewissbaker.github.io/2017/11/17/understanding-operator-co-await)
-
-
+* [using-c++-coroutine-in-boost](https://blogs.msdn.microsoft.com/vcblog/2017/05/19/using-c-coroutines-with-boost-c-libraries/)
+* [coroutine-theory](https://lewissbaker.github.io/2017/09/25/coroutine-theory)
+* [logical-linear-virtual-physical-address](https://www.zhihu.com/question/29918252)
+* [MSVC-breakpoint](https://stackoverflow.com/questions/370195/when-and-why-will-an-os-initialise-memory-to-0xcd-0xdd-etc-on-malloc-free-new)
+* [reverse-renpy](https://www.taricorp.net/2014/reverse-engineering-renpy-packages/)
+* [隐写术](https://smartjinyu.com/ctf/2016/11/29/introduction_to_stereo.html)
+* [Inside memory management](https://www.ibm.com/developerworks/linux/library/l-memory/)
 
 
 
@@ -2862,3 +2870,4 @@ Order of items is just based on Nothing :: Maybe.
 * [高匿IP](https://proxy.coderbusy.com/zh-cn/classical/anonymous-type/highanonymous.aspx)
 * [PythonTutor](http://pythontutor.com/)
 * [ODA](https://www.onlinedisassembler.com/odaweb/)
+* [tidr_](https://tldr.ostera.io)
