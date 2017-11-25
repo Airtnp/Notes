@@ -2822,6 +2822,19 @@ Order of items is just based on Nothing :: Maybe.
 * [reverse-renpy](https://www.taricorp.net/2014/reverse-engineering-renpy-packages/)
 * [隐写术](https://smartjinyu.com/ctf/2016/11/29/introduction_to_stereo.html)
 * [Inside memory management](https://www.ibm.com/developerworks/linux/library/l-memory/)
+* [理解 ReadDirectoryChangesW](http://blog.csdn.net/wzsy/article/details/6697613)
+
+#### 2017-11-24
+* [Spheres-and-points](https://ipfs.io/ipfs/QmfN5DojVnEsf1Une3DFwfUiFpfWnQf31f61qgybiXVeQE/blog/spheres-and-points/)
+* [glibc-memory](http://blog.csdn.net/maokelong95/article/details/52006379)
+* [design-memory-pool](https://www.zhihu.com/question/25527491)
+* [understanding-glibc-ptmalloc2](http://blog.csdn.net/maokelong95/article/details/51989081)
+* [fprintf-%p](https://stackoverflow.com/questions/24867814/printfp-and-casting-to-void)
+* [LRU-implement-on-CPU](https://stackoverflow.com/questions/23448528/how-is-an-lru-cache-implemented-in-a-cpu)
+* [KASLR](https://blog.netbsd.org/tnf/entry/the_strongest_kaslr_ever)
+
+#### 2017-11-25
+* [compare-POD-types](https://stackoverflow.com/questions/47437349/is-it-undefined-behavior-to-read-and-compare-padding-bytes-of-a-pod-type)
 
 
 
