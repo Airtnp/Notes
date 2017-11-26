@@ -897,3 +897,13 @@ template<typename T = int> class X {}; // error
 
 ## Compare POD bytes
 * [discussion](https://stackoverflow.com/questions/47437349/is-it-undefined-behavior-to-read-and-compare-padding-bytes-of-a-pod-type)
+
+## Union + friend
+* [clang::Type](https://www.zhihu.com/question/44213758/answer/262059049)
+
+## operator-> chaining
+```c++
+myClass->myValue;
+//--->
+(myClass.operator-> ())->myValue;
+```

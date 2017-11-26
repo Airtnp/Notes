@@ -311,6 +311,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Stupid-Python-Ideas](http://stupidpythonideas.blogspot.com/)
 * [preshing/Cpp](http://preshing.com/archives/)
 * [GeoffChappel/SoftwareAnalysis](http://www.geoffchappell.com/index.htm)
+* [Pointer/Smq/C++](http://www.cnblogs.com/pointer-smq/)
 
 
 ### OI/Alg
@@ -2835,7 +2836,25 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-25
 * [compare-POD-types](https://stackoverflow.com/questions/47437349/is-it-undefined-behavior-to-read-and-compare-padding-bytes-of-a-pod-type)
+* [Python-Top-10-Nov-2017](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-nov-2017-f46fcaa36e4b)
+* [My-unusual-hobby-Coq](https://www.stephanboyer.com/post/134/my-unusual-hobby)
 
+#### 2017-11-26
+* [ILP-DLP-TLP](https://software.intel.com/zh-cn/blogs/2011/12/02/400009299)
+* [constexpr-in-c++11-not-TM-Complete](https://stackoverflow.com/questions/9201506/is-constexpr-based-computation-turing-complete/9528554#9528554)
+* [oi-tools/tuack](https://git.thusaac.org/publish/tuack)
+* [std::reduce-in-C++17](https://stackoverflow.com/questions/47144083/why-has-stdreduce-been-added-in-c17/47191827#47191827)
+* [Albuquerque-C++-2017-Trip-Report](https://botondballo.wordpress.com/2017/11/20/trip-report-c-standards-meeting-in-albuquerque-november-2017/amp/)
+* [boost-coroutine-2-fiber](https://stackoverflow.com/questions/44521178/what-is-the-difference-between-coroutine-coroutine2-and-fiber/44562557#44562557)
+* [redis-skiplist-instead-of-rbtree](https://www.zhihu.com/question/20202931)
+* [Seemingly impossible functional programs](http://math.andrej.com/2007/09/28/seemingly-impossible-functional-programs/)
+* [c++-std::thread-unwound-stack-gcc-fix-in-8](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=55917)
+* [inline-variables](https://tech.io/playgrounds/2205/7-features-of-c17-that-will-simplify-your-code/inline-variables)
+* [Verify-Haskell-Functor](https://www.zhihu.com/question/65775009)
+* [Verify your Typeclass Instances in Haskell Today!](https://blog.jle.im/entry/verified-instances-in-haskell.html)
+* [constexpr-compile-faster](http://aras-p.info/blog/2017/10/24/Slow-to-Compile-Table-Initializers/)
+* [L123-Cache](https://zhuanlan.zhihu.com/p/31422201)
+* 
 
 
 
