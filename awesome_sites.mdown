@@ -2854,7 +2854,9 @@ Order of items is just based on Nothing :: Maybe.
 * [Verify your Typeclass Instances in Haskell Today!](https://blog.jle.im/entry/verified-instances-in-haskell.html)
 * [constexpr-compile-faster](http://aras-p.info/blog/2017/10/24/Slow-to-Compile-Table-Initializers/)
 * [L123-Cache](https://zhuanlan.zhihu.com/p/31422201)
-* 
+
+#### 2017-11-27
+* [Notes-on-shared_ptr/weak_ptr](https://eklitzke.org/notes-on-std-shared-ptr-and-std-weak-ptr)
 
 
 
