@@ -2858,6 +2858,8 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-11-27
 * [Notes-on-shared_ptr/weak_ptr](https://eklitzke.org/notes-on-std-shared-ptr-and-std-weak-ptr)
 
+#### 2017-11-28
+* 
 
 
 ## Tools

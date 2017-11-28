@@ -907,3 +907,40 @@ myClass->myValue;
 //--->
 (myClass.operator-> ())->myValue;
 ```
+
+## Lambda capture and compiler
+* [twitter](https://twitter.com/pepper_chico/status/935192195329593344)
+* [reddit](https://www.reddit.com/r/cpp/comments/7fl6zl/compilers_cant_agree_on_capture_type/)
+```c++
+#include <type_traits>
+
+int main() {
+    int x = 1;
+    int& y = x;
+    int&& z = static_cast<int&&>(x);
+
+    [ ]{ static_assert(std::is_same<decltype( x ), int>::value, "A1"); };
+    [=]{ static_assert(std::is_same<decltype( x ), int>::value, "A2"); };
+    [&]{ static_assert(std::is_same<decltype( x ), int>::value, "A3"); };
+
+    [ ]{ static_assert(std::is_same<decltype((x)), int&>::value, "B1"); };
+    [=]{ static_assert(std::is_same<decltype((x)), const int&>::value, "B2"); };
+    [&]{ static_assert(std::is_same<decltype((x)), int&>::value, "B3"); };
+
+    [ ]{ static_assert(std::is_same<decltype( y ), int&>::value, "C1"); };
+    [=]{ static_assert(std::is_same<decltype( y ), int&>::value, "C2"); };
+    [&]{ static_assert(std::is_same<decltype( y ), int&>::value, "C3"); };
+
+    [ ]{ static_assert(std::is_same<decltype((y)), int&>::value, "D1"); };
+    [=]{ static_assert(std::is_same<decltype((y)), int&>::value, "D2"); };
+    [&]{ static_assert(std::is_same<decltype((y)), int&>::value, "D3"); };
+
+    [ ]{ static_assert(std::is_same<decltype( z ), int&&>::value, "E1"); };
+    [=]{ static_assert(std::is_same<decltype( z ), int&&>::value, "E2"); };
+    [&]{ static_assert(std::is_same<decltype( z ), int&&>::value, "E3"); };
+
+    [ ]{ static_assert(std::is_same<decltype((z)), int&>::value, "F1"); };
+    [=]{ static_assert(std::is_same<decltype((z)), int&>::value, "F2"); };
+    [&]{ static_assert(std::is_same<decltype((z)), int&>::value, "F3"); };
+}
+```
