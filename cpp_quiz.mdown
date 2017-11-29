@@ -944,3 +944,77 @@ int main() {
     [&]{ static_assert(std::is_same<decltype((z)), int&>::value, "F3"); };
 }
 ```
+
+## template template template template
+```c++
+template <typename T>
+struct I {};
+
+template <template <typename T> class U>
+struct A {};
+
+template <template <template <typename T> typename U> typename V, template <typename T> typename U>
+void foo(V<U> wtf) {}
+
+int main() {
+    A<I> a;
+    foo(a);
+    return 0;
+}
+```
+
+## set_value_at_exit
+* If there is a use of a standard library object or function not permitted within signal handlers ([support.runtime]) that does not happen before ([intro.multithread]) completion of destruction of objects with static storage duration and execution of std​::​atexit registered functions ([support.start.term]), the program has undefined behavior. [ Note: If there is a use of an object with static storage duration that does not happen before the object's destruction, the program has undefined behavior. Terminating every thread before a call to std​::​exit or the exit from main is sufficient, but not necessary, to satisfy these requirements. These requirements permit thread managers as static-storage-duration objects. — end note ]
+* They either all must exit or all must not touch the standard library after main() returns. http://eel.is/c++draft/basic.start.term#6 … detach() + Xxx_at_thread_exit == the program can no longer meet that requirement, ever.
+```c++
+#include <iostream>
+#include <future>
+#include <thread>
+// UB on cppreference
+int main()
+{
+    using namespace std::chrono_literals;
+    std::promise<int> p;
+    std::future<int> f = p.get_future();
+    std::thread([&p] {
+          std::this_thread::sleep_for(1s);
+          p.set_value_at_thread_exit(9);
+    }).detach();
+ 
+    std::cout << "Waiting..." << std::flush;
+    f.wait();
+    std::cout << "Done!\nResult is: " << f.get() << '\n';
+}
+```
+
+## numeric_limits on what?
+* [discussion](https://stackoverflow.com/questions/47520847/c-why-does-numeric-limits-work-on-types-it-does-not-know)
+* `/* non-specialized */	T();`
+* you cannot specialize user-defined
+* but you can use it??
+```c++
+#include <iostream>
+#include <limits>
+using namespace std;
+
+// This is an int wrapper that defaults to 666 instead of 0
+class A {
+public:
+    int x;
+public:
+    A() : x(666) {}
+};
+
+int main() {
+    A a = std::numeric_limits<A>::max();
+    A b = std::numeric_limits<A>::max();
+
+    std::cout << a.x << "\n" << b.x; // 666 666
+    // your code goes here
+    return 0;
+}
+```
+
+## /Wall and -Weverything
+* [diag](https://gcc.godbolt.org/#g:!((g:!((g:!((h:codeEditor,i:(j:1,source:'%23include+%3Cvector%3E'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((g:!((h:compiler,i:(compiler:cl19_64,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',trim:'0'),libs:!(),options:'/std:c%2B%2Blatest+/Wall',source:1),l:'5',n:'0',o:'x86-64+MSVC+19+2017+RTW+(Editor+%231,+Compiler+%231)',t:'0')),k:50,l:'4',m:50,n:'0',o:'',s:0,t:'0'),(g:!((h:output,i:(compiler:1,editor:1),l:'5',n:'0',o:'%231+with+x86-64+MSVC+19+2017+RTW',t:'0')),header:(),l:'4',m:50,n:'0',o:'',s:0,t:'0')),k:50,l:'3',n:'0',o:'',t:'0')),l:'2',n:'0',o:'',t:'0')),version:4)
+* system headers are default excluded from warning sets

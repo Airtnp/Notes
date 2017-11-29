@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23-1)
+        - [2017-7-23](#2017-7-23)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,7 +187,7 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24-1)
+            - [2017-9-24](#2017-9-24)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
@@ -211,7 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
-            - [2017-10-20](#2017-10-20-1)
+            - [2017-10-20](#2017-10-20)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
@@ -244,6 +244,12 @@
             - [2017-11-21](#2017-11-21)
             - [2017-11-22](#2017-11-22)
             - [2017-11-23](#2017-11-23)
+            - [2017-11-24](#2017-11-24)
+            - [2017-11-25](#2017-11-25)
+            - [2017-11-26](#2017-11-26)
+            - [2017-11-27](#2017-11-27)
+            - [2017-11-28](#2017-11-28)
+            - [2017-11-29](#2017-11-29)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2859,7 +2865,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Notes-on-shared_ptr/weak_ptr](https://eklitzke.org/notes-on-std-shared-ptr-and-std-weak-ptr)
 
 #### 2017-11-28
-* 
+* [Personal-finance-for-engineer](https://cs007.blog/)
+* [Lib-of-parallel-algorithm-NESL](https://www.cs.cmu.edu/~scandal/nesl/algorithms.html)
+* [aria2-repair-chunks](https://orzfly.com/html/repair-file-chunks-with-aria2.html)
+* [Windows’s Virtual Address Space: A Short MSDN Story](http://www.tenouk.com/WinVirtualAddressSpace.html)
+
+#### 2017-11-29
+* [LINQ-ELI5](https://martinfowler.com/articles/collection-pipeline/)
 
 
 ## Tools
@@ -2907,3 +2919,4 @@ Order of items is just based on Nothing :: Maybe.
 * [PythonTutor](http://pythontutor.com/)
 * [ODA](https://www.onlinedisassembler.com/odaweb/)
 * [tidr_](https://tldr.ostera.io)
+* [matrix-calculus](http://www.matrixcalculus.org/)
