@@ -250,6 +250,7 @@
             - [2017-11-27](#2017-11-27)
             - [2017-11-28](#2017-11-28)
             - [2017-11-29](#2017-11-29)
+            - [2017-11-30](#2017-11-30)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2872,6 +2873,10 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-11-29
 * [LINQ-ELI5](https://martinfowler.com/articles/collection-pipeline/)
+
+#### 2017-11-30
+* [why-no-unsigned-float](https://stackoverflow.com/questions/512022/why-doesnt-c-have-unsigned-floats)
+
 
 
 ## Tools
