@@ -253,6 +253,7 @@
             - [2017-11-30](#2017-11-30)
             - [2017-12-1](#2017-12-1)
             - [2017-12-2](#2017-12-2)
+            - [2017-12-3](#2017-12-3)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2887,6 +2888,8 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-12-2
 * [python-chanllenge-solution](https://the-python-challenge-solutions.hackingnote.com)
 
+#### 2017-12-3
+* [Python-3-readiness](http://py3readiness.org/)
 
 ## Tools
 * [Repl.it](https://repl.it/)
