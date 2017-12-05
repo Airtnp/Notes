@@ -254,6 +254,8 @@
             - [2017-12-1](#2017-12-1)
             - [2017-12-2](#2017-12-2)
             - [2017-12-3](#2017-12-3)
+            - [2017-12-4](#2017-12-4)
+            - [2017-12-5](#2017-12-5)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2890,6 +2892,15 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-3
 * [Python-3-readiness](http://py3readiness.org/)
+
+#### 2017-12-4
+* [Persistent-RBT-in-Haskell](https://functional.works-hub.com/blog/Persistent-Red-Black-Trees-in-Haskell)
+* [SIMD-in-Rust](https://hugotunius.se/2017/12/01/exploring-simd-in-rust.html)
+* [Use-all-the-databases](https://compose.com/articles/use-all-the-databases-part-1/?cm_mmc=PSocial_Twitter-_-Analytics_Watson%20Data%20Platform-_-WW_WW-_-23218161_Tracking%20Pixel&cm_mmca1=000000XH&cm_mmca2=10000863&cm_mmca4=23218161&cm_mmca5=49375798&cm_mmca6=b56e212b-edae-4c2e-a257-5aad1c08b7d4&cvosrc=social%20network%20paid.twitter.Q42017HandlesBlog5_SD%20Behav_DesktopMobile_1x1&cvo_campaign=000000XH&cvo_pid=23218161)
+
+#### 2017-12-5
+* [Dependent-type-for-F#](https://jackfoxy.github.io/DependentTypes/)
+
 
 ## Tools
 * [Repl.it](https://repl.it/)
