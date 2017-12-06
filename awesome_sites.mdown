@@ -2900,6 +2900,8 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-5
 * [Dependent-type-for-F#](https://jackfoxy.github.io/DependentTypes/)
+* [Tarjan-DS](https://www.zhihu.com/question/65155704)
+* [HMM-CRF](https://www.zhihu.com/question/35866596)
 
 
 ## Tools

@@ -23,6 +23,7 @@ sizeof(v); // 400! runtime evaluation
 
 ## aggr-init vs. delete function
 * [dis](https://stackoverflow.com/q/33988297/8563711)
+* [change-in-C++17](https://stackoverflow.com/questions/47656093/changed-rules-for-protected-constructors-in-c17)
 ```c++
 struct Foo {
     Foo(const Foo &) = delete;

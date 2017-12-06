@@ -118,6 +118,7 @@
 * Bellman–Held–Karp
 * + TSP
 * [波兰表](http://vfleaking.blog.163.com/blog/static/174807634201321981915529/)
+* Borůvka
 
 
 ## C
@@ -761,6 +762,7 @@ struct element {
 * Shunting-yard (调度场)
 * + infix -> postfix
 * smooth sort
+* soft heap
 
 ## T
 
