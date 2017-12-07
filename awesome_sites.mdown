@@ -256,6 +256,8 @@
             - [2017-12-3](#2017-12-3)
             - [2017-12-4](#2017-12-4)
             - [2017-12-5](#2017-12-5)
+            - [2017-12-6](#2017-12-6)
+            - [2017-12-7](#2017-12-7)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2902,6 +2904,15 @@ Order of items is just based on Nothing :: Maybe.
 * [Dependent-type-for-F#](https://jackfoxy.github.io/DependentTypes/)
 * [Tarjan-DS](https://www.zhihu.com/question/65155704)
 * [HMM-CRF](https://www.zhihu.com/question/35866596)
+
+#### 2017-12-6
+* [PEP-557-Data-Classes](https://www.python.org/dev/peps/pep-0557/)
+
+#### 2017-12-7
+* [Attacking-IME](https://twitter.com/rootkovska/status/938458875522666497)
+* 
+
+
 
 
 ## Tools
