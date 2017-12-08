@@ -258,6 +258,7 @@
             - [2017-12-5](#2017-12-5)
             - [2017-12-6](#2017-12-6)
             - [2017-12-7](#2017-12-7)
+            - [2017-12-08](#2017-12-08)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2910,7 +2911,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-7
 * [Attacking-IME](https://twitter.com/rootkovska/status/938458875522666497)
-* 
+* [Ref-Out-C#](http://dailydotnettips.com/2017/11/17/back-to-basics-what-is-the-difference-between-ref-and-out-keyword-in-c/)
+* [Visual-Studio-15.5-MSVC-code-opt](https://blogs.msdn.microsoft.com/vcblog/2017/12/03/msvc-code-optimizer-improvements-in-visual-studio-2017-versions-15-5-and-15-3/)
+* [The Most Exciting Linux Kernel Stories Of 2017](https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kernel-2017-Highlights)
+* [tail-duplication](http://elegantc.blogspot.com/2016/05/tail-duplication-with-llvm.html)
+* [assume-no-aliasing](https://stackoverflow.com/questions/7298546/gcc-c-c-assume-no-pointer-aliasing)
+
+#### 2017-12-08
+* [auto-deduce-a-reference](https://blog.petrzemek.net/2017/12/08/when-auto-seemingly-deduces-a-reference-in-cpp/)
 
 
 
