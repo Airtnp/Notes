@@ -2919,6 +2919,8 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-08
 * [auto-deduce-a-reference](https://blog.petrzemek.net/2017/12/08/when-auto-seemingly-deduces-a-reference-in-cpp/)
+* [C++17-feature-removal-deprecation](https://blogs.msdn.microsoft.com/vcblog/2017/12/08/c17-feature-removals-and-deprecations/)
+* [longest-path-in-a-tree-proof](http://sighingnow.github.io/algorithm/longestpathintree.html)
 
 
 

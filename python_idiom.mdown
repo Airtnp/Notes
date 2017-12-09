@@ -237,7 +237,8 @@
 ## N
 * nested-if => `itertools.product(for, repeat=n)`
 * nonlocal (immutable type assignment)
-* 
+* NaN in python
+* + [discussion](https://stackoverflow.com/questions/47721635/in-operator-floatnan-and-np-nan)
 
 
 ## O
