@@ -259,6 +259,8 @@
             - [2017-12-6](#2017-12-6)
             - [2017-12-7](#2017-12-7)
             - [2017-12-08](#2017-12-08)
+            - [2017-12-09](#2017-12-09)
+            - [2017-12-10](#2017-12-10)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2921,6 +2923,42 @@ Order of items is just based on Nothing :: Maybe.
 * [auto-deduce-a-reference](https://blog.petrzemek.net/2017/12/08/when-auto-seemingly-deduces-a-reference-in-cpp/)
 * [C++17-feature-removal-deprecation](https://blogs.msdn.microsoft.com/vcblog/2017/12/08/c17-feature-removals-and-deprecations/)
 * [longest-path-in-a-tree-proof](http://sighingnow.github.io/algorithm/longestpathintree.html)
+
+#### 2017-12-09
+* [mmap-DMA](http://blog.jobbole.com/91891/)
+* [VFIO](https://ggaaooppeenngg.github.io/zh-CN/2017/06/05/VFIO-%E2%80%94%E2%80%94%E5%B0%86-DMA-%E6%98%A0%E5%B0%84%E6%9A%B4%E9%9C%B2%E7%BB%99%E7%94%A8%E6%88%B7%E6%80%81/)
+* [levity-polymorphism](https://stackoverflow.com/questions/35318562/what-is-levity-polymorphism)
+* [intrusive_ptr](https://www.zhihu.com/question/25271180)
+* [MIDI](https://www.zhihu.com/question/19584704)
+* [packaged_task-with-bind](https://stackoverflow.com/questions/33135304/c-create-an-stdpackaged-task-of-a-generic-stdbind/33156507#33156507)
+* [difference-between-promise-packaged_task-async](http://jakascorner.com/blog/2016/03/promise-difference.html)
+* [promise-packaged_task-async](https://stackoverflow.com/questions/17729924/when-to-use-promise-over-async-or-packaged-task/24164631#24164631)
+* [Windows10-System-Call-Stub-Changes](https://www.malwaretech.com/2015/07/windows-10-system-call-stub-changes.html)
+* [Windows-syscall](https://www.evilsocket.net/2014/02/11/on-windows-syscall-mechanism-and-syscall-numbers-extraction-methods/)
+* [RankN-Types](https://ocharles.org.uk/blog/guest-posts/2014-12-18-rank-n-types.html)
+* [Normal-to-Uniform-Distribution](https://www.zhihu.com/question/25111423)
+* [RankN-polymorphism-and-System-F](https://stackoverflow.com/questions/12031878/what-is-the-purpose-of-rank2types/12033549#12033549)
+* [Pushing the Limits of Windows](https://blogs.technet.microsoft.com/markrussinovich/2009/07/05/pushing-the-limits-of-windows-processes-and-threads/)
+* [threads-has-distinct-heap?](https://stackoverflow.com/questions/1665419/do-threads-have-a-distinct-heap/1682518#1682518)
+* [finally-always-execute-in-Java?](https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java)
+* [CrowdSourcing](https://www.zhihu.com/question/68660315/answer/267817552)
+* [Happen-before-Synchronized-with](https://zhuanlan.zhihu.com/p/31386431)
+* [Theorem-proof-in-Haskell](https://zhuanlan.zhihu.com/p/31567423)
+* [How do type classes differ from interfaces?](http://www.parsonsmatt.org/2017/01/07/how_do_type_classes_differ_from_interfaces.html)
+* [Desugar-Haskell-code](http://www.haskellforall.com/2014/10/how-to-desugar-haskell-code.html)
+* [Windows-kernel-bug](https://zhuanlan.zhihu.com/p/31739344)
+* [Partial-evaluation-interpreter-and-compiler](https://www.zhihu.com/question/263559593/answer/270924481)
+* [Welcome to a tour of Go in Haskell](https://a-tour-of-go-in-haskell.syocy.net/en_US/index.html)
+* [Data Structure for Strings](http://aandds.com/blog/algorithm-datastructure-str.html)
+* [Finite Field Arithmetic](http://www.loper-os.org/?p=1913)
+* [Dlang-with-C](https://dlang.org/blog/2017/12/05/interfacing-d-with-c-getting-started/)
+* [Git-as-a-purely-functional-DS](https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/)
+* [CSAPP-exception-OS](http://wdxtub.com/2016/04/16/thin-csapp-5/)
+
+#### 2017-12-10
+* [Find-haskell-bug-by-proving](https://www.joachim-breitner.de/blog/734-Finding_bugs_in_Haskell_code_by_proving_it)
+
+
 
 
 

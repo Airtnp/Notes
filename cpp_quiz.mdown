@@ -1022,3 +1022,96 @@ int main() {
 
 ## auto deduce a reference
 * [ref](https://blog.petrzemek.net/2017/12/08/when-auto-seemingly-deduces-a-reference-in-cpp/)
+
+## forward declaring with trailing type
+```c++
+// This file is a "Hello, world!" in C++ language by GCC for wandbox.
+#include <iostream>
+#include <cstdlib>
+
+template <typename T, typename... Args>
+auto TrailingMake(Args&&... args) -> std::enable_if_t<std::is_constructible_v<T, decltype(args)...>, T>; // That's a gcc bug
+
+template <typename T, typename... Args>
+auto TrailingMake(Args&&... args) -> std::enable_if_t<std::is_constructible_v<T, decltype(args)...>, T>
+{
+    return T{ std::forward<Args>(args)... };
+}
+
+template <typename T, typename... Args>
+std::enable_if_t<std::is_constructible_v<T, Args...>, T> NormalMake(Args&&... args);
+
+template <typename T, typename... Args>
+std::enable_if_t<std::is_constructible_v<T, Args...>, T> NormalMake(Args&&... args)
+{
+    return T{ std::forward<Args>(args)... };
+}
+
+int main()
+{
+    const auto a = TrailingMake<int>(1);
+    const auto b = NormalMake<int>(2);
+    (void)a, (void) b;
+}
+```
+
+## Base constructor order
+* [gotw](http://www.gotw.ca/gotw/080.htm)
+* First, the most derived class's constructor calls the constructors of the virtual base class subobjects. Virtual base classes are initialized in depth-first, left-to-right order.
+* Next, direct base class subobjects are constructed in the order they are declared in the class definition.
+* Next, (nonstatic) member subobjects are constructed, in the order they were declared in the class definition.
+* Finally, the body of the constructor is executed.
+```c++
+class B1 { };
+class V1 : public B1 { };
+class D1 : virtual public V1 { };
+
+class B2 { };
+class B3 { };
+class V2 : public B1, public B2 { };
+class D2 : public B3, virtual public V2 { };
+
+class M1 { };
+class M2 { };
+
+class X : public D1, public D2 { M1 m1_; M2 m2_; };
+/*
+
+B1      B1   B2
+|      |   /
+|      |  /
+|      | /
+V1      V2    B3
+|       |   /
+|v     v|  /
+|       | /
+D1       D2
+\     /
+    \   /
+    \ /
+    X
+
+first, construct the virtual bases:
+construct V1:
+    B1::B1()
+    V1::V1()
+construct V2:
+    B1::B1()
+    B2::B2()
+    V2::V2()
+
+next, construct the nonvirtual bases:
+construct D1:
+    D1::D1()
+construct D2:
+    B3::B3()
+    D2::D2()
+
+next, construct the members:
+M1::M1()
+M2::M2()
+
+finally, construct X itself:
+X::X()
+*/
+```
