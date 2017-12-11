@@ -261,6 +261,7 @@
             - [2017-12-08](#2017-12-08)
             - [2017-12-09](#2017-12-09)
             - [2017-12-10](#2017-12-10)
+            - [2017-12-11](#2017-12-11)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2957,8 +2958,10 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-10
 * [Find-haskell-bug-by-proving](https://www.joachim-breitner.de/blog/734-Finding_bugs_in_Haskell_code_by_proving_it)
+* [C99-features-C++](https://stackoverflow.com/questions/47524553/are-all-of-the-features-of-c99-also-in-c)
 
-
+#### 2017-12-11
+* [Strictness-Analysis-Haskell](http://fixpt.de/blog/2017-12-04-strictness-analysis-part-1.html)
 
 
 

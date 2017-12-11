@@ -1115,3 +1115,16 @@ finally, construct X itself:
 X::X()
 */
 ```
+
+## Accumulation
+```c++
+
+#include <vector>
+#include <numeric>
+
+int main(){
+  std::vector<double> vec{1.1,2.2,3.3,4.4,5.5};
+  return std::accumulate(begin(vec), end(vec), 0); // 15
+  return std::accumulate(begin(vec), end(vec), 0.0); // 16
+}
+```
