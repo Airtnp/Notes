@@ -262,6 +262,7 @@
             - [2017-12-09](#2017-12-09)
             - [2017-12-10](#2017-12-10)
             - [2017-12-11](#2017-12-11)
+            - [2017-12-12](#2017-12-12)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2962,6 +2963,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-11
 * [Strictness-Analysis-Haskell](http://fixpt.de/blog/2017-12-04-strictness-analysis-part-1.html)
+* [Monolithic-Micro-Hybrid-Kernel](https://www.zhihu.com/question/20314255)
+
+#### 2017-12-12
+* [Intro-to-Quantum-Computing](http://davidbkemp.github.io/QuantumComputingArticle/)
+* [Internet-protocol-changes](https://blog.apnic.net/2017/12/12/internet-protocols-changing/)
+* [石子归并-四边形优化-GarsiaWarch](http://blog.csdn.net/qq_33132383/article/details/75125993)
+* 
+
 
 
 

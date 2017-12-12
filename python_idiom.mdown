@@ -6,7 +6,7 @@
 * + a, b, *c = t ==> type(c) == list
 * + c = t[x:] ==> type(c) = tuple
 * \*\*kwargs : dict
-* [[]]*10 创建对同一个列表5次引用的列表
+* [[]]*10 创建对同一个列表10次引用的列表
 * `__slots__`: compile-time restrict attribute
 * + [ref](https://www.chrisbarra.xyz/posts/let-me-introduce-slots/)
 * + `__weakref__`

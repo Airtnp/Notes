@@ -1128,3 +1128,6 @@ int main(){
   return std::accumulate(begin(vec), end(vec), 0.0); // 16
 }
 ```
+
+## int/size_t as index
+* [discussion](https://twitter.com/lefticus/status/940608074426941445)
