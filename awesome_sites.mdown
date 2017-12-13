@@ -263,6 +263,7 @@
             - [2017-12-10](#2017-12-10)
             - [2017-12-11](#2017-12-11)
             - [2017-12-12](#2017-12-12)
+            - [2017-12-13](#2017-12-13)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2969,8 +2970,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Intro-to-Quantum-Computing](http://davidbkemp.github.io/QuantumComputingArticle/)
 * [Internet-protocol-changes](https://blog.apnic.net/2017/12/12/internet-protocols-changing/)
 * [石子归并-四边形优化-GarsiaWarch](http://blog.csdn.net/qq_33132383/article/details/75125993)
-* 
+* [异步同步-阻塞非阻塞](https://www.zhihu.com/question/19732473)
+* [Build-secure-PHP-software-2018](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software)
 
+#### 2017-12-13
+* [Avast-retdec](https://blog.avast.com/avast-open-sources-its-machine-code-decompiler)
+* 
 
 
 

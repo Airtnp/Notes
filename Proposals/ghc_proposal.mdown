@@ -1,0 +1,5 @@
+# GHC proposals
+
+* [proposals](https://github.com/ghc-proposals/ghc-proposals/tree/master/proposals)
+
+## 0000 Templates

@@ -401,6 +401,7 @@ public:
 void f(double adouble) {
   int i(int(adouble)); // function declaration int i(int adouble);
 }
+std::stringstream ss(std::string(argv[0])); // function declaration of ss (string argv[0] as array type)
 ```
 
 
