@@ -266,6 +266,7 @@
             - [2017-12-13](#2017-12-13)
             - [2017-12-14](#2017-12-14)
             - [2017-12-15](#2017-12-15)
+            - [2017-12-16](#2017-12-16)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2999,7 +3000,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-12-15
 * [MGSV-Graphics](http://www.adriancourreges.com/blog/2017/12/15/mgs-v-graphics-study/)
 * [Top-10-article-ML-Dec-17](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-dec-2017-82883b8062f5)
+* [BackPropagation](http://www.cnblogs.com/charlotte77/p/5629865.html)
 
+#### 2017-12-16
+* 
 
 
 ## Tools
