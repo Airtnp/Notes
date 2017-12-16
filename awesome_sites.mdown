@@ -264,6 +264,8 @@
             - [2017-12-11](#2017-12-11)
             - [2017-12-12](#2017-12-12)
             - [2017-12-13](#2017-12-13)
+            - [2017-12-14](#2017-12-14)
+            - [2017-12-15](#2017-12-15)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -2975,8 +2977,28 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-13
 * [Avast-retdec](https://blog.avast.com/avast-open-sources-its-machine-code-decompiler)
-* 
+* [图像-波](http://www.ruanyifeng.com/blog/2017/12/image-and-wave-filters.html)
+* [gcc-instruction-pattern](http://kristerw.blogspot.com/2017/12/more-about-gcc-instruction-patterns.html)
+* [JPEG-DCT](http://blog.csdn.net/abcjennifer/article/details/8074492)
+* [去除马赛克-GAN](https://zhuanlan.zhihu.com/p/27199954)
+* [单写多读-加锁](https://www.zhihu.com/question/31325454)
+* [ring-buffer-多核一致性](http://0xffffff.org/2017/02/21/40-atomic-variable-mutex-and-memory-barrier/)
+* [7-example-of-cache](https://coolshell.cn/articles/10249.html)
+* [false-sharing](http://0xffffff.org/2014/08/09/31-smp-false-sharing/)
+* [测试时间](http://0xffffff.org/2015/12/06/37-How-to-benchmark-code-execution-times/)
+* [Linux-IO](http://0xffffff.org/2017/05/01/41-linux-io/)
+* [Linux-memory-manage](http://0xffffff.org/2014/10/31/32-memory-management/)
+* [Linux-memory-structure](http://edsionte.com/techblog/archives/3652)
+* [Linux-memory](http://edsionte.com/techblog/archives/3937)
+* [Linux-Thread](http://0xffffff.org/2013/07/30/19-linux-thread-history/)
 
+#### 2017-12-14
+* [lock_guard-vs-unique_lock](https://stackoverflow.com/questions/20516773/stdunique-lockstdmutex-or-stdlock-guardstdmutex)
+* [Shamir's-Secret-Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
+
+#### 2017-12-15
+* [MGSV-Graphics](http://www.adriancourreges.com/blog/2017/12/15/mgs-v-graphics-study/)
+* [Top-10-article-ML-Dec-17](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-dec-2017-82883b8062f5)
 
 
 
