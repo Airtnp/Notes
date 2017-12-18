@@ -268,6 +268,7 @@
             - [2017-12-15](#2017-12-15)
             - [2017-12-16](#2017-12-16)
             - [2017-12-17](#2017-12-17)
+            - [2017-12-18](#2017-12-18)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3008,6 +3009,15 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-17
 * [最大矩阵和/最大全1子矩阵](http://www.voidcn.com/article/p-waiiowua-vy.html)
+* [Timeline-of-Programming-Languages](https://en.wikipedia.org/wiki/Timeline_of_programming_languages)
+* [Rust-for-Rubyist](https://matthias-endler.de/2017/rust-for-rubyists/)
+* [optional<bool>-specialization](https://medium.com/@barryrevzin/optional-bool-reference-or-constexpr-7cb410e8e4c4)
+* [Windows启动过程](http://www.cnblogs.com/daizhj/articles/1934456.html)
+
+#### 2017-12-18
+* [What-ORM-tells-me](http://woz.posthaven.com/what-orms-have-taught-me-just-learn-sql)
+* [How-to-write-your-own-cpp-game-engine](http://preshing.com/20171218/how-to-write-your-own-cpp-game-engine/)
+* [Py-Ruby-Profiler](https://jvns.ca/blog/2017/12/17/how-do-ruby---python-profilers-work-/)
 
 
 ## Tools
