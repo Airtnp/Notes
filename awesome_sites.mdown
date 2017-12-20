@@ -270,6 +270,7 @@
             - [2017-12-17](#2017-12-17)
             - [2017-12-18](#2017-12-18)
             - [2017-12-19](#2017-12-19)
+            - [2017-12-20](#2017-12-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3022,7 +3023,10 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-19
 * [C++17-progress-in-VS15.5-VS15.6](https://blogs.msdn.microsoft.com/vcblog/2017/12/19/c17-progress-in-vs-2017-15-5-and-15-6/)
-* 
+
+#### 2017-12-20
+* [violation-of-TCP](https://blog.cloudflare.com/this-is-strictly-a-violation-of-the-tcp-specification/)
+* [D's-newfangled-name-mangling](https://dlang.org/blog/2017/12/20/ds-newfangled-name-mangling/)
 
 
 ## Tools

@@ -817,6 +817,14 @@ double b=3;
 ```
 * same type lvalue -> lvalue
 * otherwise -> do common_type -> rvalue
+> C - conditional-expression:
+>> logical-OR-expression
+>> logical-OR-expression ? expression : conditional-expression
+
+> C++ - conditional-expression:
+>> logical-OR-expression
+>> logical-OR-expression ? expression : assignment-expression
+
 
 ## Abominable Function Types
 * [proposal](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0172r0.html)
@@ -1143,3 +1151,32 @@ int main(){
 ## WTF lambda capture
 * Right. More generally, a mention of a reference is not an odr-use if the reference is initialized by a constant expression, and captures are only necessary to permit odr-use.
 * [discussion](https://www.reddit.com/r/cpp/comments/7k03as/just_as_you_thought_you_understood_c/)
+
+## Always use auto
+```c++
+constexpr auto auto​()
+{
+  return 1;
+}
+
+typedef decltype(auto​()) auto​​;
+const auto​​ auto​​​ = auto​();
+
+template <typename auto​​​​>
+constexpr auto auto​​​​​() {
+    return auto​​​;
+}
+
+template <typename auto​​​​, typename auto​​​​​​, typename... auto​​​​​​​>
+constexpr auto auto​​​​​() {
+    return auto​​​ + auto​​​​​<auto​​​​​​, auto​​​​​​​...>();
+}
+
+int main()
+{
+  constexpr auto auto​​​​​​​ = auto​​​​​<auto​​,auto​​,auto​​,auto​​,auto​​,auto​​>();
+  constexpr auto auto​​​​ = auto​​​​​<auto​​,auto​​,auto​​,auto​​,auto​​,auto​​,auto​​>();
+  return auto​​​​​​​*auto​​​​; 
+}
+```
+* [discussion](https://twitter.com/RichardKogelnig/status/943497972481953792)
