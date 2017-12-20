@@ -269,6 +269,7 @@
             - [2017-12-16](#2017-12-16)
             - [2017-12-17](#2017-12-17)
             - [2017-12-18](#2017-12-18)
+            - [2017-12-19](#2017-12-19)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3018,6 +3019,10 @@ Order of items is just based on Nothing :: Maybe.
 * [What-ORM-tells-me](http://woz.posthaven.com/what-orms-have-taught-me-just-learn-sql)
 * [How-to-write-your-own-cpp-game-engine](http://preshing.com/20171218/how-to-write-your-own-cpp-game-engine/)
 * [Py-Ruby-Profiler](https://jvns.ca/blog/2017/12/17/how-do-ruby---python-profilers-work-/)
+
+#### 2017-12-19
+* [C++17-progress-in-VS15.5-VS15.6](https://blogs.msdn.microsoft.com/vcblog/2017/12/19/c17-progress-in-vs-2017-15-5-and-15-6/)
+* 
 
 
 ## Tools
