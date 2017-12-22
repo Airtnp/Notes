@@ -271,6 +271,7 @@
             - [2017-12-18](#2017-12-18)
             - [2017-12-19](#2017-12-19)
             - [2017-12-20](#2017-12-20)
+            - [2017-12-21](#2017-12-21)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3027,6 +3028,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-12-20
 * [violation-of-TCP](https://blog.cloudflare.com/this-is-strictly-a-violation-of-the-tcp-specification/)
 * [D's-newfangled-name-mangling](https://dlang.org/blog/2017/12/20/ds-newfangled-name-mangling/)
+
+#### 2017-12-21
+* [Rust-in-2017](https://blog.rust-lang.org/2017/12/21/rust-in-2017.html)
+
 
 
 ## Tools
