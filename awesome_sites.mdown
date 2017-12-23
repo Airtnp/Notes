@@ -272,6 +272,7 @@
             - [2017-12-19](#2017-12-19)
             - [2017-12-20](#2017-12-20)
             - [2017-12-21](#2017-12-21)
+            - [2017-12-22](#2017-12-22)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3032,6 +3033,8 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-12-21
 * [Rust-in-2017](https://blog.rust-lang.org/2017/12/21/rust-in-2017.html)
 
+#### 2017-12-22
+* [ncat-cheetsheet](https://bitrot.sh/cheatsheet/19-12-2017-ncat/)
 
 
 ## Tools
