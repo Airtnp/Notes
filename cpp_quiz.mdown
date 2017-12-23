@@ -1180,3 +1180,15 @@ int main()
 }
 ```
 * [discussion](https://twitter.com/RichardKogelnig/status/943497972481953792)
+
+## Deduce right hand function
+```c++
+template <typename T>
+void func(T&){
+}
+
+int main(){
+    void (*p)(int&) = func;//or &func
+    return 0;
+}
+```

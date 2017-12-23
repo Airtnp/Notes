@@ -273,6 +273,7 @@
             - [2017-12-20](#2017-12-20)
             - [2017-12-21](#2017-12-21)
             - [2017-12-22](#2017-12-22)
+            - [2017-12-23](#2017-12-23)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3035,6 +3036,28 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-22
 * [ncat-cheetsheet](https://bitrot.sh/cheatsheet/19-12-2017-ncat/)
+
+#### 2017-12-23
+* [reflection-in-Haskell](http://www.tweag.io/posts/2017-12-21-reflection-tutorial.html)
+* [Linux-memory-lowmem-highmem](https://www.zhihu.com/question/52711172)
+* [AVX-SSE-Transition-penalty](https://www.zhihu.com/question/37230675/answer/273654228)
+* [Structured-binding-linkage](https://www.zhihu.com/question/263970502)
+* [Program-Synthesis-Primer](http://barghouthi.github.io/articles/17/synthesis-primer)
+* [Handbook-of-Philosophical-Logic](https://zhuanlan.zhihu.com/p/31965690)
+* [二阶算术-big-five](https://www.zhihu.com/question/46778937)
+* [std::move-object-member](http://oliora.github.io/2016/02/12/where-to-put-std-move.html)
+* [__imp-and-_imp_](https://stackoverflow.com/questions/11236789/what-is-the-difference-between-imp-and-imp/11244199#11244199)
+* [DLL-mmap-page-fault](https://stackoverflow.com/questions/5684365/what-causes-page-faults/5684422#5684422)
+* [sqrt-inside-sqrt](https://www.zhihu.com/question/264207041/answer/278053059)
+* [最小的HelloWorld-Win32](https://www.zhihu.com/question/21715980)
+* [Everything-you-never-want-to-know-about-DLL](http://blog.omega-prime.co.uk/2011/07/04/everything-you-never-wanted-to-know-about-dlls/)
+* [Hook-in-Linux](http://blog.csdn.net/tianxuhong/article/details/50974400)
+* [构造主义-直觉主义-计算机](https://zhuanlan.zhihu.com/p/22389755)
+* [memcached-lock-strategy](https://zhuanlan.zhihu.com/p/32273530)
+* [Eigen-坑](https://zhuanlan.zhihu.com/p/32226967)
+
+
+
 
 
 ## Tools
