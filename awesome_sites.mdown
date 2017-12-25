@@ -274,6 +274,8 @@
             - [2017-12-21](#2017-12-21)
             - [2017-12-22](#2017-12-22)
             - [2017-12-23](#2017-12-23)
+            - [2017-12-24](#2017-12-24)
+            - [2017-12-25](#2017-12-25)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3056,6 +3058,15 @@ Order of items is just based on Nothing :: Maybe.
 * [memcached-lock-strategy](https://zhuanlan.zhihu.com/p/32273530)
 * [Eigen-坑](https://zhuanlan.zhihu.com/p/32226967)
 
+#### 2017-12-24
+* [Vue.js-vs-React](http://pixeljets.com/blog/vue-js-vs-react-what-to-expect-in-2018/)
+* [Which-Python-operation-are-atomic](http://blog.qqrs.us/blog/2016/05/01/which-python-operations-are-atomic/)
+* [Formal-verification-the-gap-between-perfect-code-and-reality](https://raywang.tech/2017/12/20/Formal-Verification:-The-Gap-between-Perfect-Code-and-Reality/)
+
+#### 2017-12-25
+* [AI-Failures-in-2017](https://syncedreview.com/2017/12/23/2017-in-review-10-ai-failures/)
+* [undefined-unsafe-in-Rust](https://manishearth.github.io/blog/2017/12/24/undefined-vs-unsafe-in-rust/)
+* [Computer-latency-1977-2017](https://danluu.com/input-lag/)
 
 
 
