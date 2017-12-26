@@ -276,6 +276,7 @@
             - [2017-12-23](#2017-12-23)
             - [2017-12-24](#2017-12-24)
             - [2017-12-25](#2017-12-25)
+            - [2017-12-26](#2017-12-26)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3068,6 +3069,11 @@ Order of items is just based on Nothing :: Maybe.
 * [undefined-unsafe-in-Rust](https://manishearth.github.io/blog/2017/12/24/undefined-vs-unsafe-in-rust/)
 * [Computer-latency-1977-2017](https://danluu.com/input-lag/)
 
+#### 2017-12-26
+* [libc_start](https://stackoverflow.com/questions/16970281/whats-going-on-in-libc-start-main)
+* + [libc_start_main](https://github.com/bminor/glibc/blob/2a69f853c03034c2e383e0f9c35b5402ce8b5473/csu/libc-start.c)
+* [FreeBSD-install-modification](https://vez.mrsk.me/freebsd-defaults.txt)
+* [Execution-space-protection-and-ASLR](http://www.productive-cpp.com/hardening-cpp-programs-executable-space-protection-address-space-layout-randomization-aslr/)
 
 
 
