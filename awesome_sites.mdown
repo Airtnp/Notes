@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23)
+        - [2017-7-23](#2017-7-23-1)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,7 +187,7 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24)
+            - [2017-9-24](#2017-9-24-1)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
@@ -211,7 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
-            - [2017-10-20](#2017-10-20)
+            - [2017-10-20](#2017-10-20-1)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
@@ -278,6 +278,7 @@
             - [2017-12-25](#2017-12-25)
             - [2017-12-26](#2017-12-26)
             - [2017-12-27](#2017-12-27)
+            - [2017-12-28](#2017-12-28)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3081,6 +3082,15 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2017-12-27
 * [RELRO/CANARY/NX/PIE/ASLR/FORTIFY_SOURCE](http://blog.siphos.be/2011/07/high-level-explanation-on-some-binary-executable-security/)
+* [Sysenter Based System Call Mechanism in Linux 2.6](http://articles.manugarg.com/systemcallinlinux2_6.html)
+* [GAS-asm](https://stackoverflow.com/questions/41690592/what-does-gs0x10-do-in-assembler)
+* [Z3-in-CTF](https://zhuanlan.zhihu.com/p/30548907)
+
+#### 2017-12-28
+* [Reactive-programming-system](https://www.oreilly.com/ideas/reactive-programming-vs-reactive-systems)
+* [ML-papers-2017](http://cachestocaches.com/2017/12/favorite-deep-learning-2017/)
+* [RC4-password](https://groups.google.com/forum/#!msg/sci.crypt/TPS_Ix7aTJ4/oPwa0skAoxAJ)
+
 
 
 ## Tools
