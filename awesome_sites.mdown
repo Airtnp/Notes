@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23-1)
+        - [2017-7-23](#2017-7-23)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,7 +187,7 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24-1)
+            - [2017-9-24](#2017-9-24)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
@@ -211,7 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
-            - [2017-10-20](#2017-10-20-1)
+            - [2017-10-20](#2017-10-20)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
@@ -3090,7 +3090,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Reactive-programming-system](https://www.oreilly.com/ideas/reactive-programming-vs-reactive-systems)
 * [ML-papers-2017](http://cachestocaches.com/2017/12/favorite-deep-learning-2017/)
 * [RC4-password](https://groups.google.com/forum/#!msg/sci.crypt/TPS_Ix7aTJ4/oPwa0skAoxAJ)
+* [Dump-PS4-kernel-in-6-days](https://fail0verflow.com/blog/2017/ps4-crashdump-dump/)
+* [TLS-1.3-not-in-browsers-yet](https://blog.cloudflare.com/why-tls-1-3-isnt-in-browsers-yet/)
+* [导入表-IAT表](https://richarde.me/2017/05/05/16-learn-pe-with-IAT-import-table/)
+* [Linux-filesystem](http://www.tigerup.cn/linux_basic/0230filesystem.php)
 
+#### 2017-12-29
+* [FS:[0]-FS:0](http://www.voidcn.com/article/p-hoknegxo-kb.html)
+* [Themida-中断-重定位](https://bbs.pediy.com/thread-140298.htm)
 
 
 ## Tools
