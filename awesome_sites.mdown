@@ -279,6 +279,9 @@
             - [2017-12-26](#2017-12-26)
             - [2017-12-27](#2017-12-27)
             - [2017-12-28](#2017-12-28)
+            - [2017-12-29](#2017-12-29)
+            - [2017-12-30](#2017-12-30)
+            - [2017-12-31](#2017-12-31)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3098,6 +3101,16 @@ Order of items is just based on Nothing :: Maybe.
 #### 2017-12-29
 * [FS:[0]-FS:0](http://www.voidcn.com/article/p-hoknegxo-kb.html)
 * [Themida-中断-重定位](https://bbs.pediy.com/thread-140298.htm)
+
+#### 2017-12-30
+* [Escaping-Docker](https://www.twistlock.com/2017/12/27/escaping-docker-container-using-waitid-cve-2017-5123/)
+* [高效删除文件前100字节](https://www.zhihu.com/question/264803491)
+* [Best-CS-Paper-HN-2017](https://news.ycombinator.com/item?id=16035402)
+
+#### 2017-12-31
+* [Difference-between-exec-versions](https://stackoverflow.com/questions/5769734/what-are-the-different-versions-of-exec-used-for-in-c-and-c)
+
+
 
 
 ## Tools
