@@ -282,6 +282,7 @@
             - [2017-12-29](#2017-12-29)
             - [2017-12-30](#2017-12-30)
             - [2017-12-31](#2017-12-31)
+            - [2018-1-1](#2018-1-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3114,6 +3115,9 @@ Order of items is just based on Nothing :: Maybe.
 * [future-statement](https://stackoverflow.com/questions/21125228/where-is-the-from-future-import-braces-code)
 * [Polya-Burnside-计数](http://blog.csdn.net/nameofcsdn/article/details/53321264)
 
+#### 2018-1-1
+* [Deriving-Bifunctor-with-Generics](http://kcsongor.github.io/generic-deriving-bifunctor/)
+* [Three-yrs-on-Google-App-Engine](https://blog.stephanbehnke.com/3-years-on-google-app-engine-an-epic-review/)
 
 
 ## Tools
