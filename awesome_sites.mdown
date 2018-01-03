@@ -3139,7 +3139,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Regex-China-手机号](https://gist.github.com/septs/8cb9f6298fa59caef39229fb04c36609)
 
 #### 2018-1-3
-* 
+* [AMD-Cpu-not-affected-by-PTI](https://lkml.org/lkml/2017/12/27/2)
+* [Linux-Kernel-Happy-New-Year](http://lkml.iu.edu/hypermail/linux/kernel/1712.3/02898.html)
+* [不强制退出Thread](http://orzz.org/why-shouldnt-i-kill-a-thread/#more-1082)
+* [Reading-Kernel-Memory-from-usermode](https://cyber.wtf/2017/07/28/negative-result-reading-kernel-memory-from-user-mode/)
+* [Linux-调度器-CFS](https://www.ibm.com/developerworks/cn/linux/l-cn-scheduler/index.html)
+* [Linux-2.6-CFS](https://www.ibm.com/developerworks/cn/linux/l-cfs/index.html)
+* [Linux-2.6](https://www.ibm.com/developerworks/cn/linux/l-cfs/index.html)
+* [(k, n)-钥匙开锁问题](http://bbs.csdn.net/topics/10260097)
 
 
 ## Tools
