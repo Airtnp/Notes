@@ -285,6 +285,7 @@
             - [2018-1-1](#2018-1-1)
             - [2018-1-2](#2018-1-2)
             - [2018-1-3](#2018-1-3)
+            - [2018-1-4](#2018-1-4)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3147,6 +3148,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Linux-2.6-CFS](https://www.ibm.com/developerworks/cn/linux/l-cfs/index.html)
 * [Linux-2.6](https://www.ibm.com/developerworks/cn/linux/l-cfs/index.html)
 * [(k, n)-钥匙开锁问题](http://bbs.csdn.net/topics/10260097)
+
+#### 2018-1-4
+* [meltdown-spectre](https://meltdownattack.com/)
+* [Google-Today's-CPU-vulnerability](https://security.googleblog.com/2018/01/todays-cpu-vulnerability-what-you-need.html)
+* [Linux-eBPF](http://www.brendangregg.com/ebpf.html)
+* [Reading privileged memory with a side-channel](https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html)
+* [Linus-on-Intel-CPU-problem](https://lkml.org/lkml/2018/1/3/797)
+* [PCID-TLB](http://ytliu.info/blog/2016/09/16/tlbde-na-xie-shi-er/)
 
 
 ## Tools
