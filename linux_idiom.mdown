@@ -78,7 +78,16 @@
 
 
 ## S
-
+* scheduler
+* Round-robin
+* SJF STCF
+* + MLFQ
+* + multi-core
+* + - SQMS
+* + - MQMS
+* + - O(1)
+* + - CFS
+* + - BFS
 
 
 ## T
