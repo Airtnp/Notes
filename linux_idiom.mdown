@@ -6,6 +6,7 @@
 * + command1 | command2 : command1 -> content -> command2
 * >/</>>/<< 输出输入重定向
 * >&/2>/2>> 错误重定向
+* [good-blog](http://ytliu.info/blog/2015/01/24/zhi-shi-zheng-li-%282015-dot-1%29/)
 
 ## A
 
@@ -78,16 +79,7 @@
 
 
 ## S
-* scheduler
-* Round-robin
-* SJF STCF
-* + MLFQ
-* + multi-core
-* + - SQMS
-* + - MQMS
-* + - O(1)
-* + - CFS
-* + - BFS
+
 
 
 ## T

@@ -1,0 +1,114 @@
+# OS Idioms
+
+## \#
+
+
+
+## A
+
+
+## B
+
+
+
+## C
+
+
+## D
+
+
+
+## E
+
+
+## F
+
+
+
+## G
+
+
+## H
+
+
+
+## I
+
+
+
+## J
+
+
+
+## K
+
+
+## L
+
+
+
+## M
+
+
+
+## N
+
+
+
+## O
+
+
+## P
+
+
+
+## Q
+
+
+
+## R
+
+
+
+## S
+* scheduler
+* Round-robin
+* SJF STCF
+* + MLFQ
+* + multi-core
+* + - SQMS
+* + - MQMS
+* + - O(1)
+* + - CFS
+* + - BFS
+
+
+## T
+* TLB
+* + hardware-handling
+* + software-handling 
+* + - [ref](https://en.wikipedia.org/wiki/Translation_lookaside_buffer#TLB-miss_handling)
+* + - [another-ref-says-RISC-and-IA-64](http://www.informit.com/articles/article.aspx?p=29961&seqNum=4)
+* + PCID/ASID/PID
+
+
+## U
+
+## V
+
+
+
+## W
+
+
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+
