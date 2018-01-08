@@ -289,6 +289,7 @@
             - [2018-1-5](#2018-1-5)
             - [2018-1-6](#2018-1-6)
             - [2018-1-7](#2018-1-7)
+            - [2018-1-8](#2018-1-8)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3179,9 +3180,12 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-1-7
 * [NN-type-and-FP](http://colah.github.io/posts/2015-09-NN-Types-FP/)
-* 
+* [Monads are just monoids in the category of endofunctors](https://blog.merovius.de/2018/01/08/monads-are-just-monoids.html)
 
-
+#### 2018-1-8
+* [Python-Web-Interface-PEP-333](https://www.python.org/dev/peps/pep-0333/)
+* [ASGI](http://channels.readthedocs.io/en/latest/asgi.html)
+* [Sanic-problem](https://zhuanlan.zhihu.com/p/32518153)
 
 
 

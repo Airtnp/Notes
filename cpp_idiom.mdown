@@ -1067,7 +1067,8 @@ auto x(f2());/auto x = f2();的时候<17会有一次A(A)但是可能被削减掉
 * + One Definition Rule
 
 ## X
-
+* X-id / X-name
+* + [ref](https://stackoverflow.com/questions/3796558/difference-between-template-name-and-template-id)
 
 
 ## Y

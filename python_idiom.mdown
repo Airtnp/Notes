@@ -25,6 +25,8 @@
 * `{}` ==> empty dict
 * `set()` ==> empty set
 * 任何缩进 任何缩进字符都被允许
+*  `(2).conjugate()` instead of `2.conjugate`
+* + [ref](https://stackoverflow.com/questions/33137934/what-types-of-attributes-does-the-the-dir-function-give-in-python)
 
 ## A
 
