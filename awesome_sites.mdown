@@ -290,6 +290,7 @@
             - [2018-1-6](#2018-1-6)
             - [2018-1-7](#2018-1-7)
             - [2018-1-8](#2018-1-8)
+            - [2018-1-9](#2018-1-9)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3186,6 +3187,18 @@ Order of items is just based on Nothing :: Maybe.
 * [Python-Web-Interface-PEP-333](https://www.python.org/dev/peps/pep-0333/)
 * [ASGI](http://channels.readthedocs.io/en/latest/asgi.html)
 * [Sanic-problem](https://zhuanlan.zhihu.com/p/32518153)
+
+#### 2018-1-9
+* [A-cpu-design-bug-for-Xbox-360](https://randomascii.wordpress.com/2018/01/07/finding-a-cpu-design-bug-in-the-xbox-360/)
+* [Rebooting-Error-Handling-Rust](https://www.ocelotconsulting.com/2018/01/08/rust-error-handling.html)
+* [C++-for-embedded-system](https://electronics.stackexchange.com/questions/3027/is-c-suitable-for-embedded-systems)
+* [h264-x264](https://www.quora.com/In-Video-Codecs-what%E2%80%99s-the-difference-between-h264-and-x264)
+* [Linux-sync](https://www.ibm.com/developerworks/cn/linux/l-linux-synchronization.html)
+* [spinlock-vs-mutex](https://stackoverflow.com/questions/5869825/when-should-one-use-a-spinlock-instead-of-mutex)
+* [Linux-spinlock-internal](http://www.linuxinternals.org/blog/2014/05/07/spinlock-implementation-in-linux-kernel/)
+* [C++-mutex-shared_mutex](https://stackoverflow.com/questions/46452973/difference-between-stdmutex-and-stdshared-mutex)
+* [futex-syscall](https://stackoverflow.com/questions/24488564/how-futex-works-in-this-case)
+* [Thin-lock-vs-futex](https://bartoszmilewski.com/2008/09/01/thin-lock-vs-futex/)
 
 
 
