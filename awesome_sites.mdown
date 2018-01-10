@@ -3199,7 +3199,7 @@ Order of items is just based on Nothing :: Maybe.
 * [C++-mutex-shared_mutex](https://stackoverflow.com/questions/46452973/difference-between-stdmutex-and-stdshared-mutex)
 * [futex-syscall](https://stackoverflow.com/questions/24488564/how-futex-works-in-this-case)
 * [Thin-lock-vs-futex](https://bartoszmilewski.com/2008/09/01/thin-lock-vs-futex/)
-
+* [Python-lambda-tuple-removed-in-3](https://stackoverflow.com/questions/11328312/python-lambda-does-not-accept-tuple-argument)
 
 
 ## Tools

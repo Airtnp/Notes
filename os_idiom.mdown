@@ -12,6 +12,10 @@
 
 
 ## C
+* conditional variable
+* + wait
+* + signal/signal_all
+* + Mesa semantics (always while loops)
 
 
 ## D
@@ -22,7 +26,9 @@
 
 
 ## F
-
+* futex
+* + 2-phase lock
+* + futex_wait/futex_wake
 
 
 ## G
@@ -48,7 +54,7 @@
 
 
 ## M
-
+* mutex
 
 
 ## N
@@ -59,7 +65,7 @@
 
 
 ## P
-
+* preemptive
 
 
 ## Q
@@ -81,7 +87,15 @@
 * + - O(1)
 * + - CFS
 * + - BFS
-
+* spinlock
+* + test-and-set
+* + compare-and-swap
+* + fetch-and-add (tick lock)
+* + load-linked/store-conditional MIPS/ARM
+* semaphore
+* + sem_wait (-1 wait if negative otherwise run)
+* + sem_post (+1 wake if 1 or more waiting)
+* + 
 
 ## T
 * TLB
