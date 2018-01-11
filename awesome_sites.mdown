@@ -291,6 +291,8 @@
             - [2018-1-7](#2018-1-7)
             - [2018-1-8](#2018-1-8)
             - [2018-1-9](#2018-1-9)
+            - [2018-1-10](#2018-1-10)
+            - [2018-1-11](#2018-1-11)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3200,6 +3202,37 @@ Order of items is just based on Nothing :: Maybe.
 * [futex-syscall](https://stackoverflow.com/questions/24488564/how-futex-works-in-this-case)
 * [Thin-lock-vs-futex](https://bartoszmilewski.com/2008/09/01/thin-lock-vs-futex/)
 * [Python-lambda-tuple-removed-in-3](https://stackoverflow.com/questions/11328312/python-lambda-does-not-accept-tuple-argument)
+
+#### 2018-1-10
+* [js-信用卡](https://medium.com/@CQD/%E7%BF%BB%E8%AD%AF-%E6%88%91%E6%98%AF%E9%80%99%E6%A8%A3%E6%8B%BF%E8%B5%B0%E5%A4%A7%E5%AE%B6%E7%B6%B2%E7%AB%99%E4%B8%8A%E7%9A%84%E4%BF%A1%E7%94%A8%E5%8D%A1%E8%99%9F%E8%B7%9F%E5%AF%86%E7%A2%BC%E7%9A%84-991cb6c4631e)
+* [length-extension-attack](https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BA%A6%E6%89%A9%E5%B1%95%E6%94%BB%E5%87%BB)
+* [HMAC](http://www.freebuf.com/articles/web/31756.html)
+
+#### 2018-1-11
+* [DROWN-Bleichenbacher](https://www.zhihu.com/question/40934602)
+* [read-acquire-write-release-in-mutex](https://www.zhihu.com/question/26588157)
+* [K-means](http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006910.html)
+* [Service-Mesh-Lstio](http://baytucao.com/archives/3876)
+* [PE-Reloc](https://bbs.pediy.com/thread-140722.htm)
+* [计算机科学 (Haskell) 中的偏序理论](http://ice1000.org/2018/01/02/PartialOrderTranslation/)
+* [ROP-入门-1](https://zhuanlan.zhihu.com/p/25816426)
+* [ROP-入门-2](https://zhuanlan.zhihu.com/p/25892385)
+* [Z3-CTF](https://zhuanlan.zhihu.com/p/30548907)
+* [python-HTTP-bug](https://zhuanlan.zhihu.com/p/32592960)
+* [-fno-builtin-ffreestanding-nostdlib-m32-c-program](https://www.zhihu.com/question/49580321/answer/287557834)
+* [TLB-pCID](https://zhuanlan.zhihu.com/p/32718446)
+* [New things in Haskell package QA](http://oleg.fi/gists/posts/2018-01-08-haskell-package-qa.html)
+* [Verified-parsing-in-real-world](http://www.sleconf.org/2014/parsing-slides/1-slides.standalone.html#(1))
+* [volatile-in-C++11](https://stackoverflow.com/questions/12878344/volatile-in-c11)
+* [Spectre-Metldown-Explan](https://zhuanlan.zhihu.com/p/32784852)
+* [Spectre still unfixed, unlike what Intel says](https://gist.github.com/woachk/2f86755260f2fee1baf71c90cd6533e9)
+* [.eh_frame/.eh_frame_hdr](https://stackoverflow.com/questions/14091231/what-do-the-eh-frame-and-eh-frame-hdr-sections-store-exactly/14091884#14091884)
+* [DCLP-in-C++](http://blog.jobbole.com/86392/)
+* [Load-time-relocation](https://eli.thegreenplace.net/2011/08/25/load-time-relocation-of-shared-libraries/)
+* [PIC-on-x86](https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/)
+* [PIC-on-x64](https://eli.thegreenplace.net/2011/11/11/position-independent-code-pic-in-shared-libraries-on-x64/)
+* [gcc-x64-forced-PIC](https://stackoverflow.com/questions/7865059/why-does-gcc-force-pic-for-x64-shared-libs)
+
 
 
 ## Tools

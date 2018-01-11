@@ -19,7 +19,9 @@
 
 
 ## D
-
+* Dining Philosophers
+* + by global order acquire lock
+* + 
 
 
 ## E
