@@ -3232,7 +3232,7 @@ Order of items is just based on Nothing :: Maybe.
 * [PIC-on-x86](https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/)
 * [PIC-on-x64](https://eli.thegreenplace.net/2011/11/11/position-independent-code-pic-in-shared-libraries-on-x64/)
 * [gcc-x64-forced-PIC](https://stackoverflow.com/questions/7865059/why-does-gcc-force-pic-for-x64-shared-libs)
-
+* [理想-Ideal-left-right](https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3_(%E7%8E%AF%E8%AE%BA))
 
 
 ## Tools
