@@ -293,6 +293,7 @@
             - [2018-1-9](#2018-1-9)
             - [2018-1-10](#2018-1-10)
             - [2018-1-11](#2018-1-11)
+            - [2018-1-12](#2018-1-12)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3233,6 +3234,19 @@ Order of items is just based on Nothing :: Maybe.
 * [PIC-on-x64](https://eli.thegreenplace.net/2011/11/11/position-independent-code-pic-in-shared-libraries-on-x64/)
 * [gcc-x64-forced-PIC](https://stackoverflow.com/questions/7865059/why-does-gcc-force-pic-for-x64-shared-libs)
 * [理想-Ideal-left-right](https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3_(%E7%8E%AF%E8%AE%BA))
+
+#### 2018-1-12
+* [LLVM-Translation-Validator](https://blog.regehr.org/archives/1565)
+* [KotlinConf-Review-2017](https://www.vokal.io/blog/vokal-takeaways-from-kotlinconf-2017)
+* [Rust2018](https://hsivonen.fi/rust2018/)
+* [common-RAID](http://www.178linux.com/12946)
+* [RAID-explain](https://www.zhihu.com/question/20131784)
+* [RAID-explain-by-graph](http://blog.51cto.com/dingyichao/698762)
+* [RAID-2-3-4-lessly-used](http://blog.open-e.com/raid-2-raid-3-raid-4-what-it-is-how-it-works-the-history-lesson/)
+* [硬盘调度算法](http://blog.sina.com.cn/s/blog_53d195d3010007iz.html)
+
+
+
 
 
 ## Tools

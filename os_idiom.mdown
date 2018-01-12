@@ -20,11 +20,26 @@
 
 ## D
 * Dining Philosophers
-* + by global order acquire lock
-* + 
+* + global order acquire lock
+* + global servicer
+* + Chandy/Misra
+* DMA
+* Device driver
+* disk scheduler
+* + SSTF
+* + - only seek time (move between tracks)
+* + Elevator(SCAN/C-SCAN)
+* + - [ref](http://www.cnblogs.com/jianyungsun/archive/2011/03/16/1986439.html)
+* + SPTF/SATF
+* + - seek + rotation time
 
 
 ## E
+* Event-driven system
+* + asynchronous IO
+* + continuation based
+* + signal/interrupt -> check complete
+* + multi-core paging
 
 
 ## F
@@ -37,7 +52,10 @@
 
 
 ## H
-
+* Hard disk
+* + SAS (Serial Attached SCSI)
+* + SATA (Serial ATA)
+* + [ref](https://www.webopedia.com/DidYouKnow/Computer_Science/sas_sata.asp)
 
 
 ## I
@@ -68,6 +86,7 @@
 
 ## P
 * preemptive
+* PIO (programmed IO)
 
 
 ## Q
@@ -75,7 +94,12 @@
 
 
 ## R
-
+* RAID
+* + [ref](https://zh.wikipedia.org/wiki/RAID)
+* + RAID0: Striping
+* + RAID1: Mirroring
+* + RAID4: Saving space with parity
+* + RAID5: rotating parity
 
 
 ## S
