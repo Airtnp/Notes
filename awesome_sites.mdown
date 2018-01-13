@@ -294,6 +294,7 @@
             - [2018-1-10](#2018-1-10)
             - [2018-1-11](#2018-1-11)
             - [2018-1-12](#2018-1-12)
+            - [2018-1-13](#2018-1-13)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3244,6 +3245,25 @@ Order of items is just based on Nothing :: Maybe.
 * [RAID-explain-by-graph](http://blog.51cto.com/dingyichao/698762)
 * [RAID-2-3-4-lessly-used](http://blog.open-e.com/raid-2-raid-3-raid-4-what-it-is-how-it-works-the-history-lesson/)
 * [硬盘调度算法](http://blog.sina.com.cn/s/blog_53d195d3010007iz.html)
+* [File-system-summary](http://blog.sciencenet.cn/blog-76290-441106.html)
+* [允许交换1次的-max-subarray](http://www.aizhuanji.com/a/MVdmMrXW.html)
+
+#### 2018-1-13
+* [2-3-tree-is-rbt](https://riteme.github.io/blog/2016-3-12/2-3-tree-and-red-black-tree.html#fn:b-tree-wiki)
+* [双重计数](https://riteme.github.io/blog/2017-6-19/double-count.html)
+* [B-tree](https://www.zhihu.com/question/19836260)
+* [B-vs-B+](http://blog.csdn.net/login_sonata/article/details/75268075)
+* [笛卡尔树](https://www.zybuluo.com/KirinBill/note/871204#%E6%9E%84%E9%80%A0treap)
+* [c-restrict-keyword](https://stackoverflow.com/questions/41105620/is-the-c-restrict-qualifier-transitive)
+* [c-restrict-keyword-2](https://stackoverflow.com/questions/10941965/c99-restrict-and-compiler-optimization)
+* [异步IO](https://www.zhihu.com/question/19585576)
+* [分布式应用中基于事件驱动的应用开发模型](https://www.ibm.com/developerworks/cn/linux/distributed/edpm/)
+* [异步事件驱动](http://blog.csdn.net/lx_shudong/article/details/71272557)
+* [2-lock-queue](https://stackoverflow.com/questions/37369031/two-lock-concurrent-queue-algorithm-issue)
+* [Event-driven-high-concurrency](https://www.zhihu.com/question/64727674)
+* [md5-collision](http://www.freebuf.com/articles/93780.html)
+* 
+
 
 
 

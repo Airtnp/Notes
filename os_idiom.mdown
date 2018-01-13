@@ -8,7 +8,11 @@
 
 
 ## B
-
+* backpointer-based consistency (BBC)
+* block corruption
+* + checksum
+* + - xor-based
+* + - CRC (cyclic redundancy check)
 
 
 ## C
@@ -16,6 +20,14 @@
 * + wait
 * + signal/signal_all
 * + Mesa semantics (always while loops)
+* crash consistency
+* + data block (write / update)
+* + inode (write / update)
+* + bitmap (write / update)
+* copy-on-write
+* cache consistency
+* + update visibiility
+* + stale cache
 
 
 ## D
@@ -32,6 +44,53 @@
 * + - [ref](http://www.cnblogs.com/jianyungsun/archive/2011/03/16/1986439.html)
 * + SPTF/SATF
 * + - seek + rotation time
+* distributed system
+* + reliable communication layers
+* + - sender ->(meesage) receiver ->(ack) -> sender
+* + - timeout -> dropped request / ack
+* + DSM (distributed shared memory)
+* + RPC (remote procedure call)
+* + - stub generator (protocol compiler)
+* + - - client stub
+* + - - - create message buffer
+* + - - - pack information
+* + - - - send message to destination RPC server
+* + - - - wait for reply
+* + - - - unpack result
+* + - - - return to caller
+* + - - server stub
+* + - - - unpack (unmarshaling/deserialization)
+* + - - - call info actual function
+* + - - - pack result
+* + - - - send reply
+* + - run-time library
+* + - - naming
+* + - - fragmentation
+* + - - reassembly
+* + - - byte ordering
+* + - - - XDR (external data representation) / protobuf
+* + - - synchronously
+* + [AFS-NFS-GFS](http://www.shuang0420.com/2016/12/10/Distributed%20Systems%E7%AC%94%E8%AE%B0%EF%BC%8DNFS%E3%80%81AFS%E3%80%81GFS/)
+* + NFS
+* + - [ref](https://csruiliu.github.io/blog/2017/11/17/nfs/)
+* + - sharing
+* + - centralized administration
+* + - security
+* + - simple and fast server crash recovery
+* + - stateless protocol
+* + - - shared state / distributed state -> complicating crash recovery
+* + - idempotent opeartion
+* + - client side caching
+* + - flush on close
+* + - block-aligned r/w
+* + AFS
+* + - [ref](https://csruiliu.github.io/blog/2017/11/17/afs/)
+* + - [ref](http://blog.csdn.net/ak913/article/details/7197062)
+* + - callback system
+* + - polling
+* + - last writer(closer) wins
+* + GFS
+* + - [ref](http://www.d-kai.me/google-file-system/)
 
 
 ## E
@@ -40,12 +99,45 @@
 * + continuation based
 * + signal/interrupt -> check complete
 * + multi-core paging
+* ECC (error correcting code)
 
 
 ## F
 * futex
 * + 2-phase lock
 * + futex_wait/futex_wake
+* file system
+* + FAT (file allocation table)
+* + NTFS
+* + ext2-4
+* + - super (metadata) + bitmap (data/inode) + inode + data
+* + UFS (FFS)
+* + - [ref](http://www.d-kai.me/ffs-unix%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%BC%BB%E7%A5%96/)
+* + - increment block size
+* + - fragment (subblock)
+* + - block group (superblock, inode/data block) / Allocation group
+* + - [ref](https://csruiliu.github.io/blog/2017/11/18/ffs/)
+* + LFS (log-structured file system) / WAFL / ZFS / btrfs
+* + - [ref](https://csruiliu.github.io/blog/2017/11/19/lfs/)
+* + - reason
+* + - - memory size ++
+* + - - random IO << sequential IO
+* + - - other poorly on common wordloads
+* + - - not RAID-aware
+* + - segment only with update
+* + - write-buffering
+* + - imap (inode map)
+* + - shadow paging update
+* + ZFS
+* + - [ref](https://www.ibm.com/developerworks/cn/linux/l-zfs/index.html)
+* + - [doc](https://docs.oracle.com/cd/E19253-01/819-7065/index.html)
+* + - [ref](http://blog.csdn.net/wdy_yx/article/details/42848773)
+* FSCK (file system checker)
+* + check superblock
+* + check inodes (free blocks) + inode state + inode link
+* + duplicates
+* + bad blocks
+* + directory checks
 
 
 ## G
@@ -56,6 +148,7 @@
 * + SAS (Serial Attached SCSI)
 * + SATA (Serial ATA)
 * + [ref](https://www.webopedia.com/DidYouKnow/Computer_Science/sas_sata.asp)
+* hypervisors
 
 
 ## I
@@ -63,18 +156,33 @@
 
 
 ## J
-
-
+* journaling (write-ahead logging)
+* + TID (transaction id)
+* + data write
+* + journal write (TxB metadata data)
+* + journal commit (TxE)
+* + checkpoint (write on-disk)
+* + free journal
 
 ## K
 
 
 ## L
-
+* LSE (latent-sector errors) / URE (unrecoverable read error)
+* + RAID-DP
+* lost write
+* + write verify (read-after write)
+* + ZFS checksum
 
 
 ## M
 * mutex
+* misdirected write
+* + PID (physical id)
+* monitor
+* + [ref](https://www.jianshu.com/p/8b3ed769bc9f)
+* + Mesa
+* + Hoare
 
 
 ## N
@@ -122,6 +230,7 @@
 * + sem_wait (-1 wait if negative otherwise run)
 * + sem_post (+1 wake if 1 or more waiting)
 * + 
+* soft-update
 
 ## T
 * TLB
@@ -135,7 +244,21 @@
 ## U
 
 ## V
-
+* VMM (virutal machine monitor)
+* + [ref](http://blog.csdn.net/flyforfreedom2008/article/details/45113635)
+* + CPU: limited direct execution
+* + - machine switch
+* + - privileged operation
+* + - trap => OS trap trampoline
+* + Memory
+* + - VM page table => VPN-to-MFN
+* + - software handled TLB: VM TLB handler => OS TLB handler
+* + - hardware handled TLB: shadow page table
+* + information gap
+* + - idle loop
+* + - zeroing of page table
+* + I/O
+* + para-virtualization
 
 
 ## W
