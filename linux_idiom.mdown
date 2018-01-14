@@ -32,6 +32,8 @@
 * + 1 : stdout
 * + 2 : stderr
 * + process independent
+* file preread
+* + [ref](http://www.d-kai.me/linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%A2%84%E8%AF%BB%E4%B8%80/)
 
 ## G
 
@@ -41,7 +43,9 @@
 
 
 ## I
-
+* IO
+* + [ref](http://www.d-kai.me/linux-io%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B-1/)
+* + [IO-stack](http://www.d-kai.me/linux-%E7%9A%84io%E5%B1%82%E6%AC%A1/)
 
 
 ## J
@@ -87,8 +91,11 @@
 
 
 ## U
-
 * user-level statically defined tracing (USDT) 
+* unlink
+* + [ref](http://www.d-kai.me/linux-close-%E4%B8%8Eunlink/)
+
+
 
 ## V
 

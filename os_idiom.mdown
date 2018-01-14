@@ -212,8 +212,9 @@
 
 ## S
 * scheduler
-* Round-robin
-* SJF STCF
+* + affinity
+* + Round-robin
+* + SJF STCF
 * + MLFQ
 * + multi-core
 * + - SQMS

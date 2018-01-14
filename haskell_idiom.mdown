@@ -1,7 +1,8 @@
 # Haskell Idioms
 
 ## \#
-
+* blog
+* + [GhaSShee](https://ghassheee.github.io/)
 
 ## A
 
@@ -58,6 +59,11 @@
 
 
 ## P
+* parametricity
+* + [ref](https://www.well-typed.com/blog/2015/05/parametricity/)
+* + [ref](https://www.well-typed.com/blog/2015/08/parametricity-part2/)
+* + [paper](http://www.cs.bham.ac.uk/~udr/papers/logical-relations-and-parametricity.pdf)
+* 
 
 
 

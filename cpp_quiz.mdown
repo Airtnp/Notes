@@ -539,6 +539,7 @@ int main() {
 * another requirement: visitor of std::visit must be exhausive (some return type and can receive all kinds of input value)
 * + g++ directly use get<0>, the hinting was soooooooooo sabi
 * `variant<T, T>` is ill-formed but without diagnose
+* [visit-overhead](https://www.reddit.com/r/cpp/comments/7pya5s/stdvisit_overhead/)
 
 ## Member specialized (such a dick)
 ```c++
@@ -1192,3 +1193,8 @@ int main(){
     return 0;
 }
 ```
+
+#### mem_fn
+* `template <typename R, typename T> auto mem_fn(R T::* pm)`
+* regard function as member
+* `mem_fn<int&()>(&X::ApointerReturnint&)`

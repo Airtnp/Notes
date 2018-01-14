@@ -230,12 +230,14 @@
 
 ## U
 
-* Unicode -> UCS-2/UCS-4 (code point) (encoding/map)
+* Unicode -> UCS-2/UCS-4 (code point: assign every character a unique id) (encoding/map)
 * + ASCII
 * + Latin-1
-* UTF -> UTF-8(not fix length)/16/32 (code unit) (bytes)
+* + 信源编码，对字符集数字化
+* UTF (UCS Transfer Format) -> UTF-8(not fix length)/16/32 (code unit) (bytes) (code point -> byte)
 * + BMP (basic multilingual plane)
 * + BOM
+* + 信道编码，为更好的存储和传输
 
 ## V
 

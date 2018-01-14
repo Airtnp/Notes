@@ -295,6 +295,7 @@
             - [2018-1-11](#2018-1-11)
             - [2018-1-12](#2018-1-12)
             - [2018-1-13](#2018-1-13)
+            - [2018-1-14](#2018-1-14)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3262,7 +3263,10 @@ Order of items is just based on Nothing :: Maybe.
 * [2-lock-queue](https://stackoverflow.com/questions/37369031/two-lock-concurrent-queue-algorithm-issue)
 * [Event-driven-high-concurrency](https://www.zhihu.com/question/64727674)
 * [md5-collision](http://www.freebuf.com/articles/93780.html)
-* 
+
+#### 2018-1-14
+* [maze-generation-algorithm](http://blog.csdn.net/juzihongle1/article/details/73135920)
+* [STM-软件事务内存](http://sighingnow.github.io/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B/stm.html)
 
 
 
