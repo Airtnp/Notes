@@ -190,6 +190,59 @@
 
 
 ## O
+* order / cache consistency / memory coherence
+* + reorder
+* + - compiler reorder
+* + - - `__asm__ __volatile__ (""::: "memory")` ensure compiler on sequence-before order
+* + - CPU reorder
+* + - - X86: `__asm__ __volatile__ ("mfence"::: "memory")` (lfence/sfence) ensure CPU on happens-before order
+* + multicore cache protocal (MESI)
+* + [ref](https://www.zhihu.com/question/24301047)
+* + SC (sequential consistency)
+* + - R(L) -> R
+* + - R -> W(S)
+* + - W -> R
+* + - W -> W
+* + Relaxed
+* + - TSO (total store order): relax W -> R [x86]
+* + - PSO (partial store order): relax W -> W
+* + - Weak ordering / Power PC / Release: relax R -> W / R -> R
+* + sequence-before => single thread happens-before
+* + happens-before
+* + - inter-thread happens-before
+* + - dependency-ordered-before
+* + synchronized-with
+* + visible side-effects
+* + seq_cst: SC
+* + - every atomic operation is not reordered between thread
+* + - Atomic operations tagged memory_order_seq_cst not only order memory the same way as release/acquire ordering (everything that happened-before a store in one thread becomes a visible side effect in the thread that did a load), but also establish a single total modification order of all atomic operations that are so tagged.
+* + relaxed: Relaxed
+* + - atomic on specific variable not reordered in single thread
+* + - Atomic operations tagged memory_order_relaxed are not synchronization operations; they do not impose an order among concurrent memory accesses. They only guarantee atomicity and modification order consistency.
+* + acq_rel/consume/acquire/release: Acquire-Release
+* + - release synchronized-with acquire
+* + - side effect: write before release visible to read after acquire
+* + - If an atomic store in thread A is tagged memory_order_release and an atomic load in thread B from the same variable is tagged memory_order_acquire, all memory writes (non-atomic and relaxed atomic) that happened-before the atomic store from the point of view of thread A, become visible side-effects in thread B, that is, once the atomic load is completed, thread B is guaranteed to see everything thread A wrote to memory.
+* + consume: dependency-ordered-before
+* + - release synchronized-with consume
+* + - If an atomic store in thread A is tagged memory_order_release and an atomic load in thread B from the same variable is tagged memory_order_consume, all memory writes (non-atomic and relaxed atomic) that are dependency-ordered-before the atomic store from the point of view of thread A, become visible side-effects within those operations in thread B into which the load operation carries dependency, that is, once the atomic load is completed, those operators and functions in thread B that use the value obtained from the load are guaranteed to see what thread A wrote to memory.
+* + memory_order_relaxed	
+* + - Relaxed operation: there are no synchronization or ordering constraints imposed on other reads or writes, only this operation's atomicity is guaranteed (see Relaxed ordering below)
+* + memory_order_consume	
+* + - A load operation with this memory order performs a consume operation on the affected memory location: no reads or writes in the current thread dependent on the value currently loaded can be reordered before this load. Writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only (see Release-Consume ordering below)
+* + memory_order_acquire	
+* + - A load operation with this memory order performs the acquire operation on the affected memory location: no reads or writes in the current thread can be reordered before this load. All writes in other threads that release the same atomic variable are visible in the current thread (see Release-Acquire ordering below)
+* + - Ensure LL/LS (RR/RW)
+* + memory_order_release	
+* + - A store operation with this memory order performs the release operation: no reads or writes in the current thread can be reordered after this store. All writes in the current thread are visible in other threads that acquire the same atomic variable (see Release-Acquire ordering below) and writes that carry a dependency into the atomic variable become visible in other threads that consume the same atomic (see Release-Consume ordering below).
+* + - Ensure LS/SS (RW/WW)
+* + memory_order_acq_rel	
+* + - A read-modify-write operation with this memory order is both an acquire operation and a release operation. No memory reads or writes in the current thread can be reordered before or after this store. All writes in other threads that release the same atomic variable are visible before the modification and the modification is visible in other threads that acquire the same atomic variable.
+* + memory_order_seq_cst	
+* + - A load operation with this memory order performs an acquire operation, a store performs a release operation, and read-modify-write performs both an acquire operation and a release operation, plus a single total order exists in which all threads observe all modifications in the same order (see Sequentially-consistent ordering below)
+* + atomic variable-variable or fence-fence
+* + lock ensures read-acquire + write-release (lock-acquire / unlock-release) (AKA memory fence)
+
 
 
 ## P

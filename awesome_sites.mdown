@@ -296,6 +296,7 @@
             - [2018-1-12](#2018-1-12)
             - [2018-1-13](#2018-1-13)
             - [2018-1-14](#2018-1-14)
+            - [2018-1-15](#2018-1-15)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3267,8 +3268,13 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-14
 * [maze-generation-algorithm](http://blog.csdn.net/juzihongle1/article/details/73135920)
 * [STM-软件事务内存](http://sighingnow.github.io/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B/stm.html)
+* [C++-TM](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/template_turing_completeness.html)
+* [Continuation-Call/cc](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/continuation_and_call_cc.html)
+* [Yin-Yang-puzzle](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/the_yin_yang_pullze.html)
 
-
+#### 2018-1-15
+* [x86-64-JIT-Compiler-2](https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2/)
+* [ucontext-介绍](http://blog.csdn.net/qq910894904/article/details/41911175)
 
 
 
