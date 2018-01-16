@@ -1198,3 +1198,71 @@ int main(){
 * `template <typename R, typename T> auto mem_fn(R T::* pm)`
 * regard function as member
 * `mem_fn<int&()>(&X::ApointerReturnint&)`
+
+#### thread and exception safety
+* [ref](https://akrzemi1.wordpress.com/2012/11/14/not-using-stdthread/)
+```c++
+auto run = []
+{
+    // if an exception escapes here std::terminate is called
+};
+std::thread thread(run);
+
+// notice that we do not detach the thread
+// if an exception escapes here std::terminate is called
+
+thread.join();
+// end of scope
+
+auto run = []() -> T // T may be void as above
+{
+    // may throw
+    return /* some T */;
+};
+
+auto launched = std::async(run);
+// launched has type std::future<T>
+
+// may throw here; nothing bad happens
+
+// expression has type T and may throw
+// will throw whatever was originally thrown in run
+launched.get();
+```
+
+#### async and scale
+* [discussion](https://bartoszmilewski.com/2011/10/10/async-tasks-in-c11-not-quite-there-yet/)
+* [n3451](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3451.pdf)
+* If the std::future obtained from std::async is not moved from or bound to a reference, the destructor of the std::future will block at the end of the full expression until the asynchronous operation completes, essentially making code such as the following synchronous:
+```c++
+std::async(std::launch::async, []{ f(); }); // temporary's dtor waits for f()
+std::async(std::launch::async, []{ g(); }); // does not start until f() completes
+
+auto f1 = async( []{ f(); } ); // this is ok
+auto f2 = async( []{ g(); } );
+```
+* [discussion-2](https://stackoverflow.com/questions/16296284/workaround-for-blocking-async)
+* 
+```c++
+int main() 
+{
+    std::cout << "Main thread id: " << std::this_thread::get_id() 
+        << std::endl;
+    std::vector<std::future> futures;
+    for (int i = 0; i < 20; ++i)
+    {
+        auto fut = std::async([]
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::cout << std::this_thread::get_id() << " ";
+        });
+        futures.push_back(std::move(fut));
+    }
+    std::for_each(futures.begin(), futures.end(), [](std::future & fut)
+    {
+        fut.wait();
+    });
+    std::cout << std::endl;
+}
+// 2 4 3 6 5 7 1 1 1 1 1 1 1 1 1 1 1 1
+```

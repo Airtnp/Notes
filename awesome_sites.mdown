@@ -297,6 +297,7 @@
             - [2018-1-13](#2018-1-13)
             - [2018-1-14](#2018-1-14)
             - [2018-1-15](#2018-1-15)
+            - [2018-1-16](#2018-1-16)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -366,6 +367,7 @@ Order of items is just based on Nothing :: Maybe.
 * [GeoffChappel/SoftwareAnalysis](http://www.geoffchappell.com/index.htm)
 * [Pointer/Smq/C++](http://www.cnblogs.com/pointer-smq/)
 * [Ytliu/OS/Linux](http://ytliu.info/blog/archives/)
+* [Eli-BenderSky](https://eli.thegreenplace.net/archives/all)
 
 
 ### OI/Alg
@@ -3275,8 +3277,13 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-15
 * [x86-64-JIT-Compiler-2](https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2/)
 * [ucontext-介绍](http://blog.csdn.net/qq910894904/article/details/41911175)
+* [shared_time_mutex-vs-shared_mutex](https://stackoverflow.com/questions/40207171/why-shared-timed-mutex-is-defined-in-c14-but-shared-mutex-in-c17)
+* [We make a std::shared_mutex 10 times faster](https://www.codeproject.com/Articles/1183423/We-make-a-std-shared-mutex-times-faster)
+* [Linux-Memory](https://www.ibm.com/developerworks/cn/linux/l-memmod/)
 
-
+#### 2018-1-16
+* [Linux-静态动态库-RTLD_NEXT](http://kaiyuan.me/2017/05/03/function_wrapper/)
+* [Spectre mitigations in MSVC](https://blogs.msdn.microsoft.com/vcblog/2018/01/15/spectre-mitigations-in-msvc/)
 
 
 ## Tools

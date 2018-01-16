@@ -173,6 +173,11 @@
 * lost write
 * + write verify (read-after write)
 * + ZFS checksum
+* lock
+* + mutex
+* + shared_mutex (reader-write lock)
+* + timed_mutex
+* + recursive_mutex
 
 
 ## M
