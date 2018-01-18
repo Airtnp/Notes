@@ -17,6 +17,9 @@
 
 * Cypto
 * + OTP
+* + Stream Ciphers (PRF)
+* + - RC2/RC4
+* + - Salsa20
 * + 凯撒
 * + DH
 * + - RSA

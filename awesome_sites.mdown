@@ -298,6 +298,8 @@
             - [2018-1-14](#2018-1-14)
             - [2018-1-15](#2018-1-15)
             - [2018-1-16](#2018-1-16)
+            - [2018-1-17](#2018-1-17)
+            - [2018-1-18](#2018-1-18)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3284,6 +3286,28 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-16
 * [Linux-静态动态库-RTLD_NEXT](http://kaiyuan.me/2017/05/03/function_wrapper/)
 * [Spectre mitigations in MSVC](https://blogs.msdn.microsoft.com/vcblog/2018/01/15/spectre-mitigations-in-msvc/)
+
+#### 2018-1-17
+* [spurious-wakeup-and-wait-morphing](http://siwind.iteye.com/blog/1469216)
+* [signal-w/o-mutex](http://www.domaigne.com/blog/computing/condvars-signal-with-mutex-locked-or-not/)
+* [shared_future-vs-future](http://en.cppreference.com/w/cpp/thread/shared_future)
+* [what-is-provider-promise](https://stackoverflow.com/questions/11004273/what-is-stdpromise)
+* [I-don't-understand-asyncio](http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/)
+* [golang-select-channel-goroutine](http://blog.csdn.net/nuli888/article/details/63331156)
+* [Python-asyncio](https://www.jianshu.com/p/b5e347b3a17c)
+* [asyncio-vs-gevent](https://www.reddit.com/r/Python/comments/7a3ikv/should_i_stick_with_asyncio_or_return_to_gevent/)
+* [Python-gevent](https://softlns.github.io/2015/11/28/python-gevent/)
+
+#### 2018-1-18
+* [TLS-&-TLS-Debug](http://blog.csdn.net/lixiangminghate/article/details/46770635)
+* [pthread-create-procedure](http://blog.csdn.net/yetyongjin/article/details/7673837)
+* [TLS-GS-clone](http://www.maxwellxxx.com/TLS)
+* [RIP-related-static-variable](https://stackoverflow.com/questions/40329260/why-is-the-address-of-static-variables-relative-to-the-instruction-pointer)
+* [system_clock-vs-steady_clock](https://stackoverflow.com/questions/13263277/difference-between-stdsystem-clock-and-stdsteady-clock)
+
+
+
+
 
 
 ## Tools
