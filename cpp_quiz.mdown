@@ -1266,3 +1266,8 @@ int main()
 }
 // 2 4 3 6 5 7 1 1 1 1 1 1 1 1 1 1 1 1
 ```
+
+#### Not a real atomic
+* All atomic types except for std::atomic_flag may be implemented using mutexes or other locking operations, rather than using the lock-free atomic CPU instructions. Atomic types are also allowed to be sometimes lock-free, e.g. if only aligned memory accesses are naturally atomic on a given architecture, misaligned objects of the same type have to use locks.
+* The C++ standard recommends (but does not require) that lock-free atomic operations are also address-free, that is, suitable for communication between processes using shared memory.
+

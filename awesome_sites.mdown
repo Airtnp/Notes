@@ -300,6 +300,7 @@
             - [2018-1-16](#2018-1-16)
             - [2018-1-17](#2018-1-17)
             - [2018-1-18](#2018-1-18)
+            - [2018-1-19](#2018-1-19)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3304,8 +3305,14 @@ Order of items is just based on Nothing :: Maybe.
 * [TLS-GS-clone](http://www.maxwellxxx.com/TLS)
 * [RIP-related-static-variable](https://stackoverflow.com/questions/40329260/why-is-the-address-of-static-variables-relative-to-the-instruction-pointer)
 * [system_clock-vs-steady_clock](https://stackoverflow.com/questions/13263277/difference-between-stdsystem-clock-and-stdsteady-clock)
+* [when-to-use-atomic_compare_exchange_weak](https://stackoverflow.com/questions/25199838/understanding-stdatomiccompare-exchange-weak-in-c11)
+* [atomic_compare_exchange_weak_bug](https://stackoverflow.com/questions/21879331/is-stdatomic-compare-exchange-weak-thread-unsafe-by-design)
 
-
+#### 2018-1-19
+* [Burnside-Polya-POJ](http://www.voidcn.com/article/p-szwhrqqm-bey.html)
+* [Burnside-Polya-SPOJ](http://prime21.logdown.com/posts/278690-polya-counting)
+* [pthread_broadcast_wait_morphing](https://stackoverflow.com/questions/20982270/sync-is-unreliable-using-stdatomic-and-stdcondition-variable)
+* 
 
 
 
