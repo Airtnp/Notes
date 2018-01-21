@@ -5,7 +5,15 @@
 
 
 ## A
-
+* Actor
+* + non-blocking IO + IO multiplexing
+* + Event demultiplexor
+* + [ref](https://www.zhihu.com/question/26943938)
+* + [ref](http://www.yeolar.com/note/2012/12/15/high-performance-io-design-patterns/)
+* + Reactor
+* + - epoll
+* + Proactor
+* + - IOCP
 
 ## B
 * backpointer-based consistency (BBC)
@@ -25,9 +33,37 @@
 * + inode (write / update)
 * + bitmap (write / update)
 * copy-on-write
+* cache
+* + performance
+* + - hit time
+* + - - small and simple cache
+* + - - way prediction
+* + - - trace cache
+* + - cache bandwidth
+* + - - nonblocking
+* + - - multibanked
+* + - - pipelined
+* + - miss penalty
+* + - - critical word first
+* + - - merging write buffers
+* + - miss rate
+* + - - compiler optimization
+* + - via parallelism
+* + - - hardware prefetching
+* + - - compiler prefetching
 * cache consistency
 * + update visibiility
 * + stale cache
+* + ping-pong cache
+* + - same data
+* + false-sharing
+* + - data stored in same cacheline
+* + transparent to programmer
+* + MESI
+* concurrency
+* + MPI
+* + OpenMP
+* + oversubscription
 
 
 ## D
@@ -93,6 +129,7 @@
 * + - [ref](http://www.d-kai.me/google-file-system/)
 
 
+
 ## E
 * Event-driven system
 * + asynchronous IO
@@ -149,6 +186,8 @@
 * + SATA (Serial ATA)
 * + [ref](https://www.webopedia.com/DidYouKnow/Computer_Science/sas_sata.asp)
 * hypervisors
+* hazard pointer
+* + [ref](http://blog.csdn.net/coryxie/article/details/8562627)
 
 
 ## I
@@ -178,6 +217,20 @@
 * + shared_mutex (reader-write lock)
 * + timed_mutex
 * + recursive_mutex
+* + deadlock
+* + livelock: two thread restart each other
+* lock-free
+* + test-and-set 
+* + compare-and-swap (CAS)
+* + - DWCAS
+* + fetch-and-add (tick lock)
+* + load-linked/store-conditional MIPS/ARM
+* + - will cause spurious failure
+* + data structures
+* + - [ref](https://liblfds.org/mediawiki/index.php?title=White_Papers)
+* + ABA
+* + - x = A -> B -> A => transparent to CAS
+* + - add ABA counter
 
 
 ## M
@@ -203,11 +256,15 @@
 * + - - X86: `__asm__ __volatile__ ("mfence"::: "memory")` (lfence/sfence) ensure CPU on happens-before order
 * + multicore cache protocal (MESI)
 * + [ref](https://www.zhihu.com/question/24301047)
-* + SC (sequential consistency)
+* + memory order <m (不同内存的读/写 != CPU执行 != 程序顺序(program order <p)不同)
 * + - R(L) -> R
 * + - R -> W(S)
 * + - W -> R
+* + - - store buffer waiting for response, so reorder faster
 * + - W -> W
+* + - 同一内存 atomic_operation => sequenced-before
+* + - 单核(Logic Core) => transparent
+* + - 不同内存 atomic_operation => 乱序
 * + Relaxed
 * + - TSO (total store order): relax W -> R [x86]
 * + - PSO (partial store order): relax W -> W
@@ -255,43 +312,13 @@
 * + - A load operation with this memory order performs an acquire operation, a store performs a release operation, and read-modify-write performs both an acquire operation and a release operation, plus a single total order exists in which all threads observe all modifications in the same order (see Sequentially-consistent ordering below)
 * + atomic variable-variable or fence-fence
 * + lock ensures read-acquire + write-release (lock-acquire / unlock-release) (AKA memory fence)
-> Sequentially-consistent ordering
-Atomic operations tagged memory_order_seq_cst not only order memory the same way as release/acquire ordering (everything that happened-before a store in one thread becomes a visible side effect in the thread that did a load), but also establish a single total modification order of all atomic operations that are so tagged.
 
-Formally,
-
-Each memory_order_seq_cst operation B that loads from atomic variable M, observes one of the following:
-
-the result of the last operation A that modified M, which appears before B in the single total order
-OR, if there was such an A, B may observe the result of some modification on M that is not memory_order_seq_cst and does not happen-before A
-OR, if there wasn't such an A, B may observe the result of some unrelated modification of M that is not memory_order_seq_cst
-If there was a memory_order_seq_cst std::atomic_thread_fence operation X sequenced-before B, then B observes one of the following:
-
-the last memory_order_seq_cst modification of M that appears before X in the single total order
-some unrelated modification of M that appears later in M's modification order
-For a pair of atomic operations on M called A and B, where A writes and B reads M's value, if there are two memory_order_seq_cst std::atomic_thread_fences X and Y, and if A is sequenced-before X, Y is sequenced-before B, and X appears before Y in the Single Total Order, then B observes either:
-
-the effect of A
-some unrelated modification of M that appears after A in M's modification order
-For a pair of atomic modifications of M called A and B, B occurs after A in M's modification order if
-
-there is a memory_order_seq_cst std::atomic_thread_fence X such that A is sequenced-before X and X appears before B in the Single Total Order
-or, there is a memory_order_seq_cst std::atomic_thread_fence Y such that Y is sequenced-before B and A appears before Y in the Single Total Order
-or, there are memory_order_seq_cst std::atomic_thread_fences X and Y such that A is sequenced-before X, Y is sequenced-before B, and X appears before Y in the Single Total Order.
-Note that this means that:
-
-1) as soon as atomic operations that are not tagged memory_order_seq_cst enter the picture, the sequential consistency is lost
-2) the sequentially-consistent fences are only establishing total ordering for the fences themselves, not for the atomic operations in the general case (sequenced-before is not a cross-thread relationship, unlike happens-before)
-Sequential ordering may be necessary for multiple producer-multiple consumer situations where all consumers must observe the actions of all producers occurring in the same order.
-
-Total sequential ordering requires a full memory fence CPU instruction on all multi-core systems. This may become a performance bottleneck since it forces the affected memory accesses to propagate to every core.
-
-This example demonstrates a situation where sequential ordering is necessary. Any other ordering may trigger the assert because it would be possible for the threads c and d to observe changes to the atomics x and y in opposite order.
 
 
 ## P
 * preemptive
 * PIO (programmed IO)
+* parallelism
 
 
 ## Q
@@ -305,6 +332,7 @@ This example demonstrates a situation where sequential ordering is necessary. An
 * + RAID1: Mirroring
 * + RAID4: Saving space with parity
 * + RAID5: rotating parity
+* RCU (read-copy-update)
 
 
 ## S

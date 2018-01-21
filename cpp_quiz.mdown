@@ -199,6 +199,24 @@ double d = p->d; // undefined behavior!
 ```
 
 ## copy=elision
+* [discussion](https://stackoverflow.com/questions/48226247/why-isnt-move-constructor-elided-whenever-possible-with-make-x-functions)
+* delay the process of turning prvalues into objects as long as possible.
+* After C++17: prvalues themselves do not necessarily have to lead to the existence of objects (only if a “temporary materialization” is necessary)
+```c++
+template <typename T>
+X make_X(T&& arg) {
+    return X(std::forward<T>(arg));
+}
+
+int main() {
+    auto x1 = make_X(1); // elided
+    auto x2 = X(X(1)); // elided
+    //  binding a reference to a prvalue, apply temporary materialization conversion
+    auto x3 = make_X(X(1)); // not elided
+    X x4 = std::forward<X>(X(1)); // not elided
+    X x5 = static_cast<X&&>(X(1)); // not elided
+}
+```
 ```c++
 struct foo {
     foo() = default;
@@ -1271,3 +1289,26 @@ int main()
 * All atomic types except for std::atomic_flag may be implemented using mutexes or other locking operations, rather than using the lock-free atomic CPU instructions. Atomic types are also allowed to be sometimes lock-free, e.g. if only aligned memory accesses are naturally atomic on a given architecture, misaligned objects of the same type have to use locks.
 * The C++ standard recommends (but does not require) that lock-free atomic operations are also address-free, that is, suitable for communication between processes using shared memory.
 
+## mutex in destructor
+```c++
+Foo::~Foo {
+    std::lock_guard<std::mutex> lk{m_mtx};
+}
+
+void Foo::update() {
+    std::lock_guard<std::mutex> lk{m_mtx};
+}
+
+void thread1() {
+    delete x;
+    x = nullptr;
+}
+
+void thread2() {
+    if (x) {
+        x->update();
+    }
+}
+
+// since m_mtx is destructed, undefined behavior
+```

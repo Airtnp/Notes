@@ -301,6 +301,7 @@
             - [2018-1-17](#2018-1-17)
             - [2018-1-18](#2018-1-18)
             - [2018-1-19](#2018-1-19)
+            - [2018-1-20](#2018-1-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3312,7 +3313,22 @@ Order of items is just based on Nothing :: Maybe.
 * [Burnside-Polya-POJ](http://www.voidcn.com/article/p-szwhrqqm-bey.html)
 * [Burnside-Polya-SPOJ](http://prime21.logdown.com/posts/278690-polya-counting)
 * [pthread_broadcast_wait_morphing](https://stackoverflow.com/questions/20982270/sync-is-unreliable-using-stdatomic-and-stdcondition-variable)
-* 
+* [lockfree-hazard-pointer](http://blog.csdn.net/coryxie/article/details/8561435)
+* [FS-GS-register](http://blog.csdn.net/coryxie/article/details/8551057)
+* [lockfree-programming](http://blog.csdn.net/coryxie/article/details/8561550)
+* [ABA-problem](https://www.zhihu.com/question/23281499)
+* [Hazard-lockfree-stack](https://zhuanlan.zhihu.com/p/22557362)
+* [lockfree-utility](https://www.zhihu.com/question/52629893)
+* [Meltdown and Spectre Linux Kernel Status - Update](http://kroah.com/log/blog/2018/01/19/meltdown-status-2/)
+* [Haskell-naming-run-get](https://stackoverflow.com/questions/48017808/what-is-the-meaning-for-the-convention-runsomething-in-the-haskell-community)
+* [Inference-in-TypeScripts](https://medium.com/@javierwchavarri/inference-engines-5-examples-with-typescript-flow-and-reason-edef2f4cf2d3)
+
+#### 2018-1-20
+* [Kinds-of-crypts](https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-aes-rc4-ecc-ecdsa-sha-and-so-on/)
+* [AES-mode](https://stackoverflow.com/questions/1220751/how-to-choose-an-aes-encryption-mode-cbc-ecb-ctr-ocb-cfb)
+* [open-source-processors](https://lwn.net/Articles/743602/)
+* [key-IV-nonce](https://crypto.stackexchange.com/questions/3965/what-is-the-main-difference-between-a-key-an-iv-and-a-nonce)
+* [stream-block-cipher](https://crypto.stackexchange.com/questions/5333/difference-between-stream-cipher-and-block-cipher)
 
 
 
