@@ -43,6 +43,8 @@
 * + - - nonblocking
 * + - - multibanked
 * + - - pipelined
+* + - - multi-level cache
+* + - - [ref](https://www.quora.com/What-is-meant-by-non-blocking-cache-and-multi-banked-cache)
 * + - miss penalty
 * + - - critical word first
 * + - - merging write buffers

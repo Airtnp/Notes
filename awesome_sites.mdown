@@ -302,6 +302,7 @@
             - [2018-1-18](#2018-1-18)
             - [2018-1-19](#2018-1-19)
             - [2018-1-20](#2018-1-20)
+            - [2018-1-21](#2018-1-21)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -372,6 +373,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Pointer/Smq/C++](http://www.cnblogs.com/pointer-smq/)
 * [Ytliu/OS/Linux](http://ytliu.info/blog/archives/)
 * [Eli-BenderSky](https://eli.thegreenplace.net/archives/all)
+* [Diting0x/Security](http://www.diting0x.com/archives/)
 
 
 ### OI/Alg
@@ -3329,7 +3331,17 @@ Order of items is just based on Nothing :: Maybe.
 * [open-source-processors](https://lwn.net/Articles/743602/)
 * [key-IV-nonce](https://crypto.stackexchange.com/questions/3965/what-is-the-main-difference-between-a-key-an-iv-and-a-nonce)
 * [stream-block-cipher](https://crypto.stackexchange.com/questions/5333/difference-between-stream-cipher-and-block-cipher)
+* [Why-CreateFile-return-non-consistent](https://blogs.msdn.microsoft.com/oldnewthing/20040302-00/?p=40443)
+* [Usage-of-lfence](https://www.zhihu.com/question/29465982)
+* [Preshing-multithread](http://chonghw.github.io/categories/High-performance/)
+* [CriticalSection-cannot-across-processes](https://blogs.msdn.microsoft.com/larryosterman/2005/08/24/why-dont-critical-sections-work-cross-process/)
+* [Peterson-lock-reorder](https://bartoszmilewski.com/2008/11/05/who-ordered-memory-fences-on-an-x86/)
+* [DCLP-reorder](https://www.zhihu.com/question/35268028)
 
+#### 2018-1-21
+* [Professional-Haskell-topics](https://www.reddit.com/r/haskell/comments/7rwuxb/professional_haskellers_what_are_your_major_pain/)
+* [Handmade-Executable-File](https://www.bigmessowires.com/2015/10/08/a-handmade-executable-file/)
+* 
 
 
 
