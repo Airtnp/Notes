@@ -303,6 +303,7 @@
             - [2018-1-19](#2018-1-19)
             - [2018-1-20](#2018-1-20)
             - [2018-1-21](#2018-1-21)
+            - [2018-1-22](#2018-1-22)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3341,7 +3342,11 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-21
 * [Professional-Haskell-topics](https://www.reddit.com/r/haskell/comments/7rwuxb/professional_haskellers_what_are_your_major_pain/)
 * [Handmade-Executable-File](https://www.bigmessowires.com/2015/10/08/a-handmade-executable-file/)
-* 
+
+#### 2018-1-22
+* [CPL-RPL-DPL](https://manybutfinite.com/post/cpu-rings-privilege-and-protection/)
+* [CPL-RPL-DPL-2](http://www.cppblog.com/xingkongyun/articles/63495.html)
+* [ARM-overview](https://zhuanlan.zhihu.com/p/21571986)
 
 
 

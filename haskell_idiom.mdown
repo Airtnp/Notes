@@ -44,7 +44,9 @@
 
 
 ## L
-
+* LambdaCase
+* + `\x -> case x of` ==> `\case`
+* + [`{- LANGUAGE LambdaCase -}`](http://storm-country.com/blog/LambdaCase)
 
 
 ## M

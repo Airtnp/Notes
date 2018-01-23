@@ -66,6 +66,12 @@
 * + MPI
 * + OpenMP
 * + oversubscription
+* Critical section
+* + Dekker
+* + Peterson
+* + Lamport Bakery
+* + Szymanski
+* + Eisenberg & McGuire
 
 
 ## D
@@ -217,9 +223,14 @@
 * lock
 * + mutex
 * + shared_mutex (reader-write lock)
+* + - upgrade_mutex
 * + timed_mutex
 * + recursive_mutex
 * + deadlock
+* + - bounded resources
+* + - no preemption
+* + - wait while holding
+* + - circular waiting (not DAG)
 * + livelock: two thread restart each other
 * lock-free
 * + test-and-set 
@@ -335,6 +346,16 @@
 * + RAID4: Saving space with parity
 * + RAID5: rotating parity
 * RCU (read-copy-update)
+* RAM
+* + SRAM
+* + - cache
+* + DRAM
+* + EEPROM
+* + Flash
+* + ECC
+* + Odd-Even check bit
+* + Chipkill
+* 
 
 
 ## S
@@ -342,7 +363,7 @@
 * + affinity
 * + Round-robin
 * + SJF STCF
-* + MLFQ
+* + MLFQ (Windows NT)
 * + multi-core
 * + - SQMS
 * + - MQMS
@@ -374,6 +395,18 @@
 ## U
 
 ## V
+* Virtualization
+* + CPU
+* + - scheduler
+* + - limited direct execution
+* + Memory
+* + - address translation
+* + - segmentation
+* + - virtual <=> physical
+* + - - paging
+* + - - TLB
+* + VMM
+* + I/O
 * VMM (virutal machine monitor)
 * + [ref](http://blog.csdn.net/flyforfreedom2008/article/details/45113635)
 * + CPU: limited direct execution
