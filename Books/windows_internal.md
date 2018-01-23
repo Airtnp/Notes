@@ -200,3 +200,20 @@
 * + - environment subsystem LPC
 * + - kernel default handler
 * + WER
+
+## IV
+* Preemption
+* Interrupt
+* 80386
+* + Segment:Offset => Selector:Offset
+* + segment => segment + page
+* virtual memory
+* + page <-> pagefile.sys
+* + #PF (#4)
+* + page out
+* + paged pool / non-paged pool
+* + GDT/LDT
+* + PAE/AWE
+* + application memory
+* + /3GB /USERVA
+* 
