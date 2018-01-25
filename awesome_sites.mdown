@@ -304,6 +304,8 @@
             - [2018-1-20](#2018-1-20)
             - [2018-1-21](#2018-1-21)
             - [2018-1-22](#2018-1-22)
+            - [2018-1-23](#2018-1-23)
+            - [2018-1-24](#2018-1-24)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3348,6 +3350,15 @@ Order of items is just based on Nothing :: Maybe.
 * [CPL-RPL-DPL-2](http://www.cppblog.com/xingkongyun/articles/63495.html)
 * [ARM-overview](https://zhuanlan.zhihu.com/p/21571986)
 
+#### 2018-1-23
+* [Fast-B+Tree](https://github.com/begeekmyfriend/bplustree)
+* [PRG-pattern](https://en.ryte.com/wiki/Post-Redirect-Get)
+* [PRG-cn](http://skyf.org:81/wp/?p=825)
+
+#### 2018-1-24
+* [Solve-90%-NLP-Problem](https://blog.insightdatascience.com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e)
+* [Difference-between-binary-Semaphore-and-mutex](https://stackoverflow.com/questions/62814/difference-between-binary-semaphore-and-mutex)
+* 
 
 
 ## Tools
