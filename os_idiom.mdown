@@ -224,6 +224,7 @@
 * + mutex
 * + shared_mutex (reader-write lock)
 * + - upgrade_mutex
+* + - [ref](https://oroboro.com/upgradable-read-write-locks/)
 * + timed_mutex
 * + recursive_mutex
 * + deadlock

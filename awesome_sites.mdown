@@ -306,6 +306,7 @@
             - [2018-1-22](#2018-1-22)
             - [2018-1-23](#2018-1-23)
             - [2018-1-24](#2018-1-24)
+            - [2018-1-25](#2018-1-25)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3358,6 +3359,9 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-24
 * [Solve-90%-NLP-Problem](https://blog.insightdatascience.com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e)
 * [Difference-between-binary-Semaphore-and-mutex](https://stackoverflow.com/questions/62814/difference-between-binary-semaphore-and-mutex)
+
+#### 2018-1-25
+* [gRPC-practice](https://grpc.io/2018/01/22/grpc-go-engineering-practices.html)
 * 
 
 
