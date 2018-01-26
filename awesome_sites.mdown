@@ -3362,7 +3362,10 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-1-25
 * [gRPC-practice](https://grpc.io/2018/01/22/grpc-go-engineering-practices.html)
-* 
+
+#### 2018-1-26
+* [Kotlin-and-Linear-programming](https://tomstechnicalblog.blogspot.com/2018/01/kotlinforoperationalplanningandoptimiza.html)
+* [Deepcopy-in-JS](https://dassur.ma/things/deep-copy/)
 
 
 ## Tools

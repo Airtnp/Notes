@@ -448,3 +448,15 @@
 * + - Mapped page writer (P = 17)
 * + - Dereference segment thread (P = 18)
 * + - Zero page thread (P = 0)
+* XP/2003
+* + 64bit (1TB physical memory)
+* + DEP (data execution prevention)
+
+## IX Security
+* Principals
+* + single user
+* + group of users
+* + computer
+* + identified by a unique human-readable name and a machine-readable identifier (SID)
+* + database: account <=> principal
+* 
