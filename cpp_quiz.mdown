@@ -1312,3 +1312,15 @@ void thread2() {
 
 // since m_mtx is destructed, undefined behavior
 ```
+
+## C significant characters
+* [discussion](https://stackoverflow.com/questions/18290165/whats-the-exact-role-of-significant-characters-in-c-variables)
+
+## . vs ->
+* a.b can be non-lvalue
+* a->b must be lvalue
+
+## vector ctors
+* noexcept move => copy => move
+* [discussion](https://stackoverflow.com/questions/8001823/how-to-enforce-move-semantics-when-a-vector-grows/8864895#8864895)
+* 

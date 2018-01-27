@@ -459,4 +459,321 @@
 * + computer
 * + identified by a unique human-readable name and a machine-readable identifier (SID)
 * + database: account <=> principal
+* SID (Security Identifier)
+* + variable-length data structure (unlike a GUID - 128bit)
+* + hierarchical structure 
+* + - S-R-I-SA-SA-SA
+* + - R (reversion number)
+* + - I (48bit identifier authority, unique namespace)
+* + - SA (sub authority)
+* Credential
+* Password (OWF)
+* Security Subsystem
+* + Authority and Domain Controller
+* + - authenticate principals
+* + Local Security Authority
+* + - LSASS.exe NetLogon
+* + LSA Server service
+* + Security Support Providers/Authentication Package (SSP/AP)
+
+## X Driver & Hardware
+* I/O subsystem
+* + define infrastructure
+* + I/O interface
+* + Packet Driven - IRP
+* + loadable, layered drivers
+* + Synchronous I/O
+* + Asynchronous I/O
+* Device drivers
+* + Legacy drivers (NT 4.0)
+* + WDM drivers
+* + - Bus/Function/Filter
+* + Filesystem drivers
+* + Printer & Graphics drivers
+* + Network drivers (NDIS)
+* + Port vs Miniport drivers
+* + - Video / SCSI
+* + Class vs Miniclass drivers
+* + - Disk / HID / CDROM
+* I/O Subssytem  (Nt!)
+* I/O Manager (Io!)
+* Driver support routine (Io!/Ex!/Ke!/Mm!/Hal!/FsRtl!)
+* Kernel mode device drivers
+* HAL I/O access routines
+* I/O port and register
+* Plug & Play Manager
+* + detecting devices / loading appropriate drivers
+* + kernel vs user mode PnP manager
+* + arbiter of resources and resouce balancing
+* + provides notification mechanism for drivers
+* Device Enumeration
+* + user plug in a new device
+* + - bus driver notices the arrival
+* + - notifies the PnP manager
+* + - enumerate the device
+* + - retrieves identification information for the device
+* + - device and instance ID
+* + - device capabilities
+* + - Hardware ID(s) and Compatible ID(s)
+* + - Information passed to Usermode Plug & Play manager
+* Power Manager
+* + enables to suspend your machine or power doen your device when idle
+* + work closely with the I/O & PnP manager
+* + requires ACPI BIOS support
+* + ACPI defines various power level for a system and for devices
+* + Device drivers must be responsive to Power manager requests (IRPs)
+* WMI (windows management instrumentation)
+* + MMC =>(DCOM) => CIM Object Manager => GIM (gommon information) => Object providers => WDM/SNMP/DMI(RPC)/Win32 => IRP_MJ_SYSTEM_CONTROL
+* WDM
+* IRP (IO Request Packet)
+* + travel down a driver stack
+* + IRP stack location
+* + create/read/write/PNP/devioctl/cleanup/close
+* Layering Driver
+* + Io Attach/Detach/Delete Device
+* + dispatch table
+* Sync IOMgr (IopParseDevice) =>(IRP) IoCallDriver => Each driver in turn
+* Async IRP =>(STATUS_PENDING) => Interrupt/DPC => APC
+* NT IO API
+* + Establish IO Handles
+* + IO Completion
+* + Actual IO Operation
+* + Meta IO
+* + Administrative operations
+* Driver as DLL
+* + class drivers => miniport
+* + USB/1394/SCSI/ATAPI/Serial/NICs
+* Sleep/Hibernate/D-states
+
+## XI Store
+* volatile devices
+* + Floppy
+* + HDD
+* + Optical Media
+* + SAN
+* + Tape
+* + Removable Media
+* storage stack
+* + application
+* + I/O subsystem
+* + filesystem
+* + Volume snapshot
+* + Volume management
+* + Partition management
+* + Class
+* + Port/Miniport
+* + Disk subsystem
+* MBR (Master Boot Record)
+* + 磁盘签名 [0x1b8]
+* + 分区表 [0x1be]
+* + 扇区签名 [55AA]
+* + primary / extended
+* Filesystem
+* + FAT12/16/32 / CDFS / UDF / NTFS
+* FAT
+* + simple file allocation table
+* + linked list file access
+* NTFS
+* + 多重数据流
+* + Unicode name
+* + 文件属性索引
+* + 动态坏扇区记录
+* + hard link
+* + 基于文件的压缩 + 稀疏文件
+* + journals
+* + encryption
+* + POSIX
+* + 磁盘碎片整理
+* + reparse point / junction
+* Boot Sector
+* + BPB (BIOS Parameter Block)
+* + OEM String [0x3-0xa]
+* + Boot code
+* MFT (Main File Table)
+* + Volume
+* + Cluster
+* + MFT
+* + $Mft [1st sector]
+* + $MftMirr (backup of $Mft)
+* + $LogFile (Volume structure and metadata log)
+* + $Volume (NTFS volume basic information)
+* + $AttrDef (file attributes)
+* + $\ (root) [11th sector]
+* + - LCN 35793
+* + $Bitmap (cluster bitmap)
+* + $Boot (boot sector)
+* + $BadClus (bad sector sign)
+* + $Secure (authority)
+* + $Upcase (lower-upper case)
+* + $\Extend (extended partition)
+* + - $Quota
+* + - $ObjID
+* + - $UsnJrnl
+* + - $Reparse
+* + NTFS Metadata + File record + Directory record
+* File Selector: Standard Information + Filename + Data + HPFS extended attribute
+* + Data
+* + - VCN
+* + - LCN
+* + - Number of clusters
+* + Directory
+* + - dense: index root + allocation + bitmap
+* + - sparse: directly list of data
+* + - B+ Tree
+
+## XII Net protocol
+* OSI
+* + Application
+* + - File I/O, Named Pipes or Mailslots
+* + Presentation
+* + - Environment subsystem
+* + - Provider interface <=> SMB
+* + Session
+* + - Provider interface <=> SMB
+* + - Redirector
+* + - NetBIOS
+* + - TDI (transport driver interface)
+* + - Windows Sockets
+* + Transport
+* + - NetBIOS
+* + - TDI (transport driver interface)
+* + - Windows Sockets
+* + - NetBEUI
+* + - TCP/IP
+* + Network
+* + - NetBEUI
+* + - TCP/IP
+* + Data Link
+* + - NetBEUI
+* + - TCP/IP
+* + - NDIS (Network driver interface specification) Interface/Environment/Drivers <=> NDIS protocol
+* + Physical
+* + - NDIS Interface/Environment/Drivers <=> NDIS protocol
+* + - Ethemet
+* + - Token Ring
+* API
+* + Windows I/O
+* + - Kernel32.dll+Ntdll.dll => Rdbss.sys => TDI => NTFS+FAT
+* + - Or by Object manager
+* + WNet
+* + Windows named pipe
+* + - bidirection / reliable / based-on-connection
+* + - CreateNamedPipe/ConnectNamedPipe/CloseHandle
+* + Windows mailslot
+* + - single direction / in-reliable / can broadcast
+* + - CreateMailslot/GetMailslotInfo
+* + NetBIOS
+* + Winsock (Windows Sockets)
+* + - start winsock
+* + - create socket
+* + - bind/listen/wait/connect/send/recv/interrupt socket
+* + - SPI (service provider interface)
+* + - Layered network services (VPN/LDAP/NLB/FRS/DFS/QoS/IPSec)
+* + - TCP/IP / NetBEUI/Apple Talk/IPX/SPX/ATM/IrDA (Infrared Data Association)
+* + - DNS/Active Directory/IPX/SPX
+* + RPC
+* + DCOM
+* + CIFS (Common Internet File System) - SMB
+* + WebServices
+* + TDI
+* + - driver
+* + - asynchronous
+* + - clients
+* + - - AFD/MSFS/NPFS
+* + - TDI transport <=>(NDIS IRP) NDIS library (miniport/protocol) <=> HAL
+* NDIS
+* + media sense
+* + TCP/IP task offloading
+* + fast packet forwarding
+* + wake on LAN
+* + 1394/USB
+* Microsoft TCP/IP
+* + Application and User Mode Service
+* + - NetBIOS
+* + - RPC
+* + - Win32 WNet/WinlNet
+* + - WinSock
+* + Application Interfaces
+* + - RPC
+* + - WNet
+* + - Winlnet
+* + - NetBIOS support
+* + - WinSock
+* + Kernel
+* + - named pipe
+* + - redirector/server
+* + - NetBT
+* + - AFD
+* + - TCP
+* + - IP
+* + - - ICMP/IP Forwarder/IP Filtering/IGMP/ARP
+* + - Traffic Control
+* + - - Packet queue/sceduler
+* + Driver Interfaces
+* + - NDIS Wrapper
+* + - - NDIS WAN Miniport wrapper
+* + - - - PPTP/Async/X.25/ISDN
+* + - - - Frame Relay/ATM/Ethenet/FDDI/Token Ring
+* + Implementation
+* + - Different network/card
+* + - Logical multi-homing
+* + - Internal IP routing capabilitiy
+* + - IGMP (IP Multicasting) support
+* + - Duplicate IP address detection
+* + - DGP (Dead gateway detection)
+* + - PMTU (automatic path maximum transmission unit) discovery
+* + Service
+* + - DHCP (Dynamic Host Configuration Protocol)
+* + - WINS (Windows Internet Name Service) NetBIOS
+* + - DNS (Domain Name Server)
+* + - PPTP (Point-to-Point tunneling protocol) VPN
+* + - PPP/SLIP 特别
+* + - LPR/LPD 网络打印
+* + - SNMP agent
+* + - IIS (Microsoft Internet Information Server)
+* + - finger/FTP/Telnet
+* + - Character Generator/Daytime/Discard/Echo/Quote of the Day
+* + - arp/hostname/ipconfig/nbtstat/netstat/ping/route/tracert
+
+## XIII BSoD
+* stop code
+* BugCheck -> BugCheckEx -> KeBegCheck2
+* + disable interrupt
+* + stop other CPU
+* + draw BSoD
+* + call register callback
+* + save dump
+* BSoD procedure
+* + collect information (process/parameter/error module)
+* + kernel debugger
+* + disable interrupt
+* + CPU.IRQL = HIGH_LEVEL
+* + stop other CPUs
+* + draw BSoD
+* + - nt!InbvAcquireDisplayOwnerShip
+* + - nt!InbvResetDisplay
+* + - nt!InbvSolidColorFill
+* + - nt!InbvSetTextColor
+* + - InbvDisplayString
+* + call registed bug check callback
+* + - KeRegisterBugCheckCallback
+* + KdInitSystem init kernel debug engine
+* + IoWriteCrashDump => dump
+* + - snapshot
+* + - fail => disable paging file, no enough space
+* + - SMSS => NtCreatePagingFile => WinLogon => SaveDump => Memory.dmp
+* + auto restart
+* + KiBugCheckDebugBreak
+
+## XIV - XV Debug
+* debugger
+* + msdev
+* + ntsd (NT symbolic debugger)
+* + cdb (console debugger)
+* + kd (kernel debugger)
+* + windbg
+* dump
+* + complete memory dump
+* + kernel memory dump
+* + small memory dump (64KB)
 * 

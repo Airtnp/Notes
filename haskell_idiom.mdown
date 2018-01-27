@@ -19,6 +19,8 @@
 
 
 ## E
+* Extensions
+* + [quiz](https://codegolf.stackexchange.com/questions/153744/wait-what-language-is-this)
 
 
 ## F
@@ -33,7 +35,9 @@
 
 
 ## I
-
+* ImplicitParams
+* + `f :: (?x::Int) -> a -> b`  and `let ?x = Bool in f`
+* + [ref](https://stackoverflow.com/questions/11141600/implicit-parameter-and-function)
 
 
 ## J
@@ -54,7 +58,8 @@
 
 
 ## N
-
+* class Num now not require Show & Ord
+* + [ref](https://stackoverflow.com/questions/46994665/typeclass-constraints-necessary-for-a-function-that-prints-integers-not-greater)
 
 
 ## O

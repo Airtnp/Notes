@@ -193,6 +193,8 @@
 * + SAS (Serial Attached SCSI)
 * + SATA (Serial ATA)
 * + [ref](https://www.webopedia.com/DidYouKnow/Computer_Science/sas_sata.asp)
+* + [S.M.A.R.T.](https://en.wikipedia.org/wiki/SMART_criteria)
+* + [Structure](https://zhuanlan.zhihu.com/p/32907254)
 * hypervisors
 * hazard pointer
 * + [ref](http://blog.csdn.net/coryxie/article/details/8562627)

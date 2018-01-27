@@ -177,6 +177,7 @@
 * + 单路增广
 * + 多路增广
 * + 预流推进
+* + [Worst-case](https://www.zhihu.com/question/266149721/answer/303649655)
 * DFS
 * + DFS序 DFS树
 * 点分治

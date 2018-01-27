@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23)
+        - [2017-7-23](#2017-7-23-1)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,7 +187,7 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24)
+            - [2017-9-24](#2017-9-24-1)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
@@ -211,7 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
-            - [2017-10-20](#2017-10-20)
+            - [2017-10-20](#2017-10-20-1)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
@@ -307,6 +307,8 @@
             - [2018-1-23](#2018-1-23)
             - [2018-1-24](#2018-1-24)
             - [2018-1-25](#2018-1-25)
+            - [2018-1-26](#2018-1-26)
+            - [2018-1-26](#2018-1-26-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3366,6 +3368,34 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-1-26
 * [Kotlin-and-Linear-programming](https://tomstechnicalblog.blogspot.com/2018/01/kotlinforoperationalplanningandoptimiza.html)
 * [Deepcopy-in-JS](https://dassur.ma/things/deep-copy/)
+* [Interactive-GPU-programming](http://dragan.rocks/articles/18/Interactive-GPU-Programming-1-Hello-CUDA)
+
+#### 2018-1-26
+* [C-context](https://zhuanlan.zhihu.com/p/32431200)
+* [frame-sync/state-sync](https://zhuanlan.zhihu.com/p/32843758)
+* [2PC-OMid-Percolator](https://zhuanlan.zhihu.com/p/32858033)
+* [Regular-Expression-Optimization](https://zhuanlan.zhihu.com/p/32896848)
+* [pointer-64bit-save-space](https://www.zhihu.com/question/265348258/answer/294995655)
+* [STL-weak-order](https://stackoverflow.com/questions/1293231/stl-ordering-strict-weak-ordering/16694905#16694905)
+* [C++-NaN-for-map](https://stackoverflow.com/questions/8096817/is-nan-a-valid-key-value-for-associative-containers/8097097#8097097)
+* [Strict-weak-order](http://www.cnblogs.com/walkerlala/p/5561339.html)
+* [Apache-2.0](https://www.whitesourcesoftware.com/whitesource-blog/top-10-apache-license-questions-answered/)
+* A known bug in the Visual C++ preprocessor: it does not expand macros prior to rescanning.
+* [WaitOnAddress-vs-futex](https://blogs.msdn.microsoft.com/oldnewthing/20170601-00/?p=96265)
+* [volatile-avoid-SL-reorder](http://blog.csdn.net/xtlisk/article/details/39098981)
+* [volatile-observer-action-cannot-reorder](https://stackoverflow.com/questions/14785639/may-accesses-to-volatiles-be-reordered/14787771#14787771)
+* [volatile-not-intended-behavior](https://sites.google.com/site/kjellhedstrom2/stay-away-from-volatile-in-threaded-code)
+* [AES-CBC/CTR](http://www.metsky.com/archives/585.html)
+* [AES-Algorithm](https://www.cnblogs.com/luop/p/4334160.html)
+* [SATA-m2-PCIE-NVME](https://www.zhihu.com/question/48972075/answer/253574912)
+* [BSGS-algorithm](http://www.cnblogs.com/yuiffy/p/3877381.html)
+* [Unity-Foreach](https://zhuanlan.zhihu.com/p/22708768)
+* [AGM-LibGC-for-Cpp](https://www.codeproject.com/Articles/7840/AGM-LibGC-a-C-garbage-collection-library)
+* [AGM-Reflection](https://www.codeproject.com/Articles/12358/C-object-properties-with-no-run-time-or-memory-ove)
+* [Distributed-Store-Interview](https://zhuanlan.zhihu.com/p/23284834)
+* [Polya-on-异构体](https://zhuanlan.zhihu.com/p/28032458)
+
+
 
 
 ## Tools
