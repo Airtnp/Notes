@@ -3395,6 +3395,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Distributed-Store-Interview](https://zhuanlan.zhihu.com/p/23284834)
 * [Polya-on-异构体](https://zhuanlan.zhihu.com/p/28032458)
 
+#### 2018-1-27
+* [Unary-expression-associativity](https://stackoverflow.com/questions/12961351/does-it-make-sense-for-unary-operators-to-be-associative)
+* + So every multiplicative-expression is an additive-expression, but not vice-versa, and this is what makes multiplication "bind tighter" than addition.
+* [Precedence-Climbing](http://www.shinexu.com/Compilation/operator-precedence-parser/)
+* + Shunting Yard
+
 
 
 

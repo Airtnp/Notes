@@ -377,9 +377,10 @@
 * + Cockoo hash
 * + Murmur hash
 * + Conflict
-* + - open hashing - close addressing
+* + - open hashing - close addressing (separate chaining)
 * + - closed hashing - open addressing
 * + - hopscotch hashing
+* + - - [ref](http://m0r3fr3e2e.blogspot.com/2011/07/hopscotch-hashing.html)
 * + - coalesced hashing
 * + - cuckoo hashing
 * hash tree

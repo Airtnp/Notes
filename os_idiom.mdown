@@ -186,6 +186,9 @@
 
 
 ## G
+* GPU
+* + [calculation](https://www.cnblogs.com/muchen/p/6138691.html)
+
 
 
 ## H
