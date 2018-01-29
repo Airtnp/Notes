@@ -72,6 +72,8 @@
 * + Lamport Bakery
 * + Szymanski
 * + Eisenberg & McGuire
+* CPU
+* + [bugs](https://wiki.osdev.org/CPU_Bugs)
 
 
 ## D
@@ -82,6 +84,7 @@
 * DMA
 * Device driver
 * disk scheduler
+* + FCFS
 * + SSTF
 * + - only seek time (move between tracks)
 * + Elevator(SCAN/C-SCAN)
@@ -89,11 +92,13 @@
 * + SPTF/SATF
 * + - seek + rotation time
 * distributed system
+* + Resource sharing/Computational speedup/Reliability/Communication
 * + reliable communication layers
 * + - sender ->(meesage) receiver ->(ack) -> sender
 * + - timeout -> dropped request / ack
 * + DSM (distributed shared memory)
 * + RPC (remote procedure call)
+* + - Client/Server Model (C/S)
 * + - stub generator (protocol compiler)
 * + - - client stub
 * + - - - create message buffer
@@ -114,6 +119,13 @@
 * + - - byte ordering
 * + - - - XDR (external data representation) / protobuf
 * + - - synchronously
+* + Naming Strategy
+* + - Mount points (NFS)
+* + - - location transparent, remote name can change
+* + - - hard to maintain
+* + - Global namespace (AFS/Sprite)
+* + - - consistent
+* + - - hard for caching, limit flexibility
 * + [AFS-NFS-GFS](http://www.shuang0420.com/2016/12/10/Distributed%20Systems%E7%AC%94%E8%AE%B0%EF%BC%8DNFS%E3%80%81AFS%E3%80%81GFS/)
 * + NFS
 * + - [ref](https://csruiliu.github.io/blog/2017/11/17/nfs/)
@@ -152,6 +164,9 @@
 * + 2-phase lock
 * + futex_wait/futex_wake
 * file system
+* + Application = Daemon = Servers = Shell
+* + open file table
+* + per-process file table
 * + FAT (file allocation table)
 * + NTFS
 * + ext2-4
@@ -237,6 +252,7 @@
 * + - no preemption
 * + - wait while holding
 * + - circular waiting (not DAG)
+* + - Banker's Algorithm
 * + livelock: two thread restart each other
 * lock-free
 * + test-and-set 
@@ -250,6 +266,44 @@
 * + ABA
 * + - x = A -> B -> A => transparent to CAS
 * + - add ABA counter
+* LRU on Paging
+* + perfect LRU
+* + - Keep a time stamp for each page with the time of the last access. Throw out the LRU page. (expensive)
+* + - Keep a list of pages, where the front of the list is the most recently used page, and the end is the least recently used. (double linked list)
+* + Approximate LRU
+* + - reference bits for each page
+* + - additional reference bits
+* + - - At regular intervals or on each memory access, shift the byte right, placing a 0 in the high order bit.
+* + - - On a page fault, the lowest numbered page is kicked out
+* + Second Change Algorithm
+* + - frames in circular list
+* + - page fault => check reference bit of next frame
+* + - keep a modify bit
+> The reference bit and modify bit form a pair (r,m) where
+1. (0,0) neither recently used nor modified - replace this page!
+2. (0,1) not recently used but modified - not as good to replace, since the OS
+must write out this page, but it might not be needed anymore.
+3. (1,0) recently used and unmodified - probably will be used again soon, but
+OS need not write it out before replacing it
+4. (1,1) recently used and modified - probably will be used again soon and
+the OS must write it out before replacing it
+> Page with (0,0) => replace the page.
+2. Page with (0,1) => initiate an I/O to write out the page, locks the page in
+memory until the I/O completes, clears the modified bit, and continue the
+search
+3. For pages with the reference bit set, the reference bit is cleared.
+4. If the hand goes completely around once, there was no (0,0) page.
+    • On the second pass, a page that was originally (0,1) or (1,0) might
+    have been changed to (0,0) => replace this page
+    • If the page is being written out, waits for the I/O to complete and then remove the page.
+    • A (0,1) page is treated as on the first pass.
+    • By the third pass, all the pages will be at (0,0
+* + Multihreading replacement
+* + - thrashing: over-commiteed memory and pages are continuously tossed
+* + - proportional allocation: more page frames to large process
+* + - global replacement: put all pages from all processes in one pool
+* + - per-process: each process has its own pool of pages
+* + Clock-PRO
 
 
 ## M
@@ -263,7 +317,14 @@
 
 
 ## N
-
+* Network
+* + Application layer: applications that use the net, e.g., mail, netscape, Xservices, ftp, telnet, provide a UI
+* + Presentation layer: data format conversion, e.g., big/little endian integer format)
+* + Session layer: implements the communication strategy, such as RPC. Provided by libraries.
+* + Transport layer: reliable end-to-end communication between any set of nodes. Provided by OS.
+* + Network layer: routing and congestion control. Usually implemented in OS.
+* + Data Link Control layer: reliable point-to-point communication of packets over an unreliable channel. Sometimes implemented in hardware, sometimes in software (PPP).
+* + Physical layer: electrical/optical signaling across a “wire”. Deals with timing issues. Implemented in hardware.
 
 
 ## O
@@ -367,9 +428,29 @@
 ## S
 * scheduler
 * + affinity
+* + FCFS
+* + - First-Come-First-Served (or FIFO: First-In-First-Out)
+* + - average wait time is highly variable as short jobs may wait behind long jobs
+* + - may lead to poor overlap of I/O and CPU since CPU-bound processes will force I/O bound processes to wait for the CPU, leaving the I/O devices idle
 * + Round-robin
-* + SJF STCF
+* + - Use a time slice and preemption to alternate jobs
+* + - Average waiting time can be bad
+* + SJF STCF SRTF(shortest remaining time first, only for preemptive)
+* + - Shortest Job First
+* + - provably optimal w.r.t. minimize average waiting time
+* + - works for preemptive & non-preemptive schedulers
+* + - IO bound jobs get priority over CPU bound jobs
+* + - impossible to predict time
+* + - long running CPU bound job can starve
+* + - optimal but unfair
 * + MLFQ (Windows NT)
+* + - RR on each priority queue and change priority
+* + - job's time slices expires => drop 1 level
+* + - context swiching from I/O bound => up to top priorit
+* + Lottery Scheduling
+* + - Jobs get tickets and scheduler randomly picks winning ticket
+* + - assign most to short running jobs, fewer to long running job, avoid starvation
+* + - fair scheduling
 * + multi-core
 * + - SQMS
 * + - MQMS
@@ -396,6 +477,26 @@
 * + - [ref](https://en.wikipedia.org/wiki/Translation_lookaside_buffer#TLB-miss_handling)
 * + - [another-ref-says-RISC-and-IA-64](http://www.informit.com/articles/article.aspx?p=29961&seqNum=4)
 * + PCID/ASID/PID
+* Thread
+* + kernel thread (1:1)
+* + - lightweight process
+* + - context switching
+* + user thread (m:1)
+* + - no context switching by kernel (but by user)
+* + - scheduling hard, affinity problem
+* + - must have idle thread process
+* + m:1 model
+* + - 1:1 NPTL/LinuxThreads (kernel thread)
+* + - - [NPTL-vs-LinuxThreads](https://www.ibm.com/developerworks/cn/linux/l-threading.html)
+* + Scheduling Algorithm
+* + - CPU Utilization: percentage of time of CPU busy
+* + - Throughput: number of processes completed / unit time
+* + - Turnaround time: length of time it rakes to run a process from init to termination, including all waiting time, turnaroundTime = burstTime + waitingTime = finishTime - arrivalTime
+* + - Waiting time: total amount of time the a process in the ready queue, waitingTime = startTime - arrivalTime
+* + - - give each process the same amount of time on the processor. This might actually increase average response time.
+* + - Response time: time between when a process is ready to run and its next I/O request
+* + - - provide output to the user as quickly as possible and process their input as soon as it is received.
+* + - - in interactive systems, predictability may be more important than a low average with a high variance.
 
 
 ## U

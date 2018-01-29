@@ -1323,4 +1323,6 @@ void thread2() {
 ## vector ctors
 * noexcept move => copy => move
 * [discussion](https://stackoverflow.com/questions/8001823/how-to-enforce-move-semantics-when-a-vector-grows/8864895#8864895)
-* 
+
+## prvalue vs. xvalue & elision
+* [discussion](https://stackoverflow.com/questions/48174588/how-do-we-test-if-an-expression-of-a-certain-type-can-be-invoked-with-a-prvalue)

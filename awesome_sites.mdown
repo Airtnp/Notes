@@ -309,6 +309,8 @@
             - [2018-1-25](#2018-1-25)
             - [2018-1-26](#2018-1-26)
             - [2018-1-26](#2018-1-26-1)
+            - [2018-1-27](#2018-1-27)
+            - [2018-1-28](#2018-1-28)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3400,6 +3402,13 @@ Order of items is just based on Nothing :: Maybe.
 * + So every multiplicative-expression is an additive-expression, but not vice-versa, and this is what makes multiplication "bind tighter" than addition.
 * [Precedence-Climbing](http://www.shinexu.com/Compilation/operator-precedence-parser/)
 * + Shunting Yard
+* [Intel-TSX-Report](http://www.dbbook.org/tsx-evaluation/)
+* [Intel-TSX-bug](https://www.zhihu.com/question/24838390/answer/32977248)
+* [Intel-TSX-NI](https://stackoverflow.com/questions/42507787/is-intel-transactional-synchronization-extensions-new-instruction-tsx-ni-diff)
+
+#### 2018-1-28
+* [V8-memory-quiz](http://www.mattzeunert.com/2018/01/25/v8-javascript-memory-quiz.html)
+* 
 
 
 
