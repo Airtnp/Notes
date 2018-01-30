@@ -311,6 +311,7 @@
             - [2018-1-26](#2018-1-26-1)
             - [2018-1-27](#2018-1-27)
             - [2018-1-28](#2018-1-28)
+            - [2018-1-29](#2018-1-29)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3408,7 +3409,19 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-1-28
 * [V8-memory-quiz](http://www.mattzeunert.com/2018/01/25/v8-javascript-memory-quiz.html)
-* 
+* [Python-3.7-Dataclass](https://hackernoon.com/a-brief-tour-of-python-3-7-data-classes-22ee5e046517)
+
+#### 2018-1-29
+* [Haskell-XCheck](https://www.reddit.com/r/haskell/comments/7tq1hl/what_to_favour_for_property_checking_quickcheck/)
+* [LAPACK-Cpp-Metaprogramming](http://wordsandbuttons.online/outperforming_lapack_with_c_metaprogramming.html)
+* [LAPACK-Cpp-Metaprogramming-2](http://wordsandbuttons.online/vastly_outperforming_lapack_with_cpp_metaprogramming.html)
+* [Microsoft-Disable-Intel-First-Spectre-Fix](http://www.securityweek.com/microsoft-disables-spectre-mitigations-due-instability)
+* [获得Kernel32-Ntdll基地址](http://blog.csdn.net/programmingring/article/details/11357393)
+* [DLL-address-to-name](https://stackoverflow.com/questions/25730526/how-to-find-out-the-function-name-from-a-call-to-the-import-address-table)
+* [Dynamic-Base-ASLR](https://stackoverflow.com/questions/8554014/how-to-know-whether-a-dll-uses-aslr-or-not)
+* [ASLR-between-Windows-Linux](http://www.freebuf.com/articles/system/29392.html)
+
+
 
 
 
