@@ -132,11 +132,20 @@ Z = g => v => g(Z(g))(v) // explicit currying makes it 'lazy'
 * + `dB(t1 t2) = dB(t1) dB(t2)`
 * + [ref](https://acemerlin.github.io/posts/%E8%AE%A1%E7%AE%97%E7%9A%84%E6%9C%AC%E8%B4%A8/2017-04-10-introduction-to-computation-part-2/)
 * + Shift
+* + `[↑d, c]`, c means context
 ```
 [↑d, c](i) = i                        if i < c
 [↑d, c](i) = i + d                    if i ≥ c
 [↑d, c](λ.t) = λ. [↑d, c+1](t)
 [↑d, c](t1 t2) = ([↑d, c](t1)) ([↑d, c](t2))
+
+-- [↑d, c]t
+termShift d t = walk 0 t where
+    walk :: Int -> Term -> Term
+    walk c t' = case t' of
+        TmVar i n   -> if i >= c then TmVar (i + d) (n + d) else TmVar i (n + d)
+        TmAbs s t1  -> TmAbs s $ walk (c + 1) t1
+        TmApp t1 t2 -> TmApp (walk c t1) (walk c t2)
 ```
 * + Substitution
 ```
@@ -144,5 +153,38 @@ Z = g => v => g(Z(g))(v) // explicit currying makes it 'lazy'
 [t/j]i = i                          if i not = j
 [t/j]λ.t0 = λ.[[↑1, 0](t)/j + 1] t0
 [t/j]t1 t2 = [t/j] t1 [t/j] t2
+
+-- [j -> s]t
+termSubst j s t = walk 0 t where
+    walk c t' = case t' of
+        TmVar i n   -> if i == (j + c) then termShift c s else TmVar i n
+        TmAbs s t1  -> TmAbs s $ walk (c + 1) t1
+        TmApp t1 t2 -> TmApp (walk c t1) (walk c t2)
+
+-- beta reduction
+-- (\x -> t) v => [↑-1, 0]([0 -> [↑1, 0](v)](t))
+-- (\x. y x z) (\x. x) => (\.1 0 2)(\. 0) => 0 (\. 0) 1 (not 1 (\. 0) 2)
+termSubstTop s t = 
+    termShift (-1) (termSubst 0 (termShift 1 s) t)
 ```
-* + 
+* Call-by-value / Call-by-name
+* + Operational semantics
+* STLC
+* + Value `v ::= T | F | \x.t`
+* + Term `t ::= v | if t then t else t | t t`
+* + Context `Γ ::= ∅ | Γ, x : τ`
+* + Type `τ ::= bool | τ1 -> τ2`
+
+## Type Safety
+* + progress
+* + - `t:τ => t ∈ v | t -> t'`
+* + - should be proved by every term:type
+* + preservation
+* + - `Γ |- t:τ & t -> t' => Γ |- t':τ`
+* + - should be proved by every term:type
+* + substituion
+* + - `Γ, x:τ1 |- t:τ2 & Γ |- t1:τ1 => Γ |- [t1/x]t:τ2`
+* + inversion
+* + canonical forms
+* + permutation
+* + weakening

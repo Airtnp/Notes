@@ -312,6 +312,8 @@
             - [2018-1-27](#2018-1-27)
             - [2018-1-28](#2018-1-28)
             - [2018-1-29](#2018-1-29)
+            - [2018-1-30](#2018-1-30)
+            - [2018-1-31](#2018-1-31)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3421,7 +3423,16 @@ Order of items is just based on Nothing :: Maybe.
 * [Dynamic-Base-ASLR](https://stackoverflow.com/questions/8554014/how-to-know-whether-a-dll-uses-aslr-or-not)
 * [ASLR-between-Windows-Linux](http://www.freebuf.com/articles/system/29392.html)
 
+#### 2018-1-30
+* [Haskell-Strategy-Pattern](http://storm-country.com/blog/gof-strategy)
+* [Lazy-OCaml](http://www.zenlife.tk/zinc.md)
+* [Matrix-Calculus-in-ML](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html)
 
+#### 2018-1-31
+* [Same-Origin-Policy](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
+* [Old-New-Things](https://github.com/mity/mctrl/wiki/Old-New-Win32API)
+* [Cv-with-Futex](https://www.remlab.net/op/futex-condvar.shtml)
+* [New-Thread-Model-for-gcc-win32](http://gcc.gcc.gnu.narkive.com/Yh0NjEyy/adding-a-new-thread-model-to-gcc)
 
 
 
