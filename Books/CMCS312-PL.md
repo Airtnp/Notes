@@ -188,3 +188,71 @@ termSubstTop s t =
 * + canonical forms
 * + permutation
 * + weakening
+
+## Curry-Howard Isomorphism
+* phase distinction
+* + static phase (typing rules)
+* + dynamic phase (evaluating)
+* constructive logics
+* + P V /P = T not hold
+* propositions = types
+* + `P => Q = P -> Q`
+* + `P ∧ Q => P x Q`
+* + proof of proposition P = terms of type P
+* + proposition P is provable = type P is inhabited by some term
+* different logic => different type system
+* + linear logic => linear type system
+* STLC
+```
+Types       τ ::= unit | nat | τ1 → τ2
+Numbers     n ::= 0 | 1 | ...
+Prim op’s   o ::= + | − | ×
+Values      v ::= ? | n | λx : τ.t
+Terms       t ::= x | v | o(t, t) | t t
+Context     Γ ::= ∅ | Γ, x : τ
+```
+* + type rules
+* + - unit/naturals/variables/prim. ops/lambda/app
+* let binding
+* + `t ::= ... | let x : τ1 = t in t end`
+* + eval rules
+* + - substitution(preservation)/progress
+* + type inference rules
+* + - application rule
+* + `let x:τ1 = t1 in t2` = `(\x:τ1. t2) t1`
+* + elaboration function
+* + - external language (with extra defs) => internal language (original)
+* + - `η : te |→ ti`
+* + - `Γ |-e te : τ` if and only if `Γ |-i (η(te)) : τ`
+* + - `t1e ->e t2e` if and only if `η(te1) ->i η(te2)`
+```
+η(v) = v
+η(t1 t2) = η(t1) η(t2)
+η(let x : τ = t1 in t2 end) = (λx : τ1.η(t1)) (η(t2))
+```
+* pair & product
+* + `τ ::= ... | τ × τ`
+* + `t ::= ... | <t, t> | first(t) | second(t)`
+* + typing rules
+* + - pair/project-1/project-2
+* + evalutaion rules (call-by-value, only have t->t' => o(t) -> o(t'))
+* + - substitute-1/-2/-first/-second/first/second
+* heterogeneous & sum
+* + `τ ::= ... | τ1 + τ2`
+* + `v ::= inl_{τ1+τ2}(v) | inr_{τ1+τ2}(t)`
+* + `t ::= inl_{τ1+τ2}(t) | inr_{τ1+τ2}(t) | (case t1 of inl(x) ⇒ t2 | inr(x) ⇒ t3)`
+* + typing rules
+* + - sum/case
+* + evaluation rules
+* + - substitute-inl/-inr/-case/application
+* recursion
+* + `fix f(x) : τ is t end`
+* + `t ::= ... | fix f(x) : τ1 → τ2 is t end`
+* + `v ::= ... | fix f(x) : τ1 → τ2 is t end`
+```
+Γ, f : τ1 → τ2, x : τ1 |- t : τ2
+---------------------------------
+Γ |- fix f(x) : τ1 → τ2 is t end : τ1 → τ
+```
+* + evaluation rule
+* + - substitute/[v/fix...]t

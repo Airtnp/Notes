@@ -314,6 +314,7 @@
             - [2018-1-29](#2018-1-29)
             - [2018-1-30](#2018-1-30)
             - [2018-1-31](#2018-1-31)
+            - [2018-2-1](#2018-2-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3434,6 +3435,10 @@ Order of items is just based on Nothing :: Maybe.
 * [Cv-with-Futex](https://www.remlab.net/op/futex-condvar.shtml)
 * [New-Thread-Model-for-gcc-win32](http://gcc.gcc.gnu.narkive.com/Yh0NjEyy/adding-a-new-thread-model-to-gcc)
 
+#### 2018-2-1
+* [Inject-learn](https://cxa.codebashing.com/courses/php)
+* [Learn-Web-Security](https://www.zhihu.com/question/21606800)
+* 
 
 
 
