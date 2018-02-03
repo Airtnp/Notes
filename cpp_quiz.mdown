@@ -1326,3 +1326,34 @@ void thread2() {
 
 ## prvalue vs. xvalue & elision
 * [discussion](https://stackoverflow.com/questions/48174588/how-do-we-test-if-an-expression-of-a-certain-type-can-be-invoked-with-a-prvalue)
+
+## terminate vs. unexpected
+* When uncaught exception is occur, terminate is called.
+* When unexpected exception is occur, unexpected is called.
+```
+void my_terminate() {
+    std::cerr << "my terminate handler";
+    std::exit(0);
+}
+
+void my_unexpected() {
+    std::cerr << "my unexpected handler";
+    std::exit(EXIT_FAILURE);
+}
+
+void function() throw() // no exception in this example, but it could be another spec
+{
+    throw std::exception();
+}
+
+int main(int argc, char* argv[])
+{
+    std::set_terminate(my_terminate);
+    std::set_unexpected(my_unexpected);
+    try {
+        function();
+    } catch (const std::logic_error&) {
+    }
+    return 0;
+}
+```

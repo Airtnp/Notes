@@ -303,7 +303,40 @@ update a i v =
 ## Polymorphism
 * System F/Polymorphic Typed lambda-calculus/Second order lambda calculus
 * `τ ::= α | τ1 → τ2 | ∀α.τ`
-* `e ::= x | λx : τ1.e | e1 e2 | Λα.e | e[τ]`
+* expression `e ::= x | λx : τ1.e | e1 e2 | Λα.e | e[τ]`
+* static type variable context
+* + `∆ = α1 type, α2 type, α3 type, ...`
+* + `∆ |- τ` indicates `τ` is a well-defined type under context `∆`
+* + `∆; Γ |- e : τ` indicates `e` has type `τ` under context `∆` (finite set of type variable : type) and `Γ` (finite set of expressions : type)
+```
+id = Λα.λx : α.x
+```
+* dynamic call-by-value small-step
+* + `v ::= λx : τ1.e | Λα.e`
+* Church Encoding
+* + [ref](https://www.zhihu.com/question/39930042)
+* + `τ = ∀α.(ctor1 type → α) → (ctor2 type → α) → α`
+* + `t = Λα.(ctor) → α`
+```
+unit    ≡ ∀α.α → α
+        ≡ Λα.∀x : α.x
+bool    ≡ ∀α.α → α → α
+true    ≡ Λα.∀x : α.∀y : α.x
+false   ≡ Λα.∀x : α.∀y : α.y
+if e0 then e1 else e2 ≡ e0[τ]e1e2
+
+τ1 + τ2 ≡ ∀α.(τ1 → α) → (τ2 → α) → α
+inle    ≡ Λα.λfl : τ1 → α.λfr : τ2 → α.fl(e)
+inre    ≡ Λα.λfl : τ1 → α.λfr : τ2 → α.fr(e)
+case e of inlx:τ1 ⇒ e1 : τ | inry:τ2 ⇒ e2 : τ ≡ e[τ](λx : τ1.e1)(λy : τ2.e2)
+
+τ1 × τ2  ≡ ∀α.(τ1 → τ2 → α) → α
+<e1, e2> ≡ Λα.λp : τ1 → τ2 → α.p e1 e2
+fst(e)   ≡ e[τ1] (λx : τ1 : λy : τ2.x)
+snd(e)   ≡ e[τ2] (λx : τ1 : λy : τ2.y)
+
+```
+
 ```haskell
 -- Polymorphism
     -- In general, the context now associates each free variable with a type scheme, not just a type.
@@ -350,7 +383,7 @@ update a i v =
     -- ref: https://stackoverflow.com/questions/21219773/are-ghcs-type-famlies-an-example-of-system-f-omega
     -- terms depend on terms (normal functional programming) \x -> x
     -- terms depend on types (polymorphism) Head : [X] -> X
-    -- types depend on types (type operator / type families) List<T> : X -> [X] K1 -> K2
+    -- types depend on types (type operator / type families) List<T> : X -> [X] K1 -> K2 (and can direct operator it, like <template<typename ...> typename>)
     -- types depend on terms (dependent types) Array<U, N> : N -> U^N
 
     -- λ→ (Simply-typed lambda calculus)
@@ -372,3 +405,132 @@ update a i v =
 
 -- System F^{\omega}_{<:}
 ```
+
+## Existential Type
+* Universal type
+* + `∀α.τ`
+* + if you have any type `σ` (i.e., for all types `σ`), then the expression e must have that type, i.e., `τ[σ/α]`.
+* + Operationally, we think of an expression of universal type as a suspended computation Λα.e that when applied to any type σ would give us an expression that is customized for that type
+* impredicative polymorphism / quantification
+* + `true[type] -> bool` and `false[type] -> bool`
+* + unbound type
+```
+τ := ∀α.α → α
+e : τ => e[τ] : (α → α)[τ/α] => (∀α.α → α) -> (∀α.α → α)
+```
+* predicative polymorphism
+* + expression e of type `∀α.τ` to be applied only un-quantified types, or types that are quantifier-free
+* prenex polymorphism
+* + For the sake of type inference, languages like ML only permit an even more restricted form of polymorphism, called prenex polymorphism that allows quantifiers to occur only at the outermost level of a type.
+* + `Mono τ ::= α ::= τ1 → τ2`
+* + `Poly σ ::= τ | ∀α.σ`
+* Existential type
+* + `∃α.τ`
+* + there exists some type `σ` such that `e : τ[σ/α]`.
+* + Operationally, you can think of `e` this as a pair that consists of a witness type `σ` (that is hidden by `α` in the existential type `∃α.τ`), and an expressions `e1` of type `τ[σ/α]`
+* + `pack σ with e as ∃α.τ`
+* + - instantiation of existential type `e : τ[σ/α]`
+* + `unpack e1 as α, x in e2`
+* + - unpack type match
+```
+pack nat with {a = 5, f : λx : nat.succ(x)} : ∃α.{a : nat, f : nat → nat}
+                                            : ∃α{a : α, f : α → α}
+                                            : ∃α{a : α, f : α → nat}
+
+pack nat with 0 as ∃α.α : ∃α.α
+pack bool with true as ∃α.α : ∃α.α
+pack bool with {a = true, f = λx : bool.1} as ∃α.{a : α, f : α → nat}
+```
+* + `e ::= ... | pack σ with e as ∃α.τ | unpack e1 as α, x in e2`
+```
+let counterADT =
+    pack {int, { new = 0, get = λi:int. i, inc = λi:int. i + 1 } }
+    as ∃Counter. { new : Counter, get : Counter → int, inc : Counter → Counter }
+in ...
+
+unpack {C, c} = counterADT in
+    let y = c.new in
+        c.get (c.inc (c.inc y))
+
+COUNTER = ∃counter. {c : counter, get : counter → nat, inc : counter → counter}
+cntr1 = pack nat with {c = 0, get = λx : nat.x, inc = λx : nat.x + 1} as COUNTER
+unpack cntr1 as α, x in x.get (x.inc x.c)
+unpack cntr1 as α, x in
+    let add3 = λc : α. x.inc (x.inc (x.inc c)) in
+        x.get (add3 x.c)
+```
+* existential as universial
+```
+∃α.τ                    ≡ ∀β. (∀α. τ → β) → β
+pack σ, e as ∃α. τ      ≡ Λβ. λc:(∀α.τ → β). c[σ] e
+unpack e as α, x in ec  ≡ e [τc] (Λα. λx:τ. ec)
+```
+
+
+## Parametricity
+* representation independence
+* + the behavior of the client does not depend on the particular representation of an existential type
+* equivalence
+* + godel's T
+* + expression context
+```
+Program Contexts C ::= succ C | λx.C | C1 e2 | e1 C2 |
+                       rec C { zero ⇒ e0 | succ x with y ⇒ e1}
+                       rec e { zero ⇒ C0 | succ x with y ⇒ e1} |
+                       rec e { zero ⇒ e0 | succ x with y ⇒ C1}
+|- C : (Γ |> τ) ~> (Γ' |> τ')
+if Γ |- e : τ then Γ' |- C[e] : τ'.
+Γ' |- C : (Γ |> τ) ~> τ'.
+```
+* + observational(contextual) equivalence
+* + - `Γ |- e1 ∼obs e2 : τ` 
+* + - `=def ∀C. |- C : (Γ |> τ) ~> nat ⇒ C[e1] →∗ z` if and only if `C[e2] →∗ z`
+* + congruence
+* + - If `Γ |- e1 ∼obs e2 : τ` and `C : (Γ |> τ) ~> (Γ' |> τ')` then `Γ' |- C[e1] ∼obs C[e2] : τ'`
+* + logical equivalence
+* + - `e ∼ e' : τ`
+* + - closed term def
+```
+e ∼ s' : nat if and only if
+e →∗ z and e' →∗ z or e →∗ succ e1 and e' →∗ succ e1' and e1 ∼ e1' : nat
+
+e ∼ e' : τ1 → τ2 if and only if
+∀e1, e1. e1 ∼ e1' : τ1 ⇒ e e1 ∼ e' e1' : τ2
+```
+* + - separate value def
+```
+v ≈ v0 : nat if and only if
+v = v0 = zero or v = succ v1 ∧ v0 = succ v10 ∧ v1 ≈ v10 : nat.
+
+λx : τ1.e ≈ λx : τ1.e' : τ1 → τ2 if and only if
+∀v1, v1' .v1 ≈ v1' : τ1 ⇒ e[v1/x] ∼ e'[v1' /x] : τ2
+```
+* + - substituion def
+```
+γ ≈ γ' : Γ 
+    =def dom(γ) = dom(γ') = dom(Γ) ∧
+    ∀x ∈ dom(Γ). γ(x) ≈ γ'(x) : Γ(x)
+```
+* + - open terms def
+```
+Γ |- e ∼ e' : τ 
+    =def ∀γ, γ'.γ ≈ γ' : Γ ⇒ γ(e) ∼ γ(e') : τ
+```
+* + fundamential property (Reynold's Abstraction Theorem)
+* + - reflexive
+* + soundness
+* + - logical <=> observational
+* + free theorem
+* + - If `e : ∀α.α → α` and `v : τ`, then `e[τ] v →∗ v`.
+* + - [free-for-fmap](https://www.schoolofhaskell.com/user/edwardk/snippets/fmap)
+```
+R : σ ↔ σ' iff ∀(v, v') ∈ R. |- v : σ ∧ |- v' : σ'
+
+v ≈ v' : α | η                             iff η(α) = (τ, τ', R) ∧ (v, v') ∈ R
+Λα. e ≈ Λα. e' : ∀α. τ | η                 iff ∀σ, σ', R. R : σ ↔ σ' ⇒ e[σ/α] ∼ e'[σ'/α] : τ | η[α |→ (σ, σ', R)]
+λx:η1(τ1). e ≈ λx:η2(τ1). e' : τ1 → τ2 | η iff ∀v, v'. v ≈ v' : τ1 | η ⇒ e[v/x] ∼ e'[v'/x] : τ2 | η
+
+∆; Γ |- e ∼ e :' τ                         iff ∀η, γ, γ'. η |= ∆ ∧ γ ≈ γ' : Γ | η ⇒ γ(η1(e)) ∼ γ'(η2(e')) : τ | η
+```
+* [ref](https://www.well-typed.com/blog/2015/05/parametricity/)
+* [ref-2](https://www.well-typed.com/blog/2015/08/parametricity-part2/)

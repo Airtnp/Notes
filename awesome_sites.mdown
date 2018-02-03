@@ -315,6 +315,8 @@
             - [2018-1-30](#2018-1-30)
             - [2018-1-31](#2018-1-31)
             - [2018-2-1](#2018-2-1)
+            - [2018-2-2](#2018-2-2)
+            - [2018-2-3](#2018-2-3)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3438,7 +3440,14 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-1
 * [Inject-learn](https://cxa.codebashing.com/courses/php)
 * [Learn-Web-Security](https://www.zhihu.com/question/21606800)
-* 
+
+#### 2018-2-2
+* [x86-TSO: A Programmer’s Model for x86](http://paulcavallaro.com/blog/x86-tso-a-programmers-model-for-x86-multiprocessors/)
+* [Solving-Minesweeper](http://magnushoff.com/minesweeper/)
+
+#### 2018-2-3
+* [iostream-lock](http://stdcxx.apache.org/doc/stdlibug/44-2.html)
+* [break-on-stdout](https://stackoverflow.com/questions/23757996/gdb-how-to-break-on-something-is-written-to-cout)
 
 
 
