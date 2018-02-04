@@ -317,6 +317,7 @@
             - [2018-2-1](#2018-2-1)
             - [2018-2-2](#2018-2-2)
             - [2018-2-3](#2018-2-3)
+            - [2018-2-4](#2018-2-4)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3448,7 +3449,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-3
 * [iostream-lock](http://stdcxx.apache.org/doc/stdlibug/44-2.html)
 * [break-on-stdout](https://stackoverflow.com/questions/23757996/gdb-how-to-break-on-something-is-written-to-cout)
+* [CTF-SQL-Injection](http://www.freebuf.com/articles/web/137094.html)
 
+#### 2018-2-4
+* [How-to-use-free-theorem](https://www.reddit.com/r/haskell/comments/2r0dn3/how_to_use_free_theorems/)
 
 
 ## Tools
