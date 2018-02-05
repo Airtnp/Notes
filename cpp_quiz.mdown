@@ -1357,3 +1357,15 @@ int main(int argc, char* argv[])
     return 0;
 }
 ```
+
+## Default but no aggregate?
+```c++
+struct A
+{
+  int a = 3;
+  int b = 3;
+};
+
+A a{0,1}; // Not allowed in C++11, allowed in C++14
+```
+* [discussion](https://stackoverflow.com/questions/27118535/c11-aggregate-initialization-for-classes-with-non-static-member-initializers)

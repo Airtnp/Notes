@@ -3453,6 +3453,9 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-2-4
 * [How-to-use-free-theorem](https://www.reddit.com/r/haskell/comments/2r0dn3/how_to_use_free_theorems/)
+* [XSS-intro](https://zhuanlan.zhihu.com/p/26177815)
+* [XSS-collection](http://www.91ri.org/4179.html)
+* [XSS-collection-2](http://blog.csdn.net/u014345860/article/details/77352889)
 
 
 ## Tools
