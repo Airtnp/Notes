@@ -318,6 +318,8 @@
             - [2018-2-2](#2018-2-2)
             - [2018-2-3](#2018-2-3)
             - [2018-2-4](#2018-2-4)
+            - [2018-2-5](#2018-2-5)
+            - [2018-2-6](#2018-2-6)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -389,6 +391,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Ytliu/OS/Linux](http://ytliu.info/blog/archives/)
 * [Eli-BenderSky](https://eli.thegreenplace.net/archives/all)
 * [Diting0x/Security](http://www.diting0x.com/archives/)
+* [Ezyang/ML/PL](http://blog.ezyang.com/archives/)
 
 
 ### OI/Alg
@@ -3456,6 +3459,20 @@ Order of items is just based on Nothing :: Maybe.
 * [XSS-intro](https://zhuanlan.zhihu.com/p/26177815)
 * [XSS-collection](http://www.91ri.org/4179.html)
 * [XSS-collection-2](http://blog.csdn.net/u014345860/article/details/77352889)
+
+#### 2018-2-5
+* [Delimited-Continuation-in-JS](https://blog.mattbierner.com/the-delimited-continuation-monad-in-javascript/)
+* [Wizard-Monoid-Monoid-IO](http://www.haskellforall.com/2018/02/the-wizard-monoid.html)
+* [Boost.Outcome-report](https://www.reddit.com/r/cpp/comments/7vdpyu/outcome_accepted_into_the_boost_c_libraries/)
+* [Realtime-software-with-Micropython](https://jsolano.net/2018/01/28/real-time-software-with-micropython/)
+* [Programming-Languages](http://lambda-the-ultimate.org/node/4186)
+
+#### 2018-2-6
+* [What-Optimization-can-GHC-does](https://stackoverflow.com/questions/12653787/what-optimizations-can-ghc-be-expected-to-perform-reliably)
+* [GHC-sum-[1..n]](https://www.zhihu.com/question/31821539)
+* [CallArity-Optimizaiton](http://git.haskell.org/ghc.git/blob/HEAD:/compiler/simplCore/CallArity.hs)
+* [GHC-8.2.1](https://www.zhihu.com/question/58281091)
+* [GHC-Core](https://stackoverflow.com/questions/6121146/reading-ghc-core/6121495#6121495)
 
 
 ## Tools

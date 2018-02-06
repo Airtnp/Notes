@@ -387,18 +387,39 @@ snd(e)   ≡ e[τ2] (λx : τ1 : λy : τ2.y)
     -- types depend on terms (dependent types) Array<U, N> : N -> U^N
 
     -- λ→ (Simply-typed lambda calculus)
+        k ::= ∗
+        A ::= p | A → B
+        e ::= x | λx:A.e | e e
     -- λω_ (STLC + higher-kinded type operators)
-        -- \lambda a : K. t
+        k ::= ∗ | k → k
+        A ::= a | p | A → B | λa:k.A | A B
+        e ::= x | λx:A.e | e e
     -- λ2 (System F: STLC + poly)
-        -- ∀a:k. A
-        -- Λa:k. e + e [A]
+        k ::= ∗
+        A ::= a | p | A → B  | ∀a:k. A 
+        e ::= x | λx:A.e | e e | Λa:k. e | e [A]
         -- can represent \x. x x
     -- λω (System F-omega: STLC + poly(parametric) + type operator)
+        k ::= ∗ | k → k 
+        A ::= a | p | A → B  | ∀a:k. A | λa:k.A | A B
+        e ::= x | λx:A.e | e e | Λa:k. e | e [A]
     -- λP (LF: STLC + dependent type)
         -- Πx:A. B(x) (arugment in return type)
+        k ::= ∗ | Πx:A. k 
+        A ::= a | p | Πx:A. B | Λx:A.B | A [e]
+        e ::= x | λx:A.e | e e
     -- λP2 (no special name: + dt + poly)
+        k ::= ∗ | Πx:A. k 
+        A ::= a | p | Πx:A. B | ∀a:k.A | Λx:A.B | A [e]
+        e ::= x | λx:A.e | e e | Λa:k. e | e [A]
     -- λPω_ (no special name: + dt + type operator)
+        k ::= ∗ | Πx:A. k | Πa:k. k'
+        A ::= a | p | Πx:A. B | Λx:A.B | A [e] | λa:k.A | A B 
+        e ::= x | λx:A.e | e e 
     -- λPω (the Calculus of Constructions: all)
+        k ::= ∗ | Πx:A. k | Πa:k. k'
+        A ::= a | p | Πx:A. B | ∀a:k.A | Λx:A.B | A [e] | λa:k.A | A B 
+        e ::= x | λx:A.e | e e | Λa:k. e | e [A]
 
     -- what's not include is subtyping (X <: Y)
     -- HM is part of System F
