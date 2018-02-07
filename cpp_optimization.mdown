@@ -189,6 +189,7 @@ Zero use in Lab1, since Lab1 is a single file program and don't apply to LTO (li
 
 You can see it below at cache section.
 
+
 ##### Some others
 
 `-fomit-frame-pointer`
@@ -196,6 +197,13 @@ You can see it below at cache section.
 `-falign-functions=16` / `-falign-loops=16`
 
 `-fno-rtti`
+
+`-fipa-pta`
+
+`-ftree-vectorize`
+
+`-fdevirtualize-speculatively`
+
 
 #### Arrange your switch
 
