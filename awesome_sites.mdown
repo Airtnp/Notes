@@ -322,6 +322,7 @@
             - [2018-2-6](#2018-2-6)
             - [2018-2-7](#2018-2-7)
             - [2018-2-8](#2018-2-8)
+            - [2018-2-9](#2018-2-9)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3486,6 +3487,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-8
 * [Win2k-Source](http://atdt.freeshell.org/k5/story_2004_2_15_71552_7795.html)
 
+#### 2018-2-9
+* [Rust-Non-Lexical-Lifetime-NLL](https://zhuanlan.zhihu.com/p/32884290)
+* [Rust-坑](https://www.zhihu.com/question/49194043)
+* [remove-implicit-int](https://herbsutter.com/2015/04/16/reader-qa-why-was-implicit-int-removed/)
 
 
 ## Tools

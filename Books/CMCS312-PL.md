@@ -555,3 +555,10 @@ v ≈ v' : α | η                             iff η(α) = (τ, τ', R) ∧ (v,
 ```
 * [ref](https://www.well-typed.com/blog/2015/05/parametricity/)
 * [ref-2](https://www.well-typed.com/blog/2015/08/parametricity-part2/)
+
+## Subtyping
+```
+X <: T
+self
+```
+* ref: subtyping.hs

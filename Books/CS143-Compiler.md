@@ -313,6 +313,40 @@ Let stack = 〈 dummy, 1 〉
 * + static scope
 * + dynamic scope
 * Typecheck
+* Type Inference
+* + `O,M,C |- e : T`
+* + An expression e occurring in the body (class) of C has static type T given a variable type environment O and method signatures M
+* + static type
+* + - self type
+```
+O,M,C |- e0@T.f(e1,…,en) : T0 (static dispatch depend on e0)
+```
+* + - least-upper-bound
+```
+O[T/y] means O modified to return T on argument y
+O |- if e0 then e1 else e2 fi: lub(T1,T2)
+O |- case e0 of x1:T1 → e1; …; xn:Tn → en; end : lub(T1’,…,Tn’)
+```
+* + - static dispatch / dynamic dispatch
+```
+dynamic dispatch O, M |- e0.f(e1, … ,en): Tn+1 (depend on e0)
+static dispatch O, M |- e0@f(e1, … ,en): Tn+1 (depend on e0 <: T)
+```
+* + - 
+* + dynamic type
+* + - new T
+* + error handling
+* + - Assign type Object to ill-typed expression
+* + - Then every other operation can cause error
+* + - Assign type bottom to ill-typed expression
+* + - Every other operation on bottom return bottom
+* + - `Bottom <: T`
 * Inheritance
 * ODR
 * Diagnosis
+
+## Runtime
+* invocation
+* lifetime (dynamic)
+* activation tree
+* activation record (AR) / frame
