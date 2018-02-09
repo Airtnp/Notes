@@ -133,6 +133,23 @@ Correctness   user       user
 * + automatic local/global correction
 * + - try token insertion/deletion
 * + - exhausive search
+* AST
+* + grammar symbol => attributes
+* + - terminal symbol (lexcial token) can be calculated by the lexer
+* + production => action
+* + - X->Y1...Yn
+* Action => Syntax-directed translation
+* + Declarative
+* + - order of resolution is not specified
+* + - parser figures it out
+* + Imperative
+* + - order of evaluation is fixed
+* + - important if the actions change global state
+* Dependency Graph
+* + AST node => val (this value can be a ast)
+* + compute all children
+* + synthesized attributes (from descendents)
+* + inherited attributes (from parent/siblings)
 * Top-down parsing (Recursive Descent)
 * + from top
 * + from left to right
@@ -207,7 +224,7 @@ For each production A -> a
             T[A, $] = a
 ```
 * + stack recording froniter of parse tree (top = leftmost pending terminal/non-terminal)
-* Bottom-Up Parsing
+* Bottom-Up Parsing => LR(0)
 * + reduce a string to start symbol by inverting productions
 * + right-most derivation
 * + split string into two substrings (stack)
@@ -217,23 +234,85 @@ reduce: given A->xy, Cbxy|ijk = CbA|ijk (pop symbols and push non-terminals)
 ```
 * + conflict
 * + - shift-reduce
+* + - - `X -> b.` and `Y->a.tc`
 * + - reduce-reduce
+* + - - `X -> b.` and `Y -> a.`
+* + handle
+* + - a handle is a string that can be reduced and also allows further reductions back to the start symbol
+* + - only appear at top of stack, never inside
+* + - rightmost nonterminal
+* + - recognize handle? => SLR CFG in Unambiguous CFG in All CFG
+* + For any grammar, the set of viable prefixes is a regular language
+* + [SLR](http://blog.sina.com.cn/s/blog_6759b6210100wnkm.html)
+* + - LR(0) Automata
+* + - - Status => Item: For production X -> R, We have item X -> .R/R./Pr.Sr...
+* + - - Calculate Extended grammar, add S'->S (start term)
+* + - - Calculate eps-closure: A -> a.Bc, add B->.c
+```
+NFA for viable prefix
+1.  Add a dummy production S’ → S to G
+2.  The NFA states are the items of G
+    –  Including the extra production
+3. For item E → α.Xβ add transition
+    E → α.Xβ →X E → αX.β
+4. For item E → α.Xβ and production X → γ add
+    E → α.Xβ →ε X → .γ
+5. Every state is an accepting state
+6. Start state is S’ → .S
+NFA => DFA
+GOTO(I, X) = Closure(U { A -> a X.b | A -> a.Xb in I})
+```
+* + - SLR table
+```
+Action[i, a] = {
+    If A -> a.ab in Ii & GOTO(Ii, a) = Ij => ACTION[i, a] = j
+    If A -> a. in Ii => Forall a in Follow(A) => ACTION[i, a] = reduce A->a // That's what LR(0) different from SLR
+    If S' -> S. => ACTION[i, $] = accept
+    Else Action[i, a] = error
+}
+
+1.  Let M be DFA for viable prefixes of G
+2.  Let |x1…xn$ be initial configuration
+3.  Repeat until configuration is S|$
+    •  Let α|ω be current configuration
+    •  Run M on current stack α
+    •  If M rejects α, report parsing error
+        •  Stack α is not a viable prefix
+    •  If M accepts α with items I, let a be next input
+        •  Shift if X → β. a γ ∈ I
+        •  Reduce if X → β. ∈ I and a ∈ Follow(X)
+        •  Report parsing error if neither applies
+
+Stack: (Symbol, DFA State)
+
+goto[i, A] = j if state_i ->A state_j
+shift x
+reduce x
+accept
+error
+
+Let I = w$ be initial input
+Let j = 0
+Let DFA state 1 have item S’ → .S
+Let stack = 〈 dummy, 1 〉
+    repeat
+        case action[top_state(stack),I[j]] of
+            shift k: push 〈 I[j++], k 〉
+            reduce X → A:
+                pop |A| pairs,
+                push 〈X, goto[top_state(stack),X]〉
+            accept: halt normally
+            error: halt and report error
+```
+* + - Normalize LR
+* + LALR
 
 ## Semantics
-* AST
-* + grammar symbol => attributes
-* + - terminal symbol (lexcial token) can be calculated by the lexer
-* + production => action
-* + - X->Y1...Yn
-* Action => Syntax-directed translation
-* + Declarative
-* + - order of resolution is not specified
-* + - parser figures it out
-* + Imperative
-* + - order of evaluation is fixed
-* + - important if the actions change global state
-* Dependency Graph
-* + AST node => val (this value can be a ast)
-* + compute all children
-* + synthesized attributes (from descendents)
-* + inherited attributes (from parent/siblings)
+* Identifier
+* Scope
+* + static scope
+* + dynamic scope
+* Typecheck
+* Inheritance
+* ODR
+* Diagnosis

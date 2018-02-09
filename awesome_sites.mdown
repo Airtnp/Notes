@@ -321,6 +321,7 @@
             - [2018-2-5](#2018-2-5)
             - [2018-2-6](#2018-2-6)
             - [2018-2-7](#2018-2-7)
+            - [2018-2-8](#2018-2-8)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -989,6 +990,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Project-Euler](https://projecteuler.net/)
 * [Project-Euler-CN](http://pe-cn.github.io/)
 * [Deadlock-Empire](https://deadlockempire.github.io/)
+* [SQL-WIndows-Function](http://www.windowfunctions.com/questions/0)
 
 ### Security
 * [pwnable.tw](https://pwnable.tw/)
@@ -3480,6 +3482,10 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-7
 * [ELF-101-Symbols](http://www.intezer.com/executable-linkable-format-101-part-2-symbols/)
 * [cpu_features](https://github.com/google/cpu_features)
+
+#### 2018-2-8
+* [Win2k-Source](http://atdt.freeshell.org/k5/story_2004_2_15_71552_7795.html)
+
 
 
 ## Tools
