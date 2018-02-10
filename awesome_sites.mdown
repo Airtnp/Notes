@@ -323,6 +323,7 @@
             - [2018-2-7](#2018-2-7)
             - [2018-2-8](#2018-2-8)
             - [2018-2-9](#2018-2-9)
+            - [2018-2-10](#2018-2-10)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3491,6 +3492,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Rust-Non-Lexical-Lifetime-NLL](https://zhuanlan.zhihu.com/p/32884290)
 * [Rust-坑](https://www.zhihu.com/question/49194043)
 * [remove-implicit-int](https://herbsutter.com/2015/04/16/reader-qa-why-was-implicit-int-removed/)
+* [KPTI/KAISER-regression](http://www.brendangregg.com/blog/2018-02-09/kpti-kaiser-meltdown-performance.html)
+* [彩虹表](https://www.zhihu.com/question/19790488)
+
+#### 2018-2-10
+* [PKCS#5/#7](http://likang.me/blog/2013/06/05/python-pycrypto-aes-ecb-pkcs-5/)
+* [C++-in-2018](http://meetingcpp.com/blog/items/Cpp-in-2018.html)
+* [haskell-package](https://www.reddit.com/r/haskell/comments/7wdu5f/haskell_packages_you_love/)
 
 
 ## Tools
@@ -3539,3 +3547,4 @@ Order of items is just based on Nothing :: Maybe.
 * [ODA](https://www.onlinedisassembler.com/odaweb/)
 * [tidr_](https://tldr.ostera.io)
 * [matrix-calculus](http://www.matrixcalculus.org/)
+* [MD5HashingNet](https://md5hashing.net/)
