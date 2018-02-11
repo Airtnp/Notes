@@ -324,6 +324,7 @@
             - [2018-2-8](#2018-2-8)
             - [2018-2-9](#2018-2-9)
             - [2018-2-10](#2018-2-10)
+            - [2018-2-11](#2018-2-11)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3499,6 +3500,10 @@ Order of items is just based on Nothing :: Maybe.
 * [PKCS#5/#7](http://likang.me/blog/2013/06/05/python-pycrypto-aes-ecb-pkcs-5/)
 * [C++-in-2018](http://meetingcpp.com/blog/items/Cpp-in-2018.html)
 * [haskell-package](https://www.reddit.com/r/haskell/comments/7wdu5f/haskell_packages_you_love/)
+
+#### 2018-2-11
+* [ML-Top10-Feb2018](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-feb-2018-b7aabba5aba4)
+* [Snowflake-UUID](https://www.v2ex.com/t/430285#reply18)
 
 
 ## Tools
