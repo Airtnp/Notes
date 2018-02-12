@@ -325,6 +325,7 @@
             - [2018-2-9](#2018-2-9)
             - [2018-2-10](#2018-2-10)
             - [2018-2-11](#2018-2-11)
+            - [2018-2-12](#2018-2-12)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3504,6 +3505,11 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-11
 * [ML-Top10-Feb2018](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-feb-2018-b7aabba5aba4)
 * [Snowflake-UUID](https://www.v2ex.com/t/430285#reply18)
+* [PHP-==-injection](http://skysec.top/2017/07/22/PHP%E5%87%BD%E6%95%B0%E9%BB%91%E9%AD%94%E6%B3%95%E5%B0%8F%E6%80%BB%E7%BB%93/)
+
+#### 2018-2-12
+* [CORS-Redirect](https://stackoverflow.com/questions/18539403/chrome-cancels-cors-xhr-upon-http-302-redirect)
+* [CORS-HTML-JS](https://stackoverflow.com/questions/11423682/cross-domain-form-posting)
 
 
 ## Tools
