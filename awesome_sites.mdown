@@ -326,6 +326,7 @@
             - [2018-2-10](#2018-2-10)
             - [2018-2-11](#2018-2-11)
             - [2018-2-12](#2018-2-12)
+            - [2018-2-13](#2018-2-13)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3510,7 +3511,11 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-12
 * [CORS-Redirect](https://stackoverflow.com/questions/18539403/chrome-cancels-cors-xhr-upon-http-302-redirect)
 * [CORS-HTML-JS](https://stackoverflow.com/questions/11423682/cross-domain-form-posting)
+* [Padding-Oracle-CBC-AES](https://www.jianshu.com/p/1851f778e579)
+* [Language-checklist](http://colinm.org/language_checklist.html)
 
+#### 2018-2-13
+* [LLVM-GC](https://medium.com/@MartinCracauer/llvms-garbage-collection-facilities-and-sbcl-s-generational-gc-a13eedfb1b31)
 
 ## Tools
 * [Repl.it](https://repl.it/)

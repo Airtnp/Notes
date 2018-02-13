@@ -1372,3 +1372,23 @@ A a{0,1}; // Not allowed in C++11, allowed in C++14
 
 ## UB on i=i++?
 * [discussion](https://stackoverflow.com/questions/4968854/is-i-i-truly-a-undefined-behavior)
+
+## Use int?
+* [discussion](https://stackoverflow.com/questions/48729384/is-there-still-a-reason-to-use-int-in-c-code)
+```c++
+double get(const double* p, int k) {
+  return p[k];
+}
+/*
+movslq %esi, %rsi
+vmovsd (%rdi,%rsi,8), %xmm0
+ret
+*/
+double get(const double* p, std::ptrdiff_t k) {
+  return p[k];
+}
+/*
+vmovsd (%rdi,%rsi,8), %xmm0
+ret
+*/
+```
