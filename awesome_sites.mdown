@@ -327,6 +327,7 @@
             - [2018-2-11](#2018-2-11)
             - [2018-2-12](#2018-2-12)
             - [2018-2-13](#2018-2-13)
+            - [2018-2-14](#2018-2-14)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3516,6 +3517,14 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-2-13
 * [LLVM-GC](https://medium.com/@MartinCracauer/llvms-garbage-collection-facilities-and-sbcl-s-generational-gc-a13eedfb1b31)
+* [Linear-Type-Scala](http://sparse.tech/blog/literal-types-case-study)
+
+#### 2018-2-14
+* [Python-Top10-Feb2018](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-feb-2018-ec438bd93c49)
+* [Stop-Olympic-Destroyer](https://www.endgame.com/blog/technical-blog/stopping-olympic-destroyer-new-process-injection-insights)
+
+
+
 
 ## Tools
 * [Repl.it](https://repl.it/)
