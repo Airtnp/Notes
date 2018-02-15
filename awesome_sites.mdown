@@ -328,6 +328,7 @@
             - [2018-2-12](#2018-2-12)
             - [2018-2-13](#2018-2-13)
             - [2018-2-14](#2018-2-14)
+            - [2018-2-15](#2018-2-15)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3523,6 +3524,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Python-Top10-Feb2018](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-feb-2018-ec438bd93c49)
 * [Stop-Olympic-Destroyer](https://www.endgame.com/blog/technical-blog/stopping-olympic-destroyer-new-process-injection-insights)
 
+#### 2018-2-15
+* [Intro-to-Waveform](http://waveforms.surge.sh/waveforms-intro)
+* [ATSP-Constant-time-Approx-Algorithm](https://www.quantamagazine.org/one-way-salesman-finds-fast-path-home-20171005/)
+* [Spectre-Mitigation-in-MSVC](https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html)
+* [Java-oddity](https://www.javaworld.com/article/3252845/java-language/java-language-oddities.html)
+* [Age-of-Empire-2-Turing-Complete](https://ecc-comp.blogspot.ca/2018/02/age-of-empires-2-scenario-editor-is.html)
 
 
 

@@ -350,4 +350,104 @@ static dispatch O, M |- e0@f(e1, … ,en): Tn+1 (depend on e0 <: T)
 * lifetime (dynamic)
 * activation tree
 * activation record (AR) / frame
+* + return value
+* + parameter
+* + pointer to previous AR
+* + machine status
+* + - PC/registers
+* Alignment
+* stack-based/register-based
+* Stack Machine
+* + Takes its operands from the top of the stack
+* + Removes those operands from the stack
+* + Computes the required operation on them
+* + Pushes the result on the stack
+
+## Code generation
+* MIPS
+* + RISC
+* + $sp(rbp) $a0 $a1 $ra $fp(rsp)
+* + lw / add / sw / addiu / li / beq / jal / jr
+```
+P    → D; P | D
+D    → def id(ARGS) = E;
+ARGS → id, ARGS | id
+E    → int | id | if E1 = E2 then E3 else E4
+           | E1 + E2 | E1 – E2 | id(E1,…,En)
+
+cgen(e1 + e2) =
+    cgen(e1)
+    sw $a0 0($sp)
+    addiu $sp $sp -4
+    cgen(e2)
+    lw $t1 4($sp)
+    add $a0 $t1 $a0
+    addiu $sp $sp 4
+
+cgen(e1 + e2, nt) =
+    cgen(e1, nt)
+    sw $a0 nt($fp)
+    cgen(e2, nt + 4)
+    lw $t1 nt($fp)
+    add $a0 $t1 $a0
+
+cgen(if e1 = e2 then e3 else e4) =
+    cgen(e1)
+    sw $a0 0($sp)
+    addiu $sp $sp -4
+    cgen(e2)
+    lw $t1 4($sp)
+    addiu $sp $sp 4
+    beq $a0 $t1 true_branch
+    false_branch:
+    cgen(e4)
+    b end_if
+    true_branch:
+    cgen(e3)
+    end_if:
+
+cgen(f(e1,…,en)) =
+    sw $fp 0($sp)
+    addiu $sp $sp -4
+    cgen(en)
+    sw $a0 0($sp)
+    addiu $sp $sp -4
+    …
+    cgen(e1)
+    sw $a0 0($sp)
+    addiu $sp $sp -4
+    jal f_entry
+
+call
+...
+push rbp     
+mov rbp rsp (enter) / or sub rsp N
+...
+mov rsp rbp (leave) / or add rsp N
+pop rbp
+ret
+
+cgen(def f(x1,…,xn) = e) =
+    move $fp $sp
+    sw $ra 0($sp)
+    addiu $sp $sp -4
+    cgen(e) // cgen(xi) = lw $a0 z($fp)
+    lw $ra 4($sp)
+    addiu $sp $sp z
+    lw $fp 0($sp)
+    jr $ra
+```
+* NT: number of temporary values
+* + known in compile-time to calculate stack size
+* OOP
+* + object
+```
+Class {
+    Class Tag
+    Object Size
+    Dispatch Ptr
+    Attributes...
+}
+```
+* + dynamic dispatch
 * 
