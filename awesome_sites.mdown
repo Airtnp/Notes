@@ -329,6 +329,7 @@
             - [2018-2-13](#2018-2-13)
             - [2018-2-14](#2018-2-14)
             - [2018-2-15](#2018-2-15)
+            - [2018-2-16](#2018-2-16)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3530,6 +3531,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Spectre-Mitigation-in-MSVC](https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html)
 * [Java-oddity](https://www.javaworld.com/article/3252845/java-language/java-language-oddities.html)
 * [Age-of-Empire-2-Turing-Complete](https://ecc-comp.blogspot.ca/2018/02/age-of-empires-2-scenario-editor-is.html)
+* [Promise-as-Monad](https://gist.github.com/briancavalier/3296186)
+* [Why-promise-is-monad](https://stackoverflow.com/questions/45712106/why-are-promises-monads)
+
+#### 2018-2-16
+* [AST=>CFG](https://www.zhihu.com/question/27730062)
+* [ASIC-GPU-矿机](https://jiasuhui.com/article/11514)
+
 
 
 

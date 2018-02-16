@@ -12,6 +12,24 @@
 * 爆破/burp
 
 ## C
+* control flow hijack
+* + stack buffer overflow
+* + - [ROP](https://www.slideshare.net/hackstuff/rop-40525248)
+* + - - code gadget
+* + - - ret2libc
+* + - - seh pointer overwrite
+* + - - virtual class pointer overwrite
+* + - DEP/NX (rwx stack => rw stack)
+* + - Cookie/Canary
+* + - ASLR
+* + - SafeSEH/SEHOP
+* + - Shadow stack
+* + - GOT/PLT
+* + [heap spray](http://blog.csdn.net/magictong/article/details/7391397)
+* + - heap double linked list
+* + - heap header
+* + - heap lookaside linked list
+* 
 
 
 ## D
@@ -29,7 +47,10 @@
 
 
 ## H
-
+* HTTPS
+* + MITM
+* + - http=>https attack
+* + - heartbleed
 
 
 ## I
@@ -48,7 +69,38 @@
 
 
 ## M
+* moving target defense
+* + non-deterministic / less homogeneous / less static
+* + reactive => proactive
+* + static => dynamic
+* + Application-based MTD
+* + - state estimation
+* + - automatic generation control
+* + - remedial action scheme
+* + - installer
+* + - diversify commands (rewrite keyword with random key)
+```
+SELECT123 id, name, description FROM123 products WHERE123 productid=$value
+99999 OR 1=1
+SELECT123 id, name, description FROM123 products WHERE123 productid=99999 OR 1=1
 
+OR is not diversified
+```
+* + System-based MTD
+* + - software/hardware-based
+* + - - ASLR
+* + - - ISR (instruction set randomization)
+* + - - DR (data randomization): pointer/memory, XOR with random masks
+* + - - Compiler-based
+* + Network-based MTD
+* + - MAC layer: changing MAC address
+* + - IP layer: IP randomization
+* + - TCP (traffic) layer: changing network protocol
+* + - Session layer
+* + - dynamic resource mapping system
+* + - mutable network
+* + - - random address hopping
+* + - - random finger printing
 
 
 ## N
