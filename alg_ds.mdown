@@ -119,6 +119,8 @@
 * + TSP
 * [波兰表](http://vfleaking.blog.163.com/blog/static/174807634201321981915529/)
 * Borůvka
+* Binary hack
+* + [magic number](https://zhuanlan.zhihu.com/p/33543750)
 
 
 ## C
@@ -143,9 +145,12 @@
 * + toom cook
 * + FFT 
 * + - 任意质数p模意义下FFT
+* + - [ref](https://chrt.github.io/2017/03/12/fft/)
+* + - [ref-2](https://zhuanlan.zhihu.com/p/31584464)
 * + FNT （快速数论变换） -> CRT优化
 * + Schnhage–Strassen algorithm
 * + Furer's algorithm
+* + [AX+BY](https://zhuanlan.zhihu.com/p/31872064)
 * 插值
 * + 非负整系数:
 * + - 输入1，输出S。
@@ -267,6 +272,7 @@
 * + 三进制
 * + 原根/阶
 * FWT (Fast Walsh-Hadamard Transform)
+* + [ref](https://riteme.github.io/blog/2016-11-25/fwt.html)
 * 分块
 * + 分块套分块
 * Floyd（点对）
@@ -825,6 +831,8 @@ struct element {
 * Wythoff Game
 * Wilson
 * + uniform spanning tree
+* 网格图
+* + [负权最短路](https://zhuanlan.zhihu.com/p/33808530)
 
 ## X
 

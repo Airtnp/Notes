@@ -96,6 +96,8 @@
 * domain
 * + application domain
 * + implementation domain
+* delimited continuation
+* + [ref](https://zhuanlan.zhihu.com/p/33399006)
 
 ## E
 

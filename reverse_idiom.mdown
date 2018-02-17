@@ -48,9 +48,11 @@
 
 ## H
 * HTTPS
-* + MITM
-* + - http=>https attack
+* + [MITM Attack](https://elliotsomething.github.io/2016/12/22/HTTPS%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%E5%8F%8A%E9%98%B2%E5%BE%A1/)
+* + - SSLSniff
+* + - SSLStrip: http=>https attack
 * + - heartbleed
+* + [Some other attacks](http://www.freebuf.com/articles/web/47076.html)
 
 
 ## I
@@ -123,7 +125,8 @@ OR is not diversified
 
 
 ## S
-
+* SSL/TLS
+* + [ref](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
 
 
 ## T

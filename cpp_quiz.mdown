@@ -1392,3 +1392,9 @@ vmovsd (%rdi,%rsi,8), %xmm0
 ret
 */
 ```
+
+## function-try-block
+>> Every catch-clause in the function-try-block for a constructor must terminate by throwing an exception. If the control reaches the end of such handler, the current exception is automatically rethrown as if by throw;. The return statement is not allowed in any catch clause of a constructor's function-try-block.
+
+## uninitialize_copy vs. copy
+* [ref](https://social.msdn.microsoft.com/Forums/vstudio/en-US/e0bd2dd9-173d-4894-b39a-b5b08e96d70e/difference-between-stdcopy-and-stduninitializedcopy?forum=vcgeneral)

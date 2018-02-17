@@ -419,3 +419,6 @@ vector<T>{}.swap(vec);
 ## Epilogue
 
 **FOCUS ON YOUR DS & ALG!**
+
+## Some other materials
+* [Ali-optimizaiton](https://zhuanlan.zhihu.com/p/33638344)

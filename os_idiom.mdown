@@ -82,6 +82,9 @@
 * + global servicer
 * + Chandy/Misra
 * DMA
+* + Memory-Device
+* + Memory-Memory
+* + [discussion](https://www.zhihu.com/question/266921250)
 * Device driver
 * disk scheduler
 * + FCFS

@@ -330,6 +330,7 @@
             - [2018-2-14](#2018-2-14)
             - [2018-2-15](#2018-2-15)
             - [2018-2-16](#2018-2-16)
+            - [2018-2-17](#2018-2-17)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -826,6 +827,7 @@ Order of items is just based on Nothing :: Maybe.
 * [unconstexpr/Cpp](https://github.com/DaemonSnake/unconstexpr)
 * [awesome-hack](https://github.com/Hack-with-Github/Awesome-Hacking/blob/master/README.md)
 * [master-plan](https://github.com/rodrigosetti/master-plan)
+* [THU-SAAC](https://git.thusaac.org/publish)
 
 
 
@@ -3537,6 +3539,27 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-16
 * [AST=>CFG](https://www.zhihu.com/question/27730062)
 * [ASIC-GPU-矿机](https://jiasuhui.com/article/11514)
+* [Understanding-Awk](http://devarea.com/understanding-awk-practical-guide/#.WocCUnanGUk)
+* [Code-as-Data-meaning](https://adambard.com/blog/what-is-homoiconicity/)
+* [Jim-Roskind-Cpp-Ambigious-grammar](http://blog.robertelder.org/jim-roskind-grammar/)
+
+#### 2018-2-17
+* [JVM-JIT](https://zhuanlan.zhihu.com/p/28476709)
+* [DRAM-DDR-I](https://zhuanlan.zhihu.com/p/33444359)
+* [DRAM-DDR-II](https://zhuanlan.zhihu.com/p/33479194)
+* [O(1)-scheduler](https://www.zhihu.com/question/266499219)
+* [Hackett](https://lexi-lambda.github.io/blog/2017/08/28/hackett-progress-report-documentation-quality-of-life-and-snake/)
+* [BS-operator dot](https://stackoverflow.com/questions/42183631/inability-to-overload-dot-operator-in-c/42188046#42188046)
+* [free-fmap-explanation](https://www.zhihu.com/question/54363988)
+* [free-fmap-explanation-2](https://github.com/quchen/articles/issues/35)
+* [all odd [] == True](https://www.zhihu.com/question/30213516/answer/47194948)
+* [signal-handler-preemptible](https://stackoverflow.com/questions/6128547/is-execution-of-signal-handler-un-preemptible-in-linux)
+* [XNA-efficiency](http://www.cnblogs.com/jimnox/archive/2009/06/11/xna-flowercursetest.html)
+* [FP-state-machine](https://www.zhihu.com/question/36728044)
+* [Formal-Verification](https://www.zhihu.com/question/38378942/answer/84744046)
+* [Design-Matrix-Library-in-Cpp](https://www.zhihu.com/question/267156650/answer/319326443)
+* [V8-memory-management](https://zhuanlan.zhihu.com/p/33816534)
+* 
 
 
 
