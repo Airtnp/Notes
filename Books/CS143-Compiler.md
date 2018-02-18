@@ -450,4 +450,298 @@ Class {
 }
 ```
 * + dynamic dispatch
-* 
+
+## Semantics
+* Denotational
+* + program => mathematical function
+* Axiomatic
+* + Program behavior described via logical formulae
+* + - If execution begins in state satisfying X, then it ends in state satisfying Y.
+* Operational
+* + Describes program evaluation via execution rules on an abstract machine
+* + environment: variable => location(memory)
+* + store: location => value
+* + type context: name => type / location => type
+* + kind context: type variable => type
+* + program context
+```
+E, S |- Term: value, S'
+
+so, E, S ` e1 : v1, S1
+l_new = newloc(S1)
+so, E[l_new/id] , S1[v1/l_new] |- e2 : v2, S2
+------------------------------------------------
+so, E, S |- let id : T ← e1 in e2 : v2, S2
+
+Informal semantics of e0.f(e1,…,en)
+–  Evaluate the arguments in order e1,…,en
+–  Evaluate e0 to the target object
+–  Let X be the dynamic type of the target object
+–  Fetch from X the definition of f (with n args.)
+–  Create n new locations and an environment that maps f’s formal arguments to those locations
+–  Initialize the locations with the actual arguments
+–  Set self to the target object and evaluate f’s body
+```
+
+## Optimization
+* Where?
+* + On AST
+* + - Pro: Machine independent
+* + - Con: Too high level
+* + On assembly language
+* + - Pro: Exposes optimization opportunities
+* + - Con: Machine dependent
+* + - Con: Must reimplement optimizations when retargetting
+* + On an intermediate language
+* + - Pro: Machine independent
+* + - Pro: Exposes optimization opportunities
+* IL => high-level assembly
+* + high-level opcodes
+* + unlimited registers
+* + control structure
+```
+P → S P | ε
+S → id := id op id
+    | id := op id
+    | id := id
+    | push id
+    | id := pop
+    | if id relop id goto L
+    | L:
+    | jump L
+```
+* basic block: maximal sequence without non-1st label + non-last jump
+* + single-entry/single-exit/straight-line
+* CFG (control flow graph)
+* + directed graph
+* + basic blocks as nodes
+* + A -> B: execution can be passed from A -> B (jump L_B / A | B)
+* Optimization granularity
+* + local optimizaiton: a basic block in isolation
+* + global optimization: control-flow graph in isolation
+* + inter-procedural optimization: across method boundaries
+* + LTO
+* Local optimization
+* + algebraic simplification (Strength reduction)
+* + - replaces complex operations by simpler ones and can be applied to this code segment, replacing the MULT by a shift left.
+* + constant folding
+* + - find constants in code and propagate them, collapsing constant values whenever possible.
+* + flow of control
+* + - eliminate unreachable basic blocks
+* + - dead code elimination
+* + single assignment form
+* + - register occurs only once on the left-hand side of an assignment
+* + common subexpression elimination
+```
+If
+    –  Basic block is in single assignment form
+    –  A definition x := is the first use of x in a block
+Then
+    –  When two assignments have the same rhs, they compute the same value
+```
+* + copy propagation
+* + - rename, enabling other optimizations
+* + loop optimization
+* + - code motion
+* + - induction variable elimination
+> Code motion finds code that is loop invariant: a particular piece of code computes the same value on every iteration of the loop and, hence, may be computed once outside the loop. Induction variable elimination is a combination of transformations that reduce overhead on indexing arrays, essentially replacing array indexing with pointer accesses.
+* + Peephole optimization
+* + - on assembly/IL
+```
+i1, …, in → j1, …, jm
+
+addiu $a $b 0 → move $a $b
+addiu $a $a i, addiu $a $a j → addiu $a $a i+j
+```
+* Global Optimization
+* + X => K: on every path to the use of X, the last assignment is X := K
+* + global analysis
+* + - dataflow
+* + - constant
+* + constant propagation (forward: input => output)
+* + - never execute (bottom) (z) / constant (c) / not a constant (º)
+```
+z < c < º
+
+Define
+    C(s,x,in) = value of x before s
+    C(s,x,out) = value of x after s
+
+C(s, x, in) = lub { C(p, x, out) | p is a predecessor of s }
+
+    if C(pi, x, out) = º for any i, then C(s, x, in) = º
+
+    C(pi, x, out) = c & C(pj, x, out) = d & d <> c then C(s, x, in) = º
+
+    if C(pi, x, out) = c or z for all i, then C(s, x, in) = c
+
+    if C(pi, x, out) = z for all i, then C(s, x, in) = z
+
+C(s, x, out) = z if C(s, x, in) = z
+
+C(x := c, x, out) = c if c is a constant
+
+C(x := f(…), x, out) = º
+
+C(y := …, x, out) = C(y := …, x, in) if x <> y
+
+1.  For every entry s to the program, set C(s, x, in) = º
+2.  Set C(s, x, in) = C(s, x, out) = z everywhere else
+3.  Repeat until all points satisfy 1-8: 
+    Pick s not satisfying 1-8 and update using the appropriate rule
+```
+* + Liveness analysis (backward: output => input)
+```
+A variable x is live at statement s if
+–  There exists a statement s’ that uses x
+–  There is a path from s to s’
+–  That path has no intervening assignment to x
+
+L(p, x, out) = ∨ { L(s, x, in) | s a successor of p }
+
+L(s, x, in) = true if s refers to x on the rhs
+
+L(x := e, x, in) = false if e does not refer to x
+
+L(s, x, in) = L(s, x, out) if s does not refer to x
+
+1.  Let all L(…) = false initially
+2.  Repeat until all statements s satisfy rules 1-4
+    Pick s where one of 1-4 does not hold and update using the appropriate rule
+```
+> Some other optimization can refer to EECS370 book Section 2.15
+* Register Allocation
+* + memory hierarchy: register=>cache=>main memory=>disk
+* + most program only aware of main memory + disk
+* + t1,t2 share a register iff at any point most one of t1,t2 is live
+```
+RIG (Register Inference Graph)
+    A node for each temporary
+    An edge between t1 and t2 if they are live simultaneously at some point in the program
+
+k-colorable RIG => NP-hard
+
+k-coloring Heuristic
+    –  Pick a node t with fewer than k neighbors
+    –  Put t on a stack and remove it from the RIG
+    –  Repeat until the graph has one node
+Assign colors to nodes on the stack
+    –  Start with the last node added
+    –  At each step pick a color different from those assigned to already colored neighbors
+What if heuristic falls (maybe unable to k-coloring)
+    If optimistic coloring fails, we spill f
+        Allocate a memory location for f
+            Typically in the current stack frame
+            Call this address fa
+    Before each operation that reads f, insert
+        f := load fa
+    After each operation that writes f, insert
+        store f, fa
+    Spill temporaries with most conflicts
+    Spill temporaries with few definitions and uses
+    Avoid spilling in inner loops
+Recompute liveness after spilling
+```
+* + Cache optimization
+* + - nested loop (fusion, distribution, unrolling)
+
+## Automatic Memory Management
+* Linear type
+* Garbage Collection
+* + [Java](https://www.zhihu.com/question/35164211)
+* + [Golang](https://www.zhihu.com/question/58863427)
+* + Mark and Sweep
+* + - reachable
+* + - mark: traces reachable objects
+* + - sweep: collect garbage objects
+* + - object with extra mark bit
+* + - Pro: objects are not moved during GC
+* + - Con: Can fragment memory
+* + - Auxiliary/Free List is stored in free objects themselves
+```
+let todo = { all roots }
+while todo ≠ ∅ do
+    pick v ∈ todo
+    todo ← todo - { v }
+    if mark(v) = 0 then (* v is unmarked yet *)
+        mark(v) ← 1
+        let v1,...,vn be the pointers contained in v
+        todo ← todo ∪ {v1,...,vn}
+    end
+end
+
+The sweep phase scans the heap looking for objects with mark bit 0
+    these objects were not visited in the mark phase
+    they are garbage
+
+(* sizeof(p) is the size of block starting at p *)
+p ← bottom of heap
+while p < top of heap do
+    if mark(p) = 1 then
+        mark(p) ← 0
+    else
+        add block p...(p+sizeof(p)-1) to freelist
+    end
+    p ← p + sizeof(p)
+end
+```
+* + Stop and Copy
+* + - old space: used for allocation
+* + - new space: used as a reserve for GC
+* + - - copied and scanned | copied | empty
+* + - must be able to know the size of object
+* + - must copy any objects pointed by the stack and update pointers in the stack
+* + - cheap: allocation/collection
+* + - need reflection to consider whether the memory is a pointer
+```
+Starts when the old space is full
+Copies all reachable objects from old space into new space
+    garbage is left behind
+    after the copy phase the new space uses less space than the old one before the collection
+    as we copy an object we store in the old copy a forwarding pointer to the new copy (solving pointer reference)
+After the copy the roles of the old and new spaces are reversed and the program resumes
+
+Step 1: Copy the objects pointed to by roots and set forwarding pointers
+Step 2: Follow the pointer in the next unscanned object (A)
+    –  copy the pointed-to objects (just C in this case)
+    –  fix the pointer in A
+    –  set forwarding pointer
+
+while scan <> alloc do
+    let O be the object at scan pointer
+    for each pointer p contained in O do
+        find O’ that p points to
+        if O’ is without a forwarding pointer
+            copy O’ to new space (update alloc pointer)
+            set 1st word of old O’ to point to the new copy
+            change p to point to the new copy of O’
+        else
+            set p in O equal to the forwarding pointer
+        end
+    end
+    increment scan pointer to the next object
+end
+```
+* + Reference Counting
+* + - Pro: easy to implement / no large pauses
+* + - Con: cannot collect circular reference / slow to manipulating at each assignment
+* + Generational
+* + Concurrent: program | collector
+* + Parallel: several collectors
+
+## Security
+* bound check
+* buffer overflow(overrun)
+* + stack smashing
+* safety
+* + language design
+* + - type safety
+* + - memory safety
+* + - lifetime analysis
+* + bug finding tools
+* + - detect patterns
+* + - use heuristics
+* + verification
+* + dynamic
+* + - sandboxing
+* + - code and data randomization

@@ -200,7 +200,7 @@ You can see it below at cache section.
 
 `-fipa-pta`
 
-`-ftree-vectorize`
+`-ftree-vectorize` => `-ftree-loop-*`
 
 `-fdevirtualize-speculatively`
 

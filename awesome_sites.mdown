@@ -331,6 +331,7 @@
             - [2018-2-15](#2018-2-15)
             - [2018-2-16](#2018-2-16)
             - [2018-2-17](#2018-2-17)
+            - [2018-2-18](#2018-2-18)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3559,7 +3560,10 @@ Order of items is just based on Nothing :: Maybe.
 * [Formal-Verification](https://www.zhihu.com/question/38378942/answer/84744046)
 * [Design-Matrix-Library-in-Cpp](https://www.zhihu.com/question/267156650/answer/319326443)
 * [V8-memory-management](https://zhuanlan.zhihu.com/p/33816534)
-* 
+
+#### 2018-2-18
+* [Top-10-features-in-MySQL-8.0](http://lefred.be/content/top-10-mysql-8-0-features-for-dbas-ops/)
+* [VNote-Markdown](https://sspai.com/post/43277)
 
 
 
