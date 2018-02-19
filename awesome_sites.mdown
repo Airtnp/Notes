@@ -332,6 +332,7 @@
             - [2018-2-16](#2018-2-16)
             - [2018-2-17](#2018-2-17)
             - [2018-2-18](#2018-2-18)
+            - [2018-2-19](#2018-2-19)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -404,6 +405,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Eli-BenderSky](https://eli.thegreenplace.net/archives/all)
 * [Diting0x/Security](http://www.diting0x.com/archives/)
 * [Ezyang/ML/PL](http://blog.ezyang.com/archives/)
+* [dangokyo/Security](https://dangokyo.me/)
 
 
 ### OI/Alg
@@ -3564,7 +3566,12 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-18
 * [Top-10-features-in-MySQL-8.0](http://lefred.be/content/top-10-mysql-8-0-features-for-dbas-ops/)
 * [VNote-Markdown](https://sspai.com/post/43277)
+* [ptmalloc-explain-with-graph](http://blog.csdn.net/maokelong95/article/details/52006379)
 
+
+#### 2018-2-19
+* [Borrow cycles in Rust: arenas v.s. drop-checking](https://exyr.org/2018/rust-arenas-vs-dropck/)
+* [Monadic-shell](http://okmij.org/ftp/Computation/monadic-shell.html)
 
 
 
