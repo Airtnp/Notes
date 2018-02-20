@@ -333,6 +333,7 @@
             - [2018-2-17](#2018-2-17)
             - [2018-2-18](#2018-2-18)
             - [2018-2-19](#2018-2-19)
+            - [2018-2-20](#2018-2-20)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3572,6 +3573,11 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-19
 * [Borrow cycles in Rust: arenas v.s. drop-checking](https://exyr.org/2018/rust-arenas-vs-dropck/)
 * [Monadic-shell](http://okmij.org/ftp/Computation/monadic-shell.html)
+* [network-proto-layer](http://www.comptechdoc.org/independent/networking/protocol/protlayers.html)
+
+#### 2018-2-20
+* [Backblaze Hard Drive Stats for 2017](https://www.backblaze.com/blog/hard-drive-stats-for-2017/)
+* [XKCD-1957-2018-CVE-list](http://www.explainxkcd.com/wiki/index.php/1957)
 
 
 

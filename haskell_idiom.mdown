@@ -5,7 +5,8 @@
 * + [GhaSShee](https://ghassheee.github.io/)
 
 ## A
-
+* [accursedUnutterablePerformIO](https://github.com/haskell/bytestring/blob/master/Data/ByteString/Internal.hs#L566)
+* + [reddit-discussion](https://www.reddit.com/r/haskell/comments/7ykrv3/xkcds_prediction_for_a_haskellrelated_cve_in_2018/duhfa2h/)
 
 ## B
 

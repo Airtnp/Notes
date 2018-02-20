@@ -5,7 +5,9 @@
 
 
 ## A
-
+* AES
+* + [Explain](https://www.cnblogs.com/luop/p/4334160.html)
+* + [MixColumn](https://crypto.stackexchange.com/questions/2402/how-to-solve-mixcolumns)
 
 ## B
 
