@@ -336,6 +336,7 @@
             - [2018-2-20](#2018-2-20)
             - [2018-2-21](#2018-2-21)
             - [2018-2-22](#2018-2-22)
+            - [2018-2-23](#2018-2-23)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3588,6 +3589,8 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-2-22
 * [Virtual-Memory](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/AQTLLATE/DOCU_012.HTM)
 
+#### 2018-2-23
+* 
 
 
 ## Tools
