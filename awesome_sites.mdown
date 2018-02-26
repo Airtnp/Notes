@@ -337,6 +337,8 @@
             - [2018-2-21](#2018-2-21)
             - [2018-2-22](#2018-2-22)
             - [2018-2-23](#2018-2-23)
+            - [2018-2-24](#2018-2-24)
+            - [2018-2-25](#2018-2-25)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3590,7 +3592,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Virtual-Memory](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/AQTLLATE/DOCU_012.HTM)
 
 #### 2018-2-23
-* 
+* [Understanding the Limitations of HTTPS](https://textslashplain.com/2018/02/14/understanding-the-limitations-of-https/)
+
+#### 2018-2-24
+* [Write-a-Linked-list-in-Rust](https://www.reddit.com/r/rust/comments/7zsy72/writing_a_doubly_linked_list_in_rust_is_easy/)
+
+#### 2018-2-25
+* [LevelDb-SSTable-Log-structured-storage](https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/)
+
 
 
 ## Tools
