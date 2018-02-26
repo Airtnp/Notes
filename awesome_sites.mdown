@@ -339,6 +339,7 @@
             - [2018-2-23](#2018-2-23)
             - [2018-2-24](#2018-2-24)
             - [2018-2-25](#2018-2-25)
+            - [2018-2-26](#2018-2-26)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3599,6 +3600,11 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-2-25
 * [LevelDb-SSTable-Log-structured-storage](https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/)
+
+#### 2018-2-26
+* [Fun with self-decryption](https://x64dbg.com/blog/2018/02/25/fun-with-self-decryption.html)
+* [ML-from-scratch](https://www.youtube.com/watch?v=iumlHzoVlJM&feature=youtu.be)
+* [Crypto-intro](https://www.reddit.com/r/crypto/comments/806bdn/i_want_to_learn_cryptography_good_place_to_start/)
 
 
 

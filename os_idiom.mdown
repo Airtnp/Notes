@@ -282,7 +282,8 @@
 * + - frames in circular list
 * + - page fault => check reference bit of next frame
 * + - keep a modify bit
-> The reference bit and modify bit form a pair (r,m) where
+```
+The reference bit and modify bit form a pair (r,m) where
 1. (0,0) neither recently used nor modified - replace this page!
 2. (0,1) not recently used but modified - not as good to replace, since the OS
 must write out this page, but it might not be needed anymore.
@@ -290,7 +291,9 @@ must write out this page, but it might not be needed anymore.
 OS need not write it out before replacing it
 4. (1,1) recently used and modified - probably will be used again soon and
 the OS must write it out before replacing it
-> Page with (0,0) => replace the page.
+```
+```
+1. Page with (0,0) => replace the page.
 2. Page with (0,1) => initiate an I/O to write out the page, locks the page in
 memory until the I/O completes, clears the modified bit, and continue the
 search
@@ -300,7 +303,8 @@ search
     have been changed to (0,0) => replace this page
     • If the page is being written out, waits for the I/O to complete and then remove the page.
     • A (0,1) page is treated as on the first pass.
-    • By the third pass, all the pages will be at (0,0
+    • By the third pass, all the pages will be at (0,0)
+```
 * + Multihreading replacement
 * + - thrashing: over-commiteed memory and pages are continuously tossed
 * + - proportional allocation: more page frames to large process
