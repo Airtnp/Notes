@@ -340,6 +340,7 @@
             - [2018-2-24](#2018-2-24)
             - [2018-2-25](#2018-2-25)
             - [2018-2-26](#2018-2-26)
+            - [2018-2-27](#2018-2-27)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3606,6 +3607,9 @@ Order of items is just based on Nothing :: Maybe.
 * [ML-from-scratch](https://www.youtube.com/watch?v=iumlHzoVlJM&feature=youtu.be)
 * [Crypto-intro](https://www.reddit.com/r/crypto/comments/806bdn/i_want_to_learn_cryptography_good_place_to_start/)
 
+#### 2018-2-27
+* [grass-mud-list](https://chinadigitaltimes.net/2013/06/grass-mud-horse-list/)
+* [CSS-snippets](https://atomiks.github.io/30-seconds-of-css/)
 
 
 ## Tools
