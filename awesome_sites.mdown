@@ -342,6 +342,7 @@
             - [2018-2-26](#2018-2-26)
             - [2018-2-27](#2018-2-27)
             - [2018-2-28](#2018-2-28)
+            - [2018-3-1](#2018-3-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3615,8 +3616,11 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-2-28
 * [MPEG-1-in-JS](http://phoboslab.org/log/2017/02/decode-it-like-its-1999)
+* [Reasoning with Types in Rust](https://aaronweiss.us/posts/2018-02-26-reasoning-with-types-in-rust.html)
 
-
+#### 2018-3-1
+* [Time to move to C11 atomics?](https://lwn.net/Articles/691128/)
+* [February 28th DDoS Incident Report](https://githubengineering.com/ddos-incident-report/)
 
 
 
