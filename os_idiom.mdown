@@ -256,6 +256,7 @@
 * + - wait while holding
 * + - circular waiting (not DAG)
 * + - Solution: [Banker's Algorithm](https://zh.wikipedia.org/wiki/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95)
+* + - - [banker-ref](http://www.cnblogs.com/Lynn-Zhang/p/5672080.html)
 * + livelock: two thread restart each other
 * lock-free
 * + test-and-set 
@@ -406,6 +407,8 @@ search
 * preemptive
 * PIO (programmed IO)
 * parallelism
+* PCIE
+* + [ref](https://zhuanlan.zhihu.com/p/34047690)
 
 
 ## Q

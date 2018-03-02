@@ -243,6 +243,10 @@
 * + BMP (basic multilingual plane)
 * + BOM
 * + 信道编码，为更好的存储和传输
+* unification
+* + Hindley-Milner
+* + Wand
+* + [ref](http://blog.sciencenet.cn/blog-279072-465788.html)
 
 ## V
 

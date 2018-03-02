@@ -200,10 +200,23 @@ You can see it below at cache section.
 
 `-fipa-pta`
 
+`-fipa-sra`
+
+`-fipa-icf`
+
+`-fipa-vrp`
+
 `-ftree-vectorize` => `-ftree-loop-*`
 
 `-fdevirtualize-speculatively`
 
+`-fdevirtualize-at-ltrans`
+
+`-fstore-merging`
+
+`-fprintf-return-value`
+
+* [ref](https://www.zhihu.com/question/266923117/answer/324329834)
 
 #### Arrange your switch
 

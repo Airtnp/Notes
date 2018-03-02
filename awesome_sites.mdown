@@ -3622,6 +3622,17 @@ Order of items is just based on Nothing :: Maybe.
 * [Time to move to C11 atomics?](https://lwn.net/Articles/691128/)
 * [February 28th DDoS Incident Report](https://githubengineering.com/ddos-incident-report/)
 
+#### 2018-3-2
+* [memcrashed-memcached](https://blog.cloudflare.com/memcrashed-major-amplification-attacks-from-port-11211/)
+* [微处理器架构](https://www.zhihu.com/question/267334796/answer/323843885)
+* [NUMA-UMA-SMP](http://unicornx.github.io/2016/03/26/20160326-mem-shared-arch/)
+* [NUMA-SMP-2](http://pipul.org/2015/10/linux-scheduling-domains-load-balance-algorithm/)
+* [Scala-delegate](https://zhuanlan.zhihu.com/p/33932952)
+* [Scala-reference](https://zhuanlan.zhihu.com/p/33884861)
+* [Why-are-types-so-cool-Rust](https://blue-dinosaur.github.io/haskell/type-theory/programming/2018/02/19/result-types.html)
+* [The Expressive C++17 Coding Challenge in D](https://seb.wilzba.ch/b/2018/02/the-expressive-c17-coding-challenge-in-d/)
+* [PHP-md5-0e-bug](https://www.zhihu.com/question/266144672/answer/305893111)
+
 
 
 ## Tools

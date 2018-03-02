@@ -571,6 +571,7 @@ struct element {
 * NFA-DFA
 * 逆元
 * + [ref](https://www.zhihu.com/question/59033693)
+* + [open-question](https://www.zhihu.com/question/59033693/answer/323292359)
 
 ## O
 
@@ -613,6 +614,9 @@ struct element {
 * Polhig-Hellman
 * PSPACE(NPSPACE)
 * Perlin noise (地图生成)
+* Persistent Data Structure
+* + list
+* + - Braun tree
 
 ## Q
 
@@ -890,6 +894,10 @@ struct element {
 * + 区间k大
 * 字典树 (Trie Tree)
 * + x-fast trie / y-fast trie
+* + suffix trie
+* + patricia trie
+* + crit-bit trie
+* + [ref](https://www.zhihu.com/question/30736334/answer/49444490)
 * 在线算法
 * zkw线段树
 * 状态机

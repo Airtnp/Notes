@@ -1397,4 +1397,9 @@ ret
 >> Every catch-clause in the function-try-block for a constructor must terminate by throwing an exception. If the control reaches the end of such handler, the current exception is automatically rethrown as if by throw;. The return statement is not allowed in any catch clause of a constructor's function-try-block.
 
 ## uninitialize_copy vs. copy
+* std::copy overwrites existing objects in the destination range using operator=. 
+* std::uninitialized_copy creates new objects in the destination range using placement new. If there happen to be existing objects in the destination range, you can get memory corruption.
 * [ref](https://social.msdn.microsoft.com/Forums/vstudio/en-US/e0bd2dd9-173d-4894-b39a-b5b08e96d70e/difference-between-stdcopy-and-stduninitializedcopy?forum=vcgeneral)
+
+## Overload comma operator
+* [discussion](https://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator/5602136#5602136)
