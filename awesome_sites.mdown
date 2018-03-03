@@ -343,6 +343,8 @@
             - [2018-2-27](#2018-2-27)
             - [2018-2-28](#2018-2-28)
             - [2018-3-1](#2018-3-1)
+            - [2018-3-2](#2018-3-2)
+            - [2018-3-3](#2018-3-3)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3632,6 +3634,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Why-are-types-so-cool-Rust](https://blue-dinosaur.github.io/haskell/type-theory/programming/2018/02/19/result-types.html)
 * [The Expressive C++17 Coding Challenge in D](https://seb.wilzba.ch/b/2018/02/the-expressive-c17-coding-challenge-in-d/)
 * [PHP-md5-0e-bug](https://www.zhihu.com/question/266144672/answer/305893111)
+
+#### 2018-3-3
+* [clojure-don't-lazy](https://stuartsierra.com/2015/08/25/clojure-donts-lazy-effects)
+* [LFS-8.2](http://lists.linuxfromscratch.org/pipermail/lfs-support/2018-March/051866.html)
+* [GHC-compact-regions](http://fuuzetsu.co.uk/blog/posts/2018-03-03-GHC-compact-regions-for-improved-latency.html)
+* [Deconstructing the water effect in Super Mario Sunshine](http://blog.mecheye.net/2018/03/deconstructing-the-water-effect-in-super-mario-sunshine/)
 
 
 
