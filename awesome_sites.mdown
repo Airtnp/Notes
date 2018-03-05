@@ -345,6 +345,8 @@
             - [2018-3-1](#2018-3-1)
             - [2018-3-2](#2018-3-2)
             - [2018-3-3](#2018-3-3)
+            - [2018-3-4](#2018-3-4)
+            - [2018-3-5](#2018-3-5)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3641,6 +3643,12 @@ Order of items is just based on Nothing :: Maybe.
 * [GHC-compact-regions](http://fuuzetsu.co.uk/blog/posts/2018-03-03-GHC-compact-regions-for-improved-latency.html)
 * [Deconstructing the water effect in Super Mario Sunshine](http://blog.mecheye.net/2018/03/deconstructing-the-water-effect-in-super-mario-sunshine/)
 
+#### 2018-3-4
+* [Fear and Loathing with APL](http://theburningmonk.com/2015/06/fear-and-loathing-with-apl/)
+* [Linguistic-behind-re](https://dev.to/alainakafkes/exploring-the-linguistics-behind-regular-expressions-bb4)
+
+#### 2018-3-5
+* [Linux-Kernel-Development](http://devarea.com/linux-kernel-development-and-writing-a-simple-kernel-module/#.Wp2df23waUk)
 
 
 ## Tools
