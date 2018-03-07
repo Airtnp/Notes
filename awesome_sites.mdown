@@ -348,6 +348,7 @@
             - [2018-3-4](#2018-3-4)
             - [2018-3-5](#2018-3-5)
             - [2018-3-6](#2018-3-6)
+            - [2018-3-7](#2018-3-7)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3654,6 +3655,12 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-3-6
 * [C++: Thoughts on Dealing with Signed/Unsigned Mismatch](http://ithare.com/c-thoughts-on-dealing-with-signedunsigned-mismatch/)
+* [Windows’s Virtual Address Space: A Short MSDN Story](http://www.tenouk.com/WinVirtualAddressSpace.html)
+
+#### 2018-3-7
+* [Java-FX-removed-from-Java-JDK](https://www.infoworld.com/article/3261066/java/javafx-will-be-removed-from-the-java-jdk.html)
+* [Encryption-101-break](https://blog.malwarebytes.com/threat-analysis/2018/03/encryption-101-how-to-break-encryption/)
+
 
 
 ## Tools
