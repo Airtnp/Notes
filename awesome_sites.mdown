@@ -349,6 +349,7 @@
             - [2018-3-5](#2018-3-5)
             - [2018-3-6](#2018-3-6)
             - [2018-3-7](#2018-3-7)
+            - [2018-3-8](#2018-3-8)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3660,6 +3661,12 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-3-7
 * [Java-FX-removed-from-Java-JDK](https://www.infoworld.com/article/3261066/java/javafx-will-be-removed-from-the-java-jdk.html)
 * [Encryption-101-break](https://blog.malwarebytes.com/threat-analysis/2018/03/encryption-101-how-to-break-encryption/)
+
+#### 2018-3-8
+* [System.IO-in-.Net-Core-2.1](https://blogs.msdn.microsoft.com/jeremykuhne/2018/03/08/system-io-in-net-core-2-1-sneek-peek/)
+* [LLVM-6](https://lists.llvm.org/pipermail/llvm-announce/2018-March/000077.html)
+* [GHC-8.4.1](https://ghc.haskell.org/trac/ghc/blog/ghc-8.4.1-released)
+
 
 
 
