@@ -351,6 +351,7 @@
             - [2018-3-7](#2018-3-7)
             - [2018-3-8](#2018-3-8)
             - [2018-3-9](#2018-3-9)
+            - [2018-3-10](#2018-3-10)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3673,7 +3674,10 @@ Order of items is just based on Nothing :: Maybe.
 * [gcc-m32-stack-analysis](https://reverseengineering.stackexchange.com/questions/17075/stack-buffer-size-is-different-between-c-and-asm/17076#17076)
 
 
-
+#### 2018-3-10
+* [VDSO-syscall](https://jin-yang.github.io/post/kernel-syscall.html)
+* [非线性最小二乘法](http://blog.sciencenet.cn/blog-465130-1001688.html)
+* [setuid-uid-euid](https://www.osso.nl/blog/setuid-seteuid-uid-euid/)
 
 
 ## Tools
