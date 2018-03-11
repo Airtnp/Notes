@@ -352,6 +352,7 @@
             - [2018-3-8](#2018-3-8)
             - [2018-3-9](#2018-3-9)
             - [2018-3-10](#2018-3-10)
+            - [2018-3-11](#2018-3-11)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3678,6 +3679,14 @@ Order of items is just based on Nothing :: Maybe.
 * [VDSO-syscall](https://jin-yang.github.io/post/kernel-syscall.html)
 * [非线性最小二乘法](http://blog.sciencenet.cn/blog-465130-1001688.html)
 * [setuid-uid-euid](https://www.osso.nl/blog/setuid-seteuid-uid-euid/)
+
+
+#### 2018-3-11
+* [UID-Real-Effective-Saved](https://stackoverflow.com/questions/205070/whats-the-deal-with-all-the-different-uids-a-process-can-have)
+* [PyGILState_Ensure](https://vstinner.github.io/python37-gil-change.html)
+* [CUDA++](https://migocpp.wordpress.com/2018/03/07/cuda/)
+
+
 
 
 ## Tools
