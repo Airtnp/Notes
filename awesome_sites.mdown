@@ -3686,6 +3686,10 @@ Order of items is just based on Nothing :: Maybe.
 * [PyGILState_Ensure](https://vstinner.github.io/python37-gil-change.html)
 * [CUDA++](https://migocpp.wordpress.com/2018/03/07/cuda/)
 
+#### 2018-3-12
+* [Advent-of-D](http://jordi.inversethought.com/blog/advent-of-d/)
+
+
 
 
 
