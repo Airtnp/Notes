@@ -214,6 +214,57 @@
 * + - `CreateTimerQueue` - `CreateTimerQueueTimer` - `DeleteTimerQueue` - `WaitOrTimerCallback`
 * + Countdown Event
 * + Barrier
+* System
+* + [primer](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
+* + Scalability
+* + - horizontal scaling
+* + - vertical scaling
+* + CAP: consistency / availability / partition tolerance (2 in 3)
+* + - consistency
+* + - - weak: may not see updated
+* + - - final: instantly view (copy asynchronously)
+* + - - strong: instantly view (copy synchronously)
+* + - availability
+* + - - fail-over
+* + - - - active-passive: regularly send signal (no signal => switch to backup)
+* + - - - active-active: balanced load
+* + - - replication
+* + DNS system
+* + CDN system (content distribution)
+* + - push/pull
+* + Balance Loading
+* + - 4-layer: transfer layer
+* + - 7-layer: application layer
+* + Reverse Proxy
+* + Microservice
+* + Service Discover
+* + Database
+* + - RDBMS (relational): ACID
+* + - - master-slave copy
+* + - - master-master copy
+* + - - union
+* + - - slice
+* + - - optimization
+* + - NoSQL: kv/document/list/graph DB, final consistency, soft status
+* + Cache
+* + - Client
+* + - CDN
+* + - Web server
+* + - Database
+* + - Application (RAM: Memcached/Redis)
+* + - write-through
+* + - write-back
+* + Async
+* + - message queue
+* + - task list
+* + Communication
+* + - HTTP
+* + - TCP
+* + - UDP
+* + - RPC
+* + - REST
+* + Security
+
 
 ## T
 
