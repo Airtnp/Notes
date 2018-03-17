@@ -1403,3 +1403,39 @@ ret
 
 ## Overload comma operator
 * [discussion](https://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator/5602136#5602136)
+
+## valarray, what's that
+* [discussion](https://stackoverflow.com/questions/1602451/c-valarray-vs-vector)
+
+## enum variable undefined
+* [discussion](https://stackoverflow.com/questions/6842799/enum-variable-default-value)
+```c++
+enum color { red, yellow, green = 20, blue };
+color col = red;
+int n = blue; // n == 21
+
+
+
+
+enum SomeEnum {  
+    EValue1 = 1,  
+    EValue2 = 4,
+    EValue3 = 15,  
+};
+SomeEnum e; // e is 0
+int i;      // i is 0
+
+int main() {
+    SomeEnum f;
+    cout << e << " " << i; //prints 0 0 
+    cout << f; // undefined
+}
+```
+
+## Call parent method
+```
+void child::method() {
+    parent::method();
+    c.parent::method();
+}
+```

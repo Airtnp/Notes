@@ -357,6 +357,7 @@
             - [2018-3-13](#2018-3-13)
             - [2018-3-14](#2018-3-14)
             - [2018-3-15](#2018-3-15)
+            - [2018-3-16](#2018-3-16)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3711,6 +3712,9 @@ Order of items is just based on Nothing :: Maybe.
 * [Ruby-monkey-patch](https://www.jianshu.com/p/329079b5819c)
 * [并发之痛 Thread，Goroutine，Actor](http://jolestar.com/parallel-programming-model-thread-goroutine-actor/)
 * [Usability improvements in GCC 8](https://developers.redhat.com/blog/2018/03/15/gcc-8-usability-improvements/)
+
+#### 2018-3-16
+* [What can we learn from how compilers are designed?](http://www.tedinski.com/2018/03/13/how-compilers-are-designed.html)
 
 
 ## Tools
