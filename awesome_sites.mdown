@@ -358,6 +358,7 @@
             - [2018-3-14](#2018-3-14)
             - [2018-3-15](#2018-3-15)
             - [2018-3-16](#2018-3-16)
+            - [2018-3-17](#2018-3-17)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3715,6 +3716,11 @@ Order of items is just based on Nothing :: Maybe.
 
 #### 2018-3-16
 * [What can we learn from how compilers are designed?](http://www.tedinski.com/2018/03/13/how-compilers-are-designed.html)
+
+#### 2018-3-17
+* [Why inheritance never made any sense](https://www.sicpers.info/2018/03/why-inheritance-never-made-any-sense/)
+* [IDEA-instructions](https://idea-instructions.com/)
+* [Python 3.7’s new builtin breakpoint — a quick tour](https://medium.com/@anthonypjshaw/python-3-7s-new-builtin-breakpoint-a-quick-tour-4f1aebc444c)
 
 
 ## Tools
