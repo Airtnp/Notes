@@ -1439,3 +1439,29 @@ void child::method() {
     c.parent::method();
 }
 ```
+
+## Must be visible
+```
+void foo() { // 1
+    cout << "WTF";   
+}
+
+
+
+template <typename T>
+void foo(T t) { // 2
+    cout << "Small\n";   
+}
+
+
+template <typename T, typename ...Args>
+void foo(T t, Args... args) { // 3
+    cout << "Large\n";
+    foo(args...);
+}
+
+// call foo(1, 2, 3, 4)
+// 123 => LLLS
+// 132 => LLLW
+// 213 => LLLS
+```

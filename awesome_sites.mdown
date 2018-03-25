@@ -360,6 +360,8 @@
             - [2018-3-16](#2018-3-16)
             - [2018-3-17](#2018-3-17)
             - [2018-3-18](#2018-3-18)
+            - [2018-3-19](#2018-3-19)
+            - [2018-3-20 - 2018-3-25](#2018-3-20---2018-3-25)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3726,6 +3728,19 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-3-18
 * [Building-a-fast-Electron-App-using-Rust](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/)
 * [Gcc-builtin-expand](https://code.woboq.org/gcc/gcc/builtins.c.html)
+
+#### 2018-3-19
+* [2-fd-in-TCP](https://stackoverflow.com/questions/36730848/why-we-have-to-get-two-file-descriptors-in-tcp-server-socket-programming)
+
+#### 2018-3-20 - 2018-3-25
+* [Types, and Why You Should Care](https://www.youtube.com/watch?v=0arFPIQatCU)
+* [Async/Await VI: 6 weeks of great progress](https://boats.gitlab.io/blog/post/2018-03-20-async-vi/)
+* [Bash-suid](https://unix.stackexchange.com/questions/74527/setuid-bit-seems-to-have-no-effect-on-bash)
+* [Canary-DEP/NX-ASLR-Break](https://security.stackexchange.com/questions/20497/stack-overflows-defeating-canaries-aslr-dep-nx)
+* [Basic Data Structures and Algorithms in the Linux Kernel](http://luisbg.blogalia.com/historias/74062)
+* [DoNot-Tor](https://www.whonix.org/wiki/DoNot)
+
+
 
 
 ## Tools
