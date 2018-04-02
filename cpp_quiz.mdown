@@ -1465,3 +1465,9 @@ void foo(T t, Args... args) { // 3
 // 132 => LLLW
 // 213 => LLLS
 ```
+
+## is_nothrow_copy_constructible<runtime_error> false ?
+* [discussion](https://stackoverflow.com/questions/35039927/are-the-copy-constructor-and-copy-assignment-of-stdruntime-error-noexcept)
+```
+An inheriting constructor (12.9) and an implicitly declared special member function (Clause 12) have an exception-specification. If f is an inheriting constructor or an implicitly declared default constructor, copy constructor, move constructor, destructor, copy assignment operator, or move assignment operator, its implicit exception-specification specifies the type-id T if and only if T is allowed by the exception-specification of a function directly invoked by f’s implicit definition; f allows all exceptions if any function it directly invokes allows all exceptions, and f has the exception-specification noexcept(true) if every function it directly invokes allows no exceptions.
+```

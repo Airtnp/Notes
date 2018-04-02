@@ -362,6 +362,7 @@
             - [2018-3-18](#2018-3-18)
             - [2018-3-19](#2018-3-19)
             - [2018-3-20 - 2018-3-25](#2018-3-20---2018-3-25)
+            - [2018-3-26 - 2018-4-1](#2018-3-26---2018-4-1)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3739,6 +3740,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Canary-DEP/NX-ASLR-Break](https://security.stackexchange.com/questions/20497/stack-overflows-defeating-canaries-aslr-dep-nx)
 * [Basic Data Structures and Algorithms in the Linux Kernel](http://luisbg.blogalia.com/historias/74062)
 * [DoNot-Tor](https://www.whonix.org/wiki/DoNot)
+
+#### 2018-3-26 - 2018-4-1
+* [Top 10 Bugs in the C++ Projects of 2017](https://medium.com/@CPP_Coder/top-10-bugs-in-the-c-projects-of-2017-d7e48a5c23b2)
+* [Linux-IO-select-epoll](https://segmentfault.com/a/1190000003063859)
+* [More-branch-attack](https://arstechnica.com/gadgets/2018/03/its-not-just-spectre-researchers-reveal-more-branch-prediction-attacks/)
+* [Total-Meltdown-Win7](http://blog.frizk.net/2018/03/total-meltdown.html?m=1)
+* [C++-2018-Jacksonville](https://botondballo.wordpress.com/2018/03/28/trip-report-c-standards-meeting-in-jacksonville-march-2018/)
+* [Rust-1.25](https://blog.rust-lang.org/2018/03/29/Rust-1.25.html)
 
 
 
