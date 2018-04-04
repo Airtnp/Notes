@@ -363,6 +363,7 @@
             - [2018-3-19](#2018-3-19)
             - [2018-3-20 - 2018-3-25](#2018-3-20---2018-3-25)
             - [2018-3-26 - 2018-4-1](#2018-3-26---2018-4-1)
+            - [2018-4-2 - 2018-4-8](#2018-4-2---2018-4-8)
     - [Tools](#tools)
 
 <!-- /TOC -->
@@ -3749,7 +3750,8 @@ Order of items is just based on Nothing :: Maybe.
 * [C++-2018-Jacksonville](https://botondballo.wordpress.com/2018/03/28/trip-report-c-standards-meeting-in-jacksonville-march-2018/)
 * [Rust-1.25](https://blog.rust-lang.org/2018/03/29/Rust-1.25.html)
 
-
+#### 2018-4-2 - 2018-4-8
+* 
 
 
 ## Tools

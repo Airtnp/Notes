@@ -358,7 +358,7 @@ search
 * + - PSO (partial store order): relax W -> W
 * + - Weak ordering / Power PC / Release: relax R -> W / R -> R
 * + sequenced-before => single thread happens-before
-* + happens-before
+* + happens-before (strict partial order)
 * + - inter-thread happens-before
 * + - - A synchronizes-with B
 * + - - A is dependency-ordered before B
