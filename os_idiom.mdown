@@ -456,7 +456,8 @@ search
 * + MLFQ (Windows NT)
 * + - RR on each priority queue and change priority
 * + - job's time slices expires => drop 1 level
-* + - context swiching from I/O bound => up to top priorit
+* + - context swiching from I/O bound => up to top priority
+* + - After some time to top level
 * + Lottery Scheduling
 * + - Jobs get tickets and scheduler randomly picks winning ticket
 * + - assign most to short running jobs, fewer to long running job, avoid starvation

@@ -140,7 +140,7 @@
         - [2017-7-21](#2017-7-21)
         - [2017-7-22](#2017-7-22)
         - [2017-7-23](#2017-7-23)
-        - [2017-7-23](#2017-7-23)
+        - [2017-7-23](#2017-7-23-1)
         - [2017-7-25](#2017-7-25)
         - [2017-7-26](#2017-7-26)
         - [2017-7-29](#2017-7-29)
@@ -187,7 +187,7 @@
         - [2017-9-22](#2017-9-22)
             - [2017-9-23](#2017-9-23)
             - [2017-9-24](#2017-9-24)
-            - [2017-9-24](#2017-9-24)
+            - [2017-9-24](#2017-9-24-1)
             - [2017-9-25](#2017-9-25)
             - [2017-9-26](#2017-9-26)
             - [2017-9-27](#2017-9-27)
@@ -211,7 +211,7 @@
             - [2017-10-18](#2017-10-18)
             - [2017-10-19](#2017-10-19)
             - [2017-10-20](#2017-10-20)
-            - [2017-10-20](#2017-10-20)
+            - [2017-10-20](#2017-10-20-1)
             - [2017-10-22](#2017-10-22)
             - [2017-10-23](#2017-10-23)
             - [2017-10-24](#2017-10-24)
@@ -308,7 +308,7 @@
             - [2018-1-24](#2018-1-24)
             - [2018-1-25](#2018-1-25)
             - [2018-1-26](#2018-1-26)
-            - [2018-1-26](#2018-1-26)
+            - [2018-1-26](#2018-1-26-1)
             - [2018-1-27](#2018-1-27)
             - [2018-1-28](#2018-1-28)
             - [2018-1-29](#2018-1-29)
@@ -3751,7 +3751,15 @@ Order of items is just based on Nothing :: Maybe.
 * [Rust-1.25](https://blog.rust-lang.org/2018/03/29/Rust-1.25.html)
 
 #### 2018-4-2 - 2018-4-8
-* 
+* [Trip report: Winter ISO C++ standards meeting (Jacksonville)](https://herbsutter.com/2018/04/02/trip-report-winter-iso-c-standards-meeting-jacksonville/)
+* [Python-Numba](https://zhuanlan.zhihu.com/p/27152060)
+* [C++-Low-level-IO-proposal](https://www.reddit.com/r/cpp/comments/89nn1t/proposed_standard_low_level_file_io_library_for_c/)
+* [opencv-cuda-cython](https://stackoverflow.com/questions/42125084/accessing-opencv-cuda-functions-from-python-no-pycuda/42401559#42401559)
+* [numpy-pybuffer](https://stackoverflow.com/questions/37988849/safer-way-to-expose-a-c-allocated-memory-buffer-using-numpy-ctypes)
+* [Pool-imap-map](https://stackoverflow.com/questions/26520781/multiprocessing-pool-whats-the-difference-between-map-async-and-imap)
+* [concurrent.futures-internal](http://manjusaka.itscoder.com/2017/11/28/something-about-concurrent-future/)
+
+
 
 
 ## Tools

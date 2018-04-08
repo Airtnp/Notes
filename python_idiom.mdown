@@ -27,6 +27,7 @@
 * 任何缩进 任何缩进字符都被允许
 *  `(2).conjugate()` instead of `2.conjugate`
 * + [ref](https://stackoverflow.com/questions/33137934/what-types-of-attributes-does-the-the-dir-function-give-in-python)
+* [some-quiz](http://manjusaka.itscoder.com/2016/11/18/Someone-tell-me-that-you-think-Python-is-simple/)
 
 ## A
 
