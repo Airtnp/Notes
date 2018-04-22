@@ -3404,6 +3404,12 @@ Order of items is just based on Nothing :: Maybe.
 * + In the x86_64 ABI, if a function has variable arguments then AL (which is part of EAX) is expected to hold the number of vector (XMM) registers used to hold arguments to that function.
 * [Win64-SysV-difference](https://stackoverflow.com/questions/4429398/why-does-windows64-use-a-different-calling-convention-from-all-other-oses-on-x86)
 
+#### 2018-4-16 - 2018-4-22
+* [best-python-articles](https://medium.freecodecamp.org/python-collection-of-my-favorite-articles-8469b8455939)
+* [Virtual Data Optimizer](https://www.redhat.com/de/blog/look-vdo-new-linux-compression-layer)
+* [POPL-SPJ-Interview](http://www.cs.cmu.edu/~popl-interviews/peytonjones.html)
+* [Software-Foundation-zh-cn](https://coq-zh.github.io/SF-zh/)
+
 
 ## Tools
 * [Repl.it](https://repl.it/)
