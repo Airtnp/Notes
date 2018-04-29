@@ -1471,3 +1471,16 @@ void foo(T t, Args... args) { // 3
 ```
 An inheriting constructor (12.9) and an implicitly declared special member function (Clause 12) have an exception-specification. If f is an inheriting constructor or an implicitly declared default constructor, copy constructor, move constructor, destructor, copy assignment operator, or move assignment operator, its implicit exception-specification specifies the type-id T if and only if T is allowed by the exception-specification of a function directly invoked by f’s implicit definition; f allows all exceptions if any function it directly invokes allows all exceptions, and f has the exception-specification noexcept(true) if every function it directly invokes allows no exceptions.
 ```
+
+## Take address of std::free
+```c++
+std::unique_ptr<char, decltype(std::free) *>
+    t_copy { strdup(t), std::free };
+```
+* [discussion](https://stackoverflow.com/questions/27440953/stdunique-ptr-for-c-functions-that-need-free/)
+* std::free in not guaranteed to be void(void*)
+* you shall not specialize std function templates
+* Only in newest N4741:
+> Let F denote a standard library function (20.5.5.4), a standard library static member function, or an instantiation of a standard library function template. Unless F is designated an addressable function, the behavior of a C++ program is unspecified (possibly ill-formed) if it explicitly or implicitly attempts to form a pointer to F . [ Note: Possible means of forming such pointers include application of the unary & operator (8.5.2.1), addressof (23.10.11.1), or a function-to-pointer standard conversion (7.3). — end note ] Moreover, the behavior of a C++ program is unspecified (possibly ill-formed) if it attempts to form a reference to F or if it attempts to form a pointer-to-member designating either a standard library non-static member function (20.5.5.5) or an instantiation of a standard library member function template
+* ACCU 2018 Lightning talks - Wednesday
+* 
