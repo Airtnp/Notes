@@ -104,6 +104,10 @@ make -j `nproc` check
 cd ..
 ln -s ~/build/klee/Release+Asserts/lib/libkleeRuntest.so ~/build/klee/Release+Asserts/lib/libkleeRuntest.so.1.0
 
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install libelf-dev libdwarf-dev
+
 git clone https://github.com/01org/processor-trace
 cd processor-trace
 cmake .

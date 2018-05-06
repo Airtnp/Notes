@@ -26,13 +26,15 @@
 * + - rewriting previous constraints when new equality constraints are added to the constraint set. In this example, substituting the value for x into the first constraint simplifies it to true, which KLEE eliminates.
 * + implied value concretization
 * + - constraint: (x + 1 == 10) => concrete x = 9
+* + constraint independence
+* + - i = 20 only need first 2 of {i < j, j < 20, k > 0}
 * + counter-example cache
 * + -  The counter-example cache maps sets of constraints to counter-examples (i.e., variable assignments), along with a special sentinel used when a set of constraints has no solution.   This mapping is stored in a custom data structure — derived from the UBTree structure of Hoffmann and Hoehler [28] — which allows efficient searching for cache entries for both subsets and supersets of a constraint set.
 * + - ![image_1cacn3ie11f5s2fa1e7717vs1m959.png-50kB][1]
 * state scheduling
 * + Random Path Selection maintains a binary tree recording the program path followed for all active states.
 * + Coverage-Optimized Search tries to select states likely to cover new code in the immediate future. It uses heuristics to compute a weight for each state and then randomly selects a state according to these weights.  
-* + round robin
+* + round robin for each strategy
 
 ### Environment modelling
 * Mechanically, we handle the environment by redirecting calls that access it to models that understand the semantics of the desired action well enough to generate the required constraints.

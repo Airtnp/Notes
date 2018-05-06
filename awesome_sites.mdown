@@ -3413,7 +3413,25 @@ Order of items is just based on Nothing :: Maybe.
 #### 2018-4-23 - 2018-4-29
 * [Python-source-code-int](https://blog.csdn.net/zhangyifei216/article/details/50667192)
 * [Windows-CreateProcess-overhead](https://stackoverflow.com/questions/47845/why-is-creating-a-new-process-more-expensive-on-windows-than-linux)
+* [BBR-TCP](https://www.zhihu.com/question/53559433/answer/135919956)
+* [bypass-PHP-escape](https://security.szurek.pl/exploit-bypass-php-escapeshellarg-escapeshellcmd.html)
+* [HITCON-2017-Notes](https://hackmd.io/7hNNkuw2QD2pXj7UI15wJw)
+* [Simplify-Building-C++](https://mropert.github.io/2018/04/27/simplifying_build-part3/)
 
+#### 2018-4-30 - 2018-5-6
+* [concurrent-lock-free-queue-ringbuffer](http://moodycamel.com/blog/2014/a-fast-general-purpose-lock-free-queue-for-c++#benchmarks)
+* [LMAX-Java-Disruptor](https://martinfowler.com/articles/lmax.html)
+* [Java-Disruptor](https://zhuanlan.zhihu.com/p/21355046)
+* [C-Compiler-SSA](https://blog.csdn.net/dongtingzhizi/article/details/8011612)
+* [CFL-Reachability-Inter-procedural-analysis](https://www.zhihu.com/question/38569079)
+* [4-Russian's-Method-Bit-Matrix](https://www.youtube.com/watch?v=cYJrMUvJQGc)
+* [Tourist-Guide-to-LLVM-source-code](https://blog.regehr.org/archives/1453)
+* [LLVM-Module](https://richardustc.github.io/2013-06-19-2013-06-19-programming-with-llvm-ir.html)
+* [LLVM for Grad Students](https://www.cs.cornell.edu/~asampson/blog/llvm.html)
+* [LLVM-PassManager](https://www.zhihu.com/question/45051197)
+* [C-is-Not-a-Low-Level-Language](https://queue.acm.org/detail.cfm?id=3212479)
+* [Programming-Language-Theory-in-Agda](https://wenkokke.github.io/sf/)
+* [PCA-Introduce](https://blog.csdn.net/u010376788/article/details/46957957)
 
 
 

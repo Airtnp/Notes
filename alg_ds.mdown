@@ -286,6 +286,7 @@
 * + 二分
 * + 三分
 * Four Russians
+* + bit-matrix multiplication
 * Ford-Fulkerson
 * fread/fwrite
 * Fisher-Yates
@@ -805,6 +806,7 @@ struct element {
 ## U
 
 * UB tree
+* + [ref](http://cherrot.com/snippet/2012/05/16/ubtree-and-zorder-curve.html)
 
 ## V
 
