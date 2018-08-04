@@ -1483,4 +1483,31 @@ std::unique_ptr<char, decltype(std::free) *>
 * Only in newest N4741:
 > Let F denote a standard library function (20.5.5.4), a standard library static member function, or an instantiation of a standard library function template. Unless F is designated an addressable function, the behavior of a C++ program is unspecified (possibly ill-formed) if it explicitly or implicitly attempts to form a pointer to F . [ Note: Possible means of forming such pointers include application of the unary & operator (8.5.2.1), addressof (23.10.11.1), or a function-to-pointer standard conversion (7.3). — end note ] Moreover, the behavior of a C++ program is unspecified (possibly ill-formed) if it attempts to form a reference to F or if it attempts to form a pointer-to-member designating either a standard library non-static member function (20.5.5.5) or an instantiation of a standard library member function template
 * ACCU 2018 Lightning talks - Wednesday
-* 
+
+## constexpr function calling inside class
+```c++
+class TestClass1{ 
+public:
+    static constexpr int getInt(){return 0;};
+    static constexpr int y = getInt();//why it's wrong?
+    TestClass1(){}
+};
+```
+* [CWG-1626](http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_active.html#1626)
+* [discussion](https://stackoverflow.com/questions/11522399/constexpr-initializing-static-member-using-static-function%EF%BC%9A)
+* [discussion](https://www.v2ex.com/t/460939#reply14)
+
+## sizeof(struct {}) ?
+* [discussion](https://stackoverflow.com/questions/1626446/what-is-the-size-of-an-empty-struct-in-c)
+
+## sizeof(Cls::foo) ?
+* [Why C++ Member Function Pointers Are 16 Bytes Wide](http://lazarenko.me/wide-pointers/)
+* [Pointers to member functions are very strange animals](https://blogs.msdn.microsoft.com/oldnewthing/20040209-00/?p=40713)
+* [discussion](https://stackoverflow.com/questions/29607359/size-of-pointer-to-member-function-varies-like-crazy)
+* + Under MSVC compiler (/vmg, /vmb options)
+* + The size of a pointer-to-member-function of a class that uses only single inheritance is just the size of a pointer.
+* + The size of a pointer-to-member-function of a class that uses multiple inheritance is the size of a pointer plus the size of a size_t.
+* + The size of a pointer-to-member-function can change depending on the class
+* + Casting a function pointer can change its size
+
+
