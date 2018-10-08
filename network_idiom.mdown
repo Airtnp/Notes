@@ -12,11 +12,9 @@
 
 
 ## C
-
 * CA (certification authorities)
 
 ## D
-
 * DCCP
 
 ## E
@@ -35,7 +33,6 @@
 
 
 ## H
-
 * http
 * + 短连接
 * + 长连接
@@ -85,12 +82,10 @@
 
 
 ## T
-
 * TLS
 * TCP
 
 ## U
-
 * UDP
 
 ## V

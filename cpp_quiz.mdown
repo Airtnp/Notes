@@ -198,7 +198,7 @@ int c = p->n; // undefined behavior!
 double d = p->d; // undefined behavior!
 ```
 
-## copy=elision
+## copy=elisionelision
 * [discussion](https://stackoverflow.com/questions/48226247/why-isnt-move-constructor-elided-whenever-possible-with-make-x-functions)
 * delay the process of turning prvalues into objects as long as possible.
 * After C++17: prvalues themselves do not necessarily have to lead to the existence of objects (only if a “temporary materialization” is necessary)
@@ -220,7 +220,7 @@ int main() {
 ```c++
 struct foo {
     foo() = default;
-    foo(cosnt foo&) = delete;
+    foo(const foo&) = delete;
 };
 
 int main() {
@@ -1510,4 +1510,31 @@ public:
 * + The size of a pointer-to-member-function can change depending on the class
 * + Casting a function pointer can change its size
 
+## return ways
+* [discussion](https://www.youtube.com/watch?v=9mWWNYRHAIQ)
+```c++
+std::string get_string(const bool b) {
+    if (b) {
+        return "A";
+    } else {
+        return "B";
+    }
+    // return b ? "A" : "B"; // cmov and will incur extra strlen
+    // ret = "A"; // will force compiler default construct
+}
+```
 
+## inherited member function pointer type
+```c++
+struct parent
+{
+    int parent_method(int);
+};
+
+struct foo : parent
+{
+    int some_method(int);
+};
+
+abi::__cxa_demangle(typeid(&foo::parent_method).name(), NULL, NULL, NULL); // int (parent::*)(int)
+```

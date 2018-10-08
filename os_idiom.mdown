@@ -222,7 +222,34 @@
 
 
 ## I
-
+* interrupt
+* + PIC (Programmable Interrupt Controller)
+* + - IR0-IR7/INTA/CS/ICW (initialization control word)/OCW (operation command word)
++ + - IRR (Interrupt Request Register): pin interrupt -(unmasked)-> IRR set bit
+* + - ISR (In Service Register): IRR bit -> CPU -> ISR set bit
+* + - IMR (Interrupt Mask Register): mask pin interrupt
+* + - interrupt procedure
+* + - - pin signal -(unmasked)-> IRR bit
+* + - - PIC set INTR -> CPU
+* + - - CPU set INTA -> IRR clear MSB, ISR set bit
+* + - - CPU set INTA -> PIC calculate highest-priority vector, submit data
+* + - - Wait CPU EOI -> ISR clear MSB (If AEOI mode, second INTA will clear ISR MSB)
+* + APIC
+* + - LAPIC (Local APIC): at CPU (per CPU)
+* + - - IRR/ISR (256 bit)
+* + - - - at most 2 interrupts for same type interrupt (IRR will be set if same interrupt is processed [ISR bit = 1])
+* + - - Priority
+* + - - - TPR (whether LAPIC send IRR to CPU) / PPR (Current interrupt priority) / APR
+* + - - Local Vector Table
+* + - IOAPIC: at south bridge (1)
+* + - - distribute to LAPIC interrupt by RTE of PRT (Programmable Redirection Table)
+* + Hardware -> BIOS -> OS: MP spec / MADT (Multiple APIC Description Table)
+* + - 
+* + IRQ: interrupt number (Pin in PIC)
+* + Pin: IOAPIC pin
+* + GSI: APIC Global System Interrupt
+* + - IRQ (> 15) == GSI
+* + Vector: Interrupt index in IDT
 
 
 ## J

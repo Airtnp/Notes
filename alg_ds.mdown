@@ -49,6 +49,9 @@
 * + [ref](http://www.narutoacm.com/archives/a-pow-b-mod-m/)
 * 埃拉托色尼筛法
 * + 求逆元
+* + Sieve of Atkin
+* + Sieve of Sundaram
+* + - [ref](https://bruceking.site/2017/09/18/prime-sieves/)
 
 ## B
 
