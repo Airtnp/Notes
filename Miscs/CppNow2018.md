@@ -1,0 +1,37 @@
+# CppNow 2018
+
+- allocator => pmr::allocator (handler to heap, easily shared memory_resource)
+- boost::text 
+- - string layer: `string`, `string_view`, `unencoded_rope` (B-tree mixture of string and string_view), `unencoded_rope_view`, `repeated_string_view`
+- - unicode layer: `from/to_utfxx_iterator`
+- - text layer: `text`, `text_view`, `rope`, `rope_view`
+- utf8 -> utf32 (DFA automata)
+- `A foo(A x)` enables move from rvalue, while `A foo(A& x)` forced copy constructor
+- smart iterators
+- - range-v3 style (on input iterator): `num | range::filter(f) | range::transform(ff)`
+- - output iterator style: `copy(num.begin(), num.end(), transformer(type_inserter(res.begin())))` (use `*it.operator=(const T&)` to transform)
+- new type traits
+- - `is_trivially_relocatable`: when your vector reserve uses move constructor
+- - - `__uninit_copy_a + __destroy_a` => `__uninit_move_a` => `__uninit_relocate_a` => `uninitialize_relocate` => `__builtin_memcpy`
+- - `is_trivially_comparable`: memcmp-comparable or memberwise-comparable?
+- - `tombstone_traits<T>`: is some spare or sign bits can be used for `optional<T>`? so `sizeof(opt<opt<T>>) == sizeof(T)`
+- C++2a
+- - concepts
+- - modern time issues
+- - span (both static `span<T, N>` and dynamic `span<T>`)
+- - `operator<=>`
+- - sync buffered ostream
+- - `atomic<shared_ptr<T>>`, `atomic<floating-point-type>`
+- - `[[no_unique_address]]` for empty base optimization
+- - `[[likely]]`
+- - designated init
+- - range-based-for init statement
+- - `<version>`, `<endian>`
+- - `[[no_discard]]`, `remove_cvref<T>`, `to_address(pointer)`, `VA_OPT`, constexpr iterator
+- - unordered_map Equal for heterogeneous index lookup
+- - `[]<typename T>{}`, `[=, this]`, pack expansion in lambda capture-init statement
+- - remove `typename` requirement for type-only conditions
+- - `make_shared<T[]>`
+- `initializer_list<T>` leads to temporary array to be created (2N copies)
+- - [ref](https://akrzemi1.wordpress.com/2016/07/07/the-cost-of-stdinitializer_list/)
+- - need `movable_init_list`, like `vector<T>(std::make_move_iterator(std::begin(a)), std::make_move_iterator(std::end(a)))`
