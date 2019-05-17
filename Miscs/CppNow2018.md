@@ -17,6 +17,11 @@
 - - `tombstone_traits<T>`: is some spare or sign bits can be used for `optional<T>`? so `sizeof(opt<opt<T>>) == sizeof(T)`
 - C++2a
 - - concepts
+  - contracts
+  - ranges
+  - coroutines
+  - modules
+  - reflection TS
 - - modern time issues
 - - span (both static `span<T, N>` and dynamic `span<T>`)
 - - `operator<=>`
@@ -24,7 +29,7 @@
 - - `atomic<shared_ptr<T>>`, `atomic<floating-point-type>`
 - - `[[no_unique_address]]` for empty base optimization
 - - `[[likely]]`
-- - designated init
+- - designated init `{.a(a)}`
 - - range-based-for init statement
 - - `<version>`, `<endian>`
 - - `[[no_discard]]`, `remove_cvref<T>`, `to_address(pointer)`, `VA_OPT`, constexpr iterator

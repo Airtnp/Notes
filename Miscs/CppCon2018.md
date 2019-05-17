@@ -869,17 +869,23 @@ std::vector<std::string> vec{"a long string of characters", "b long string of ch
     >
     > Each concept is a predicate, evaluated at compile time, and becomes a part of the interface of a template where it is used as a constraint. 
 
-* `Regular` type (**Sane and Safe Cpp Classes**)
-  - `EqualityComparable` (`==`, `!=`)
+* `Regular` type (**Sane and Safe Cpp Classes**) (Again in ACCU2019)
+  
+  * ![1556438272961](D:\OneDrive\Pictures\Typora\1556438272961.png)
+  * ![1556438293550](D:\OneDrive\Pictures\Typora\1556438293550.png)
+  * ![1556438212450](D:\OneDrive\Pictures\Typora\1556438212450.png)
+  * 
+  * `EqualityComparable` (`==`, `!=`)
     - equality = equivalence relation + partial order
-  - --- `SemiRegular` ---
-  - `DefaultConstructible` (`T{}`)
-  - `Copyable` (`T(T const&)`, `T& operator=(T const&)&`)
-  - `Movable` (`T(T&&)`, `T& operator=(T&&)&`, `is_object_v`)
-  - `Swappable` (`swap(T&, T&)`)
-  - `Assignable` (`t1 = t2`)
-  - `MoveConstructible` (`T(T&&)`)
-  - ![1546811435400](D:\OneDrive\Pictures\Typora\1546811435400.png)
+  * --- `SemiRegular` ---
+  * `DefaultConstructible` (`T{}`)
+  * `Copyable` (`T(T const&)`, `T& operator=(T const&)&`)
+  * `Movable` (`T(T&&)`, `T& operator=(T&&)&`, `is_object_v`)
+  * `Swappable` (`swap(T&, T&)`)
+  * `Assignable` (`t1 = t2`)
+  * `MoveConstructible` (`T(T&&)`)
+  * ![1546811435400](D:\OneDrive\Pictures\Typora\1546811435400.png)
+  
 * STL requires `Regular` type
 
 

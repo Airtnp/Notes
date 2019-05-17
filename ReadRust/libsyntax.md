@@ -2982,6 +2982,90 @@ enum LastToken {
 
 
 
-### attr [WIP]
+### attr.rs [WIP]
 
 处理attributes和元对象(meta items)。
+
+
+
+```rust
+#[derive(Debug)]
+enum InnerAttributeParsePolicy<'a> {
+    Permitted,
+    NotPermitted { reason: &'a str },
+}
+```
+
+控制parser是否允许一个`InnerAttribute`
+
+* inner: 以`#!`开头，对包裹这个attribute的对象起效
+
+* outer: 以`#`开头，对跟随这个attribute的对象起效
+
+* ```rust
+  #[allow(non_camel_case_types)]
+  type int8_t = i8;
+  
+  fn some_unused_variables() {
+    #![allow(unused_variables)]
+    let x = ();
+    let y = ();
+    let z = ();
+  }
+  ```
+
+* [Attributes](<https://doc.rust-lang.org/reference/attributes.html>)
+
+
+
+```rust
+impl<'a> Parser<'a> {
+    /// 在对象之前出现的Attribute
+    crate fn parse_outer_attributes(&mut self) -> PResult<'a, Vec<ast::Attribute>> {
+        let mut attrs: Vec<ast::Attribute> = Vec::new();
+        let mut just_parsed_doc_comment = false;
+        loop {
+            match self.token {
+                token::Pound => {
+                	// 不允许紧跟文档字符串的inner attr
+                    let inner_error_reason = if just_parsed_doc_comment {
+                        "an inner attribute is not permitted following an outer doc comment"
+                    // 不允许紧跟outer attr的inner attr
+                    } else if !attrs.is_empty() {
+                        "an inner attribute is not permitted following an outer attribute"
+                    } else {
+                        DEFAULT_UNEXPECTED_INNER_ATTR_ERR_MSG
+                    };
+                    let inner_parse_policy =
+                        InnerAttributeParsePolicy::NotPermitted { reason: inner_error_reason };
+                    attrs.push(self.parse_attribute_with_inner_parse_policy(inner_parse_policy)?);
+                    just_parsed_doc_comment = false;
+                }
+                token::DocComment(s) => {
+                    let attr = attr::mk_sugared_doc_attr(attr::mk_attr_id(), s, self.span);
+                    if attr.style != ast::AttrStyle::Outer {
+                        let mut err = self.fatal("expected outer doc comment");
+                        err.note("inner doc comments like this (starting with \
+                                  `//!` or `/*!`) can only appear before items");
+                        return Err(err);
+                    }
+                    attrs.push(attr);
+                    self.bump();
+                    just_parsed_doc_comment = true;
+                }
+                _ => break,
+            }
+        }
+        Ok(attrs)
+    }
+}
+```
+
+* 不允许紧跟文档字符串的inner attr
+* 不允许紧跟outer attr的inner attr
+* 不允许写在对象外的inner doc string (`//!`, `//*`)
+  * 这里的报错信息错了(?)
+* 
+
+
+

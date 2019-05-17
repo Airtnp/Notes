@@ -13,6 +13,22 @@
 * [Pull request]引用: [!XXXXX]()
 * 全文使用英文括号
 
+## Update to track
+* async
+* NLL
+* const generics
+* generic associated types (HKT)
+* specialization
+* new hashtable
+* + [hashbrown](https://github.com/Amanieu/hashbrown)
+* + [FxHash]
+* + [SwissTable]
+* parser
+* + [libsyntax]
+* + [rust-analyer](https://github.com/rust-analyzer/rust-analyzer)
+* + [syn](https://github.com/dtolnay/syn)
+
+
 
 
 ## 参考(Reference)
