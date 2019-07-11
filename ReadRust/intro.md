@@ -14,10 +14,12 @@
 * 全文使用英文括号
 
 ## Update to track
-* async
+* async/await
 * NLL
+* MIR/HIR
+* miri
 * const generics
-* generic associated types (HKT)
+* generic associated types (HKT/GAT)
 * specialization
 * new hashtable
 * + [hashbrown](https://github.com/Amanieu/hashbrown)
@@ -27,6 +29,11 @@
 * + [libsyntax]
 * + [rust-analyer](https://github.com/rust-analyzer/rust-analyzer)
 * + [syn](https://github.com/dtolnay/syn)
++ [chalk](<https://github.com/rust-lang/chalk>)
++ cargo pipeline
++ new channel
++ parking_lot
++ crossbeam
 
 
 

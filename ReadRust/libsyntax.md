@@ -176,10 +176,9 @@ scoped_thread_local!(pub static GLOBALS: Globals);
 
 * `Lock<T>`这里是一个根据全局`cfg!(parallel_queries)`变化，并行则为`parking_lot::Mutex<T>`，否则则为`RefCell<T>`
   * [`Cell<T>`, `RefCell<T>`](https://doc.rust-lang.org/book/ch15-05-interior-mutability.html)提供了内部可变性(interior mutability)。
-    * [内部可变性](内部可变性 - F001的文章 - 知乎
-      https://zhuanlan.zhihu.com/p/22111297)
+    * [内部可变性](https://zhuanlan.zhihu.com/p/22111297)
     * [Interior Mutability](https://doc.rust-lang.org/book/ch15-05-interior-mutability.html)
-
+  
 * `Lrc<T>`同理，选择`Arc<T>`或`Rc<T>`
 
 
@@ -188,6 +187,70 @@ scoped_thread_local!(pub static GLOBALS: Globals);
 
 * [ScopedKey](https://doc.rust-lang.org/1.7.0/std/thread/struct.ScopedKey.html) / [#27715](https://github.com/rust-lang/rust/issues/27715)
 * [scoped-tls](https://docs.rs/scoped-tls/0.1.2/scoped_tls/)
+
+
+
+### tokenstream.rs
+
+`TokenStream`是`TokenTree`的序列。每个`TokenTree`由一个`Token`或者含有`Delimited`的`Token`子序列组成。`TokenStream`是一个持久化的数据结构，类似`rope`，由带引用计数的孩子组成。
+
+* [macro-ambiguity](<https://doc.rust-lang.org/nightly/reference/macro-ambiguity.html>)
+
+
+
+```rust
+#[derive(Debug, Clone, PartialEq, RustcEncodable, RustcDecodable)]
+pub enum TokenTree {
+    Token(Span, token::Token),
+    Delimited(DelimSpan, DelimToken, ThinTokenStream),
+}
+
+#[derive(Clone, Debug)]
+pub enum TokenStream {
+    Empty,
+    // 单独的TokenTree
+    Tree(TokenTree, IsJoint),
+    Stream(Lrc<Vec<TokenStream>>),
+}
+
+// 用于Joint操作，`proc_macro::TokenNode`
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IsJoint {
+    Joint,
+    NonJoint
+}
+
+```
+
+`TokenStream`, `TokenTree`的定义。
+
+
+
+```rust
+#[derive(Clone)]
+pub struct Cursor(CursorKind);
+
+#[derive(Clone)]
+enum CursorKind {
+    Empty,
+    Tree(TokenTree, IsJoint, bool /* consumed? */),
+    Stream(StreamCursor),
+}
+
+#[derive(Clone)]
+struct StreamCursor {
+    stream: Lrc<Vec<TokenStream>>,
+    index: usize,
+    stack: Vec<(Lrc<Vec<TokenStream>>, usize)>,
+}
+
+```
+
+
+
+
+
+
 
 
 
@@ -2953,6 +3016,7 @@ pub struct Parser<'a> {
 #[derive(Clone)]
 struct TokenCursor {
     frame: TokenCursorFrame,
+    /// 存储被替换过(`mem::replace`)的Frame
     stack: Vec<TokenCursorFrame>,
 }
 
@@ -2966,6 +3030,17 @@ struct TokenCursorFrame {
     last_token: LastToken,
 }
 
+#[derive(Clone, PartialEq)]
+crate enum TokenType {
+    Token(token::Token),
+    Keyword(keywords::Keyword),
+    Operator,
+    Lifetime,
+    Ident,
+    Path,
+    Type,
+}
+
 /// 用于`TokenCursorFrame`中追踪消耗掉的`Token`
 /// Collecting: 把所有消耗的存在`Vec`中
 /// Was: 仅记录最后的`Token`。当开始记录`Token`时，这个`Token`会是第一个`Token`
@@ -2973,6 +3048,325 @@ struct TokenCursorFrame {
 enum LastToken {
     Collecting(Vec<TokenStream>),
     Was(Option<TokenStream>),
+}
+```
+
+Parser的基础定义。
+
+
+
+```rust
+impl<'a> for Parser<'a> {
+    pub fn new(sess: &'a ParseSess,
+               tokens: TokenStream,
+               directory: Option<Directory<'a>>,
+               recurse_into_file_modules: bool,
+               desugar_doc_comments: bool)
+               -> Self {
+        let mut parser = Parser {
+            sess,
+            token: token::Whitespace,
+            span: syntax_pos::DUMMY_SP,
+            prev_span: syntax_pos::DUMMY_SP,
+            meta_var_span: None,
+            prev_token_kind: PrevTokenKind::Other,
+            restrictions: Restrictions::empty(),
+            recurse_into_file_modules,
+            directory: Directory {
+                path: Cow::from(PathBuf::new()),
+                ownership: DirectoryOwnership::Owned { relative: None }
+            },
+            root_module_name: None,
+            expected_tokens: Vec::new(),
+            token_cursor: TokenCursor {
+                frame: TokenCursorFrame::new(
+                    DelimSpan::dummy(),
+                    token::NoDelim,
+                    &tokens.into(),
+                ),
+                stack: Vec::new(),
+            },
+            desugar_doc_comments,
+            cfg_mods: true,
+        };
+
+        let tok = parser.next_tok();
+        parser.token = tok.tok;
+        parser.span = tok.sp;
+
+        if let Some(directory) = directory {
+            parser.directory = directory;
+        } else if !parser.span.is_dummy() {
+            if let FileName::Real(mut path) = sess.source_map().span_to_unmapped_path(parser.span) {
+                path.pop();
+                parser.directory.path = Cow::from(path);
+            }
+        }
+
+        parser.process_potential_macro_variable();
+        parser
+    }
+
+    fn next_tok(&mut self) -> TokenAndSpan {
+        let mut next = if self.desugar_doc_comments {
+            self.token_cursor.next_desugared()
+        } else {
+            self.token_cursor.next()
+        };
+        if next.sp.is_dummy() {
+            next.sp = self.prev_span.with_ctxt(next.sp.ctxt());
+        }
+        next
+    }
+}
+
+
+impl TokenCursor {
+    fn next(&mut self) -> TokenAndSpan {
+        loop {
+            let tree = if !self.frame.open_delim {
+                self.frame.open_delim = true;
+                TokenTree::open_tt(self.frame.span.open, self.frame.delim)
+            } else if let Some(tree) = self.frame.tree_cursor.next() {
+                tree
+            } else if !self.frame.close_delim {
+                self.frame.close_delim = true;
+                TokenTree::close_tt(self.frame.span.close, self.frame.delim)
+            } else if let Some(frame) = self.stack.pop() {
+                self.frame = frame;
+                continue
+            } else {
+                return TokenAndSpan { tok: token::Eof, sp: syntax_pos::DUMMY_SP }
+            };
+
+            match self.frame.last_token {
+                LastToken::Collecting(ref mut v) => v.push(tree.clone().into()),
+                LastToken::Was(ref mut t) => *t = Some(tree.clone().into()),
+            }
+
+            match tree {
+                TokenTree::Token(sp, tok) => return TokenAndSpan { tok: tok, sp: sp },
+                TokenTree::Delimited(sp, delim, tts) => {
+                    let frame = TokenCursorFrame::new(sp, delim, &tts);
+                    self.stack.push(mem::replace(&mut self.frame, frame));
+                }
+            }
+        }
+    }
+
+    fn next_desugared(&mut self) -> TokenAndSpan {
+        let (sp, name) = match self.next() {
+            TokenAndSpan { sp, tok: token::DocComment(name) } => (sp, name),
+            tok => return tok,
+        };
+
+        let stripped = strip_doc_comment_decoration(&name.as_str());
+
+        // Searches for the occurrences of `"#*` and returns the minimum number of `#`s
+        // required to wrap the text.
+        let mut num_of_hashes = 0;
+        let mut count = 0;
+        for ch in stripped.chars() {
+            count = match ch {
+                '"' => 1,
+                '#' if count > 0 => count + 1,
+                _ => 0,
+            };
+            num_of_hashes = cmp::max(num_of_hashes, count);
+        }
+
+        let delim_span = DelimSpan::from_single(sp);
+        let body = TokenTree::Delimited(
+            delim_span,
+            token::Bracket,
+            [TokenTree::Token(sp, token::Ident(ast::Ident::from_str("doc"), false)),
+             TokenTree::Token(sp, token::Eq),
+             TokenTree::Token(sp, token::Literal(
+                token::StrRaw(Symbol::intern(&stripped), num_of_hashes), None))
+            ]
+            .iter().cloned().collect::<TokenStream>().into(),
+        );
+
+        self.stack.push(mem::replace(&mut self.frame, TokenCursorFrame::new(
+            delim_span,
+            token::NoDelim,
+            &if doc_comment_style(&name.as_str()) == AttrStyle::Inner {
+                [TokenTree::Token(sp, token::Pound), TokenTree::Token(sp, token::Not), body]
+                    .iter().cloned().collect::<TokenStream>().into()
+            } else {
+                [TokenTree::Token(sp, token::Pound), body]
+                    .iter().cloned().collect::<TokenStream>().into()
+            },
+        )));
+
+        self.next()
+    }
+}
+```
+
+`next_tok`返回`TokenStream`流的下一个`Token`
+
+* 根据是否`desugar_doc_comment`将文档字符串`Token`(`DocComment`)转换成普通`Token`序列(`Pound`, `Not`/`Pound`).
+* 根据`LastToken`收集或更新`last_token`
+* `Token`则返回，`Delimited`则更新`frame`并将旧`frame`放入`stack`
+
+
+
+
+
+
+
+
+
+```rust
+impl<'a> for Parser<'a> {
+    pub fn expect(&mut self, t: &token::Token) -> PResult<'a,  ()> {
+        if self.expected_tokens.is_empty() {
+            if self.token == *t {
+                self.bump();
+                Ok(())
+            } else {
+                let token_str = pprust::token_to_string(t);
+                let this_token_str = self.this_token_descr();
+                let mut err = self.fatal(&format!("expected `{}`, found {}",
+                                                  token_str,
+                                                  this_token_str));
+
+                let sp = if self.token == token::Token::Eof {
+                    self.prev_span
+                } else {
+                    self.sess.source_map().next_point(self.prev_span)
+                };
+                let label_exp = format!("expected `{}`", token_str);
+                let cm = self.sess.source_map();
+                match (cm.lookup_line(self.span.lo()), cm.lookup_line(sp.lo())) {
+                    (Ok(ref a), Ok(ref b)) if a.line == b.line => {
+                        // When the spans are in the same line, it means that the only content
+                        // between them is whitespace, point only at the found token.
+                        err.span_label(self.span, label_exp);
+                    }
+                    _ => {
+                        err.span_label(sp, label_exp);
+                        err.span_label(self.span, "unexpected token");
+                    }
+                }
+                Err(err)
+            }
+        } else {
+            self.expect_one_of(slice::from_ref(t), &[])
+        }
+    }
+
+    /// Expect next token to be edible or inedible token.  If edible,
+    /// then consume it; if inedible, then return without consuming
+    /// anything.  Signal a fatal error if next token is unexpected.
+    pub fn expect_one_of(&mut self,
+                         edible: &[token::Token],
+                         inedible: &[token::Token]) -> PResult<'a,  ()>{
+        fn tokens_to_string(tokens: &[TokenType]) -> String {
+            let mut i = tokens.iter();
+            // This might be a sign we need a connect method on Iterator.
+            let b = i.next()
+                     .map_or(String::new(), |t| t.to_string());
+            i.enumerate().fold(b, |mut b, (i, a)| {
+                if tokens.len() > 2 && i == tokens.len() - 2 {
+                    b.push_str(", or ");
+                } else if tokens.len() == 2 && i == tokens.len() - 2 {
+                    b.push_str(" or ");
+                } else {
+                    b.push_str(", ");
+                }
+                b.push_str(&a.to_string());
+                b
+            })
+        }
+        if edible.contains(&self.token) {
+            self.bump();
+            Ok(())
+        } else if inedible.contains(&self.token) {
+            // leave it in the input
+            Ok(())
+        } else {
+            let mut expected = edible.iter()
+                .map(|x| TokenType::Token(x.clone()))
+                .chain(inedible.iter().map(|x| TokenType::Token(x.clone())))
+                .chain(self.expected_tokens.iter().cloned())
+                .collect::<Vec<_>>();
+            expected.sort_by_cached_key(|x| x.to_string());
+            expected.dedup();
+            let expect = tokens_to_string(&expected[..]);
+            let actual = self.this_token_to_string();
+            let (msg_exp, (label_sp, label_exp)) = if expected.len() > 1 {
+                let short_expect = if expected.len() > 6 {
+                    format!("{} possible tokens", expected.len())
+                } else {
+                    expect.clone()
+                };
+                (format!("expected one of {}, found `{}`", expect, actual),
+                 (self.sess.source_map().next_point(self.prev_span),
+                  format!("expected one of {} here", short_expect)))
+            } else if expected.is_empty() {
+                (format!("unexpected token: `{}`", actual),
+                 (self.prev_span, "unexpected token after this".to_string()))
+            } else {
+                (format!("expected {}, found `{}`", expect, actual),
+                 (self.sess.source_map().next_point(self.prev_span),
+                  format!("expected {} here", expect)))
+            };
+            let mut err = self.fatal(&msg_exp);
+            if self.token.is_ident_named("and") {
+                err.span_suggestion_short_with_applicability(
+                    self.span,
+                    "use `&&` instead of `and` for the boolean operator",
+                    "&&".to_string(),
+                    Applicability::MaybeIncorrect,
+                );
+            }
+            if self.token.is_ident_named("or") {
+                err.span_suggestion_short_with_applicability(
+                    self.span,
+                    "use `||` instead of `or` for the boolean operator",
+                    "||".to_string(),
+                    Applicability::MaybeIncorrect,
+                );
+            }
+            let sp = if self.token == token::Token::Eof {
+                // This is EOF, don't want to point at the following char, but rather the last token
+                self.prev_span
+            } else {
+                label_sp
+            };
+
+            let cm = self.sess.source_map();
+            match (cm.lookup_line(self.span.lo()), cm.lookup_line(sp.lo())) {
+                (Ok(ref a), Ok(ref b)) if a.line == b.line => {
+                    // When the spans are in the same line, it means that the only content between
+                    // them is whitespace, point at the found token in that case:
+                    //
+                    // X |     () => { syntax error };
+                    //   |                    ^^^^^ expected one of 8 possible tokens here
+                    //
+                    // instead of having:
+                    //
+                    // X |     () => { syntax error };
+                    //   |                   -^^^^^ unexpected token
+                    //   |                   |
+                    //   |                   expected one of 8 possible tokens here
+                    err.span_label(self.span, label_exp);
+                }
+                _ if self.prev_span == syntax_pos::DUMMY_SP => {
+                    // Account for macro context where the previous span might not be
+                    // available to avoid incorrect output (#54841).
+                    err.span_label(self.span, "unexpected token");
+                }
+                _ => {
+                    err.span_label(sp, label_exp);
+                    err.span_label(self.span, "unexpected token");
+                }
+            }
+            Err(err)
+        }
+    }
 }
 ```
 
