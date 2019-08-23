@@ -170,7 +170,7 @@ No Notes
 
 
 
-## C++ Template The Complete Guide 2nd Edition
+## C++ Template The Complete Guide 1st/2nd Edition
 
 
 
@@ -191,6 +191,18 @@ by Andrei Alexandrescu, No Notes (`TypeList`?)
 
 
 No Notes.
+
+
+
+## (More) Effective (Modern) C++
+
+No Notes
+
+
+
+## Exceptional C++
+
+No Notes
 
 
 
@@ -255,3 +267,29 @@ No Notes
 
 
 Notes in AHaskellLib
+
+
+
+
+
+## 精通正则表达式
+
+
+
+No Notes
+
+
+
+## Rust编程之道
+
+
+
+No Notes
+
+
+
+## 计算机网络 (Tanenbaum)
+
+
+
+AKA VE489, Notes in OneDrive

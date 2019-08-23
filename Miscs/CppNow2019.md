@@ -263,7 +263,7 @@
     * ![1560907591369](D:\OneDrive\Pictures\Typora\1560907591369.png)
   * `pointer_traits<T>`
     * ![1560907648339](D:\OneDrive\Pictures\Typora\1560907648339.png)
-    * [why allocator can be `constexpr`](<http://open-std.org/JTC1/SC22/WG21/docs/papers/2018/p0784r1.html>)
+    * [why allocator can be `constexpr`](http://open-std.org/JTC1/SC22/WG21/docs/papers/2018/p0784r1.html)
   * other standard lib
     * ![1560907705744](D:\OneDrive\Pictures\Typora\1560907705744.png)
     * ![1560907717841](D:\OneDrive\Pictures\Typora\1560907717841.png)
