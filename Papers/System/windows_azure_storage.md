@@ -108,4 +108,107 @@
 
 ### Two Replication Engines
 
+* **Intra-Stamp Replication** (stream layer)
+  * synchronous replication: all the data written into a stamp is kept durable within that stamp.
+  * keep enough replicas across different nodes in different fault domains
+  * critical path of customer's write requests
+  * focusing on replicating blocks of disk storage
+  * durabilty against hardware failures
+  * low-latency
+  * single storage stamp, in memory meta-state, enabling WAS to provide fast replication with strong consistency by quickly committing transactions within a single stamp
+* **Inter-Stamp Replication** (partition layer)
+  * asynchronous replication: replicating data across stamps
+  * background, off critical path of customer's write requests
+  * keeping a copy of an account's data in two locations for disaster recovery
+  * migrating an account's data between stamps
+  * focusing on replicating objects & transactions applied
+  * durability agianst geo-redundancy of geo-disasters
+  * acceptable levle of replication delay
+  * across data centers, location service controls & understand global object namespace across stamps
+
+
+
+## Stream Layer
+
+* ![1566722326295](D:\OneDrive\Pictures\Typora\1566722326295.png)
+* internal interface used only by partition layer
+* append-only file system like namespace & API (open, close, delete, rename, read, append to, concatenate)
+* **Stream**: ordered list of extent pointers
+  * name in hierarchical namespace, like a big file
+  * maintained by stream manager
+* **Extent**: a sequence of append blocks
+  * unit of replication in the stream layer
+  * default replication policy: 3 replicas within a storage stamp for an extent
+  * NTFS file
+  * 1GB target size
+* **Block**: minimum unit of data for writing & reading
+  * data is appended as one or more concatenated blocks to an extent, not have ot be same size
+  * checksum validation at block level, 1 checksum per block, check per read
+
+
+
+### Stream Manager & Extent Nodes
+
+* ![1566733631664](D:\OneDrive\Pictures\Typora\1566733631664.png)
+* **Storage Manager (SM)**
+  * keep track of the stream namespace, extent arrangement in each stream, extent allocation across the Extent Nodes (EN).
+  * standard Paxos cluster
+  * off the critical path of client requests
+  * maintaining the stream namespac eand state of all active streams and extents
+  * monitoring the headlth of the ENs
+  * creating & assigning extents to ENs
+  * performing the lazy re-replication of extent replicas lost due to hardware failure or unavailability
+  * garbage collecting extents that are no longer pointed by any stream
+  * scheduling the erasure coding of extent data according to stream policy
+  * periodically poll (sync) the state of ENs and extents
+    * replicated few than expected -> re-prelication lazilly
+    * randomly choose EN across different fault domains
+  * in-memory state
+  * only care about stream & extent
+* **Extent Nodes (EN)**
+  * maintain the storage for a set of extent replicas assigned to it by the SM
+  * N disks attached, control for storing extent replicas & blocks
+  * only care about extent & block
+  * Map[extent offset + blocks, file location]
+  * cache about extents & peer replica locations
+
+
+
+### Append Operation & Sealed Extent
+
+* atomic append -> duplicate records
+* single atomic "multi-block append"
+* metadata & commit log duplicate -> sequence number
+* row data & blob data stream duplicate -> only last write will be pointed to by the `RangePartition`, the rest will be GCed.
+* sealed extent: immutable, can do optimizations by stream layer (size > target size at a block boundary)
+
+
+
+### Stream Layer Intra-Stamp Replication
+
+* strong consistency guarantee
+  * Once a record is appended and acknowledged back to the client, any later reads of that record from any replica will see the same data (the data is immutable) 
+  * Once an extent is sealed, any reads from any sealed replica will always see the same contents of the extent 
+* malicious adversaries -> data center / Fabric Controller / WAS
+
+
+
+#### Replication Flow
+
+* create a stream -> SM assigns 3 replicas for the first extent (1 primary + 2 secondary) to 3 extent nodes
+* write: client -> primary EN (active-passive) -> secondary ENs
+* allocate/seal -> send location to client (cached)
+* read -> any replicas
+* primary EN
+  * determining the offset of the append in the extent
+  * ordering (choose the offset of) all of the appends if there are concurrent append requests to the same extent outstanding
+  * sending the append with its chosen offset to 2 secondary extent nodes
+  * only returning success for the append to the client after a successful append has occurred to disk for all 3 ENs
+  * labelled in with number in previous graph
+* replica failure -> client contact SM -> seal extent at commit length -> allocate new extent with replicas -> back to client
+
+
+
+#### Sealing
+
 * 
