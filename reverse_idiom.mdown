@@ -8,6 +8,12 @@
 * AES
 * + [Explain](https://www.cnblogs.com/luop/p/4334160.html)
 * + [MixColumn](https://crypto.stackexchange.com/questions/2402/how-to-solve-mixcolumns)
++ AFL Fuzz
++ ASAN
+* ASLR
+  + ASLR绕过
+
+
 
 ## B
 
@@ -31,7 +37,7 @@
 * + - heap double linked list
 * + - heap header
 * + - heap lookaside linked list
-* 
+* Control flow isolation
 
 
 ## D
@@ -41,7 +47,15 @@
 ## E
 
 
+
+
+
+
 ## F
+
+* Fuzz
+  * 变异算法
+  * 回显
 
 
 
@@ -55,9 +69,15 @@
 * + - SSLStrip: http=>https attack
 * + - heartbleed
 * + [Some other attacks](http://www.freebuf.com/articles/web/47076.html)
+* Hook
+  + hook原理
 
 
 ## I
+
+* IAT表
+  * image_header
+  * image_optional_header
 
 
 
@@ -66,6 +86,17 @@
 
 
 ## K
+
+* Kernel
+  * 内核栈溢出
+  * 内核ROP, cred结构体覆盖
+  * 内核UAF
+  * 内核double free
+  * 内核堆溢出
+    * slab
+  * 内核保护绕过
+
+
 
 
 ## L
@@ -117,6 +148,9 @@ OR is not diversified
 ## P
 
 * 旁信道攻击
+* ptmalloc2
+  * fastbin
+  * IO_file
 
 ## Q
 
@@ -129,15 +163,30 @@ OR is not diversified
 ## S
 * SSL/TLS
 * + [ref](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
+* Stackoverflow
+  * 内核栈溢出
+* SEH栈溢出
+
+
 
 
 ## T
+
+* tcache攻击
 
 
 
 ## U
 
+* userspace
+  * 用户态double free
+
+
+
 ## V
+
+* VMProtect
+  * 穿山甲
 
 
 

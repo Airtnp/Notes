@@ -9,10 +9,13 @@
   * 自定义点: 运算(+), 双指针移动方式(++, --)
   * k-sum (closest)
   * 滑动窗口
+  
 * DP
   * 常规DP
   * 树形DP
   * 数位DP
+  * 单调队列优化 `dp[i] = min(f[k]) + g[i] (0 < k < i)`
+  
 * 树
   * 线段树
   * Trie
@@ -22,14 +25,22 @@
   * 欧拉序
   * 树状数组
   * BST
+  
 * 并查集
+  
   * 连通关系
+  
 * 后缀数组
   * 后缀大小
   * LCA
+  
 * DFS序
-* 二分
+
+* 二分 -> 单调函数
+  
   * 二分规则 -> 灵活
+  * 三分 `(l, mid, (mid + r) / 2, r)` -> 凸函数
+  
 * 图
   * 单源最短 (Dijsktra, Bellman-Ford)
   * 全部最短 (Floyd)
@@ -37,20 +48,51 @@
   * DFS
   * BFS 最短距离
   * 网络流
+  
 * 排序
+  
   * 归并 -> 求数组逆序对
+  
 * xor
+
 * 倍增
   * 求幂
   * dp
   * LCA
   * 后缀数组
+  
 * LCS
+  
   * 单调队列$O(n\log n)$优化
+  
 * 单调栈/队列
   * 区间最值
   * 去除冗余状态, LIS
   * 最优队首
+  
+* 离散化
+
+  * 先排序, 去重, 再用下标表示
+
+  * ```c++
+    sort(sub_a.begin(), sub_a.end());
+    int size = unique(sub_a.begin(), sub_a.end()) - sub_a.begin();
+    for(i = 0; i < n; ++i)
+        a[i] = lower_bound(sub_a.begin(), sub_a.end(), a[i]) - sub_a.begin() + 1;
+    ```
+
+* Top K
+
+  * quick select (partition in quicksort)
+  * priority queue
+  
+* 背包问题
+
+  * [背包九讲](https://blog.csdn.net/ling_du/article/details/41594767)
+  * 01背包
+  * 完全背包
+  * 多重背包
+  * 多维背包
 
 
 
@@ -185,7 +227,106 @@
 
 
 
-#### 84 Largest Rectangle in Histogram
+### 39 &  & 216 Combinational Sum i & ii & iii
+
+* 经典NP-Hard
+
+* i. 先排序, 然后DFS强做, 可剪枝
+
+* ```c++
+  class Solution {
+  public:
+      void helper(vector<vector<int>>& res, vector<int>& candidates, int target, vector<int>& nums, int offset) {
+          if (target == 0) {
+              res.push_back(nums);
+              return;
+          }
+          for (int k = offset; k < candidates.size(); ++k) {
+              int i = candidates[k];
+              nums.push_back(i);
+              if (target >= i)
+                  helper(res, candidates, target - i, nums, k);
+              nums.pop_back();
+          }
+      }
+      
+      
+      vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+          sort(candidates.begin(), candidates.end());
+          vector<vector<int>> res;
+          vector<int> nums;
+          helper(res, candidates, target, nums, 0);
+          return res;
+      }
+  };
+  ```
+
+* ii. 同一个数只试一遍: 同一个offset下只能用第一个 `k > offset && candidates[k] == candidates[k - 1]`
+
+* ```c++
+  class Solution {
+  public:
+      void helper(vector<vector<int>>& res, vector<int>& candidates, int target, vector<int>& nums, int offset) {
+          if (target == 0) {
+              res.push_back(nums);
+              return;
+          }
+          for (int k = offset; k < candidates.size(); ++k) {
+              int i = candidates[k];
+              if (k > offset && candidates[k] == candidates[k - 1])
+                  continue;
+              nums.push_back(i);
+              if (target >= i)
+                  helper(res, candidates, target - i, nums, k + 1);
+              nums.pop_back();
+          }
+      }
+      
+      
+      vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+          sort(candidates.begin(), candidates.end());
+          vector<vector<int>> res;
+          vector<int> nums;
+          helper(res, candidates, target, nums, 0);
+          return res;
+      }
+  };
+  ```
+
+* iii, 没啥技术含量
+
+* ```c++
+  class Solution {
+  public:
+      void helper(vector<vector<int>>& res, vector<int>& nums, int k, int n, int offset) {
+          if (nums.size() == k && n == 0) { res.push_back(nums); return ; }
+          if (nums.size() == k) return;
+          for (int i = offset; i <= 9; ++i) {
+              if (n - i < 0) break;
+              nums.push_back(i);
+              helper(res, nums, k, n - i, i + 1);
+              nums.pop_back();
+          }
+      }
+  
+      vector<vector<int>> combinationSum3(int k, int n) {
+          vector<vector<int>> result;
+          vector<int> nums;
+          helper(result, nums, k, n, 1);
+          return result;
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+
+
+### 84 Largest Rectangle in Histogram
 
 * 先弄进去一个0保证输出, 然后裸的单调栈, 维护一个单调递增的栈, 更小的元素就不断`pop`
 
@@ -217,6 +358,61 @@
   ```
 
 * 扩展: 最大全1矩阵, 先预处理一维视为之前连续的1个数, 然后就是对每行做最大直方图
+
+
+
+### 74 & 240 Search a 2D Matrix i & ii
+
+* 74: 因为相当于一个有序数组切分成几段, 二维二分, 先找row再找col
+
+  * ```c++
+    class Solution {
+    public:
+        bool searchMatrix(vector<vector<int>>& matrix, int target) {
+            if (!matrix.size() || !matrix[0].size()) return false;
+            vector<int> first;
+            for (auto& v : matrix) {
+                first.push_back(v[0]);
+            }
+            auto it = upper_bound(first.begin(), first.end(), target);
+            if (it == first.begin()) return false;
+            auto& col = matrix[it - first.begin() - 1];
+            auto tit = lower_bound(col.begin(), col.end(), target);        
+            if (tit == col.end() || *tit != target)
+                return false;
+            return true;
+        }
+    };
+    ```
+
+* 240: 相当于一个二维菱形, 从最大开始双指针 $O(M + N)$
+
+  * ```c++
+    class Solution {
+    public:
+        bool searchMatrix(vector<vector<int>>& matrix, int target) {
+            int m = matrix.size();
+            if (m == 0) return false;
+            int n = matrix[0].size();
+            int i = 0, j = n - 1;
+            while (i < m && j >= 0) {
+                if (matrix[i][j] == target)
+                    return true;
+                else if (matrix[i][j] > target) {
+                    --j;
+                } else 
+                    ++i;
+            }
+            return false;
+        }
+    };
+    ```
+
+  * [SO-saddleback search](https://stackoverflow.com/questions/2457792/how-do-i-search-for-a-number-in-a-2d-array-sorted-left-to-right-and-top-to-botto/2458113#2458113)
+
+  * 也可以对每一行做二分, $O(M\log{N})$
+
+
 
 
 
@@ -274,6 +470,79 @@
 
 
 
+### 145 Binary Tree Postorder Traversal
+
+* 迭代求前序: 压入根, 每次出栈, 放入right, 放入left
+
+  * ```c++
+    stack.push(root);
+    while (!stack.isEmpty()) {
+        Node node = stack.pop();
+        result.add(node.val);
+        if (node.right) stack.push(node.right);
+        if (node.left) stack.push(node.left);
+    }
+    ```
+
+  * 
+
+* 迭代求中序: 循环压入left, 每次弹出加入right
+
+  * ```c++
+    stack.push(root);
+    while (!stack.isEmpty()) {
+        while (stack.top().left != null) {
+            stack.push(stack.top().left);
+        }
+        if (!stack.isEmpty()) {
+            Node node = stack.pop();
+            result.add(node.val);
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+    }
+    ```
+
+* 迭代求后序: 先走完左子树, 然后走右子树, 栈回溯时判断上一次pop的是否是栈顶的right, 是则为回溯路径
+
+  * ```c++
+    class Solution {
+    public:
+        vector<int> postorderTraversal(TreeNode* root) {
+            vector<int> nodes;
+            stack<TreeNode*> s;
+            TreeNode* last = nullptr;
+            while (root || !s.empty()) {
+                if (root) {
+                    s.push(root);
+                    root = root->left;
+                } else {
+                    TreeNode* node = s.top();
+                    if (node->right && last != node->right) {
+                        root = node->right;
+                    } else {
+                        nodes.push_back(node->val);
+                        last = node;
+                        s.pop();
+                    }
+                }
+            }
+            return nodes;
+        }
+    };
+    ```
+
+  * 也可以reverse前序遍历
+
+* [Morris遍历](https://www.cnblogs.com/AnnieKim/archive/2013/06/15/morristraversal.html)
+
+  * 在遍历中原地更改右节点用于恢复前驱
+
+
+
+
+
 ### 149 Max Points on a Line
 
 * 转化成斜率 + 共点, [max-points-on-a-line](https://leetcode.com/problems/max-points-on-a-line/)
@@ -322,6 +591,62 @@ public:
 
 
 
+### 189 Rotate Array
+
+* 暴力移位
+
+* 三次翻转
+
+  * 总体翻转
+
+  * 前`k`个翻转
+
+  * 后`n - k`个翻转
+
+  * ```c++
+    class Solution {
+    public:
+        void rotate(vector<int>& nums, int k) {
+            k %= nums.size();
+            reverse(nums.begin(), nums.end());
+            reverse(nums.begin(), nums.begin() + k);
+            reverse(nums.begin() + k, nums.end());
+        }
+    };
+    ```
+
+* gcd交换
+
+  * 循环左移会造成`N / gcd(N, k)`个`gcd(N, k)`大小的循环群
+
+  * ```c++
+    class Solution {
+    public:
+        void rotate(vector<int>& nums, int k) {
+            int n = nums.size();
+            k %= n;
+            int cyclic = __gcd(n, k);
+            for (int start = cyclic - 1; start >= 0; --start) {
+                int current = start;
+                int prev = nums[start];
+                do {
+                    int next = (current + k) % n;
+                    swap(prev, nums[next]);
+                    swap(current, next);
+                } while (start != current);
+            }
+        }
+    };
+    ```
+
+
+
+
+
+
+
+
+
 ### 315 Count of Smaller Numbers After Self
 
 * 求逆序数, 考虑归并排序, 同时有序, 则考虑双指针优化
@@ -359,6 +684,39 @@ public:
 * 用线段树, 以值建树(O(N))后倒着查询并更新size (二分为前半线段, 后半线段)
 
 * [ref](https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/76657/3-ways-(Segment-Tree-Binary-Indexed-Tree-Binary-Search-Tree)-clean-python-code)
+
+
+
+### 435 Non-overlapping Intervals
+
+* 对结束时间贪心, 仅当初始时间大于等于原结束时间才更改活动区间
+
+* ```c++
+  class Solution {
+  public:
+      int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+          if (!intervals.size())
+              return 0;
+          auto cmp = [](const vector<int>& l, const vector<int>& r) {
+              if (l[1] != r[1])
+                  return l[1] < r[1];
+              return l[0] < r[0];
+          };
+          sort(intervals.begin(), intervals.end(), cmp);
+          int cnt = 1;
+          int end = intervals[0][1];
+          for (int i = 1; i < intervals.size(); ++i) {
+              if (intervals[i][0] < end)
+                  continue;
+              end = intervals[i][1];
+              ++cnt;
+          }
+          return intervals.size() - cnt;
+      }
+  };
+  ```
+
+
 
 
 
@@ -416,7 +774,50 @@ public:
   };
   ```
 
-* 
+
+
+
+### 572 Subtree of Another Tree
+
+* 先做depth优化, 找到候选根, 然后比较
+
+* ```c++
+  class Solution {
+  public:
+      vector<TreeNode*> candidates;
+      
+      int depth(TreeNode* root, int d) {
+          if (!root) return 0;
+          int currentd = max(depth(root->left, d), depth(root->right, d)) + 1;
+          if (currentd == d) {
+              candidates.push_back(root);
+          }
+          return currentd;
+      }
+      
+      bool is_same_tree(TreeNode* s, TreeNode* t) {
+          if (!s && !t) return true;
+          if (!s || !t) return false;
+          if (s->val != t->val)
+              return false;
+          return is_same_tree(s->left, t->left) && is_same_tree(s->right, t->right);
+      }
+      
+      bool isSubtree(TreeNode* s, TreeNode* t) {
+          if (!s && !t) return true;
+          if (!s || !t) return false;
+          int tdepth = depth(t, -1);
+          depth(s, tdepth);
+          for (auto n : candidates) {
+              if (is_same_tree(n, t))
+                  return true;
+          }
+          return false;
+      }
+  };
+  ```
+
+* 先做欧拉序, 然后找子序列?
 
 
 
@@ -453,6 +854,173 @@ public:
           return lo;
       }
   };
+  ```
+
+
+
+
+
+### 796 Rotate String
+
+* [TODO]
+* rolling hash
+* KMP
+
+
+
+
+
+### 792 Number of Matching Subsequence
+
+* 优化成对每个字符串的首字符集合, 相当于同时做n个匹配
+
+* ```c++
+  class Solution {
+  public:
+      int numMatchingSubseq(string S, vector<string>& words) {
+          unordered_map<string_view, int> indup;
+          unordered_map<string_view, int> indup_cnt;
+          for (const auto& s : words) {
+              ++indup[s];
+          }
+          int count = 0;
+          using It = decltype(indup)::iterator;
+          vector<vector<It>> queue(26);
+          for (auto it = indup.begin(); it != indup.end(); ++it) {
+              queue[it->first[0] - 'a'].push_back(it);
+          }
+          int cnt = 0;
+          
+          for (auto c : S) {
+              vector<It> u;
+              queue[c - 'a'].swap(u);
+              for (auto it : u) {
+                  int scnt = ++indup_cnt[it->first];
+                  if (scnt < it->first.length()) {
+                      queue[it->first[scnt] - 'a'].push_back(it);
+                  } else {
+                      cnt += it->second;
+                  }
+              }
+          }
+          return cnt;
+      }
+  };
+  ```
+
+
+
+### 850 Rectangle Area II
+
+* HDU 1542
+
+* 线段树 + 扫描线 (+ 离散化)
+
+* 先对`y`坐标区域建线段树, 每次插入记录上次插入的`x`坐标和是否是左端线段. 求和 $O(N\log{N})$
+
+* ```c++
+   int m = 1e9 + 7;
+  struct Segment {
+    	int x;
+      int y_down;
+      int y_up;
+      bool is_left;
+  };
+  struct SegTreeNode {
+      int x; // last x index
+      int y_down;
+    	int y_up;
+      bool is_leaf;
+      int acc; // how many lines in this section
+      void print() {
+          cout &lt;&lt; &quot;x: &quot; &lt;&lt; x &lt;&lt; &quot; [&quot; &lt;&lt; y_down &lt;&lt; &quot;, &quot; &lt;&lt; y_up &lt;&lt; &quot;] &quot; &lt;&lt; acc &lt;&lt; &quot;\n&quot;;
+      }
+  };
+  struct SegTree {
+    	vector&lt;SegTreeNode&gt; nodes;
+      SegTree(int n) {
+          nodes.resize(1 &lt;&lt; n);
+      }
+      void build(int i, int l, int r, const vector&lt;int&gt;&amp; yvalue) {
+          nodes[i] = {0, yvalue[l], yvalue[r], false, 0};
+          if (l + 1 == r) {
+              nodes[i].is_leaf = true;
+              return;
+          }
+          int mid = (l + r) &gt;&gt; 1;
+          build(2 * i, l, mid, yvalue);
+          build(2 * i + 1, mid, r, yvalue);
+      }
+      long long insert(int i, const Segment&amp; seg) {
+          if (seg.y_up &lt;= nodes[i].y_down || seg.y_down &gt;= nodes[i].y_up) return 0;
+          if (nodes[i].is_leaf) {
+              if (!nodes[i].acc) {
+                  nodes[i].acc += seg.is_left ? 1 : -1;
+                  nodes[i].x = seg.x;
+                  return 0;
+              } else {
+                  long long diff_x = (seg.x - nodes[i].x) % m;
+                  long long diff_y = (nodes[i].y_up - nodes[i].y_down) % m;
+                  long long v = (diff_x * diff_y) % m;
+                  nodes[i].x = seg.x;
+                  nodes[i].acc += seg.is_left ? 1 : -1;
+                  return v % m;
+              }
+          }
+          return insert(2 * i, seg) + insert(2 * i + 1, seg);
+      }
+  };
+  class Solution {
+  public:
+      int rectangleArea(vector&lt;vector&lt;int&gt;&gt;&amp; rectangles) {
+      	vector&lt;int&gt; yvalue;
+          yvalue.push_back(-1); // for fill 0;
+          vector&lt;Segment&gt; lines;
+          for (auto&amp; l : rectangles) {
+              yvalue.push_back(l[1]);
+              yvalue.push_back(l[3]);
+              lines.emplace_back(Segment{l[0], l[1], l[3], true});
+              lines.emplace_back(Segment{l[2], l[1], l[3], false});
+          }
+          sort(yvalue.begin(), yvalue.end());
+  		// discretization
+          auto it = unique(yvalue.begin(), yvalue.end());
+          yvalue.erase(it, yvalue.end());
+          sort(lines.begin(), lines.end(), [](const auto&amp; l, const auto&amp; r){
+              return l.x &lt; r.x;
+          });
+          SegTree tree{8};
+          tree.build(1, 1, yvalue.size() - 1, yvalue);
+          long long ans = 0;
+          for (auto&amp; l : lines) {
+              ans += tree.insert(1, l);
+              ans %= m;
+          }
+          return ans;
+      }    
+  };
+  ```
+
+* 不用线段树的扫描线: 每次直接遍历所有`x`线段 $O(N^2)$
+
+* ```c++
+   def rectangleArea(self, rectangles):
+          xs = sorted(set([x for x1, y1, x2, y2 in rectangles for x in [x1, x2]] + [0]))
+          x_i = {v: i for i, v in enumerate(xs)}
+          count = [0] * len(x_i)
+          L = []
+          for x1, y1, x2, y2 in rectangles:
+              L.append([y1, x1, x2, 1])
+              L.append([y2, x1, x2, -1])
+          L.sort()
+          cur_y = cur_x_sum = area = 0
+          for y, x1, x2, sig in L:
+              area += (y - cur_y) * cur_x_sum
+              cur_y = y
+              for i in range(x_i[x1], x_i[x2]):
+                  count[i] += sig
+              cur_x_sum = sum(x2 - x1 if c else 0 for x1, x2, c in zip(xs, xs[1:], count))
+          return area % (10 ** 9 + 7)
   ```
 
 
@@ -582,3 +1150,16 @@ public:
 
 - $a(2n) = a(n) + a(n-1) + n, a(2n + 1) = 2a(n) + n + 1$
 
+
+
+### 序列移除 (CF #243 Div.1 C)
+
+* ![1566911533892](D:\OneDrive\Pictures\Typora\1566911533892.png)
+  * 注意这题第二种操作和CF不一样
+  * dp转移一样, 但是dp只是用来判断能否取到$j$个, 并非最优下标. 同时每个$j$要用最大下标$b_u$判断是否成立
+* [codeforce r243 div.1 c](http://codeforces.com/problemset/problem/425/C)
+* 先对b做counting sort得到下标. 然后对a数列和总共宝石数做dp. $dp(i, j)$ 表示取到 $a_i$ 元素前缀时 (不一定操作), 且总宝石数为$j$时, 剩下的 $b$ 最小序列起始点. 那么转移方程就是
+  * $dp(i, j) = dp(i - 1, j)$, 不拿宝石
+  * $dp(i, j) = (a_i$ 在 $b_{k + 1}, \cdots, b_{n-1}$ 中出现的最小位置$)$, 其中$k$是$dp(i - 1, j - 1)$, 拿宝石, 则从之前的最小序列之后开始找下一个匹配元素
+* 总支出$j * cost + i + dp(i, j)$
+* 单调性: 支出只会选 $b$ 中小的下标 (cost小, 且可能性多)
