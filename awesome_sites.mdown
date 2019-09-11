@@ -1984,7 +1984,7 @@ Order of items is just based on Nothing :: Maybe.
 * [TLB-cache-page-miss](https://stackoverflow.com/questions/37825859/cache-miss-a-tlb-miss-and-page-fault)
 * [virtual-function-call-assembly](https://stackoverflow.com/questions/4464144/does-c-virtual-function-call-on-derived-object-go-through-vtable)
 
-#### 2017-9-23
+### 2017-9-23
 * [Link-Cut-Tree](http://blog.csdn.net/Sunshine_cfbsl/article/details/52199415)
 * [Bootstrapper](http://www.tldp.org/LDP/LG/issue70/ghosh.html)
 * [网络流](http://sunshine-cfbsl.com/2017/02/12/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E6%B5%81-%EF%BC%88%E8%BD%AC%EF%BC%89/#comment-77)
@@ -1995,7 +1995,7 @@ Order of items is just based on Nothing :: Maybe.
 * [dos2unix-to-stderr](https://stackoverflow.com/questions/24720429/why-does-dos2unix-print-to-stderr/24720454)
 * [Intro-to-Webrender](https://mozillagfx.wordpress.com/2017/09/21/introduction-to-webrender-part-1-browsers-today/)
 
-#### 2017-9-24
+### 2017-9-24
 * [clear_cache](https://stackoverflow.com/questions/35741814/how-does-builtin-clear-cache-work)
 * [01背包-伪多项式](https://www.zhihu.com/question/20686504)
 * [JS-Emulator](https://gist.github.com/creaktive/978540)
@@ -2007,7 +2007,7 @@ Order of items is just based on Nothing :: Maybe.
 * [MathML-is-a-failed-standard](https://www.peterkrautzberger.org/0186/)
 * [Basic-category-for-scala-I](https://blog.scalents.com/2017/09/22/basic-category-theory-for-scala-programmers-part-i/)
 
-#### 2017-9-24
+### 2017-9-24
 * [strrchr-compile-time-BASEFILE](https://stackoverflow.com/questions/8487986/file-macro-shows-full-path)
 * [Bessel-glibc](https://www.zhihu.com/question/52901649/answer/132560490)
 * [Paxos-intro](https://zhuanlan.zhihu.com/p/29522440)
@@ -2030,7 +2030,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Python-MRO-2](https://laike9m.com/blog/li-jie-python-super,70/)
 * [Graphviz](https://www.worthe-it.co.za/programming/2017/09/19/quick-introduction-to-graphviz.html)
 
-#### 2017-9-25
+### 2017-9-25
 * [Linux-C10K](https://www.urbanairship.com/blog/linux-kernel-tuning-for-c500k)
 * [gcc-get-overflow](https://stackoverflow.com/questions/2340259/how-to-turn-off-gcc-compiler-optimization-to-enable-buffer-overflow)
 * [Intel-i9-Review](https://www.anandtech.com/show/11839/intel-core-i9-7980xe-and-core-i9-7960x-review)
@@ -2040,7 +2040,7 @@ Order of items is just based on Nothing :: Maybe.
 * [let-vs-let*](https://stackoverflow.com/questions/15003518/confused-by-the-difference-between-let-and-let-in-scheme)
 * [Pierce-Law-call/cc](https://www.zhihu.com/question/21954238)
 
-#### 2017-9-26
+### 2017-9-26
 * [falign-gcc](https://stackoverflow.com/questions/19470873/why-does-gcc-generate-15-20-faster-code-if-i-optimize-for-size-instead-of-speed)
 * [Omit-the-frame-pointer](https://stackoverflow.com/questions/1942801/when-should-i-omit-the-frame-pointer)
 * [Link-register-and-Frame-pointer](https://stackoverflow.com/questions/15752188/arm-link-register-and-frame-pointer)
@@ -2051,14 +2051,14 @@ Order of items is just based on Nothing :: Maybe.
 * [permutation-python](https://stackoverflow.com/questions/104420/how-to-generate-all-permutations-of-a-list-in-python)
 * [You-are-not-expect-to-understand-pdp-linux](https://www.bell-labs.com/usr/dmr/www/odd.html)
 
-#### 2017-9-27
+### 2017-9-27
 * [.NET-runtime](https://www.hanselman.com/blog/TheBookOfTheRuntimeTheInternalsOfTheNETRuntimeThatYouWontFindInTheDocumentation.aspx)
 * [Rust-TiKV-why](https://pingcap.github.io/blog/2017/09/26/whyrust/)
 * [Free-Monad-harmful](https://markkarpov.com/post/free-monad-considered-harmful.html)
 * [TreeListRecursion](http://cslibrary.stanford.edu/109/TreeListRecursion.html)
 * [STL-thread-safety](https://stackoverflow.com/questions/12931787/c11-stl-containers-and-thread-safety)
 
-#### 2017-9-28
+### 2017-9-28
 * [Underhanded-Rust-contest](http://blog.community.rs/underhanded/2016/12/15/underhanded-rust.en-US.html)
 * [Microsoft-SAL(source-code-annotation-language)](https://docs.microsoft.com/en-us/visualstudio/code-quality/understanding-sal)
 * [Decision Trees Are Free Monads](http://clathomasprime.github.io/hask/freeDecision)
@@ -2071,28 +2071,28 @@ Order of items is just based on Nothing :: Maybe.
 * [Derbycon-2017-writeup](https://labs.nettitude.com/blog/derbycon-2017-ctf-write-up/)
 * + tar with symbol link
 
-#### 2017-9-29
+### 2017-9-29
 * [Floating-point-visually-explained](http://fabiensanglard.net/floating_point_visually_explained/)
 * [Call-by](https://courses.cs.washington.edu/courses/cse341/98sp/general/parameters.html)
 * [Call-by-VResult-Ref](https://stackoverflow.com/questions/32794008/call-by-reference-and-call-by-value-result)
 
-#### 2017-9-30
+### 2017-9-30
 * [Visualize-Ruby-Heap](http://tenderlovemaking.com/2017/09/27/visualizing-your-ruby-heap.html)
 * [Top-10-Py-Sept](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-sep-2017-e42c26816ab9)
 * [remove-last-\n-POSIX](https://stackoverflow.com/questions/1654021/how-can-i-delete-a-newline-if-it-is-the-last-character-in-a-file)
 * [C-extern-static-global-variable](https://stackoverflow.com/questions/11055802/static-and-extern-global-variables-in-c-and-c)
 
-#### 2017-10-1
+### 2017-10-1
 * [merge-string-literal](https://stackoverflow.com/questions/6281835/how-do-c-compilers-merge-identical-string-literals)
 * [successful-git-branching](http://nvie.com/posts/a-successful-git-branching-model/)
 * [Alice-in-Python-projectland](https://veekaybee.github.io/2017/09/26/python-packaging/)
 * [Attacking-Bluetooth-BLE](https://www.pentestpartners.com/security-blog/screwdriving-locating-and-exploiting-smart-adult-toys/)
 * [ARMv8-vs-v7](https://community.arm.com/cn/f/discussions/2471/armv7-armv8)
 
-#### 2017-10-2
+### 2017-10-2
 * [Diminishing returns of static typing](https://blog.merovius.de/2017/09/12/diminishing-returns-of-static-typing.html)
 
-#### 2017-10-3
+### 2017-10-3
 * [rbp-4-clang-implicit-return-from-main](https://stackoverflow.com/questions/31149806/why-is-0-moved-to-stack-when-using-return-value)
 * [Build-a-CPU-with-Haskell](http://yager.io/CPU/CPU1.html)
 * [Strong-weak-global-gcc](https://leondong1993.github.io/2017/04/15/strong-weak-symbol/)
@@ -2101,7 +2101,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Are-switch-jump-table-the-fastest](http://www.cipht.net/2017/10/03/are-jump-tables-always-fastest.html)
 * [A-lesson-in-shortcuts](https://plus.google.com/+RobPikeTheHuman/posts/R58WgWwN9jp)
 
-#### 2017-10-4
+### 2017-10-4
 * [Reverse-trickbot](https://qmemcpy.github.io/post/reverse-engineering-malware-trickbot-part-2-loader)
 * [CppCon2017-Trip-Report](https://deque.blog/2017/10/04/my-cppcon-2017-trip-report-10-great-talks-to-watch-and-learn-from/)
 * [Useful-gcc-warning-options-not-by-Wall](https://kristerw.blogspot.com/2017/09/useful-gcc-warning-options-not-enabled.html)
@@ -2110,12 +2110,12 @@ Order of items is just based on Nothing :: Maybe.
 * [From-design-patterns-to-Category-theory](http://blog.ploeh.dk/2017/10/04/from-design-patterns-to-category-theory/)
 * [An Internship on Laziness](https://v8project.blogspot.com/2017/10/lazy-unlinking.html)
 
-#### 2017-10-5
+### 2017-10-5
 * [why-python-not-del-large-object](http://effbot.org/pyfaq/why-doesnt-python-release-the-memory-when-i-delete-a-large-object.htm)
 * [py-ctypes-tutorial](http://starship.python.net/crew/theller/ctypes/tutorial.html)
 
 
-#### 2017-10-6 - 2017-10-8
+### 2017-10-6 - 2017-10-8
 * [Visual-sorting](https://caspervonb.github.io/toneofsorting/)
 * [Rust-container-cheat-sheet](https://www.reddit.com/r/rust/comments/74yrdp/rust_container_cheat_sheet_reposted/)
 * [C++-compiler-bench-mark](https://imagine-rt.blogspot.com/2017/10/c-compiler-benchmarks-v2.html)
@@ -2125,7 +2125,7 @@ Order of items is just based on Nothing :: Maybe.
 * [LivePython](https://github.com/agermanidis/livepython)
 * [Runtime-bound-decidable?](https://cstheory.stackexchange.com/questions/5004/are-runtime-bounds-in-p-decidable-answer-no)
 
-#### 2017-10-9 - 2017-10-10
+### 2017-10-9 - 2017-10-10
 * [printf-long-long](https://stackoverflow.com/questions/6400180/how-to-printf-long-long)
 * [CSV-injection](http://georgemauer.net/2017/10/07/csv-injection.html)
 * [TrickBot-reverse-loader](http://qmemcpy.io/post/reverse-engineering-malware-trickbot-part-2-loader)
@@ -2160,7 +2160,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Cpp-exception-from-SEH](https://blogs.msdn.microsoft.com/oldnewthing/20170728-00/?p=96706)
 * [selenium-switch-iframe](https://stackoverflow.com/questions/37687149/how-to-switch-to-iframe-in-selenium)
 
-#### 2017-10-11
+### 2017-10-11
 * [slow-power-glibc](http://entropymine.com/imageworsener/slowpow/)
 * [DLL-best-practice](https://msdn.microsoft.com/en-us/library/windows/desktop/dn633971.aspx)
 * [Killing-Module-TS](https://izzys.casa/posts/millennials-are-killing-the-modules-ts.html)
@@ -2168,7 +2168,7 @@ Order of items is just based on Nothing :: Maybe.
 * [implicit-constexpr-virtual-bug](https://stackoverflow.com/questions/46696247/implicitly-virtual-constexpr-function)
 * [phantom-type-alignment-not layout-compatitible](https://stackoverflow.com/questions/46425250/does-a-phantom-type-have-the-same-alignment-as-the-original-one)
 
-#### 2017-10-12
+### 2017-10-12
 * [Rust-1.21](https://blog.rust-lang.org/2017/10/12/Rust-1.21.html)
 * [git-bomb](https://kate.io/blog/git-bomb/)
 * [Kernel-ASLR-and-amd64](http://blog.netbsd.org/tnf/entry/kernel_aslr_on_amd64)
@@ -2177,7 +2177,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Cache-coherence](https://en.wikipedia.org/wiki/Cache_coherence)
 * [Musing-on-Cython](http://notes-on-cython.readthedocs.io/en/latest/index.html)
 
-#### 2017-10-13
+### 2017-10-13
 * [Cache-swap-alg](http://www.cnblogs.com/-OYK/archive/2012/12/05/2803317.html)
 * [CFG-decidable](https://cs.stackexchange.com/questions/315/are-all-context-free-and-regular-languages-efficiently-decidable)
 * [OMG-a-lisp-runs-python](http://kitchingroup.cheme.cmu.edu/blog/2016/03/30/OMG-A-Lisp-that-runs-python/)
@@ -2186,12 +2186,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Shell-operator](https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators)
 * [Lambda-cubde](http://www.rbjones.com/rbjpub/logic/cl/tlc001.htm)
 
-#### 2017-10-14
+### 2017-10-14
 * [Cost-of-Kotlin](http://oneeyedmen.com/cost-of-kotlin-preliminary-results-part3-invocation.html)
 * [Impossible-dream-of-USB-C](https://marco.org/2017/10/14/impossible-dream-of-usb-c)
 * [Xbox360-to-Win-Exec](https://github.com/rexdex/recompiler#porting-xbox360-executables-to-windows)
 
-#### 2017-10-15
+### 2017-10-15
 * [Why-physicists-still-use-Fortran](http://moreisdifferent.com/2015/07/16/why-physicsts-still-use-fortran/)
 * [What-is-Nix](https://yakking.branchable.com/posts/what-and-why-nix/)
 * [From-CL-to-Julia](https://tpapp.github.io/post/common-lisp-to-julia/)
@@ -2199,7 +2199,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Why-PostgreSQL-is-better-than-MySQL](https://blog.2ndquadrant.com/postgresql-better-mysql-1/)
 * [Good/Bad-Math-Lambda-Calculus](http://cgnail.github.io/academic/lambda-index/)
 
-#### 2017-10-16
+### 2017-10-16
 * [Teach Youself Scheme in Fixnum Days](http://tiankonguse.com/manual/t-y-scheme/zh/)
 * [Yet Another Scheme Tutorial](https://deathking.github.io/yast-cn)
 * [Security-Public-RSS](https://www.zhihu.com/question/66470538/answer/242568128)
@@ -2222,7 +2222,7 @@ Order of items is just based on Nothing :: Maybe.
 * [std::string-optimization](https://shaharmike.com/cpp/std-string/)
 * [std::string-concatentation-+=/append](https://stackoverflow.com/questions/18892281/most-optimized-way-of-concatenation-in-strings)
 
-#### 2017-10-17
+### 2017-10-17
 * [SMP-NUMA](https://www.quora.com/What-is-the-difference-between-SMP-and-NUMA-architectures)
 * [Falling through the KRACKs](https://blog.cryptographyengineering.com/2017/10/16/falling-through-the-kracks/)
 * [Keyboard-latency](https://danluu.com/keyboard-latency/)
@@ -2236,7 +2236,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Haskell Typeclasses vs. C++ Classes](http://www.michaelburge.us/2017/10/15/haskell-typeclasses-vs-cpp-classes.html)
 * [MTBF](https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%9D%87%E6%95%85%E9%9A%9C%E9%96%93%E9%9A%94)
 
-#### 2017-10-18
+### 2017-10-18
 * [Stop-using-word2vec](http://multithreaded.stitchfix.com/blog/2017/10/18/stop-using-word2vec/)
 * [TiDB-1.0](https://pingcap.github.io/blog/2017/10/17/announcement/)
 * [FE=Checklist](https://github.com/thedaviddias/Front-End-Checklist)
@@ -2260,7 +2260,7 @@ Order of items is just based on Nothing :: Maybe.
 * [p=27a^2+27a+7-RSA-is-unsafe](https://mathoverflow.net/questions/283767/conjecturally-unsafe-rsa-primes-p-27a227a7)
 * [Less-copy-in-memoryview](https://eli.thegreenplace.net/2011/11/28/less-copies-in-python-with-the-buffer-protocol-and-memoryviews)
 
-#### 2017-10-19
+### 2017-10-19
 * [Blockchain-visually](https://unwttng.com/what-is-a-blockchain)
 * [x86-LFENCE-SFENCE-MFENCE](https://stackoverflow.com/questions/20316124/does-it-make-any-sense-instruction-lfence-in-processors-x86-x86-64)
 * [How-x86-implement-atomic-operation](https://stackoverflow.com/questions/38447226/atomicity-on-x86)
@@ -2278,7 +2278,7 @@ Order of items is just based on Nothing :: Maybe.
 * [EternalBlue-everything](https://research.checkpoint.com/eternalblue-everything-know/)
 * [Nim-GC](https://nim-lang.org/araq/destructors.html)
 
-#### 2017-10-20
+### 2017-10-20
 * [threadpool-c++14](http://roar11.com/2016/01/a-platform-independent-thread-pool-using-c14/)
 * [kernel-101](http://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel)
 * [Object-Oriented-Haskell-SQL](https://programming.tobiasdammers.nl/blog/2017-10-17-object-oriented-haskell)
@@ -2291,7 +2291,7 @@ Order of items is just based on Nothing :: Maybe.
 * [python-logging-multithread-to-single-file](https://www.v2ex.com/t/399193#reply3)
 * [Haskell-Any](https://stackoverflow.com/questions/6479444/is-there-a-type-any-in-haskell)
 
-#### 2017-10-20
+### 2017-10-20
 * [Dismissing-Python-GC](https://engineering.instagram.com/dismissing-python-garbage-collection-at-instagram-4dca40b29172)
 * [GHC-cross-platform](https://medium.com/@zw3rk/ghc-cross-compiler-binary-distributions-490bb2c0c411)
 * [C#-7.2-with-VS](http://www.c-sharpcorner.com/article/c-sharp-7-2-new-features-with-visual-studio-2017/)
@@ -2306,13 +2306,13 @@ Order of items is just based on Nothing :: Maybe.
 * [L_REC-undecidable](https://math.stackexchange.com/questions/344545/is-this-undecidable-language-recognizable)
 * [pyc-files](http://www.curiousefficiency.org/posts/2011/04/benefits-and-limitations-of-pyc-only.html)
 
-#### 2017-10-22
+### 2017-10-22
 * [scrap-all-typeclasses-into-1](http://h2.jaguarpaw.co.uk/posts/scrap-all-your-typeclasses-but-one/)
 * [scrap-your-typeclass](http://www.haskellforall.com/2012/05/scrap-your-type-classes.html)
 * [kernel-exploitation-deferencing-nullptr](https://0x00sec.org/t/kernel-exploitation-dereferencing-a-null-pointer/3850)
 * [Rust-to-wasm](https://lord.io/blog/2017/wargo/)
 
-#### 2017-10-23
+### 2017-10-23
 * [Java-List<>](https://stackoverflow.com/questions/6231973/difference-between-list-list-listt-liste-and-listobject)
 * [game-developer-resources](https://unlikekinds.com/t/game-developer-resources)
 * [spin_lock](https://www.zhihu.com/question/66889164)
@@ -2341,7 +2341,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Multiple-def-of-spin_lock](http://locklessinc.com/articles/locks/)
 * [spin-lock-implementation](https://www.zhihu.com/question/55764216)
 
-#### 2017-10-24
+### 2017-10-24
 * [Rust-1.21](https://www.infoq.com/news/2017/10/rust-1-21-released)
 * [Cpp17-interview-with-Herb-Sutter](https://www.infoq.com/news/2017/10/cpp-17-herb-sutter-interview)
 * [.NET-Core-2.0](https://weblog.west-wind.com/posts/2017/Oct/22/NET-Core-20-and-ASPNET-20-Core-are-finally-here)
@@ -2349,7 +2349,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Counter-example-of-typeclass](http://blog.functorial.com/posts/2015-12-06-Counterexamples.html?repost)
 * [Games-Look-Bad-1](https://ventspace.wordpress.com/2017/10/20/games-look-bad-part-1-hdr-and-tone-mapping/)
 
-#### 2017-10-25
+### 2017-10-25
 * [VLA-speed](https://stackoverflow.com/questions/34847662/is-accessing-statically-or-dynamically-allocated-memory-faster)
 * [Why-Python-is-slow](http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/)
 * [SciPy-1.0](https://mail.python.org/pipermail/scipy-user/2017-October/037357.html)
@@ -2358,16 +2358,16 @@ Order of items is just based on Nothing :: Maybe.
 * [copy-elision-on-argument](https://stackoverflow.com/questions/33872026/copy-elision-for-pass-by-value-arguments)
 * [copy-elision-prvalue+xvalue](https://zhuanlan.zhihu.com/p/22821671)
 
-#### 2017-10-26
+### 2017-10-26
 * [Optimising-free-monad-using-Plate](https://qfpl.io/posts/optimising-free-with-plated/)
 * [Learning-a-hierarchy](https://blog.openai.com/learning-a-hierarchy/)
 * [How-to-use-Zorn's-lemma](http://www.tricki.org/article/How_to_use_Zorns_lemma)
 * [recursion-tail-calls-and-trampolines](http://www.datchley.name/recursion-tail-calls-and-trampolines/)
 
-#### 2017-10-27
+### 2017-10-27
 * [Make-2+2=5](https://codegolf.stackexchange.com/questions/28786/write-a-program-that-makes-2-2-5)
 
-#### 2017-10-28
+### 2017-10-28
 * [Void-linux](https://www.linux.com/learn/intro-to-linux/2017/10/void-linux-salute-old-school-linux)
 * [GADT](https://www.zhihu.com/question/67043774)
 * [Linux-PLT-GOT](https://www.zhihu.com/question/21249496)
@@ -2389,7 +2389,7 @@ Order of items is just based on Nothing :: Maybe.
 * [understanding-FFT](http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/)
 * [C++-compile-time](https://www.zhihu.com/question/42964826)
 
-#### 2017-10-29
+### 2017-10-29
 * [Docker-over-fat-binary](http://www.smashcompany.com/technology/why-would-anyone-choose-docker-over-fat-binaries)
 * [Gilectomy-GIL-less-python](https://lwn.net/Articles/723514/)
 * [PyPy-STM-GIL-less-python](http://pypy.org/tmdonate2.html)
@@ -2397,11 +2397,11 @@ Order of items is just based on Nothing :: Maybe.
 * [Greg's-1.5-Python-remove-GIL](https://mail.python.org/pipermail/python-dev/2001-August/017099.html)
 * [PyPy-GIL](http://doc.pypy.org/en/latest/faq.html#does-pypy-have-a-gil-why)
 
-#### 2017-10-30
+### 2017-10-30
 * [Python-hardest-problem-GIL](https://jeffknupp.com/blog/2012/03/31/pythons-hardest-problem/)
 * [Python-hardest-problem-GIL-revisited](https://jeffknupp.com/blog/2013/06/30/pythons-hardest-problem-revisited/)
 
-#### 2017-10-31
+### 2017-10-31
 * [Do-you-need-a-VPN](https://blog.mozilla.org/internetcitizen/2017/08/29/do-you-need-a-vpn/)
 * [HTTP=103](https://datatracker.ietf.org/doc/draft-ietf-httpbis-early-hints/)
 * [So-you-want-to-write-a-type-checker](http://languagengine.co/blog/so-you-want-to-write-a-type-checker/)
@@ -2411,24 +2411,24 @@ Order of items is just based on Nothing :: Maybe.
 * [How-to-implement-dependent-type-theory](http://math.andrej.com/2012/11/08/how-to-implement-dependent-type-theory-i/)
 * [dependent-type-compiler](https://cstheory.stackexchange.com/questions/18777/is-compiler-for-dependent-type-much-harder-than-an-intepreter)
 
-#### 2017-11-1
+### 2017-11-1
 * [How-lazy-evaluation-in-Haskell](https://hackhands.com/lazy-evaluation-works-haskell/)
 * [Common-misconception-of-C++-TS-Modules](https://build2.org/article/cxx-modules-misconceptions.xhtml)
 
-#### 2017-11-2
+### 2017-11-2
 * [Minimal-guide-to-SQLite](http://tech.marksblogg.com/sqlite3-tutorial-and-guide.html)
 * [Fearlesss-Concurrency-in-Rust](https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html)
 * [Have-fun-with-Mach-O](https://www.pnfsoftware.com/blog/having-fun-with-obfuscated-mach-o-files/)
 * [Python-Parallelism](https://segmentfault.com/a/1190000000382873)
 
-#### 2017-11-3
+### 2017-11-3
 * [2FA-Hash](https://techblog.bozho.net/enabling-two-factor-authentication-web-application/)
 * [WPS-developing](http://bbs.wps.cn/thread-22332423-1-1.html)
 * [MySQL-vs-MariaDB](https://www.percona.com/blog/2017/11/02/mysql-vs-mariadb-reality-check/)
 * [Linux-container-in-500-lines](https://blog.lizzie.io/linux-containers-in-500-loc.html)
 * [Reverse-guitar-hero](https://hackaday.com/2017/09/25/reverse-engineering-guitar-hero/)
 
-#### 2017-11-4
+### 2017-11-4
 * [Cpp-Relaxed-template-argument](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0522r0.html)
 * [Write-line-in-C](https://zhuanlan.zhihu.com/p/30553006)
 * [Implement-coroutine-C](https://stackoverflow.com/questions/121757/how-do-you-implement-coroutines-in-c)
@@ -2442,19 +2442,19 @@ Order of items is just based on Nothing :: Maybe.
 * [Profiling-go](http://www.integralist.co.uk/posts/profiling-go/)
 * [Implement-a-kv-store](https://samrat.me/posts/2017-11-04-kvstore-linear-hashing/)
 
-#### 2017-11-5
+### 2017-11-5
 * [Python-class-def-internals](https://eli.thegreenplace.net/2012/06/15/under-the-hood-of-python-class-definitions)
 * [Self-Replicating Functions](http://tylerneylon.com/a/self_repl/)
 * [Penetration-test-cheat-sheet](https://techincidents.com/penetration-testing-cheat-sheet/)
 
-#### 2017-11-6
+### 2017-11-6
 * [Python-Packaging-user-guide](https://packaging.python.org/)
 * [MINIX-back-door-Intel](https://www.networkworld.com/article/3236064/servers/minix-the-most-popular-os-in-the-world-thanks-to-intel.html)
 * [libreboot](https://libreboot.org/faq.html#intel)
 * [GreenHoney](http://muyueh.com/greenhoney/)
 * [Difference-between-stack-and-frame](https://stackoverflow.com/questions/23848391/what-is-the-difference-between-a-stack-and-a-frame)
 
-#### 2017-11-7
+### 2017-11-7
 * [FP-Jargon](https://functional.works-hub.com/blog/Functional-Programming-Jargon)
 * [Virtual-memory-tricks](http://ourmachinery.com/post/virtual-memory-tricks/)
 * [Advance-ctypes](https://dbader.org/blog/python-ctypes-tutorial-part-2)
@@ -2474,7 +2474,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Windows-TCP-winsocks](https://web.archive.org/web/20020322041909/http://www.kuro5hin.org/story/2001/6/19/05641/7357)
 * [乱序执行-内存屏障](http://blog.csdn.net/dd864140130/article/details/56494925)
 
-#### 2017-11-8 - 2017-11-9
+### 2017-11-8 - 2017-11-9
 * [i386-i686-x86_64](https://serverfault.com/questions/610308/x86-i386-i686-amd64-i5-i7-archtecture-processor-confusion)
 * [F-Algebra](https://zhuanlan.zhihu.com/p/30833827)
 * [Fast-typechecking-for-JS](https://blog.acolyer.org/2017/11/08/fast-and-precise-type-checking-for-javascript/)
@@ -2484,19 +2484,19 @@ Order of items is just based on Nothing :: Maybe.
 * [real-time-ascii-decision-tree](https://art.pixlab.io/)
 * [x86_64-JIT-python](https://csl.name/post/python-jit/)
 
-#### 2017-11-10
+### 2017-11-10
 * [8-yrs-of-Golang](https://blog.golang.org/8years)
 * [Apple-A11-core](https://www.mikeash.com/pyblog/friday-qa-2017-11-10-observing-the-a11s-heterogenous-cores.html)
 * [IME-JTAG-using-USB](https://thenextweb.com/security/2017/11/09/researchers-find-almost-every-computer-intel-skylake-cpu-can-owned-via-usb/?amp=1)
 
-#### 2017-11-11
+### 2017-11-11
 * [x86_64-TCP-bind-explain](https://pentesterslife.blog/2017/11/01/x86_64-tcp-bind-shellcode-with-basic-authentication-on-linux-systems/)
 * [Create-MIDI-from-scratch-in-C++](https://www.youtube.com/watch?v=6PFf6klllAE)
 * [buffer-overflow-attack](http://www.cnblogs.com/fanzhidongyzby/p/3250405.html)
 * [Capsule-Network-explained](https://kndrck.co/posts/capsule_networks_explained/)
 * [Albuquerque-ISO-C++-Trip-Report](https://www.reddit.com/r/cpp/comments/7ca2sh/2017_albuquerque_iso_c_committee_reddit_trip/)
 
-#### 2017-11-12
+### 2017-11-12
 * [Linux-sandboxing-improvement-in-FF57](http://www.morbo.org/2017/11/linux-sandboxing-improvements-in.html)
 * [C-locale-MPV](https://github.com/mpv-player/mpv/commit/1e70e82baa9193f6f027338b0fab0f5078971fbe)
 * [HS-ABQ-Trip-report](https://herbsutter.com/2017/11/11/trip-report-fall-iso-c-standards-meeting-albuquerque/amp/)
@@ -2504,7 +2504,7 @@ Order of items is just based on Nothing :: Maybe.
 * [PowerPC-block-diagram](https://www.powerpc-notebook.org/2017/11/powerpc-notebook-block-diagram-done/)
 * 
 
-#### 2017-11-13
+### 2017-11-13
 * [let-polymorphism](https://www.haskell.org/tutorial/pitfalls.html)
 * [Unification-ML-in-JS](https://zhuanlan.zhihu.com/p/24181997)
 * [Omega-in-Haskell](https://stackoverflow.com/questions/33546004/is-it-possible-to-define-omega-combinator-%CE%BBx-xx-in-modern-haskell)
@@ -2512,24 +2512,24 @@ Order of items is just based on Nothing :: Maybe.
 * [Existential-Type-in-Haskell](https://stackoverflow.com/questions/10753073/whats-the-theoretical-basis-for-existential-types/10753957#10753957)
 * [Existential-type-haskell](http://iveselov.info/posts/2012-08-30-existential-types.html)
 
-#### 2017-11-14
+### 2017-11-14
 * [FSM-Haskell](https://wickstrom.tech/finite-state-machines/2017/11/10/finite-state-machines-part-1-modeling-with-haskell.html)
 * [Executable-Space-protection-and-ASLR](http://www.productive-cpp.com/hardening-cpp-programs-executable-space-protection-address-space-layout-randomization-aslr/)
 * [Fearless-concurrency-in-rust](https://blog.rust-lang.org/2017/11/14/Fearless-Concurrency-In-Firefox-Quantum.html)
 * [Intel Microcode Extra Undocumented Header](https://github.com/platomav/MCExtractor/wiki/Intel-Microcode-Extra-Undocumented-Header)
 * [Haskell-WASM](https://dhc.dfinity.org/)
 
-#### 2017-11-15
+### 2017-11-15
 * [Cost-of-JS](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
 * [Haskell-survey](http://taylor.fausak.me/2017/11/15/2017-state-of-haskell-survey-results/)
 * [Optimizing-Pandas-code](https://engineering.upside.com/a-beginners-guide-to-optimizing-pandas-code-for-speed-c09ef2c6a4d6)
 
-#### 2017-11-16
+### 2017-11-16
 * [Intro-to-Nullable-Reference-Types](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/nullable-reference-types-in-csharp/)
 * [Digital-Securiry-Motherboard](https://motherboard.vice.com/en_us/article/d3devm/motherboard-guide-to-not-getting-hacked-online-safety-guide)
 * [Speed-up-Python-using-Rust](https://developers.redhat.com/blog/2017/11/16/speed-python-using-rust/)
 
-#### 2017-11-17
+### 2017-11-17
 * [Improving-debugging-of-std-function](https://blogs.msdn.microsoft.com/vcblog/2017/11/16/improving-the-debugging-experience-for-stdfunction/)
 * [C++-Interview](http://blog.csdn.net/shanghairuoxiao/article/details/72876248)
 * [Best-result-of-ML](https://github.com//RedditSota/state-of-the-art-result-for-machine-learning-problems)
@@ -2539,16 +2539,16 @@ Order of items is just based on Nothing :: Maybe.
 * [MIT-6.824-Intro](https://www.zhihu.com/question/29597104/answer/128443409)
 * [<=>-for-optional](https://medium.com/@barryrevzin/implementing-the-spaceship-operator-for-optional-4de89fc6d5ec)
 
-#### 2017-11-18
+### 2017-11-18
 * [Fast-exact-interger-division-using-floating-point-operations](https://lemire.me/blog/2017/11/16/fast-exact-integer-divisions-using-floating-point-operations/)
 * [Wrong-way-for-benchmarking-integer-comparision](https://blogs.msdn.microsoft.com/oldnewthing/20171117-00/?p=97416)
 
-#### 2017-11-19
+### 2017-11-19
 * [内存断点/硬件断点](https://www.zhihu.com/question/52625624)
 * [PE-files](http://www.4hou.com/system/7782.html)
 * [Windows-VEH](http://syprog.blogspot.com/2011/10/windows-structured-and-vectored.html)
 
-#### 2017-11-20
+### 2017-11-20
 * [Design-of-Python](https://zhuanlan.zhihu.com/p/26895103)
 * [Design-of-Python-2](https://zhuanlan.zhihu.com/p/27678351)
 * [Python-ASDL-load-store-del](https://bytes.com/topic/python/answers/845057-what-do-_ast-load-store-del-augload-augstore-param-mean)
@@ -2563,18 +2563,18 @@ Order of items is just based on Nothing :: Maybe.
 * [implementation-block](http://linlexus.com/implementation_of_block/)
 * [Implement-closure-in-C](http://hokstad.com/how-to-implement-closures)
 
-#### 2017-11-21
+### 2017-11-21
 * [Replacing x86 firmware with Linux and Go](https://lwn.net/SubscriberLink/738649/81007748bf15c1e5/)
 * [Hask-is-even-not-a-category](https://wiki.haskell.org/Hask#Is_Hask_even_a_category.3F)
 * [JIT-for-x86_64-Py](https://csl.name/post/python-compiler/)
 
-#### 2017-11-22
+### 2017-11-22
 * [deprecated-is_literal_type](https://stackoverflow.com/questions/40351816/deprecated-stdis-literal-type-in-c17)
 * [constexpr-function-parameter](https://mpark.github.io/programming/2017/05/26/constexpr-function-parameters/)
 * [compile-time-string-check](http://zverovich.net/2017/11/05/compile-time-format-strings.html)
 * [Building-GHC-the-Stages](https://medium.com/@zw3rk/building-ghc-the-stages-2c6cf6fc4b29)
 
-#### 2017-11-23
+### 2017-11-23
 * [Rust-1.22](https://blog.rust-lang.org/2017/11/22/Rust-1.22.html)
 * [understanding-co_await](https://lewissbaker.github.io/2017/11/17/understanding-operator-co-await)
 * [using-c++-coroutine-in-boost](https://blogs.msdn.microsoft.com/vcblog/2017/05/19/using-c-coroutines-with-boost-c-libraries/)
@@ -2586,7 +2586,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Inside memory management](https://www.ibm.com/developerworks/linux/library/l-memory/)
 * [理解 ReadDirectoryChangesW](http://blog.csdn.net/wzsy/article/details/6697613)
 
-#### 2017-11-24
+### 2017-11-24
 * [Spheres-and-points](https://ipfs.io/ipfs/QmfN5DojVnEsf1Une3DFwfUiFpfWnQf31f61qgybiXVeQE/blog/spheres-and-points/)
 * [glibc-memory](http://blog.csdn.net/maokelong95/article/details/52006379)
 * [design-memory-pool](https://www.zhihu.com/question/25527491)
@@ -2595,12 +2595,12 @@ Order of items is just based on Nothing :: Maybe.
 * [LRU-implement-on-CPU](https://stackoverflow.com/questions/23448528/how-is-an-lru-cache-implemented-in-a-cpu)
 * [KASLR](https://blog.netbsd.org/tnf/entry/the_strongest_kaslr_ever)
 
-#### 2017-11-25
+### 2017-11-25
 * [compare-POD-types](https://stackoverflow.com/questions/47437349/is-it-undefined-behavior-to-read-and-compare-padding-bytes-of-a-pod-type)
 * [Python-Top-10-Nov-2017](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-nov-2017-f46fcaa36e4b)
 * [My-unusual-hobby-Coq](https://www.stephanboyer.com/post/134/my-unusual-hobby)
 
-#### 2017-11-26
+### 2017-11-26
 * [ILP-DLP-TLP](https://software.intel.com/zh-cn/blogs/2011/12/02/400009299)
 * [constexpr-in-c++11-not-TM-Complete](https://stackoverflow.com/questions/9201506/is-constexpr-based-computation-turing-complete/9528554#9528554)
 * [oi-tools/tuack](https://git.thusaac.org/publish/tuack)
@@ -2616,46 +2616,46 @@ Order of items is just based on Nothing :: Maybe.
 * [constexpr-compile-faster](http://aras-p.info/blog/2017/10/24/Slow-to-Compile-Table-Initializers/)
 * [L123-Cache](https://zhuanlan.zhihu.com/p/31422201)
 
-#### 2017-11-27
+### 2017-11-27
 * [Notes-on-shared_ptr/weak_ptr](https://eklitzke.org/notes-on-std-shared-ptr-and-std-weak-ptr)
 
-#### 2017-11-28
+### 2017-11-28
 * [Personal-finance-for-engineer](https://cs007.blog/)
 * [Lib-of-parallel-algorithm-NESL](https://www.cs.cmu.edu/~scandal/nesl/algorithms.html)
 * [aria2-repair-chunks](https://orzfly.com/html/repair-file-chunks-with-aria2.html)
 * [Windows’s Virtual Address Space: A Short MSDN Story](http://www.tenouk.com/WinVirtualAddressSpace.html)
 
-#### 2017-11-29
+### 2017-11-29
 * [LINQ-ELI5](https://martinfowler.com/articles/collection-pipeline/)
 
-#### 2017-11-30
+### 2017-11-30
 * [why-no-unsigned-float](https://stackoverflow.com/questions/512022/why-doesnt-c-have-unsigned-floats)
 * [TSP-approximation](https://zhuanlan.zhihu.com/p/28161351)
 
-#### 2017-12-1
+### 2017-12-1
 * [write-a-simple-linux-kernel-mode](https://blog.sourcerer.io/writing-a-simple-linux-kernel-module-d9dc3762c234)
 * [functional-exceptionless-error-handling](https://blog.tartanllama.xyz/optional-expected/)
 
-#### 2017-12-2
+### 2017-12-2
 * [python-chanllenge-solution](https://the-python-challenge-solutions.hackingnote.com)
 
-#### 2017-12-3
+### 2017-12-3
 * [Python-3-readiness](http://py3readiness.org/)
 
-#### 2017-12-4
+### 2017-12-4
 * [Persistent-RBT-in-Haskell](https://functional.works-hub.com/blog/Persistent-Red-Black-Trees-in-Haskell)
 * [SIMD-in-Rust](https://hugotunius.se/2017/12/01/exploring-simd-in-rust.html)
 * [Use-all-the-databases](https://compose.com/articles/use-all-the-databases-part-1/?cm_mmc=PSocial_Twitter-_-Analytics_Watson%20Data%20Platform-_-WW_WW-_-23218161_Tracking%20Pixel&cm_mmca1=000000XH&cm_mmca2=10000863&cm_mmca4=23218161&cm_mmca5=49375798&cm_mmca6=b56e212b-edae-4c2e-a257-5aad1c08b7d4&cvosrc=social%20network%20paid.twitter.Q42017HandlesBlog5_SD%20Behav_DesktopMobile_1x1&cvo_campaign=000000XH&cvo_pid=23218161)
 
-#### 2017-12-5
+### 2017-12-5
 * [Dependent-type-for-F#](https://jackfoxy.github.io/DependentTypes/)
 * [Tarjan-DS](https://www.zhihu.com/question/65155704)
 * [HMM-CRF](https://www.zhihu.com/question/35866596)
 
-#### 2017-12-6
+### 2017-12-6
 * [PEP-557-Data-Classes](https://www.python.org/dev/peps/pep-0557/)
 
-#### 2017-12-7
+### 2017-12-7
 * [Attacking-IME](https://twitter.com/rootkovska/status/938458875522666497)
 * [Ref-Out-C#](http://dailydotnettips.com/2017/11/17/back-to-basics-what-is-the-difference-between-ref-and-out-keyword-in-c/)
 * [Visual-Studio-15.5-MSVC-code-opt](https://blogs.msdn.microsoft.com/vcblog/2017/12/03/msvc-code-optimizer-improvements-in-visual-studio-2017-versions-15-5-and-15-3/)
@@ -2663,12 +2663,12 @@ Order of items is just based on Nothing :: Maybe.
 * [tail-duplication](http://elegantc.blogspot.com/2016/05/tail-duplication-with-llvm.html)
 * [assume-no-aliasing](https://stackoverflow.com/questions/7298546/gcc-c-c-assume-no-pointer-aliasing)
 
-#### 2017-12-08
+### 2017-12-08
 * [auto-deduce-a-reference](https://blog.petrzemek.net/2017/12/08/when-auto-seemingly-deduces-a-reference-in-cpp/)
 * [C++17-feature-removal-deprecation](https://blogs.msdn.microsoft.com/vcblog/2017/12/08/c17-feature-removals-and-deprecations/)
 * [longest-path-in-a-tree-proof](http://sighingnow.github.io/algorithm/longestpathintree.html)
 
-#### 2017-12-09
+### 2017-12-09
 * [mmap-DMA](http://blog.jobbole.com/91891/)
 * [VFIO](https://ggaaooppeenngg.github.io/zh-CN/2017/06/05/VFIO-%E2%80%94%E2%80%94%E5%B0%86-DMA-%E6%98%A0%E5%B0%84%E6%9A%B4%E9%9C%B2%E7%BB%99%E7%94%A8%E6%88%B7%E6%80%81/)
 * [levity-polymorphism](https://stackoverflow.com/questions/35318562/what-is-levity-polymorphism)
@@ -2699,22 +2699,22 @@ Order of items is just based on Nothing :: Maybe.
 * [Git-as-a-purely-functional-DS](https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/)
 * [CSAPP-exception-OS](http://wdxtub.com/2016/04/16/thin-csapp-5/)
 
-#### 2017-12-10
+### 2017-12-10
 * [Find-haskell-bug-by-proving](https://www.joachim-breitner.de/blog/734-Finding_bugs_in_Haskell_code_by_proving_it)
 * [C99-features-C++](https://stackoverflow.com/questions/47524553/are-all-of-the-features-of-c99-also-in-c)
 
-#### 2017-12-11
+### 2017-12-11
 * [Strictness-Analysis-Haskell](http://fixpt.de/blog/2017-12-04-strictness-analysis-part-1.html)
 * [Monolithic-Micro-Hybrid-Kernel](https://www.zhihu.com/question/20314255)
 
-#### 2017-12-12
+### 2017-12-12
 * [Intro-to-Quantum-Computing](http://davidbkemp.github.io/QuantumComputingArticle/)
 * [Internet-protocol-changes](https://blog.apnic.net/2017/12/12/internet-protocols-changing/)
 * [石子归并-四边形优化-GarsiaWarch](http://blog.csdn.net/qq_33132383/article/details/75125993)
 * [异步同步-阻塞非阻塞](https://www.zhihu.com/question/19732473)
 * [Build-secure-PHP-software-2018](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software)
 
-#### 2017-12-13
+### 2017-12-13
 * [Avast-retdec](https://blog.avast.com/avast-open-sources-its-machine-code-decompiler)
 * [图像-波](http://www.ruanyifeng.com/blog/2017/12/image-and-wave-filters.html)
 * [gcc-instruction-pattern](http://kristerw.blogspot.com/2017/12/more-about-gcc-instruction-patterns.html)
@@ -2731,44 +2731,44 @@ Order of items is just based on Nothing :: Maybe.
 * [Linux-memory](http://edsionte.com/techblog/archives/3937)
 * [Linux-Thread](http://0xffffff.org/2013/07/30/19-linux-thread-history/)
 
-#### 2017-12-14
+### 2017-12-14
 * [lock_guard-vs-unique_lock](https://stackoverflow.com/questions/20516773/stdunique-lockstdmutex-or-stdlock-guardstdmutex)
 * [Shamir's-Secret-Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
 
-#### 2017-12-15
+### 2017-12-15
 * [MGSV-Graphics](http://www.adriancourreges.com/blog/2017/12/15/mgs-v-graphics-study/)
 * [Top-10-article-ML-Dec-17](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-dec-2017-82883b8062f5)
 * [BackPropagation](http://www.cnblogs.com/charlotte77/p/5629865.html)
 
-#### 2017-12-16
+### 2017-12-16
 * [clang-in-docker-for-c++17](https://solarianprogrammer.com/2017/12/14/clang-in-docker-container-cpp-17-development/)
 
-#### 2017-12-17
+### 2017-12-17
 * [最大矩阵和/最大全1子矩阵](http://www.voidcn.com/article/p-waiiowua-vy.html)
 * [Timeline-of-Programming-Languages](https://en.wikipedia.org/wiki/Timeline_of_programming_languages)
 * [Rust-for-Rubyist](https://matthias-endler.de/2017/rust-for-rubyists/)
 * [optional<bool>-specialization](https://medium.com/@barryrevzin/optional-bool-reference-or-constexpr-7cb410e8e4c4)
 * [Windows启动过程](http://www.cnblogs.com/daizhj/articles/1934456.html)
 
-#### 2017-12-18
+### 2017-12-18
 * [What-ORM-tells-me](http://woz.posthaven.com/what-orms-have-taught-me-just-learn-sql)
 * [How-to-write-your-own-cpp-game-engine](http://preshing.com/20171218/how-to-write-your-own-cpp-game-engine/)
 * [Py-Ruby-Profiler](https://jvns.ca/blog/2017/12/17/how-do-ruby---python-profilers-work-/)
 
-#### 2017-12-19
+### 2017-12-19
 * [C++17-progress-in-VS15.5-VS15.6](https://blogs.msdn.microsoft.com/vcblog/2017/12/19/c17-progress-in-vs-2017-15-5-and-15-6/)
 
-#### 2017-12-20
+### 2017-12-20
 * [violation-of-TCP](https://blog.cloudflare.com/this-is-strictly-a-violation-of-the-tcp-specification/)
 * [D's-newfangled-name-mangling](https://dlang.org/blog/2017/12/20/ds-newfangled-name-mangling/)
 
-#### 2017-12-21
+### 2017-12-21
 * [Rust-in-2017](https://blog.rust-lang.org/2017/12/21/rust-in-2017.html)
 
-#### 2017-12-22
+### 2017-12-22
 * [ncat-cheetsheet](https://bitrot.sh/cheatsheet/19-12-2017-ncat/)
 
-#### 2017-12-23
+### 2017-12-23
 * [reflection-in-Haskell](http://www.tweag.io/posts/2017-12-21-reflection-tutorial.html)
 * [Linux-memory-lowmem-highmem](https://www.zhihu.com/question/52711172)
 * [AVX-SSE-Transition-penalty](https://www.zhihu.com/question/37230675/answer/273654228)
@@ -2787,17 +2787,17 @@ Order of items is just based on Nothing :: Maybe.
 * [memcached-lock-strategy](https://zhuanlan.zhihu.com/p/32273530)
 * [Eigen-坑](https://zhuanlan.zhihu.com/p/32226967)
 
-#### 2017-12-24
+### 2017-12-24
 * [Vue.js-vs-React](http://pixeljets.com/blog/vue-js-vs-react-what-to-expect-in-2018/)
 * [Which-Python-operation-are-atomic](http://blog.qqrs.us/blog/2016/05/01/which-python-operations-are-atomic/)
 * [Formal-verification-the-gap-between-perfect-code-and-reality](https://raywang.tech/2017/12/20/Formal-Verification:-The-Gap-between-Perfect-Code-and-Reality/)
 
-#### 2017-12-25
+### 2017-12-25
 * [AI-Failures-in-2017](https://syncedreview.com/2017/12/23/2017-in-review-10-ai-failures/)
 * [undefined-unsafe-in-Rust](https://manishearth.github.io/blog/2017/12/24/undefined-vs-unsafe-in-rust/)
 * [Computer-latency-1977-2017](https://danluu.com/input-lag/)
 
-#### 2017-12-26
+### 2017-12-26
 * [libc_start](https://stackoverflow.com/questions/16970281/whats-going-on-in-libc-start-main)
 * + [libc_start_main](https://github.com/bminor/glibc/blob/2a69f853c03034c2e383e0f9c35b5402ce8b5473/csu/libc-start.c)
 * [FreeBSD-install-modification](https://vez.mrsk.me/freebsd-defaults.txt)
@@ -2806,13 +2806,13 @@ Order of items is just based on Nothing :: Maybe.
 * [Moorefs-恢复](http://blog.ztrix.me/blog/2012/05/13/restore-mfs-metadata/)
 * [gdb-peda-god-mode](http://blog.ztrix.me/blog/2014/05/10/asis-quals-2014-serial-number-writeup/)
 
-#### 2017-12-27
+### 2017-12-27
 * [RELRO/CANARY/NX/PIE/ASLR/FORTIFY_SOURCE](http://blog.siphos.be/2011/07/high-level-explanation-on-some-binary-executable-security/)
 * [Sysenter Based System Call Mechanism in Linux 2.6](http://articles.manugarg.com/systemcallinlinux2_6.html)
 * [GAS-asm](https://stackoverflow.com/questions/41690592/what-does-gs0x10-do-in-assembler)
 * [Z3-in-CTF](https://zhuanlan.zhihu.com/p/30548907)
 
-#### 2017-12-28
+### 2017-12-28
 * [Reactive-programming-system](https://www.oreilly.com/ideas/reactive-programming-vs-reactive-systems)
 * [ML-papers-2017](http://cachestocaches.com/2017/12/favorite-deep-learning-2017/)
 * [RC4-password](https://groups.google.com/forum/#!msg/sci.crypt/TPS_Ix7aTJ4/oPwa0skAoxAJ)
@@ -2821,28 +2821,28 @@ Order of items is just based on Nothing :: Maybe.
 * [导入表-IAT表](https://richarde.me/2017/05/05/16-learn-pe-with-IAT-import-table/)
 * [Linux-filesystem](http://www.tigerup.cn/linux_basic/0230filesystem.php)
 
-#### 2017-12-29
+### 2017-12-29
 * [FS:[0]-FS:0](http://www.voidcn.com/article/p-hoknegxo-kb.html)
 * [Themida-中断-重定位](https://bbs.pediy.com/thread-140298.htm)
 
-#### 2017-12-30
+### 2017-12-30
 * [Escaping-Docker](https://www.twistlock.com/2017/12/27/escaping-docker-container-using-waitid-cve-2017-5123/)
 * [高效删除文件前100字节](https://www.zhihu.com/question/264803491)
 * [Best-CS-Paper-HN-2017](https://news.ycombinator.com/item?id=16035402)
 
-#### 2017-12-31
+### 2017-12-31
 * [Difference-between-exec-versions](https://stackoverflow.com/questions/5769734/what-are-the-different-versions-of-exec-used-for-in-c-and-c)
 * [GNU-yes-so-fast](https://www.reddit.com/r/unix/comments/6gxduc/how_is_gnu_yes_so_fast/)
 * [Rust-yes-implementation](https://matthias-endler.de/2017/yes/)
 * [future-statement](https://stackoverflow.com/questions/21125228/where-is-the-from-future-import-braces-code)
 * [Polya-Burnside-计数](http://blog.csdn.net/nameofcsdn/article/details/53321264)
 
-#### 2018-1-1
+### 2018-1-1
 * [Deriving-Bifunctor-with-Generics](http://kcsongor.github.io/generic-deriving-bifunctor/)
 * [Three-yrs-on-Google-App-Engine](https://blog.stephanbehnke.com/3-years-on-google-app-engine-an-epic-review/)
 * [n-ary-Functor](http://gelisam.blogspot.ca/2017/12/n-ary-functors.html)
 
-#### 2018-1-2
+### 2018-1-2
 * [Linux-Page-Table-Isolation](http://pythonsweetness.tumblr.com/post/169166980422/the-mysterious-case-of-the-linux-page-table/amp?)
 * [RowHammer攻击](https://www.inforsec.org/wp/?p=1316)
 * [风水翻转攻击](http://www.freebuf.com/column/133871.html)
@@ -2858,7 +2858,7 @@ Order of items is just based on Nothing :: Maybe.
 * [arena-bin-chunk-fastbin](http://sqlike.com/glibc-malloc-struct/)
 * [Regex-China-手机号](https://gist.github.com/septs/8cb9f6298fa59caef39229fb04c36609)
 
-#### 2018-1-3
+### 2018-1-3
 * [AMD-Cpu-not-affected-by-PTI](https://lkml.org/lkml/2017/12/27/2)
 * [Linux-Kernel-Happy-New-Year](http://lkml.iu.edu/hypermail/linux/kernel/1712.3/02898.html)
 * [不强制退出Thread](http://orzz.org/why-shouldnt-i-kill-a-thread/#more-1082)
@@ -2868,7 +2868,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Linux-2.6](https://www.ibm.com/developerworks/cn/linux/l-cfs/index.html)
 * [(k, n)-钥匙开锁问题](http://bbs.csdn.net/topics/10260097)
 
-#### 2018-1-4
+### 2018-1-4
 * [meltdown-spectre](https://meltdownattack.com/)
 * [Google-Today's-CPU-vulnerability](https://security.googleblog.com/2018/01/todays-cpu-vulnerability-what-you-need.html)
 * [Linux-eBPF](http://www.brendangregg.com/ebpf.html)
@@ -2882,26 +2882,26 @@ Order of items is just based on Nothing :: Maybe.
 * [retpoline](https://support.google.com/faqs/answer/7625886)
 
 
-#### 2018-1-5
+### 2018-1-5
 * [how-gdb-call-function](https://jvns.ca/blog/2018/01/04/how-does-gdb-call-functions/)
 * [retpoline-CN](https://zhuanlan.zhihu.com/p/32655503)
 * [inndy-WEB-PoC](http://www.freebuf.com/articles/web/158885.html)
 * [Windows-HEAP](http://www.freebuf.com/articles/system/156174.html)
 
-#### 2018-1-6
+### 2018-1-6
 * [WebGL2](https://webgl2fundamentals.org/)
 * [WIWIK-Bash](https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/)
 
-#### 2018-1-7
+### 2018-1-7
 * [NN-type-and-FP](http://colah.github.io/posts/2015-09-NN-Types-FP/)
 * [Monads are just monoids in the category of endofunctors](https://blog.merovius.de/2018/01/08/monads-are-just-monoids.html)
 
-#### 2018-1-8
+### 2018-1-8
 * [Python-Web-Interface-PEP-333](https://www.python.org/dev/peps/pep-0333/)
 * [ASGI](http://channels.readthedocs.io/en/latest/asgi.html)
 * [Sanic-problem](https://zhuanlan.zhihu.com/p/32518153)
 
-#### 2018-1-9
+### 2018-1-9
 * [A-cpu-design-bug-for-Xbox-360](https://randomascii.wordpress.com/2018/01/07/finding-a-cpu-design-bug-in-the-xbox-360/)
 * [Rebooting-Error-Handling-Rust](https://www.ocelotconsulting.com/2018/01/08/rust-error-handling.html)
 * [C++-for-embedded-system](https://electronics.stackexchange.com/questions/3027/is-c-suitable-for-embedded-systems)
@@ -2914,12 +2914,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Thin-lock-vs-futex](https://bartoszmilewski.com/2008/09/01/thin-lock-vs-futex/)
 * [Python-lambda-tuple-removed-in-3](https://stackoverflow.com/questions/11328312/python-lambda-does-not-accept-tuple-argument)
 
-#### 2018-1-10
+### 2018-1-10
 * [js-信用卡](https://medium.com/@CQD/%E7%BF%BB%E8%AD%AF-%E6%88%91%E6%98%AF%E9%80%99%E6%A8%A3%E6%8B%BF%E8%B5%B0%E5%A4%A7%E5%AE%B6%E7%B6%B2%E7%AB%99%E4%B8%8A%E7%9A%84%E4%BF%A1%E7%94%A8%E5%8D%A1%E8%99%9F%E8%B7%9F%E5%AF%86%E7%A2%BC%E7%9A%84-991cb6c4631e)
 * [length-extension-attack](https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BA%A6%E6%89%A9%E5%B1%95%E6%94%BB%E5%87%BB)
 * [HMAC](http://www.freebuf.com/articles/web/31756.html)
 
-#### 2018-1-11
+### 2018-1-11
 * [DROWN-Bleichenbacher](https://www.zhihu.com/question/40934602)
 * [read-acquire-write-release-in-mutex](https://www.zhihu.com/question/26588157)
 * [K-means](http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006910.html)
@@ -2945,7 +2945,7 @@ Order of items is just based on Nothing :: Maybe.
 * [gcc-x64-forced-PIC](https://stackoverflow.com/questions/7865059/why-does-gcc-force-pic-for-x64-shared-libs)
 * [理想-Ideal-left-right](https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3_(%E7%8E%AF%E8%AE%BA))
 
-#### 2018-1-12
+### 2018-1-12
 * [LLVM-Translation-Validator](https://blog.regehr.org/archives/1565)
 * [KotlinConf-Review-2017](https://www.vokal.io/blog/vokal-takeaways-from-kotlinconf-2017)
 * [Rust2018](https://hsivonen.fi/rust2018/)
@@ -2957,7 +2957,7 @@ Order of items is just based on Nothing :: Maybe.
 * [File-system-summary](http://blog.sciencenet.cn/blog-76290-441106.html)
 * [允许交换1次的-max-subarray](http://www.aizhuanji.com/a/MVdmMrXW.html)
 
-#### 2018-1-13
+### 2018-1-13
 * [2-3-tree-is-rbt](https://riteme.github.io/blog/2016-3-12/2-3-tree-and-red-black-tree.html#fn:b-tree-wiki)
 * [双重计数](https://riteme.github.io/blog/2017-6-19/double-count.html)
 * [B-tree](https://www.zhihu.com/question/19836260)
@@ -2972,25 +2972,25 @@ Order of items is just based on Nothing :: Maybe.
 * [Event-driven-high-concurrency](https://www.zhihu.com/question/64727674)
 * [md5-collision](http://www.freebuf.com/articles/93780.html)
 
-#### 2018-1-14
+### 2018-1-14
 * [maze-generation-algorithm](http://blog.csdn.net/juzihongle1/article/details/73135920)
 * [STM-软件事务内存](http://sighingnow.github.io/%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B/stm.html)
 * [C++-TM](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/template_turing_completeness.html)
 * [Continuation-Call/cc](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/continuation_and_call_cc.html)
 * [Yin-Yang-puzzle](http://sighingnow.github.io/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/the_yin_yang_pullze.html)
 
-#### 2018-1-15
+### 2018-1-15
 * [x86-64-JIT-Compiler-2](https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2/)
 * [ucontext-介绍](http://blog.csdn.net/qq910894904/article/details/41911175)
 * [shared_time_mutex-vs-shared_mutex](https://stackoverflow.com/questions/40207171/why-shared-timed-mutex-is-defined-in-c14-but-shared-mutex-in-c17)
 * [We make a std::shared_mutex 10 times faster](https://www.codeproject.com/Articles/1183423/We-make-a-std-shared-mutex-times-faster)
 * [Linux-Memory](https://www.ibm.com/developerworks/cn/linux/l-memmod/)
 
-#### 2018-1-16
+### 2018-1-16
 * [Linux-静态动态库-RTLD_NEXT](http://kaiyuan.me/2017/05/03/function_wrapper/)
 * [Spectre mitigations in MSVC](https://blogs.msdn.microsoft.com/vcblog/2018/01/15/spectre-mitigations-in-msvc/)
 
-#### 2018-1-17
+### 2018-1-17
 * [spurious-wakeup-and-wait-morphing](http://siwind.iteye.com/blog/1469216)
 * [signal-w/o-mutex](http://www.domaigne.com/blog/computing/condvars-signal-with-mutex-locked-or-not/)
 * [shared_future-vs-future](http://en.cppreference.com/w/cpp/thread/shared_future)
@@ -3001,7 +3001,7 @@ Order of items is just based on Nothing :: Maybe.
 * [asyncio-vs-gevent](https://www.reddit.com/r/Python/comments/7a3ikv/should_i_stick_with_asyncio_or_return_to_gevent/)
 * [Python-gevent](https://softlns.github.io/2015/11/28/python-gevent/)
 
-#### 2018-1-18
+### 2018-1-18
 * [TLS-&-TLS-Debug](http://blog.csdn.net/lixiangminghate/article/details/46770635)
 * [pthread-create-procedure](http://blog.csdn.net/yetyongjin/article/details/7673837)
 * [TLS-GS-clone](http://www.maxwellxxx.com/TLS)
@@ -3010,7 +3010,7 @@ Order of items is just based on Nothing :: Maybe.
 * [when-to-use-atomic_compare_exchange_weak](https://stackoverflow.com/questions/25199838/understanding-stdatomiccompare-exchange-weak-in-c11)
 * [atomic_compare_exchange_weak_bug](https://stackoverflow.com/questions/21879331/is-stdatomic-compare-exchange-weak-thread-unsafe-by-design)
 
-#### 2018-1-19
+### 2018-1-19
 * [Burnside-Polya-POJ](http://www.voidcn.com/article/p-szwhrqqm-bey.html)
 * [Burnside-Polya-SPOJ](http://prime21.logdown.com/posts/278690-polya-counting)
 * [pthread_broadcast_wait_morphing](https://stackoverflow.com/questions/20982270/sync-is-unreliable-using-stdatomic-and-stdcondition-variable)
@@ -3024,7 +3024,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Haskell-naming-run-get](https://stackoverflow.com/questions/48017808/what-is-the-meaning-for-the-convention-runsomething-in-the-haskell-community)
 * [Inference-in-TypeScripts](https://medium.com/@javierwchavarri/inference-engines-5-examples-with-typescript-flow-and-reason-edef2f4cf2d3)
 
-#### 2018-1-20
+### 2018-1-20
 * [Kinds-of-crypts](https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-aes-rc4-ecc-ecdsa-sha-and-so-on/)
 * [AES-mode](https://stackoverflow.com/questions/1220751/how-to-choose-an-aes-encryption-mode-cbc-ecb-ctr-ocb-cfb)
 * [open-source-processors](https://lwn.net/Articles/743602/)
@@ -3037,33 +3037,33 @@ Order of items is just based on Nothing :: Maybe.
 * [Peterson-lock-reorder](https://bartoszmilewski.com/2008/11/05/who-ordered-memory-fences-on-an-x86/)
 * [DCLP-reorder](https://www.zhihu.com/question/35268028)
 
-#### 2018-1-21
+### 2018-1-21
 * [Professional-Haskell-topics](https://www.reddit.com/r/haskell/comments/7rwuxb/professional_haskellers_what_are_your_major_pain/)
 * [Handmade-Executable-File](https://www.bigmessowires.com/2015/10/08/a-handmade-executable-file/)
 
-#### 2018-1-22
+### 2018-1-22
 * [CPL-RPL-DPL](https://manybutfinite.com/post/cpu-rings-privilege-and-protection/)
 * [CPL-RPL-DPL-2](http://www.cppblog.com/xingkongyun/articles/63495.html)
 * [ARM-overview](https://zhuanlan.zhihu.com/p/21571986)
 
-#### 2018-1-23
+### 2018-1-23
 * [Fast-B+Tree](https://github.com/begeekmyfriend/bplustree)
 * [PRG-pattern](https://en.ryte.com/wiki/Post-Redirect-Get)
 * [PRG-cn](http://skyf.org:81/wp/?p=825)
 
-#### 2018-1-24
+### 2018-1-24
 * [Solve-90%-NLP-Problem](https://blog.insightdatascience.com/how-to-solve-90-of-nlp-problems-a-step-by-step-guide-fda605278e4e)
 * [Difference-between-binary-Semaphore-and-mutex](https://stackoverflow.com/questions/62814/difference-between-binary-semaphore-and-mutex)
 
-#### 2018-1-25
+### 2018-1-25
 * [gRPC-practice](https://grpc.io/2018/01/22/grpc-go-engineering-practices.html)
 
-#### 2018-1-26
+### 2018-1-26
 * [Kotlin-and-Linear-programming](https://tomstechnicalblog.blogspot.com/2018/01/kotlinforoperationalplanningandoptimiza.html)
 * [Deepcopy-in-JS](https://dassur.ma/things/deep-copy/)
 * [Interactive-GPU-programming](http://dragan.rocks/articles/18/Interactive-GPU-Programming-1-Hello-CUDA)
 
-#### 2018-1-26
+### 2018-1-26
 * [C-context](https://zhuanlan.zhihu.com/p/32431200)
 * [frame-sync/state-sync](https://zhuanlan.zhihu.com/p/32843758)
 * [2PC-OMid-Percolator](https://zhuanlan.zhihu.com/p/32858033)
@@ -3088,7 +3088,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Distributed-Store-Interview](https://zhuanlan.zhihu.com/p/23284834)
 * [Polya-on-异构体](https://zhuanlan.zhihu.com/p/28032458)
 
-#### 2018-1-27
+### 2018-1-27
 * [Unary-expression-associativity](https://stackoverflow.com/questions/12961351/does-it-make-sense-for-unary-operators-to-be-associative)
 * + So every multiplicative-expression is an additive-expression, but not vice-versa, and this is what makes multiplication "bind tighter" than addition.
 * [Precedence-Climbing](http://www.shinexu.com/Compilation/operator-precedence-parser/)
@@ -3097,11 +3097,11 @@ Order of items is just based on Nothing :: Maybe.
 * [Intel-TSX-bug](https://www.zhihu.com/question/24838390/answer/32977248)
 * [Intel-TSX-NI](https://stackoverflow.com/questions/42507787/is-intel-transactional-synchronization-extensions-new-instruction-tsx-ni-diff)
 
-#### 2018-1-28
+### 2018-1-28
 * [V8-memory-quiz](http://www.mattzeunert.com/2018/01/25/v8-javascript-memory-quiz.html)
 * [Python-3.7-Dataclass](https://hackernoon.com/a-brief-tour-of-python-3-7-data-classes-22ee5e046517)
 
-#### 2018-1-29
+### 2018-1-29
 * [Haskell-XCheck](https://www.reddit.com/r/haskell/comments/7tq1hl/what_to_favour_for_property_checking_quickcheck/)
 * [LAPACK-Cpp-Metaprogramming](http://wordsandbuttons.online/outperforming_lapack_with_c_metaprogramming.html)
 * [LAPACK-Cpp-Metaprogramming-2](http://wordsandbuttons.online/vastly_outperforming_lapack_with_cpp_metaprogramming.html)
@@ -3111,44 +3111,44 @@ Order of items is just based on Nothing :: Maybe.
 * [Dynamic-Base-ASLR](https://stackoverflow.com/questions/8554014/how-to-know-whether-a-dll-uses-aslr-or-not)
 * [ASLR-between-Windows-Linux](http://www.freebuf.com/articles/system/29392.html)
 
-#### 2018-1-30
+### 2018-1-30
 * [Haskell-Strategy-Pattern](http://storm-country.com/blog/gof-strategy)
 * [Lazy-OCaml](http://www.zenlife.tk/zinc.md)
 * [Matrix-Calculus-in-ML](http://parrt.cs.usfca.edu/doc/matrix-calculus/index.html)
 
-#### 2018-1-31
+### 2018-1-31
 * [Same-Origin-Policy](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
 * [Old-New-Things](https://github.com/mity/mctrl/wiki/Old-New-Win32API)
 * [Cv-with-Futex](https://www.remlab.net/op/futex-condvar.shtml)
 * [New-Thread-Model-for-gcc-win32](http://gcc.gcc.gnu.narkive.com/Yh0NjEyy/adding-a-new-thread-model-to-gcc)
 
-#### 2018-2-1
+### 2018-2-1
 * [Inject-learn](https://cxa.codebashing.com/courses/php)
 * [Learn-Web-Security](https://www.zhihu.com/question/21606800)
 
-#### 2018-2-2
+### 2018-2-2
 * [x86-TSO: A Programmer’s Model for x86](http://paulcavallaro.com/blog/x86-tso-a-programmers-model-for-x86-multiprocessors/)
 * [Solving-Minesweeper](http://magnushoff.com/minesweeper/)
 
-#### 2018-2-3
+### 2018-2-3
 * [iostream-lock](http://stdcxx.apache.org/doc/stdlibug/44-2.html)
 * [break-on-stdout](https://stackoverflow.com/questions/23757996/gdb-how-to-break-on-something-is-written-to-cout)
 * [CTF-SQL-Injection](http://www.freebuf.com/articles/web/137094.html)
 
-#### 2018-2-4
+### 2018-2-4
 * [How-to-use-free-theorem](https://www.reddit.com/r/haskell/comments/2r0dn3/how_to_use_free_theorems/)
 * [XSS-intro](https://zhuanlan.zhihu.com/p/26177815)
 * [XSS-collection](http://www.91ri.org/4179.html)
 * [XSS-collection-2](http://blog.csdn.net/u014345860/article/details/77352889)
 
-#### 2018-2-5
+### 2018-2-5
 * [Delimited-Continuation-in-JS](https://blog.mattbierner.com/the-delimited-continuation-monad-in-javascript/)
 * [Wizard-Monoid-Monoid-IO](http://www.haskellforall.com/2018/02/the-wizard-monoid.html)
 * [Boost.Outcome-report](https://www.reddit.com/r/cpp/comments/7vdpyu/outcome_accepted_into_the_boost_c_libraries/)
 * [Realtime-software-with-Micropython](https://jsolano.net/2018/01/28/real-time-software-with-micropython/)
 * [Programming-Languages](http://lambda-the-ultimate.org/node/4186)
 
-#### 2018-2-6
+### 2018-2-6
 * [What-Optimization-can-GHC-does](https://stackoverflow.com/questions/12653787/what-optimizations-can-ghc-be-expected-to-perform-reliably)
 * [GHC-sum-[1..n]](https://www.zhihu.com/question/31821539)
 * [CallArity-Optimizaiton](http://git.haskell.org/ghc.git/blob/HEAD:/compiler/simplCore/CallArity.hs)
@@ -3157,45 +3157,45 @@ Order of items is just based on Nothing :: Maybe.
 * [ucontext-deprecated](https://stackoverflow.com/questions/4298986/is-there-something-to-replace-the-ucontext-h-functions)
 * [multiprocessing-import-error](https://bugs.python.org/issue25053)
 
-#### 2018-2-7
+### 2018-2-7
 * [ELF-101-Symbols](http://www.intezer.com/executable-linkable-format-101-part-2-symbols/)
 * [cpu_features](https://github.com/google/cpu_features)
 
-#### 2018-2-8
+### 2018-2-8
 * [Win2k-Source](http://atdt.freeshell.org/k5/story_2004_2_15_71552_7795.html)
 
-#### 2018-2-9
+### 2018-2-9
 * [Rust-Non-Lexical-Lifetime-NLL](https://zhuanlan.zhihu.com/p/32884290)
 * [Rust-坑](https://www.zhihu.com/question/49194043)
 * [remove-implicit-int](https://herbsutter.com/2015/04/16/reader-qa-why-was-implicit-int-removed/)
 * [KPTI/KAISER-regression](http://www.brendangregg.com/blog/2018-02-09/kpti-kaiser-meltdown-performance.html)
 * [彩虹表](https://www.zhihu.com/question/19790488)
 
-#### 2018-2-10
+### 2018-2-10
 * [PKCS#5/#7](http://likang.me/blog/2013/06/05/python-pycrypto-aes-ecb-pkcs-5/)
 * [C++-in-2018](http://meetingcpp.com/blog/items/Cpp-in-2018.html)
 * [haskell-package](https://www.reddit.com/r/haskell/comments/7wdu5f/haskell_packages_you_love/)
 
-#### 2018-2-11
+### 2018-2-11
 * [ML-Top10-Feb2018](https://medium.mybridge.co/machine-learning-top-10-articles-for-the-past-month-v-feb-2018-b7aabba5aba4)
 * [Snowflake-UUID](https://www.v2ex.com/t/430285#reply18)
 * [PHP-==-injection](http://skysec.top/2017/07/22/PHP%E5%87%BD%E6%95%B0%E9%BB%91%E9%AD%94%E6%B3%95%E5%B0%8F%E6%80%BB%E7%BB%93/)
 
-#### 2018-2-12
+### 2018-2-12
 * [CORS-Redirect](https://stackoverflow.com/questions/18539403/chrome-cancels-cors-xhr-upon-http-302-redirect)
 * [CORS-HTML-JS](https://stackoverflow.com/questions/11423682/cross-domain-form-posting)
 * [Padding-Oracle-CBC-AES](https://www.jianshu.com/p/1851f778e579)
 * [Language-checklist](http://colinm.org/language_checklist.html)
 
-#### 2018-2-13
+### 2018-2-13
 * [LLVM-GC](https://medium.com/@MartinCracauer/llvms-garbage-collection-facilities-and-sbcl-s-generational-gc-a13eedfb1b31)
 * [Linear-Type-Scala](http://sparse.tech/blog/literal-types-case-study)
 
-#### 2018-2-14
+### 2018-2-14
 * [Python-Top10-Feb2018](https://medium.mybridge.co/python-top-10-articles-for-the-past-month-v-feb-2018-ec438bd93c49)
 * [Stop-Olympic-Destroyer](https://www.endgame.com/blog/technical-blog/stopping-olympic-destroyer-new-process-injection-insights)
 
-#### 2018-2-15
+### 2018-2-15
 * [Intro-to-Waveform](http://waveforms.surge.sh/waveforms-intro)
 * [ATSP-Constant-time-Approx-Algorithm](https://www.quantamagazine.org/one-way-salesman-finds-fast-path-home-20171005/)
 * [Spectre-Mitigation-in-MSVC](https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html)
@@ -3204,14 +3204,14 @@ Order of items is just based on Nothing :: Maybe.
 * [Promise-as-Monad](https://gist.github.com/briancavalier/3296186)
 * [Why-promise-is-monad](https://stackoverflow.com/questions/45712106/why-are-promises-monads)
 
-#### 2018-2-16
+### 2018-2-16
 * [AST=>CFG](https://www.zhihu.com/question/27730062)
 * [ASIC-GPU-矿机](https://jiasuhui.com/article/11514)
 * [Understanding-Awk](http://devarea.com/understanding-awk-practical-guide/#.WocCUnanGUk)
 * [Code-as-Data-meaning](https://adambard.com/blog/what-is-homoiconicity/)
 * [Jim-Roskind-Cpp-Ambigious-grammar](http://blog.robertelder.org/jim-roskind-grammar/)
 
-#### 2018-2-17
+### 2018-2-17
 * [JVM-JIT](https://zhuanlan.zhihu.com/p/28476709)
 * [DRAM-DDR-I](https://zhuanlan.zhihu.com/p/33444359)
 * [DRAM-DDR-II](https://zhuanlan.zhihu.com/p/33479194)
@@ -3228,56 +3228,56 @@ Order of items is just based on Nothing :: Maybe.
 * [Design-Matrix-Library-in-Cpp](https://www.zhihu.com/question/267156650/answer/319326443)
 * [V8-memory-management](https://zhuanlan.zhihu.com/p/33816534)
 
-#### 2018-2-18
+### 2018-2-18
 * [Top-10-features-in-MySQL-8.0](http://lefred.be/content/top-10-mysql-8-0-features-for-dbas-ops/)
 * [VNote-Markdown](https://sspai.com/post/43277)
 * [ptmalloc-explain-with-graph](http://blog.csdn.net/maokelong95/article/details/52006379)
 
 
-#### 2018-2-19
+### 2018-2-19
 * [Borrow cycles in Rust: arenas v.s. drop-checking](https://exyr.org/2018/rust-arenas-vs-dropck/)
 * [Monadic-shell](http://okmij.org/ftp/Computation/monadic-shell.html)
 * [network-proto-layer](http://www.comptechdoc.org/independent/networking/protocol/protlayers.html)
 
-#### 2018-2-20
+### 2018-2-20
 * [Backblaze Hard Drive Stats for 2017](https://www.backblaze.com/blog/hard-drive-stats-for-2017/)
 * [XKCD-1957-2018-CVE-list](http://www.explainxkcd.com/wiki/index.php/1957)
 * [iframe-防嵌套](http://blog.csdn.net/hengyunabc/article/details/44158639)
 
-#### 2018-2-21
+### 2018-2-21
 * [IPFS](https://muratbuffalo.blogspot.com/2018/02/paper-review-ipfs-content-addressed.html)
 
-#### 2018-2-22
+### 2018-2-22
 * [Virtual-Memory](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/AQTLLATE/DOCU_012.HTM)
 
-#### 2018-2-23
+### 2018-2-23
 * [Understanding the Limitations of HTTPS](https://textslashplain.com/2018/02/14/understanding-the-limitations-of-https/)
 
-#### 2018-2-24
+### 2018-2-24
 * [Write-a-Linked-list-in-Rust](https://www.reddit.com/r/rust/comments/7zsy72/writing_a_doubly_linked_list_in_rust_is_easy/)
 
-#### 2018-2-25
+### 2018-2-25
 * [LevelDb-SSTable-Log-structured-storage](https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/)
 
-#### 2018-2-26
+### 2018-2-26
 * [Fun with self-decryption](https://x64dbg.com/blog/2018/02/25/fun-with-self-decryption.html)
 * [ML-from-scratch](https://www.youtube.com/watch?v=iumlHzoVlJM&feature=youtu.be)
 * [Crypto-intro](https://www.reddit.com/r/crypto/comments/806bdn/i_want_to_learn_cryptography_good_place_to_start/)
 
-#### 2018-2-27
+### 2018-2-27
 * [grass-mud-list](https://chinadigitaltimes.net/2013/06/grass-mud-horse-list/)
 * [CSS-snippets](https://atomiks.github.io/30-seconds-of-css/)
 * [Intel-MPX](https://software.intel.com/zh-cn/articles/intel-memory-protection-extensions-on-windows-10-a-tutorial)
 
-#### 2018-2-28
+### 2018-2-28
 * [MPEG-1-in-JS](http://phoboslab.org/log/2017/02/decode-it-like-its-1999)
 * [Reasoning with Types in Rust](https://aaronweiss.us/posts/2018-02-26-reasoning-with-types-in-rust.html)
 
-#### 2018-3-1
+### 2018-3-1
 * [Time to move to C11 atomics?](https://lwn.net/Articles/691128/)
 * [February 28th DDoS Incident Report](https://githubengineering.com/ddos-incident-report/)
 
-#### 2018-3-2
+### 2018-3-2
 * [memcrashed-memcached](https://blog.cloudflare.com/memcrashed-major-amplification-attacks-from-port-11211/)
 * [微处理器架构](https://www.zhihu.com/question/267334796/answer/323843885)
 * [NUMA-UMA-SMP](http://unicornx.github.io/2016/03/26/20160326-mem-shared-arch/)
@@ -3288,64 +3288,64 @@ Order of items is just based on Nothing :: Maybe.
 * [The Expressive C++17 Coding Challenge in D](https://seb.wilzba.ch/b/2018/02/the-expressive-c17-coding-challenge-in-d/)
 * [PHP-md5-0e-bug](https://www.zhihu.com/question/266144672/answer/305893111)
 
-#### 2018-3-3
+### 2018-3-3
 * [clojure-don't-lazy](https://stuartsierra.com/2015/08/25/clojure-donts-lazy-effects)
 * [LFS-8.2](http://lists.linuxfromscratch.org/pipermail/lfs-support/2018-March/051866.html)
 * [GHC-compact-regions](http://fuuzetsu.co.uk/blog/posts/2018-03-03-GHC-compact-regions-for-improved-latency.html)
 * [Deconstructing the water effect in Super Mario Sunshine](http://blog.mecheye.net/2018/03/deconstructing-the-water-effect-in-super-mario-sunshine/)
 
-#### 2018-3-4
+### 2018-3-4
 * [Fear and Loathing with APL](http://theburningmonk.com/2015/06/fear-and-loathing-with-apl/)
 * [Linguistic-behind-re](https://dev.to/alainakafkes/exploring-the-linguistics-behind-regular-expressions-bb4)
 
-#### 2018-3-5
+### 2018-3-5
 * [Linux-Kernel-Development](http://devarea.com/linux-kernel-development-and-writing-a-simple-kernel-module/#.Wp2df23waUk)
 * [History-of-User-Agent-Mozilla](https://webaim.org/blog/user-agent-string-history/)
 
-#### 2018-3-6
+### 2018-3-6
 * [C++: Thoughts on Dealing with Signed/Unsigned Mismatch](http://ithare.com/c-thoughts-on-dealing-with-signedunsigned-mismatch/)
 * [Windows’s Virtual Address Space: A Short MSDN Story](http://www.tenouk.com/WinVirtualAddressSpace.html)
 
-#### 2018-3-7
+### 2018-3-7
 * [Java-FX-removed-from-Java-JDK](https://www.infoworld.com/article/3261066/java/javafx-will-be-removed-from-the-java-jdk.html)
 * [Encryption-101-break](https://blog.malwarebytes.com/threat-analysis/2018/03/encryption-101-how-to-break-encryption/)
 
-#### 2018-3-8
+### 2018-3-8
 * [System.IO-in-.Net-Core-2.1](https://blogs.msdn.microsoft.com/jeremykuhne/2018/03/08/system-io-in-net-core-2-1-sneek-peek/)
 * [LLVM-6](https://lists.llvm.org/pipermail/llvm-announce/2018-March/000077.html)
 * [GHC-8.4.1](https://ghc.haskell.org/trac/ghc/blog/ghc-8.4.1-released)
 
-#### 2018-3-9
+### 2018-3-9
 * [gcc-m32-i386-System-V-stack-alignment](https://stackoverflow.com/questions/40307193/responsiblity-of-stack-alignment-in-x86-assembly)
 * [gcc-m32-stack-analysis](https://reverseengineering.stackexchange.com/questions/17075/stack-buffer-size-is-different-between-c-and-asm/17076#17076)
 
 
-#### 2018-3-10
+### 2018-3-10
 * [VDSO-syscall](https://jin-yang.github.io/post/kernel-syscall.html)
 * [非线性最小二乘法](http://blog.sciencenet.cn/blog-465130-1001688.html)
 * [setuid-uid-euid](https://www.osso.nl/blog/setuid-seteuid-uid-euid/)
 
 
-#### 2018-3-11
+### 2018-3-11
 * [UID-Real-Effective-Saved](https://stackoverflow.com/questions/205070/whats-the-deal-with-all-the-different-uids-a-process-can-have)
 * [PyGILState_Ensure](https://vstinner.github.io/python37-gil-change.html)
 * [CUDA++](https://migocpp.wordpress.com/2018/03/07/cuda/)
 
-#### 2018-3-12
+### 2018-3-12
 * [Advent-of-D](http://jordi.inversethought.com/blog/advent-of-d/)
 * [Image-alignment](http://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/)
 * [Rust-2018-roadmap](https://blog.rust-lang.org/2018/03/12/roadmap.html)
 
-#### 2018-3-13
+### 2018-3-13
 * [Windows-NT-C2-Security](https://msdn.microsoft.com/en-us/library/cc767092.aspx)
 * [SQL-NoSQL](http://blog.csdn.net/ochangwen/article/details/53423301)
 
-#### 2018-3-14
+### 2018-3-14
 * [PROFILING: OPTIMISATION](https://engineering.riotgames.com/news/profiling-optimisation)
 * [A-Z-match-lowercase-locale](https://unix.stackexchange.com/questions/227070/why-does-a-z-match-lowercase-letters-in-bash)
 * [MemCache++-study](http://cppdepend.com/blog/?p=678)
 
-#### 2018-3-15
+### 2018-3-15
 * [Simple-Optimization-of-A*-in-Unity](https://github.com/badawe/Simple-optimized-A-Pathfinder)
 * [LeetCode-hard-collection](https://github.com/wisdompeak/LeetCode)
 * [.NET-drop-STM](http://www.infoq.com/cn/news/2010/05/STM-Dropped)
@@ -3353,22 +3353,22 @@ Order of items is just based on Nothing :: Maybe.
 * [并发之痛 Thread，Goroutine，Actor](http://jolestar.com/parallel-programming-model-thread-goroutine-actor/)
 * [Usability improvements in GCC 8](https://developers.redhat.com/blog/2018/03/15/gcc-8-usability-improvements/)
 
-#### 2018-3-16
+### 2018-3-16
 * [What can we learn from how compilers are designed?](http://www.tedinski.com/2018/03/13/how-compilers-are-designed.html)
 
-#### 2018-3-17
+### 2018-3-17
 * [Why inheritance never made any sense](https://www.sicpers.info/2018/03/why-inheritance-never-made-any-sense/)
 * [IDEA-instructions](https://idea-instructions.com/)
 * [Python 3.7’s new builtin breakpoint — a quick tour](https://medium.com/@anthonypjshaw/python-3-7s-new-builtin-breakpoint-a-quick-tour-4f1aebc444c)
 
-#### 2018-3-18
+### 2018-3-18
 * [Building-a-fast-Electron-App-using-Rust](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/)
 * [Gcc-builtin-expand](https://code.woboq.org/gcc/gcc/builtins.c.html)
 
-#### 2018-3-19
+### 2018-3-19
 * [2-fd-in-TCP](https://stackoverflow.com/questions/36730848/why-we-have-to-get-two-file-descriptors-in-tcp-server-socket-programming)
 
-#### 2018-3-20 - 2018-3-25
+### 2018-3-20 - 2018-3-25
 * [Types, and Why You Should Care](https://www.youtube.com/watch?v=0arFPIQatCU)
 * [Async/Await VI: 6 weeks of great progress](https://boats.gitlab.io/blog/post/2018-03-20-async-vi/)
 * [Bash-suid](https://unix.stackexchange.com/questions/74527/setuid-bit-seems-to-have-no-effect-on-bash)
@@ -3376,7 +3376,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Basic Data Structures and Algorithms in the Linux Kernel](http://luisbg.blogalia.com/historias/74062)
 * [DoNot-Tor](https://www.whonix.org/wiki/DoNot)
 
-#### 2018-3-26 - 2018-4-1
+### 2018-3-26 - 2018-4-1
 * [Top 10 Bugs in the C++ Projects of 2017](https://medium.com/@CPP_Coder/top-10-bugs-in-the-c-projects-of-2017-d7e48a5c23b2)
 * [Linux-IO-select-epoll](https://segmentfault.com/a/1190000003063859)
 * [More-branch-attack](https://arstechnica.com/gadgets/2018/03/its-not-just-spectre-researchers-reveal-more-branch-prediction-attacks/)
@@ -3384,7 +3384,7 @@ Order of items is just based on Nothing :: Maybe.
 * [C++-2018-Jacksonville](https://botondballo.wordpress.com/2018/03/28/trip-report-c-standards-meeting-in-jacksonville-march-2018/)
 * [Rust-1.25](https://blog.rust-lang.org/2018/03/29/Rust-1.25.html)
 
-#### 2018-4-2 - 2018-4-8
+### 2018-4-2 - 2018-4-8
 * [Trip report: Winter ISO C++ standards meeting (Jacksonville)](https://herbsutter.com/2018/04/02/trip-report-winter-iso-c-standards-meeting-jacksonville/)
 * [Python-Numba](https://zhuanlan.zhihu.com/p/27152060)
 * [C++-Low-level-IO-proposal](https://www.reddit.com/r/cpp/comments/89nn1t/proposed_standard_low_level_file_io_library_for_c/)
@@ -3393,7 +3393,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Pool-imap-map](https://stackoverflow.com/questions/26520781/multiprocessing-pool-whats-the-difference-between-map-async-and-imap)
 * [concurrent.futures-internal](http://manjusaka.itscoder.com/2017/11/28/something-about-concurrent-future/)
 
-#### 2018-4-9 - 2018-4-15
+### 2018-4-9 - 2018-4-15
 * [Modern garbage collection](https://blog.plan99.net/modern-garbage-collection-911ef4f8bd8e)
 * [Python-Interpreter-Internal](https://blog.csdn.net/atfield/article/category/256448)
 * [MSVC-now-report-__cplusplus-correctly](https://blogs.msdn.microsoft.com/vcblog/2018/04/09/msvc-now-correctly-reports-__cplusplus/)
@@ -3404,13 +3404,13 @@ Order of items is just based on Nothing :: Maybe.
 * + In the x86_64 ABI, if a function has variable arguments then AL (which is part of EAX) is expected to hold the number of vector (XMM) registers used to hold arguments to that function.
 * [Win64-SysV-difference](https://stackoverflow.com/questions/4429398/why-does-windows64-use-a-different-calling-convention-from-all-other-oses-on-x86)
 
-#### 2018-4-16 - 2018-4-22
+### 2018-4-16 - 2018-4-22
 * [best-python-articles](https://medium.freecodecamp.org/python-collection-of-my-favorite-articles-8469b8455939)
 * [Virtual Data Optimizer](https://www.redhat.com/de/blog/look-vdo-new-linux-compression-layer)
 * [POPL-SPJ-Interview](http://www.cs.cmu.edu/~popl-interviews/peytonjones.html)
 * [Software-Foundation-zh-cn](https://coq-zh.github.io/SF-zh/)
 
-#### 2018-4-23 - 2018-4-29
+### 2018-4-23 - 2018-4-29
 * [Python-source-code-int](https://blog.csdn.net/zhangyifei216/article/details/50667192)
 * [Windows-CreateProcess-overhead](https://stackoverflow.com/questions/47845/why-is-creating-a-new-process-more-expensive-on-windows-than-linux)
 * [BBR-TCP](https://www.zhihu.com/question/53559433/answer/135919956)
@@ -3418,7 +3418,7 @@ Order of items is just based on Nothing :: Maybe.
 * [HITCON-2017-Notes](https://hackmd.io/7hNNkuw2QD2pXj7UI15wJw)
 * [Simplify-Building-C++](https://mropert.github.io/2018/04/27/simplifying_build-part3/)
 
-#### 2018-4-30 - 2018-5-6
+### 2018-4-30 - 2018-5-6
 * [concurrent-lock-free-queue-ringbuffer](http://moodycamel.com/blog/2014/a-fast-general-purpose-lock-free-queue-for-c++#benchmarks)
 * [LMAX-Java-Disruptor](https://martinfowler.com/articles/lmax.html)
 * [Java-Disruptor](https://zhuanlan.zhihu.com/p/21355046)
@@ -3434,7 +3434,7 @@ Order of items is just based on Nothing :: Maybe.
 * [PCA-Introduce](https://blog.csdn.net/u010376788/article/details/46957957)
 
 
-#### 2018-5-7 - 2018-8-3
+### 2018-5-7 - 2018-8-3
 * [Solving the Generalized Streaming Iterator Problem without GATs [Totoroot]](https://lukaskalbertodt.github.io/2018/08/03/solving-the-generalized-streaming-iterator-problem-without-gats.html)
 * [Logic programming and compiler writing](http://sovietov.com/tmp/warren1980.pdf)
 * [Bootable CD retro game in a tweet](https://www.quaxio.com/bootable_cd_retro_game_tweet/)
@@ -3536,12 +3536,12 @@ Order of items is just based on Nothing :: Maybe.
 * [Why C Member Function Pointers Are 16 Bytes Wide - Vlad Lazarenko](http://lazarenko.me/wide-pointers/)
 * [Linux x86 Program Start Up](http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html)
 
-#### 2018-8-4
+### 2018-8-4
 * [ShiChao's Notes](https://notes.shichao.io/)
 * [C++-recommendation-books](http://blog.cheyulin.me/?p=318)
 * [type-safe-printf](https://www.zhihu.com/question/288323827)
 
-#### 2018-8-5 - 2018-10-8
+### 2018-8-5 - 2018-10-8
 * [TCP-GBN-SR](https://blog.yfxie.com/comparison-of-network-gbn-sr-and-tcp/)
 * [Nadav Amit - How new-lines affect Linux performance](https://nadav.amit.zone/blog/linux-inline)
 * [康托尔、哥德尔、图灵——永恒的金色对角线(rev#2) – 刘未鹏 | Mind Hacks](http://mindhacks.cn/2006/10/15/cantor-godel-turing-an-eternal-golden-diagonal/)
@@ -3702,7 +3702,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Shichao's Notes](https://notes.shichao.io/)
 
 
-#### 2018-10-9 - 2018-12-17
+### 2018-10-9 - 2018-12-17
 * [c - g : std::function initialized with closure type always uses heap all](https://stackoverflow.com/questions/12452022/g-stdfunction-initialized-with-closure-type-always-uses-heap-allocation)
 * [ambry LinkedIn 对象存储 论文翻译 | 邹扒皮实验室](https://zou.cool/2018/12/13/ambry/)
 * [(80 条消息)cname记录是什么？他存在的意义是什么？ - 知乎](https://www.zhihu.com/question/22916306)
@@ -4238,7 +4238,7 @@ Order of items is just based on Nothing :: Maybe.
 * [The case for Auto Non-Static Data Member Initializers | cor3ntin](https://cor3ntin.github.io/posts/auto_nsdmi/)
 
 
-#### 2018-12-18 - 2018-12-22
+### 2018-12-18 - 2018-12-22
 * [Raw String Literals Removed From Java 12 as Feature Set Frozen](https://www.infoq.com/news/2018/12/jdk-12-new-features)
 * [How to Version Control Jupyter Notebooks - Nextjournal](https://nextjournal.com/schmudde/how-to-version-control-jupyter)
 * [Hacker News](http://hn.premii.com/#/comments/18740939)
@@ -4354,7 +4354,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Git quick statistics :chart_with_upwards_trend: | Lukáš Mešťan](https://lukasmestan.com/git-quick-stats/)
 * [The LLVM Foundation](http://llvm.org/foundation/relicensing/)
 
-#### 2018-12-23 - 2019-01-13
+### 2018-12-23 - 2019-01-13
 
 * [Hindsight on Advent of Code 2018 – phaazon.net](https://phaazon.net/blog/aoc-18-hindsight)
 * [Learning Rust With Entirely Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)
@@ -4880,7 +4880,7 @@ Order of items is just based on Nothing :: Maybe.
 * [haskell - Is there a function to flatten a nested list of elements? - Stack](https://stackoverflow.com/questions/5994051/is-there-a-function-to-flatten-a-nested-list-of-elements)
 * [HowToBeAProgrammer.pdf](https://www.doc.ic.ac.uk/~susan/475/HowToBeAProgrammer.pdf)
 
-#### 2018-01-15 - 2019-03-05
+### 2018-01-15 - 2019-03-05
 * [Kona: A trip report | cor3ntin](https://cor3ntin.github.io/posts/kona2019/#modules)
 * [Are C Modules Dead-on-Arrival?](https://vector-of-bool.github.io/2019/03/04/modules-doa-2.html)
 * [What are covariance and contravariance? | Stephan Boyer](https://www.stephanboyer.com/post/132/what-are-covariance-and-contravariance)
@@ -5285,7 +5285,7 @@ Order of items is just based on Nothing :: Maybe.
 * [haskell - Is there a function to flatten a nested list of elements? - Stack](https://stackoverflow.com/questions/5994051/is-there-a-function-to-flatten-a-nested-list-of-elements)
 
 
-#### 2019-03-06 - 2019-05-17
+### 2019-03-06 - 2019-05-17
 * [https://www.usenix.org/conference/nsdi18/presentation/khalid](https://www.usenix.org/conference/nsdi18/presentation/khalid)
 * [GCC 的编译流程及中间表示层 RTL 的初步探索](https://www.ibm.com/developerworks/cn/linux/l-gccrtl/index.html)
 * [C links: Coroutines (WIP draft)](https://gist.github.com/MattPD/9b55db49537a90545a90447392ad3aeb#file-cpp-std-coroutines-draft-md)
@@ -5486,7 +5486,7 @@ Order of items is just based on Nothing :: Maybe.
 * [Advantages and Disadvantages of a Monolithic Repository](https://people.engr.ncsu.edu/ermurph3/papers/seip18.pdf)
 
 
-#### 2019-05-18 - 2019-07-11
+### 2019-05-18 - 2019-07-11
 * [A gentle introduction to Linux Kernel fuzzing](https://blog.cloudflare.com/a-gentle-introduction-to-linux-kernel-fuzzing/)
 * [Catching use-after-move bugs with Clang's consumed annotations – Andreas Kl](https://awesomekling.github.io/Catching-use-after-move-bugs-with-Clang-consumed-annotations/)
 * [c   - How do stackless coroutines differ from stackful coroutines? - Stack ](https://stackoverflow.com/questions/28977302/how-do-stackless-coroutines-differ-from-stackful-coroutines/28989543#28989543)
@@ -5629,7 +5629,7 @@ Order of items is just based on Nothing :: Maybe.
 * [ATL Thunk机制深入分析 - 爱程序网](http://m.aichengxu.com/other/4379313.htm)
 
 
-#### 2019-07-12 - 2019-08-27
+### 2019-07-12 - 2019-08-27
 * [Incrementing vectors | Performance Matters](https://travisdowns.github.io/blog/2019/08/26/vector-inc.html)
 * [知乎问答：如何看待 Google 的新操作系统 Fuchsia？](https://www.zhihu.com/question/49535135/answer/803528949?utm_source=com.ideashower.readitlater.pro&utm_medium=social&utm_oi=831107418380447744)
 * [面向分布式系统工程师的分布式系统理论（译）](http://blog.xiayf.cn/2014/08/10/Distributed-systems-theory-for-the-distributed-systems-engineer/)
@@ -5788,6 +5788,80 @@ Order of items is just based on Nothing :: Maybe.
 * [X86调用约定 - 维基百科，自由的百科全书](https://zh.wikipedia.org/zh-hans/X86%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A#fastcall)
 * [what happens in the background from the time you press the Power button unt](https://leetcode.com/discuss/interview-question/operating-system/124638/what-happens-in-the-background-from-the-time-you-press-the-Power-button-until-the-Linux-login-prompt-appears)
 * [What Is Rust's unsafe? | Nora Codes](https://nora.codes/post/what-is-rusts-unsafe/)
+
+
+
+### 2019-08-27 - 2019-09-11
+
+- [Taskbar Latency and Kernel Calls | Random ASCII – tech blog of Bruce Dawson](https://randomascii.wordpress.com/2019/09/08/taskbar-latency-and-kernel-calls/)
+- [You Won’t Believe This One Weird CPU Instruction! - Vaibhav Sagar](https://vaibhavsagar.com/blog/2019/09/08/popcount/)
+- https://www.ryanfrantz.com/posts/systems-thinking-in-practice.html
+- [简单易懂的博弈论讲解(巴什博弈、尼姆博弈、威佐夫博弈、斐波那契博弈、SG定理) - The_Virtuoso - 博客园](https://www.cnblogs.com/Khada-Jhin/p/9609561.html)
+- [It’s not wrong that "??‍♂️".length == 7](https://hsivonen.fi/string-length/)
+- [Compiler Explorer](https://godbolt.org/)
+- [c - Why can we use `std::move` on a `const` object? - Stack Overflow](https://stackoverflow.com/questions/28595117/why-can-we-use-stdmove-on-a-const-object)
+- [记一次 TCMalloc Debug 经历 #2 - 知乎专栏·「SmartX 技术博客」](https://zhuanlan.zhihu.com/p/81683409?utm_source=com.ideashower.readitlater.pro&utm_medium=social&utm_oi=831107418380447744)
+- [局部敏感哈希(Locality-Sensitive Hashing, LSH) - 夕月一弯 - 博客园](https://www.cnblogs.com/wt869054461/p/8148940.html)
+- [UUID 做主键有什么优势和劣势？ - V2EX](https://v2ex.com/t/598593#reply59)
+- [laisky-blog: Python 之路](https://laisky.com/p/python-road/)
+- [laisky-blog: Golang 性能分析笔记](https://laisky.com/p/go-perf/)
+- [Lenky个人站点 » Triple Fault的捕获与处理](http://www.lenky.info/archives/2012/04/1507)
+- [c - When is CUDA's __shared__ memory useful? - Stack Overflow](https://stackoverflow.com/questions/8011376/when-is-cudas-shared-memory-useful)
+- [解密TTY - 李秋豪 - 博客园](https://www.cnblogs.com/liqiuhao/p/9031803.html)
+- [How Rust optimizes async/await I - Tyler Mandry](https://tmandry.gitlab.io/blog/posts/optimizing-await-1/)
+- [is it valid to use standard library function name as identifier in C ? - S](https://stackoverflow.com/questions/33856187/is-it-valid-to-use-standard-library-function-name-as-identifier-in-c)
+- [LSM树（Log-Structured Merge Tree）存储引擎 - 远方的专栏 - CSDN博客](https://blog.csdn.net/u014774781/article/details/52105708)
+- [关于函数式语言的pointfree和SKI的一点我的想法 - 知乎](https://zhuanlan.zhihu.com/p/81218667)
+- [Combining Coverage-Guided and Generation-Based Fuzzing](http://fitzgeraldnick.com/2019/09/04/combining-coverage-guided-and-generation-based-fuzzing.html)
+- [File locking in Linux](https://gavv.github.io/articles/file-locks/)
+- [int 8量化 - 知乎](https://zhuanlan.zhihu.com/p/42688598)
+- [GCC内联汇编入门 - 吴遥的专栏 - CSDN博客](https://blog.csdn.net/wuyao721/article/details/3573598#_Toc200964859)
+- [Main Page - Competitive Programming Algorithms](https://cp-algorithms.com/)
+- [基于贪心算法的几类区间覆盖问题 - 可笑痴狂 - 博客园](https://www.cnblogs.com/dongsheng/archive/2013/04/19/3030444.html)
+- [内存模型系列（上）- 内存一致性模型（Memory Consistency） - 猫科龙 - CSDN博客](https://blog.csdn.net/maokelong95/article/details/80727952#Memory_Models_Series__Memory_Consistency_Slides__Talk_3)
+- [DDR内存 时序指南 - ghostyu的专栏 - CSDN博客](https://blog.csdn.net/ghostyu/article/details/7728106)
+- [如何动态调用 C 函数 | WeRead团队博客](https://wereadteam.github.io/2016/07/05/CFunction/?utm_source=com.ideashower.readitlater.pro&utm_medium=social&utm_oi=831107418380447744)
+- [从Intel Optane SSD和DIMM谈全闪存性能优化 - Hardy - CSDN博客](https://blog.csdn.net/swingwang/article/details/77279366)
+- [JVM中方法调用的实现机制 - Java译站](http://it.deepinmind.com/jvm/2019/07/19/jvm-method-invocation.html)
+- [(8 条消息) DDR3和DDR4内存的区别是什么，都有哪些提高？ - 知乎](https://www.zhihu.com/question/57270200)
+- [内存系列二：深入理解硬件原理 - 知乎](https://zhuanlan.zhihu.com/p/26327347)
+- [SSD(固态硬盘)简介 [金步国\]](http://www.jinbuguo.com/storage/ssd_intro.html)
+- [Windows的四种链接方式 | Binary Think](https://binarythink.net/2013/06/windows-link/)
+- [12 块 6T， raid50 还是 raid10 还是软 raid？ - V2EX](https://www.v2ex.com/t/597017)
+- [知乎问答：raid5 磁盘阵列真的不安全么？](https://www.zhihu.com/question/20164654/answer/348274179?utm_source=com.ideashower.readitlater.pro&utm_medium=social&utm_oi=831107418380447744)
+- [Intel RDT - lvmxh - 博客园](https://www.cnblogs.com/shaohef/p/6636526.html)
+- [Home · intel/intel-cmt-cat Wiki](https://github.com/intel/intel-cmt-cat/wiki)
+- [Windows Registry](https://www.dfir.training/resources/downloads/windows-registry)
+- [Thread by @Foone: "So sometime between 1987 and whenever DVI/HDMI/DisplayPo](https://threadreaderapp.com/thread/1156392702725902336.html)
+- [abseil / B-tree Ordered Containers](https://abseil.io/blog/20190812-btree)
+- [Barnes-Hut算法（quad-tree的一个应用） - 算法网](http://ddrv.cn/a/79385/?tdsourcetag=s_pctim_aiomsg)
+- [用 Kleene 递归定理构造输出自己的 Python 程序](https://zhuanlan.zhihu.com/p/25098306?utm_source=com.ideashower.readitlater.pro&utm_medium=social&utm_oi=831107418380447744)
+- [Linux内核内存管理算法Buddy和Slab - 知乎](https://zhuanlan.zhihu.com/p/36140017)
+- [Linux slab 分配器剖析](https://www.ibm.com/developerworks/cn/linux/l-linux-slab-allocator/index.html)
+- [kimwalisch/primecount: ? Fast prime counting function implementation](https://github.com/kimwalisch/primecount)
+- [HKTs via type classes](https://gist.github.com/thautwarm/f136174be60cbf1bf0861cce76888ee0)
+- [sorting - Python: how does the functools cmp_to_key function works? - Stack](https://stackoverflow.com/questions/32752739/python-how-does-the-functools-cmp-to-key-function-works)
+- [tcp建立连接为什么需要三次握手 - 简书](https://www.jianshu.com/p/e7f45779008a)
+- [关于上的主定理（Master Theorem）的证明 - young7的个人空间 - OSCHINA](https://my.oschina.net/u/240275/blog/232763)
+- [Linux syscall过程分析（万字长文） - 云 社区 - 腾讯云](https://cloud.tencent.com/developer/article/1492374)
+- [Sushi Roll: A CPU research kernel with minimal noise for cycle-by-cycle mic](https://gamozolabs.github.io/metrology/2019/08/19/sushi_roll.html)
+- [Anti-hash test. - Codeforces](https://codeforces.com/blog/entry/4898?tdsourcetag=s_pctim_aiomsg)
+- [干货！KCon 2019 议题 PPT 公开](https://paper.seebug.org/1023/)
+- [Tengine_gemm_tutorial/readme_cn.md at master · lyuchuny3/Tengine_gemm_tutor](https://github.com/lyuchuny3/Tengine_gemm_tutorial/blob/master/readme_cn.md?utm_source=qq&utm_medium=social&utm_oi=831107418380447744&tdsourcetag=s_pctim_aiomsg)
+- [linux在多核处理器上的负载均衡原理 - 华的专栏 - CSDN博客](https://blog.csdn.net/wh8_2011/article/details/52089438)
+- [SMP多核启动 - 云 社区 - 腾讯云](https://cloud.tencent.com/developer/article/1169513)
+- [ARM多核引导过程 - 走向星辰大海 - CSDN博客](https://blog.csdn.net/cs0301lm/article/details/41078599)
+- https://stackoverflow.com/a/33651438/8563711
+- [辗转相除法(GCD)求左旋转字符串 - hhwyt - 博客园](https://www.cnblogs.com/hhwyt/p/10353359.html)
+- [Async Stack Traces in Rust](http://fitzgeraldnick.com/2019/08/27/async-stacks-in-rust.html)
+- [c - Why does sizeof(x ) not increment x? - Stack Overflow](https://stackoverflow.com/questions/8225776/why-does-sizeofx-not-increment-x/21995718#21995718)
+- [在没有 https 的情况下，如何确保用户登录安全 - V2EX](https://v2ex.com/t/595470?p=1)
+
+
+
+
+
+
 
 
 
