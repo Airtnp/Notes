@@ -6,6 +6,15 @@
 
 
 
+[[S: Content]]
+
+* S = C: Check, random or related insights
+* S = N: Note, some notes
+* S = T: Todo, literally
+* S = R: Refer, cross reference
+
+
+
 ## Why Parallelism? Why Efficiency
 
 * Common definition: A parallel computer is a collection of processing elements that cooperate to solve problems quickly
@@ -602,6 +611,40 @@
 
 * > Modern GPUs, to support features like virtualization and [CUDA dynamic parallelism](https://devblogs.nvidia.com/parallelforall/cuda-dynamic-parallelism-api-principles/), are beginning to support limited forms of software-managed thread pre-emption, but we will not talk about it in this class.
 
+* > pinned memory
+  >
+  > atomic op on different memory (global, L1, shared)
+  >
+  > pipelined device overlap (stream)
+  >
+  > memory mapping (DMA)
+  >
+  > data representation (im2col, CSR, ELL, JDS...)
+  >
+  > reduction algorithm (winograd, combination tree, Kogge-stone, Brent Kung, ...)
+  >
+  > unrolling (cache coherence, memory coalescing)
+  >
+  > shared/constant/restrict/global memory
+  >
+  > synchronization (host, device, thread, block, memory barrier)
+  >
+  > warp SIMD (coalescing, adjacent thread adjacent memory)
+  >
+  > branch divergence (granularity % wrap)
+  >
+  > cache (hierarchy, size, scratchpad, TSM)
+  >
+  > SM thread num / memory limit
+  >
+  > memory bank conflict
+  >
+  > non-cachable load
+>
+  > DRAM burst (detail of memory coalescing)
+  >
+  > multiple-gpu
+  
   
 
 ## Performance Optimization I: Work Distribution & Scheduling
@@ -1967,8 +2010,8 @@
 
     * ```c++
       		LOCK	lock;	
-      		int		counter;															//	initialize	to	0
-      		int		flag;																		//	initialize	to	0
+        		int		counter;															//	initialize	to	0
+        		int		flag;																		//	initialize	to	0
       };	
       thread_local int	private_sense	=	0;								//	private	per	processor.	Main	idea:	processors	wait	
       																														//	for	flag	to	be	equal	to	private_sense
@@ -2315,6 +2358,7 @@
       * Cache-line granularity
       * Mixed
     * Examples
+      
       * ![1568110259512](D:\OneDrive\Pictures\Typora\1568110259512.png)
     * Hardware transaction memory (HTM)
       * data versioning in caches (cache writer buffer or undo log)

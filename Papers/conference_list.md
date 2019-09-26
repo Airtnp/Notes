@@ -255,11 +255,15 @@
 
 
 
-### USLLVM (Aug.)
+### USLLVM (Oct.)
 
 - [homepage](http://llvm.org/devmtg/)
 
 
+
+### Papers We Love Conf (Sept.)
+
+* [homepage](https://pwlconf.org/)
 
 
 
@@ -295,6 +299,14 @@
 
 
 
+### Linux Plumbers Conference (Sept.)
+
+
+
+### GPU Technology Conference (March)
+
+
+
 
 
 ## Miscs
@@ -308,15 +320,15 @@
 
 ## Calendar
 
-|                   | Jan. | Feb.        | March | April    | May               | June                             | July                                   | Aug.                 | Sept.  | Oct.      | Nov.   | Dec.    |
-| ----------------- | ---- | ----------- | ----- | -------- | ----------------- | -------------------------------- | -------------------------------------- | -------------------- | ------ | --------- | ------ | ------- |
-| Arch              |      | HPCA        |       | ASPLOS   |                   | ISCA                             |                                        |                      |        | MICRO     |        |         |
-| System            |      | FAST        |       |          | HotOS EuroSys     |                                  | USENIX ATC                             | Linux Commit         |        | OSDI/SOSP |        |         |
-| Dist/Parallel/HPC |      | PPoPP       |       |          |                   | HPDC<br />ICS                    | ICDCS HotCloud                         | ICPP                 | PACT   |           |        |         |
-| Security          |      | NDSS        |       |          | S&P               |                                  |                                        | USENIX Security      |        | CCS       |        |         |
-| PL                | POPL | CGO<br />CC |       |          | ICSE              | PLDI                             | ECOOP                                  |                      | ICFP   |           | OOPSLA |         |
-| Database          |      |             |       | ICDE     |                   |                                  | SIGMOD                                 | VLDB                 |        |           |        |         |
-| Network           |      | NSDI        |       |          | WWW               | DSN                              |                                        | SIGCOMM              |        |           |        |         |
-| TCS               |      |             |       |          |                   | STOC                             |                                        |                      |        | FOCS      |        |         |
-| Others            |      | RECon       |       | EuroLLVM | CppNow<br />PLISS | LambdaConf<br />OPLSS<br />RECon | DSSS<br />CASS<br />PSTW<br />Curry-On | RustConf<br />HoTTSS | CppCon | USLLVM    | ACCU   | TVMConf |
+|                   | Jan. | Feb.        | March | April    | May               | June                             | July                                   | Aug.                 | Sept.                        | Oct.      | Nov.   | Dec.    |
+| ----------------- | ---- | ----------- | ----- | -------- | ----------------- | -------------------------------- | -------------------------------------- | -------------------- | ---------------------------- | --------- | ------ | ------- |
+| Arch              |      | HPCA        |       | ASPLOS   |                   | ISCA                             |                                        |                      |                              | MICRO     |        |         |
+| System            |      | FAST        |       |          | HotOS EuroSys     |                                  | USENIX ATC                             | Linux Commit         |                              | OSDI/SOSP |        |         |
+| Dist/Parallel/HPC |      | PPoPP       |       |          |                   | HPDC<br />ICS                    | ICDCS HotCloud                         | ICPP                 | PACT                         |           |        |         |
+| Security          |      | NDSS        |       |          | S&P               |                                  |                                        | USENIX Security      |                              | CCS       |        |         |
+| PL                | POPL | CGO<br />CC |       |          | ICSE              | PLDI                             | ECOOP                                  |                      | ICFP                         |           | OOPSLA |         |
+| Database          |      |             |       | ICDE     |                   |                                  | SIGMOD                                 | VLDB                 |                              |           |        |         |
+| Network           |      | NSDI        |       |          | WWW               | DSN                              |                                        | SIGCOMM              |                              |           |        |         |
+| TCS               |      |             |       |          |                   | STOC                             |                                        |                      |                              | FOCS      |        |         |
+| Others            |      | RECon       | GTC   | EuroLLVM | CppNow<br />PLISS | LambdaConf<br />OPLSS<br />RECon | DSSS<br />CASS<br />PSTW<br />Curry-On | RustConf<br />HoTTSS | CppCon<br />LPC<br />PWLConf | USLLVM    | ACCU   | TVMConf |
 

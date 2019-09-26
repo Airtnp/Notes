@@ -300,6 +300,59 @@
 
 
 
+### 5. Longest Palindromic Substring
+
+* 最长子回文串, Manacher
+
+  * ![1568847870792](D:\OneDrive\Pictures\Typora\1568847870792.png)
+  * ![1568847881201](D:\OneDrive\Pictures\Typora\1568847881201.png)
+
+* ```python
+  class Solution:
+      def longestPalindrome(self, s: str) -> str:
+          news = '$' + '#'.join(s) + '#*'
+          N = len(news)
+          length = [0] * N
+          pi = 0
+          maxl = 0
+          for i in range(1, N):
+              if maxl > i:
+                  length[i] = min(maxl - i, length[2 * pi - i])
+              else:
+                  length[i] = 1
+              while i - length[i] > 0 and i + length[i] < N and news[i - length[i]] == news[i + length[i]]:
+                  length[i] += 1
+              if length[i] > maxl:
+                  maxl = length[i]
+                  pi = i
+          return news[pi - maxl + 1:pi + maxl].replace('#', '').replace('$', '').replace('*', '')
+  ```
+
+* `dp(i, j) = dp(i + 1, j - 1) + s[i] == s[j] or 0`
+
+* ```python
+  def longestPalindrome(self, s):
+      dp = [[0] * len(s) for i in range(len(s))]
+      ans = ""
+      max_length = 0
+      for i in range(len(s) - 1, -1, -1):
+          for j in range(i, len(s)):
+              if s[i] == s[j] and (j - i < 3 or dp[i+1][j-1] == 1):
+                  dp[i][j] = 1
+                  if ans == "" or max_length < j - i + 1:
+                      ans = s[i:j+1]
+                      max_length = j - i + 1
+      return ans
+  ```
+
+* 
+
+
+
+
+
+
+
 ### 39 &  & 216 Combinational Sum i & ii & iii
 
 * 经典NP-Hard
@@ -831,47 +884,6 @@
 
 
 
-
-
-
-
-### 84 Largest Rectangle in Histogram
-
-* 先弄进去一个0保证输出, 然后裸的单调栈, 维护一个单调递增的栈, 更小的元素就不断`pop`
-
-* ```c++
-  class Solution {
-  public:
-      int largestRectangleArea(vector<int>& heights) {
-          stack<int> m;
-          heights.push_back(0);
-          int res = 0;
-          int lastK = 0;
-          for (int i  = 0; i < heights.size(); ++i) {
-              while (!m.empty() && heights[i] < heights[m.top()]) {
-                  int h = m.top();
-                  m.pop();
-                  int k = 0;
-                  if (m.empty()) {
-                      k = -1;
-                  } else {
-                      k = m.top();
-                  }
-                  res = max(res, (i - k - 1) * heights[h]);
-              }
-              m.push(i);
-          }
-          return res;
-      }
-  };
-  ```
-
-* 扩展: 最大全1矩阵, 先预处理一维视为之前连续的1个数, 然后就是对每行做最大直方图
-
-
-
-
-
 ### 74 & 240 Search a 2D Matrix i & ii
 
 * 74: 因为相当于一个有序数组切分成几段, 二维二分, 先找row再找col
@@ -925,11 +937,373 @@
 
 
 
+### 76. Minimum Window Substring
+
+* 通用解法, 快慢双指针维护窗口, `map/unordered_map`维护计数
+
+* ```c++
+  vector<int> cmap(128, 0);
+          for (auto c: t) ++cmap[c];
+          int counter = t.size(), begin = 0, end = 0, res = INT_MAX, head = 0;
+          while (end < s.size()){
+              if (cmap[s[end++]]-- > 0) counter--;
+              while (counter == 0){
+                  if (end - begin < res) {
+                      res = end - begin;
+                      head = begin;
+                  }
+                  if (cmap[s[begin++]]++ == 0) counter++;
+              }  
+          }
+          return res == INT_MAX ? "" : s.substr(head, res);
+  ```
+
+* 
 
 
 
 
-### 96 Unique Binary Search Trees
+
+### 80. Remove Duplicate from Sorted Array II
+
+* 排序过的数列, 判断`k`位之前是否相等, 维护得到最长连续`k`个相等元素的队列
+
+* ```c++
+  class Solution {
+  public:
+      int removeDuplicates(vector<int>& nums) {
+          int k = 2;
+          if (nums.size() < k) return nums.size();
+          int idx = k;
+          for (int i = k; i < nums.size(); ++i) {
+              if (nums[idx - k] != nums[i]) {
+                  nums[idx] = nums[i];
+                  ++idx;
+              }
+          }
+          return idx;
+      }
+  };
+  ```
+
+
+
+### 81. Search in Rotated Sorted Array II
+
+* 二分查找, 对前有序后有序讨论, 注意边界
+
+* ```c++
+  class Solution {
+  public:
+      bool search(vector<int>& nums, int target) {
+          int l = 0, r =  nums.size() - 1;
+          
+          while (l <= r) {
+              int mid = l + (r - l) / 2;
+              if (nums[mid] == target) return true;
+              if ((nums[l] == nums[mid]) && (nums[r] == nums[mid])) {
+                  ++l;
+                  --r;
+              } else if (nums[l] <= nums[mid]) { // left ordered
+                  if ((nums[l] <= target) && nums[mid] > target) {
+                      r = mid - 1;
+                  } else {
+                      l = mid + 1;
+                  }
+              } else { // right ordered
+                  if ((nums[mid] < target) && nums[r] >= target) {
+                      l = mid + 1;
+                  } else {
+                      r = mid - 1;
+                  }
+                  
+              }
+          }
+          return false;
+      }
+  };
+  ```
+
+* 
+
+
+
+### 84 & 85. Largest Rectangle in Histogram / Maximal Rectangle
+
+- 先弄进去一个0保证输出, 然后裸的单调栈, 维护一个单调递增的栈, 更小的元素就不断`pop`
+
+- ```c++
+  class Solution {
+  public:
+      int largestRectangleArea(vector<int>& heights) {
+          stack<int> m;
+          heights.push_back(0);
+          int res = 0;
+          for (int i  = 0; i < heights.size(); ++i) {
+              while (!m.empty() && heights[i] < heights[m.top()]) {
+                  int h = m.top();
+                  m.pop();
+                  int k = 0;
+                  if (m.empty()) {
+                      k = -1;
+                  } else {
+                      k = m.top();
+                  }
+                  res = max(res, (i - k - 1) * heights[h]);
+              }
+              m.push(i);
+          }
+          return res;
+      }
+  };
+  ```
+  
+- 最大全1矩阵, 先预处理一维(行)视为之前连续的1个数, 然后就是对每列做最大直方图
+
+- ```c++
+  class Solution {
+  public:
+      int maximalRectangle(vector<vector<char>>& matrix) {
+          int N = matrix.size();
+          if (N == 0) return 0;
+          int M = matrix[0].size();
+          if (M == 0) return 0;
+          vector<vector<int>> rowacc(N, vector<int>(M, 0));
+          for (int i = 0; i < N; ++i) {
+              rowacc[i][0] = (matrix[i][0] == '1');
+              for (int j = 1; j < M; ++j) {
+                  if (matrix[i][j] == '0') {
+                      rowacc[i][j] = 0;
+                  } else {
+                      rowacc[i][j] = rowacc[i][j - 1] + 1;
+                  }
+              }
+          }
+          int res = 0;
+          for (int j = 0; j < M; ++j) {
+              stack<int> m;
+              for (int i = 0; i <= N; ++i) {
+                  int current = 0;
+                  if (i == N) current = 0;
+                  else current = rowacc[i][j];
+                  while (!m.empty() && current < rowacc[m.top()][j]) {
+                      int h = m.top();
+                      int k = 0;
+                      m.pop();
+                      if (m.empty()) {
+                          k = -1;
+                      } else {
+                          k = m.top();
+                      }
+                      res = max(res, (i - k - 1) * rowacc[h][j]);
+                  }
+                  m.push(i);
+              }
+          }
+          return res;
+      }
+  };
+  ```
+
+- DP解法
+
+- > height[i] record the current number of countinous '1' in column i
+  >
+  > left[i] record the left most index j which satisfies that for any index k from j to  i, height[k] >= height[i];
+  >
+  > right[i] record the right most index j which satifies that for any index k from i to  j, height[k] >= height[i];
+  >
+  > we need to update maxArea with value (height[i] * (right[i] - left[i] + 1));
+  >
+  > cur_left: last 1 index starts
+  >
+  > cur_right: first coming 1 index
+
+* > left(i,j) = max(left(i-1,j), cur_left), cur_left can be determined from the current row
+  >
+  > right(i,j) = min(right(i-1,j), cur_right), cur_right can be determined from the current row
+  >
+  > height(i,j) = height(i-1,j) + 1, if matrix[i][j]=='1';
+  >
+  > height(i,j) = 0, if matrix[i][j]=='0'
+
+* ```c++
+  class Solution {public:
+  int maximalRectangle(vector<vector<char> > &matrix) {
+      if(matrix.empty()) return 0;
+      const int m = matrix.size();
+      const int n = matrix[0].size();
+      int left[n], right[n], height[n];
+      fill_n(left,n,0); fill_n(right,n,n); fill_n(height,n,0);
+      int maxA = 0;
+      for(int i=0; i<m; i++) {
+          int cur_left=0, cur_right=n; 
+          for(int j=0; j<n; j++) { // compute height (can do this from either side)
+              if(matrix[i][j]=='1') height[j]++; 
+              else height[j]=0;
+          }
+          for(int j=0; j<n; j++) { // compute left (from left to right)
+              if(matrix[i][j]=='1') left[j]=max(left[j],cur_left);
+              else {left[j]=0; cur_left=j+1;}
+          }
+          // compute right (from right to left)
+          for(int j=n-1; j>=0; j--) {
+              if(matrix[i][j]=='1') right[j]=min(right[j],cur_right);
+              else {right[j]=n; cur_right=j;}    
+          }
+          // compute the area of rectangle (can do this from either side)
+          for(int j=0; j<n; j++)
+              maxA = max(maxA,(right[j]-left[j])*height[j]);
+      }
+      return maxA;
+  }
+  ```
+
+* 
+
+
+
+### 87. Scramble String
+
+* 判断字符串移位: 倍增一个, 搜索第二个
+
+* 对每个下标判断`s1`的两部分能否由`s2`中同一位置或者对称的两部分组成. 剪枝: 小于等于3长度一定可以, 计数不相等一定不行
+
+* ```c++
+  class Solution {
+      vector<array<int, 26>> s1cnt;
+      vector<array<int, 26>> s2cnt;
+  public:
+      bool comp(pair<int, int> s1idx, pair<int, int> s2idx) {
+          for (int i = 0; i < 26; ++i) {
+              int c1 = s1cnt[s1idx.second][i] - s1cnt[s1idx.first][i];
+              int c2 = s2cnt[s2idx.second][i] - s2cnt[s2idx.first][i];
+              if (c1 != c2) return false;
+          }
+          return true;
+      }
+      
+      bool helper(const string& s1, const string& s2, pair<int, int> s1idx, pair<int, int> s2idx) {
+          int N = s1idx.second - s1idx.first;
+          if (N == 0) return true;
+          if (!comp({s1idx.first, s1idx.second}, {s2idx.first, s2idx.second})) return false;
+          if (N <= 3) return true;
+          if (s1.substr(s1idx.first, s1idx.second) == s2.substr(s2idx.first, s2idx.second)) return true;
+          for (int i = 1; i < N; ++i) {
+              if (helper(
+                      s1, s2,
+                      {s1idx.first, s1idx.first + i}, 
+                      {s2idx.first, s2idx.first + i})
+                  && 
+                  helper(
+                      s1, s2,
+                      {s1idx.first + i, s1idx.second}, 
+                      {s2idx.first + i, s2idx.second})           
+                 )
+                  return true;
+              if (helper(
+                      s1, s2,
+                      {s1idx.first, s1idx.first + i}, 
+                      {s2idx.second - i, s2idx.second})
+                  && 
+                  helper(
+                      s1, s2,
+                      {s1idx.first + i, s1idx.second}, 
+                      {s2idx.first, s2idx.second - i})
+                 )
+                  return true;
+          }
+          return false;
+      }
+      
+      bool isScramble(string s1, string s2) {
+          int N = s1.size();
+          if (!s1.length()) return true;
+          if (s1 == s2) return true;
+          s1cnt.resize(N + 1);
+          s2cnt.resize(N + 1);
+          fill(s1cnt[0].begin(), s1cnt[0].end(), 0);
+          fill(s2cnt[0].begin(), s2cnt[0].end(), 0);
+          
+          for (int i = 0; i < N; ++i) {
+              for (int j = 0; j < 26; ++j) {
+                  s1cnt[i + 1][j] = s1cnt[i][j] + ((s1[i] - 'a') == j);
+                  s2cnt[i + 1][j] = s2cnt[i][j] + ((s2[i] - 'a') == j);
+              }
+          }
+          
+          return helper(s1, s2, {0, N}, {0, N});       
+      }
+  };
+  ```
+
+* 或者对`s1`下标, `s2`下标, 长度进行dp
+
+* ```c++
+  class Solution {
+  public:
+      bool isScramble(string s1, string s2) {
+          int sSize = s1.size(), len, i, j, k;
+          if(0==sSize) return true;
+          if(1==sSize) return s1==s2;
+          bool isS[sSize+1][sSize][sSize];
+  
+          for(i=0; i<sSize; ++i)
+              for(j=0; j<sSize; ++j)
+                  isS[1][i][j] = s1[i] == s2[j];
+                  
+          for(len=2; len <=sSize; ++len)
+              for(i=0; i<=sSize-len; ++i)
+                  for(j=0; j<=sSize-len; ++j)
+                  {
+                      isS[len][i][j] = false;
+                          for(k=1; k<len && !isS[len][i][j]; ++k)
+                          {
+                              isS[len][i][j] = isS[len][i][j] || (isS[k][i][j] && isS[len-k][i+k][j+k]);
+                              isS[len][i][j] = isS[len][i][j] || (isS[k][i+len-k][j] && isS[len-k][i][j+k]);
+                          }
+                  }
+          return isS[sSize][0][0];            
+  
+      }
+  };
+  ```
+
+
+
+
+
+
+### 89. Gray Code
+
+* 从0长开始, 每次保留k-1长 (相当于多一个0), 再倒序加入最高位变1的数 (保证每次差1)
+
+* ```c++
+  class Solution {
+  public:
+      vector<int> grayCode(int n) {
+          vector<int> res(1, 0);
+  
+          for(int i = 0; i < n; ++i){
+              int size = res.size();
+              for(int j = size - 1; j >= 0; --j){
+                  res.push_back(res[j] | (1 << i));
+              }
+          }
+          return res;
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+
+
+### 96. & 97. Unique Binary Search Trees I & II
 
 * Catalan数, $f(n) = \sum_{i = 0}^{n-1}f(i)f(n - i - 1)$, $f(n) = C(2n, n) / (n + 1)$
 
@@ -977,6 +1351,178 @@
   };
   ```
 
+* 从n-1树中生成n树
+
+* > 1) The nth node is the new root, so `newroot->left = oldroot;`
+  > 2) the nth node is not root, we traverse the old tree, every time the node in the old tree has a right child, we can perform: `old node->right = nth node, nth node ->left = right child;` and when we reach the end of the tree, don't forget we can also add the nth node here.
+
+* 或者即为Catalan树的分治
+
+* ```c++
+  class Solution {
+  public:
+      vector<TreeNode *> generateTree(int from, int to) {
+          vector<TreeNode*> ret;
+          
+          if (to - from < 0) return {nullptr};
+          if (to - from == 0) return {new TreeNode{from}};
+          
+          for (int i = from; i <= to; ++i) {
+              vector<TreeNode*> l = generateTree(from, i - 1);
+              vector<TreeNode*> r = generateTree(i + 1, to);
+              for (auto j : l) {
+                  for (auto k : r) {
+                      TreeNode * h = new TreeNode{i};
+                      h->left = j;
+                      h->right = k;
+                      ret.push_back(h);
+                  }
+              }
+          }
+          return ret;
+      }
+  
+      vector<TreeNode*> generateTrees(int n) {
+          if (n == 0) return {};
+          return generateTree(1, n);
+      }
+  };
+  ```
+
+
+
+
+
+
+### 99. Recover Binary Search Tree
+
+* 中序遍历, 保证原BST顺序应该是从小到大, 同时维护上一个访问的节点, 第一次失配中的大节点 (`prev`), 和最后一次失配的最小节点 (`curr`), 交换大小失配节点
+
+* ```c++
+  class Solution {
+  public:
+      void recoverTree(TreeNode* root) {
+          TreeNode* smaller = nullptr, *larger = nullptr;
+          TreeNode* node = root, *prev = nullptr;
+          stack<TreeNode*> s;
+          while (!s.empty() || node) {
+              while (node) {
+                  s.push(node);
+                  node = node->left;
+              }
+              node = s.top();
+              s.pop();
+              
+              if (prev && node->val <= prev->val) {
+                  if (!larger) larger = prev;
+                  smaller = node;
+              }
+              
+              prev = node;
+              node = node->right;
+          }
+          swap(smaller->val, larger->val);
+      }
+  };
+  ```
+
+* 
+
+
+
+### 105. & 106. Construct Binary Tree From Preorder + Inorder & Inorder + Postorder
+
+* 或者从preorder提取第一个分治
+
+* ```c++
+  class Solution {
+  public:
+      TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+          return helper(preorder, 0, preorder.size(), inorder, 0, inorder.size());
+      }
+      TreeNode* helper(vector<int>& preorder,int i,int j,vector<int>& inorder,int ii,int jj) {
+          if(i >= j || ii >= jj)
+              return NULL;
+          int mid = preorder[i];
+          auto f = find(inorder.begin() + ii,inorder.begin() + jj,mid);
+          int dis = f - inorder.begin() - ii;
+          TreeNode* root = new TreeNode(mid);
+          root->left = helper(preorder, i + 1, i + 1 + dis, inorder, ii, ii + dis);
+          root->right = helper(preorder, i + 1 + dis, j, inorder, ii + dis + 1, jj);
+          return root;
+      }
+  };
+  ```
+
+* 或者从postorder提取最后一个分治
+
+* ```c++
+  class Solution {
+  public:
+      TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+          return helper(inorder, 0, inorder.size(), postorder, 0, postorder.size());
+      }
+      TreeNode* helper(vector<int>& inorder,int i,int j,vector<int>& postorder,int ii,int jj) {
+          if(i >= j || ii >= jj)
+              return NULL;
+          int mid = postorder[jj - 1];
+          auto f = find(inorder.begin() + i, inorder.begin() + j, mid);
+          int dis = f - inorder.begin() - i;
+          TreeNode* root = new TreeNode(mid);
+          root->left = helper(inorder, i, i + dis, postorder, ii, ii + dis);
+          root->right = helper(inorder, i + dis + 1, j, postorder, ii + dis, jj - 1);
+          return root;
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+### 115. Distinct Subsequences
+
+* `dp(i, j)`表示`0..i`的s和`0..j`的t中能有多少个subsequence, 则
+
+* `dp(i, j) = dp(i, j - 1) or dp(i, j - 1) + dp(i - 1, j - 1)`
+
+* 压缩一维(`i`), 并倒着求`dp(j)`来保障`dp(i - 1, j - 1)`未被修改
+
+* ```c++
+  static const auto speedup = [](){
+      ios::sync_with_stdio(false);
+      cin.tie(nullptr);
+      return nullptr;
+  }();
+  
+  
+  class Solution {
+  public:
+      int numDistinct(string s, string t) {
+          size_t slen = s.length();
+          size_t tlen = t.length();
+          vector<uint32_t> dp(tlen + 1, 0);
+          dp[0] = 1;
+          for (size_t i = 0; i < slen; ++i) {
+              for (size_t j = tlen; j-- > 0;) {
+                  if (s[i] == t[j]) {
+                      dp[j+1] += dp[j];
+                  }
+              }
+          }
+          return dp[tlen];
+      }
+  };
+  ```
+
+
+
+
+
+
+
 
 
 
@@ -1000,19 +1546,19 @@
 * 迭代求中序: 循环压入left, 每次弹出加入right
 
   * ```c++
-    stack.push(root);
-    while (!stack.isEmpty()) {
-        while (stack.top().left != null) {
-            stack.push(stack.top().left);
+    vector<int> nodes;
+    stack<TreeNode*> todo;
+    while (root || !todo.empty()) {
+        while (root) {
+            todo.push(root);
+            root = root -> left;
         }
-        if (!stack.isEmpty()) {
-            Node node = stack.pop();
-            result.add(node.val);
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-        }
+        root = todo.top();
+        todo.pop();
+        nodes.push_back(root -> val);
+        root = root -> right;
     }
+    return nodes;
     ```
 
 * 迭代求后序: 先走完左子树, 然后走右子树, 栈回溯时判断上一次pop的是否是栈顶的right, 是则为回溯路径
@@ -1844,9 +2390,372 @@ public:
   };
   ```
 
+
+
+
+### 957. Prison Cells After N Days
+
+* 局面数不超过64, 直接模拟找出循环节
+
+* ```c++
+  class Solution {
+  public:
+      vector<int> prisonAfterNDays(vector<int>& cells, int N) {
+          int n = cells.size(), cycle = 0;
+          vector<int> cur(n, 0), direct;
+          while(N-- > 0) {
+              for(int i = 1; i < n - 1; ++i) cur[i] = cells[i - 1] == cells[i + 1];
+              if(direct.empty()) direct = cur;
+              else if(direct == cur) N %= cycle;
+              ++cycle;
+              cells = cur;
+          }
+          return cur;
+      }
+  };
+  ```
+
+* 然而循环节最长为14, 证明?
+
+* > The main reason is that the values of the 1st, 3rd, 5th and 7th number in the array before an iteration completely determine the values of the 2nd, 4th, 6th and 8th number after an iteration. Similiarly, the values of the 2nd, 4th, 6th and 8th number before an iteration completely determine the values of the 1st, 3rd, 5th and 7th number after the iteration.
+  >
+  > 
+  >
+  > To see this, take as example the 5th number (odd). After an iteration its value will depend only on the before-iteration value of the 4th and 6th number (even).
+  >
+  > 
+  >
+  > After one iteration, the 1st and 8th number are 0 and stay that way. So after one iteration, the array looks like:
+  >
+  > 
+  >
+  > - 0x?y?z?0.
+  >
+  > 
+  >
+  > After one more iteration the values of x,y and z (2nd, 4th and 6th array element) completely determine the non-? values given here (r,s and t):
+  >
+  > 
+  >
+  > - 0?r?s?t0.
+  >
+  > 
+  >
+  > After one more iteration, those values (r,s and t) determine again the new (2nd, 4th and 6th array element):
+  >
+  > 
+  >
+  > - 0x′?y′?z′?0.
+  >
+  > 
+  >
+  > What this shows, is that after two iterations of the cycle, x, y, and z determine the values of x', y', and z', and are **independent of the in between values.**
+  >
+  > 
+  >
+  > The same can be said of course for the remaining 3 values (above shown as ?,).
+  >
+  > 
+  >
+  > So from the original 8-bit data set, 2 bits immediately become and stay 0. (the ends). Then 2 sets of 3 bits of data remain that, after 2 iterations, determine the "next" value of the exact same 3 bits of data. (xyz determine x'y'z' after two iterations and rst determine r's't' after 2 iterations. x,y,z does not depend on rst looking at it every two iterations.)
+  >
+  > 
+  >
+  > So those 2 sets of 3 bit data have a maximal cycle length of 8 (2^3 = 8). Because we need two of our iterations for one step in the 3-bit cycle, that makes a maximal iteration count of 16.
+  >
+  > 
+  >
+  > Now to get to the 14 iterations...
+  >
+  > 
+  >
+  > what's needed is to actually write down those cycles of the 3 bit data. It turns out that it's one cycle of 7 steps and one 1 cyle of 1 step.
+  >
+  > 
+  >
+  > You get the 1 step cycle if you start with (this is one step remember, because each step is 2 iterations for each set of data)
+  >
+  > 
+  >
+  > - 00?0?1?0,
+  >
+  > 
+  >
+  > then the next iteration will be
+  >
+  > 
+  >
+  > - 0?1?0?00
+  >
+  > 
+  >
+  > and the next one will be (again)
+  >
+  > 
+  >
+  > - 00?0?1?0.
+  >
+  > 
+  >
+  > If you start with any other configuration, you will find the 7-step cycle. As 1 step is two iterations, this explains the max 14 iterations. Therefore, 7 is the max cycle and there are two sets, which make 14 total.
+
+
+
+
+
+
+
+
+
+### 973. K Closest Points to Origin
+
+* Top K问题
+
+  * quickselect
+  * min-heap
+
+* ```c++
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          int N = points.size();
+          int l = 0, r = N - 1, remain = K;
+          while (l < r) {
+              auto pivot = points[r];
+              auto dis = [](const vector<int>& em) -> long long {
+                  return (long long)em[0] * em[0] + em[1] * em[1];
+              };
+              auto first_not_less_equal_it = partition(points.begin() + l, points.begin() + r, [&](const auto& em) {
+                  return dis(em) <= dis(pivot);
+              });
+              iter_swap(points.begin() + r, first_not_less_equal_it);
+              int n_less_equal = distance(points.begin(), first_not_less_equal_it);
+              if (n_less_equal == K) {
+                  break;
+              } else if (n_less_equal > K) {
+                  r = n_less_equal - 1;
+              } else {
+                  l = n_less_equal + 1;
+              }
+          }
+          return {points.begin(), points.begin() + K};
+      }
+  };
+  ```
+
+* 学会`partial_sort`和`nth_element`
+
+* ```c++
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          partial_sort(points.begin(), points.begin() + K, points.end(), [](vector<int>& p, vector<int>& q) {
+              return p[0] * p[0] + p[1] * p[1] < q[0] * q[0] + q[1] * q[1];
+          });
+          return vector<vector<int>>(points.begin(), points.begin() + K);
+      }
+  };
+  
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          nth_element(points.begin(), points.begin() + K - 1, points.end(), [](vector<int>& p, vector<int>& q) {
+              return p[0] * p[0] + p[1] * p[1] < q[0] * q[0] + q[1] * q[1];
+          });
+          return vector<vector<int>>(points.begin(), points.begin() + K);
+      }
+  };
+  
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          priority_queue<vector<int>, vector<vector<int>>, compare> pq;
+          for (vector<int>& point : points) {
+              pq.push(point);
+              if (pq.size() > K) {
+                  pq.pop();
+              }
+          }
+          vector<vector<int>> ans;
+          while (!pq.empty()) {
+              ans.push_back(pq.top());
+              pq.pop();
+          }
+          return ans;
+      }
+  private:
+      struct compare {
+          bool operator()(vector<int>& p, vector<int>& q) {
+              return p[0] * p[0] + p[1] * p[1] < q[0] * q[0] + q[1] * q[1];
+          }
+      };
+  };
+  
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          multiset<vector<int>, compare> mset(points.begin(), points.end());
+          vector<vector<int>> ans;
+          copy_n(mset.begin(), K, back_inserter(ans));
+          return ans;
+      }
+  private:
+      struct compare {
+          bool operator()(const vector<int>& p, const vector<int>& q) const {
+              return p[0] * p[0] + p[1] * p[1] < q[0] * q[0] + q[1] * q[1];
+          }
+      };
+  };
+  
+  class Solution {
+  public:
+      vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
+          int l = 0, r = points.size() - 1;
+          while (true) {
+              int p = partition(points, l, r);
+              if (p == K - 1) {
+                  break;
+              }
+              if (p < K - 1) {
+                  l = p + 1;
+              } else {
+                  r = p - 1;
+              }
+          }
+          return vector<vector<int>>(points.begin(), points.begin() + K);
+      }
+  private:
+      bool farther(vector<int>& p, vector<int>& q) {
+          return p[0] * p[0] + p[1] * p[1] > q[0] * q[0] + q[1] * q[1];
+      }
+      
+      bool closer(vector<int>& p, vector<int>& q) {
+          return p[0] * p[0] + p[1] * p[1] < q[0] * q[0] + q[1] * q[1];
+      }
+      
+      int partition(vector<vector<int>>& points, int left, int right) {
+          int pivot = left, l = left + 1, r = right;
+          while (l <= r) {
+              if (farther(points[l], points[pivot]) && closer(points[r], points[pivot])) {
+                  swap(points[l++], points[r--]);
+              }
+              if (!farther(points[l], points[pivot])) {
+                  l++;
+              }
+              if (!closer(points[r], points[pivot])) {
+                  r--;
+              }
+          }
+          swap(points[pivot], points[r]);
+          return r;
+      }
+  };
+  ```
+
 * 
 
 
+
+
+
+
+
+
+
+### 992. Subarrays with K Different Integers
+
+* 滑动窗口 + 双指针, 维护窗口内不同的字符个数. 统计所有不超过`K`个 - 不超过`K-1`个
+
+* ```c++
+  static const int __ = []() {
+      std::ios::sync_with_stdio(false);
+      std::cin.tie(nullptr);
+      std::cout.tie(nullptr);
+      return 0;
+  }();
+  
+  class Solution {
+  public:
+      int subarraysWithKDistinct(vector<int>& A, int K) {
+          return atMostK(A, K) - atMostK(A, K - 1);        
+      }
+      int atMostK(vector<int>& A, int K) {
+          int i = 0, res = 0;
+          map<int, int> count;
+          for (int j = 0; j < A.size(); ++j) {
+              if (count[A[j]] == 0) --K;
+              ++count[A[j]];
+              while (K < 0) {
+                  --count[A[i]];
+                  if (count[A[i]] == 0) ++K;
+                  ++i;
+              }
+              res += j - i + 1;
+          }
+          return res;
+      }
+  };
+  ```
+
+* 只做一遍, 用`i`, `j`维护窗口右端点(看到的最新值)和窗口左端点(最后一个仅出现一次的值), `prefix`表示这段长度
+
+* > If the subarray `[j, i]` contains `K` unique numbers, and first `prefix` numbers also appear in `[j + prefix, i]` subarray, we have total `1 + prefix` good subarrays. For example, there are 3 unique numers in `[1, 2, 1, 2, 3]`. First two numbers also appear in the remaining subarray `[1, 2, 3]`, so we have 1 + 2 good subarrays: `[1, 2, 1, 2, 3]`, `[2, 1, 2, 3]` and `[1, 2, 3]`.
+  >
+  > 
+  >
+  > We can iterate through the array and use two pointers for our sliding window (`[j, i]`). The back of the window is always the current position in the array (`i`). The front of the window (`j`) is moved so that A[j] appear only once in the sliding window. In other words, we are trying to shrink our sliding window while maintaining the same number of unique elements.
+  >
+  > 
+  >
+  > To do that, we keep tabs on how many times each number appears in our window (`m`). After we add next number to the back of our window, we try to remove as many as possible numbers from the front, until the number in the front appears only once. While removing numbers, we are increasing `prefix`.
+  >
+  > 
+  >
+  > If we collected `K` unique numbers, then we found 1 + `prefix` sequences, as each removed number would also form a sequence.
+  >
+  > 
+  >
+  > If our window reached `K + 1` unique numbers, we remove one number from the head (again, that number appears only in the front), and reset `prefix` as now we are starting a new sequence. This process is demonstrated step-by-step for the test case below; `prefix` are shown as `+1` in the green background.
+
+* ```c++
+  static const int __ = []() {
+      std::ios::sync_with_stdio(false);
+      std::cin.tie(nullptr);
+      std::cout.tie(nullptr);
+      return 0;
+  }();
+  
+  class Solution {
+  public:
+      int subarraysWithKDistinct(vector<int>& A, int K) {
+          vector<int> m(A.size() + 1);
+          int res = 0;
+          for (auto i = 0, j = 0, prefix = 0, count = 0; i < A.size(); ++i) {
+              // new distinct
+              if (m[A[i]]++ == 0) {
+                  ++count;
+              }
+              // exceed K
+              if (count > K) {
+                  --m[A[j++]];
+                  --count;
+                  prefix = 0;
+              }
+              // increase prefix
+              while (m[A[j]] > 1) {
+                  ++prefix;
+                  --m[A[j++]];
+              }
+              if (count == K) {
+                  res += prefix + 1;
+              }
+          }
+          return res;        
+      }
+  };
+  ```
+
+* 带更新的`priority_queue`?
 
 
 
@@ -1943,6 +2852,372 @@ public:
               }
           }
           return (s + dp[0][1]) / 2;
+      }
+  };
+  ```
+
+
+
+
+
+
+### 1157. Online Majority Elements In Subarray
+
+* 区间多数值
+
+* 统计每个值的出现下标, 每次询问多次随机选择区间内一点, 判断是否对应值为多数值 (个数超过一半), 生日理论保证可行性
+
+* ```c++
+  class MajorityChecker {
+  public:
+      vector<int> x;
+      vector<int> v[20001];
+      MajorityChecker(vector<int>& arr) {
+          x = arr;
+          for (int i = 1; i <= 20000; i++)
+              v[i].clear();
+          for (int i = 0; i < x.size(); i++) {
+              v[x[i]].push_back(i);
+          }
+          srand(time(0));
+      }
+      
+      int query(int left, int right, int threshold) {
+          int l = right - left + 1;
+          for (int i = 0; i < 30; i++) {
+              int tmp = x[rand() % l + left];
+              if (upper_bound(v[tmp].begin(), v[tmp].end(), right) - lower_bound(v[tmp].begin(), v[tmp].end(), left) >= threshold)
+                  return tmp;
+          }
+          return -1;
+      }
+  };
+  
+  /**
+   * Your MajorityChecker object will be instantiated and called as such:
+   * MajorityChecker* obj = new MajorityChecker(arr);
+   * int param_1 = obj->query(left,right,threshold);
+   */
+  ```
+
+* 区间查询 (单点更新) -> 线段树, 每个区间无多数值则为-1, 否则从左右孩子中选择多数值作为区间值 (这里更新成nlog^2n了, 应该存下多数值的个数的). 查询时, 当一个区间被查询区间包含的时候, 则这个多数值为备选值, 重新二分来验证
+
+* ```c++
+  class MajorityChecker {
+  private:
+      unordered_map<int, vector<int>> pos;
+      vector<int> tree;
+      vector<int> a;
+      
+  public:
+      MajorityChecker(vector<int>& arr): a(arr) {
+          for (int i = 0; i < arr.size(); ++i) {
+              pos[arr[i]].push_back(i);
+          }
+          tree = vector<int>(arr.size() * 4, -1);
+          build_tree(1, 0, arr.size() - 1);
+      }
+      
+      void build_tree(int tree_pos, int l, int r) {
+          if (l == r) {
+              tree[tree_pos] = a[l];
+              return;
+          }
+          int mid = (l + r) >> 1;
+          build_tree(tree_pos * 2, l, mid);
+          build_tree(tree_pos * 2 + 1, mid + 1, r);
+          if (tree[tree_pos * 2] != -1 && get_occurrence(tree[tree_pos * 2], l, r) * 2 > r - l + 1) {
+              tree[tree_pos] = tree[tree_pos * 2];
+          }
+          else if (tree[tree_pos * 2 + 1] != -1 && get_occurrence(tree[tree_pos * 2 + 1], l, r) * 2 > r - l + 1) {
+              tree[tree_pos] = tree[tree_pos * 2 + 1];
+          }
+      }
+      
+      pair<int, int> query(int tree_pos, int l, int r, int queryl, int queryr) {
+          if (l > queryr || r < queryl) {
+              return make_pair(-1, -1);
+          }
+          if (queryl <= l && r <= queryr) {
+              if (tree[tree_pos] == -1) {
+                  return make_pair(-1, -1);
+              }
+              int occ = get_occurrence(tree[tree_pos], queryl, queryr);
+              if (occ * 2 > queryr - queryl + 1) {
+                  return make_pair(tree[tree_pos], occ);
+              }
+              else {
+                  return make_pair(-1, -1);
+              }
+          }
+          int mid = (l + r) >> 1;
+          pair<int, int> res_l = query(tree_pos * 2, l, mid, queryl, queryr);
+          if (res_l.first > -1) {
+              return res_l;
+          }
+          pair<int, int> res_r = query(tree_pos * 2 + 1, mid + 1, r, queryl, queryr);
+          if (res_r.first > -1) {
+              return res_r;
+          }
+          return make_pair(-1, -1);
+      }
+      
+      int get_occurrence(int num, int l, int r) {
+          auto iter = pos.find(num);
+          if (iter == pos.end()) {
+              return 0;
+          }
+          const auto& vec = iter->second;
+          auto iter_l = lower_bound(vec.begin(), vec.end(), l);
+          if (iter_l == vec.end()) {
+              return 0;
+          }
+          auto iter_r = upper_bound(vec.begin(), vec.end(), r);
+          return iter_r - iter_l;
+      }
+      
+      int query(int left, int right, int threshold) {
+          pair<int, int> ans = query(1, 0, a.size() - 1, left, right);
+          if (ans.second >= threshold) {
+              return ans.first;
+          }
+          return -1;
+      }
+  };
+  ```
+
+* 分块, 对每个块找出多数值, 这些必定是所有的候选项 (否则, 和肯定小于总数的一半)
+
+* ```c++
+  class MajorityChecker {
+  private:
+      unordered_map<int, vector<int>> pos;
+      vector<int> a;
+      vector<int> bucket;
+      int bucket_size;
+      
+      
+  public:
+      MajorityChecker(vector<int>& arr): a(arr) {
+          for (int i = 0; i < arr.size(); ++i) {
+              pos[arr[i]].push_back(i);
+          }
+          bucket_size = round(sqrt(a.size()));
+          int l = 0;
+          while (l < a.size()) {
+              int r = min(l + bucket_size, (int)a.size()) - 1;
+              bucket.push_back(vote(l, r));
+              l += bucket_size;
+          }
+      }
+      
+      int vote(int l, int r) {
+          int target = a[l], occ = 1;
+          for (int i = l + 1; i <= r; ++i) {
+              if (a[i] == target) {
+                  ++occ;
+              }
+              else {
+                  --occ;
+                  if (occ < 0) {
+                      target = a[i];
+                      occ = 1;
+                  }
+              }
+          }
+          int cnt = 0;
+          for (int i = l; i <= r; ++i) {
+              if (a[i] == target) {
+                  ++cnt;
+              }
+          }
+          if (cnt * 2 > r - l + 1) {
+              return target;
+          }
+          return -1;
+      }
+      
+      int get_occurrence(int num, int l, int r) {
+          auto iter = pos.find(num);
+          if (iter == pos.end()) {
+              return 0;
+          }
+          const auto& vec = iter->second;
+          auto iter_l = lower_bound(vec.begin(), vec.end(), l);
+          if (iter_l == vec.end()) {
+              return 0;
+          }
+          auto iter_r = upper_bound(vec.begin(), vec.end(), r);
+          return iter_r - iter_l;
+      }
+      
+      int query(int left, int right, int threshold) {
+          int bucket_l = left / bucket_size;
+          int bucket_r = right / bucket_size;
+          if (bucket_l == bucket_r) {
+              int candidate = vote(left, right);
+              if (candidate != -1 && get_occurrence(candidate, left, right) >= threshold) {
+                  return candidate;
+              }
+              return -1;
+          }
+          else {
+              int vote_l = vote(left, (bucket_l + 1) * bucket_size - 1);
+              int vote_r = vote(bucket_r * bucket_size, right);
+              if (vote_l != -1 && get_occurrence(vote_l, left, right) >= threshold) {
+                  return vote_l;
+              }
+              if (vote_r != -1 && get_occurrence(vote_r, left, right) >= threshold) {
+                  return vote_r;
+              }
+              for (int i = bucket_l + 1; i < bucket_r; ++i) {
+                  int occ = get_occurrence(bucket[i], left, right);
+                  if (occ >= threshold) {
+                      return bucket[i];
+                  }
+              }
+              return -1;
+          }
+      }
+  };
+  ```
+
+* 主席树
+
+* ```python
+  class Solution:
+      def __init__(self, arr):
+          """
+          :type arr: List[int]
+          """
+          self.t = []
+          self.h = []
+          self.l = min(arr)
+          self.r = max(arr)
+  
+          self.t.append({"v": 0, "l": 0, "r": 0})
+          self.h.append(0)
+          n = len(arr)
+          for i in range(n):
+              x = arr[i]
+              l, r = self.l, self.r
+              now = self.h[i]
+              self.h.append(len(self.t))
+              while True:
+                  rec = self.t[now]
+                  tmp = {"v": rec["v"] + 1}
+                  self.t.append(tmp)
+                  if l < r:
+                      o = (l + r) >> 1
+                      if x <= o:
+                          tmp["l"] = len(self.t)
+                          tmp["r"] = rec["r"]
+                          r = o
+                          now = rec["l"]
+                      else:
+                          tmp["l"] = rec["l"]
+                          tmp["r"] = len(self.t)
+                          l = o + 1
+                          now = rec["r"]
+                  else:
+                      break
+  
+      def query(self, left, right, threshold):
+          """
+          :type left: int
+          :type right: int
+          :type threshold: int
+          :rtype: int
+          """
+          l = self.l
+          r = self.r
+          u = self.h[left]
+          v = self.h[right + 1]
+          while True:
+              if self.t[v]["v"] - self.t[u]["v"] < threshold:
+                  return -1
+              if l == r:
+                  return l
+              o = (l + r) >> 1
+              if self.t[self.t[v]["l"]]["v"] - self.t[self.t[u]["l"]]["v"] >= threshold:
+                  r, u, v = o, self.t[u]["l"], self.t[v]["l"]
+              else:
+                  l, u, v = o + 1, self.t[u]["r"], self.t[v]["r"]
+  
+                          
+  ```
+
+* 树套树 (树状数组 + 线段树)
+
+* ```c++
+  const int MAXN=2e4+50;
+  const int MAXM=2e4;
+  
+  struct BTree{ int ch[2], sum; }node[MAXN*100];
+  int root[MAXN], numn, PL, PR;
+  
+  inline int lowbit(int x){ return x&-x; }
+  
+  void init(){ 
+      numn=0;
+      memset(root, 0, sizeof(root));
+  }
+  
+  void insertNode(int &x, int l, int r, int p){
+      if (!x) { x=++numn; node[x].ch[0]=node[x].ch[1]=node[x].sum=0; }
+  
+      ++node[x].sum;
+  
+      if (l<r){
+          int m=(l+r)/2;
+          if (p<=m){
+              insertNode(node[x].ch[0], l, m, p);
+          }else insertNode(node[x].ch[1], m+1, r, p);
+      }
+  }
+  
+  void insertTree(int p, int v){
+      for (int i=v; i<=MAXM; i+=lowbit(i)) 
+          insertNode(root[i], PL, PR, p);
+  }
+  
+  int queryNode(int x, int l, int r, int left, int right){
+      if (!x) return 0;
+      if (left<=l && r<=right) return node[x].sum;
+  
+      int m=(l+r)/2, ret=0;
+      if (left<=m) ret+=queryNode(node[x].ch[0], l, m, left, right);
+      if (m+1<=right) ret+=queryNode(node[x].ch[1], m+1, r, left, right);
+  
+      return ret;
+  }
+  
+  int queryTree(int left, int right, int v){
+      int ret=0;
+      for (int i=v; i>0; i-=lowbit(i))
+          ret+=queryNode(root[i], PL, PR, left, right);
+      return ret;
+  }
+  
+  class MajorityChecker {
+  public:
+      MajorityChecker(vector<int>& a) {
+          PL=0, PR=a.size()-1;
+          init();
+          for (int i=PL; i<=PR; i++) insertTree(i, a[i]);
+      }
+      
+      int query(int left, int right, int threshold) {
+          int ans=0, now=32768/2, k=threshold;
+          while(now){
+              if (now+ans>MAXM) { now/=2; continue; }
+              int v=queryNode(root[ans+now], PL, PR, left, right);
+              if (v<k) { k-=v; ans+=now; }
+              now/=2;
+          }
+          
+          int cnt=queryTree(left, right, ans+1) - queryTree(left, right, ans);
+          return cnt>=threshold?ans+1:-1;
       }
   };
   ```
@@ -2430,6 +3705,278 @@ public:
   };
   ```
 
+
+
+
+
+
+### 1191. K-Concatenation Maximum Sum
+
+* 分类讨论, 如果总和>=0, 则为一次复制的最大值+(k-2)倍数组和, 否则, 则为一次复制中的最大值
+
+* ```c++
+  class Solution {
+  public:
+      int kConcatenationMaxSum(vector<int>& arr, int k) {
+          long long sum = 0;
+          int m = 1e9 + 7;
+          for (auto i: arr) {
+              sum += i;
+          }
+          long long max_so_far = 0, max_ending_here = 0;
+          for (int i = 0; i < 2 * arr.size(); ++i) {
+              max_ending_here = max_ending_here + arr[i % arr.size()];
+              if (max_so_far < max_ending_here) 
+                  max_so_far = max_ending_here;
+              if (max_ending_here < 0) 
+                  max_ending_here = 0; 
+          }
+          if (sum < 0) {
+              return max_so_far % m;        
+          } else {
+              long long res = ((k - 2) % m) * (sum % m);
+              return (res % m) + (max_so_far % m);
+          }
+      }
+  };
+  ```
+
+
+
+### 1192. Critical Connection in a Network
+
+* Amazon OA题, Tarjan求割桥
+
+* ```c++
+  class Solution {
+  public:
+      void helper(int u, vector<bool> &visited, vector<vector<int>> &res, vector<vector<int>>& adj, vector<int> &disc, vector<int> &low, vector<int> &parent) {
+          static int time = 0;
+          visited[u] = true;
+          disc[u] = low[u] = ++time;
+          for (int i = 0; i < adj[u].size(); ++i) {
+              int v = adj[u][i];
+              if (!visited[v]) {
+                  parent[v] = u;
+                  helper(v, visited, res, adj, disc, low, parent);
+                  low[u] = min(low[u], low[v]);
+                  if (low[v] > disc[u]) {
+                      res.push_back(vector<int>{u, v});
+                  }
+              }
+              else if (v != parent[u]) {
+                  low[u] = min(low[u], disc[v]);
+              }
+          }
+      }
+  
+  
+      
+      vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections) {
+          vector<vector<int>> adj(n, vector<int>());
+          for (auto& c: connections) {
+              adj[c[0]].push_back(c[1]);
+              adj[c[1]].push_back(c[0]);
+          }
+          vector<bool> visited(n + 1, false);
+          vector<int> disc(n + 1, 0);
+          vector<int> low(n + 1, 0);
+          vector<int> parent(n + 1, 0);
+          vector<vector<int>> res;
+          for (int i = 0; i < n; ++i) {
+              if (!visited[i]) {
+                  helper(i, visited, res, adj, disc, low, parent);
+              }
+          }
+          return res;
+      }
+  };
+  ```
+
+* 求无向连通图的割点
+
+* ![1567052650935](D:\OneDrive\Pictures\Typora\1567052650935.png)
+
+* [连通图强连通分量-割点-缩点/Tarjan](https://www.cnblogs.com/stxy-ferryman/p/7779347.html)
+
+* [求无向连通图的割点](https://www.cnblogs.com/en-heng/p/4002658.html)
+
+* ![1567054062693](D:\OneDrive\Pictures\Typora\1567054062693.png)
+
+
+
+
+### 1199. Minimum Time to Build Blocks
+
+* dp, 状态是前i和j worker, `dp(i, j) = min(dp(i, j), max(dp(i-1, j-1), b[i]), dp(i, j * 2) + split)`
+
+* ```c++
+  class Solution {
+  public:
+      int minBuildTime(vector<int>& blocks, int split) {
+          constexpr int INF = 0x3F3F3F3F;
+          sort(blocks.begin(), blocks.end());
+          const int N = blocks.size();
+          vector<int> dp(N+1);
+          for (int i = 0; i < N; i++) {
+              vector<int> ndp(N+1, INF);
+              for (int j = N; j > 0; j--) {
+                  int nj = min(j*2, N);
+                  ndp[j] = max(dp[j-1], blocks[i]);
+                  if (j != nj) {
+                      ndp[j] = min(ndp[j], ndp[nj] + split);
+                  }
+              }
+              dp = std::move(ndp);
+          }
+          return dp[1];
+      }
+  };
+  
+  // DFS-DP
+  class Solution {
+      int dp[1005][1005], N, MAX = 1000000009, S;
+      vector<int> A;
+  public:
+      int cal(int x, int c) {
+          if (dp[x][c] != -1) return dp[x][c];
+          dp[x][c] = MAX;
+          if (x == N) dp[x][c] = 0;
+          else if (c > 0) {
+              if (c < N) dp[x][c] = S + cal(x, min(N, 2 * c));
+              dp[x][c] = min(dp[x][c], max(A[x], cal(x+1,c-1)));
+          }
+          //printf("dp[%d][%d] = %d\n", x, c, dp[x][c]);
+          return dp[x][c];
+      }
+      int minBuildTime(vector<int>& blocks, int split) {
+          N = blocks.size(), S = split;
+          A = blocks;
+          sort(A.begin(), A.end());
+          reverse(A.begin(), A.end());
+          memset(dp,-1,sizeof(dp));
+          return cal(0, 1);
+      }
+  };
+  ```
+
+* 对`i..j`dp也可做, `w`表示`i..j`的最优split, 则新的`a..b`得最优split一定在`w[a][b-1]`和`w[a+1][b]`之间产生
+
+* ```c++
+  class Solution {
+  public:
+      int minBuildTime(vector<int>& blocks, int split) {
+          sort(blocks.begin(), blocks.end());
+          
+          int n = blocks.size();
+          
+          int dp[1001][1001] = {}, w[1001][1001] = {};
+          
+          for (int i = 0; i < n; i++) {
+              dp[i][i] = blocks[i];
+              w[i][i] = i;
+          }
+          
+          for (int k = 1; k < n; k++) {
+              for (int i = 0; i + k < n; i++) {
+                  int lo = w[i][i + k - 1];
+                  int hi = w[i + 1][i + k];
+                  dp[i][i + k] = 2147483647;
+                  for (int m = lo; m <= hi; m++) {
+                      int val = split + max(dp[i][m], dp[m + 1][i + k]);
+                      if (val < dp[i][i + k]) {
+                          dp[i][i + k] = val;
+                          w[i][i + k] = m;
+                      }
+                  }
+              }
+          }
+          
+          return dp[0][n - 1];
+      }
+  };
+  ```
+
+* 二分上下界, 贪心, 从最大的开始, 倒着倍增, 每次倍增到超过给定时间. 然后倒着寻找下一个可以倍增的项. 可以先离散化优化. 最终会变为`S_n * S + max(a_n, ..., a_i+1, S_i * S + max(a_i, ..., a_j+1, ...))` 这必定是最小的
+
+* ![1569082363066](D:\OneDrive\Pictures\Typora\1569082363066.png)
+
+* ```c++
+  class Solution {
+  public:
+      int minBuildTime(vector<int>& blocks, int split) {
+          
+          int n = blocks.size();
+          
+          auto check = [&](int m)
+          {
+              vector<int> v;
+              for (auto x : blocks)
+              {
+                  int len = (m-x)/split;
+                  v.push_back(len);
+              }
+              sort(v.begin(), v.end());
+              int tot = 0;
+              int cur = 1;
+              int i = 0;
+              while (i < n)
+              {
+                  if (v[i] == tot)
+                  {
+                      if (cur == 0) return 0;
+                      -- cur;
+                      i ++;
+                  }
+                  else
+                  {
+                      cur = cur*2;
+                      tot ++;
+                      if (cur > 1000) return 1;
+                  }
+              }
+              return 1;
+          };
+          
+          int L = *max_element(blocks.begin(), blocks.end()), R = 1000000;
+         
+          int ret = R;
+          while (L <= R)
+          {
+              int m = (L+R)/2;
+              if (check(m))
+              {
+                  ret = m;
+                  R = m-1;
+              }
+              else
+                  L = m+1;
+          }
+          return ret;
+      }
+  };
+  ```
+
+* priority queue, 回想剪绳子, 因为解必定是上文形式, 所以?
+
+* ```c++
+  class Solution {
+  public:
+      int minBuildTime(vector<int>& blocks, int split) {
+          priority_queue<int, vector<int>, greater<int>> pq;
+          for(int b: blocks) pq.push(b);
+          while (pq.size() > 1){
+              int a = pq.top();
+              pq.pop();
+              int b = pq.top();
+              pq.pop();
+              pq.push(split + b);
+          }
+          return pq.top();
+      }
+  };
+  ```
+
 * 
 
 
@@ -2657,3 +4204,371 @@ public:
 * 每次扩展多一个梯形 (+ 三角形)
 
 * ![1568103736022](D:\OneDrive\Pictures\Typora\1568103736022.png)
+
+
+
+### 钱老板赶工
+
+* > ```
+  > 钱老板去国外度了个假，刚回到公司就收到了n封催促工作完成的邮件。每项工作都有完成截止日期的deadline，钱老板做每项工作都会花去cost天，而且不能中断。
+  > 请你帮钱老板安排一下完成工作的顺序，以减少总的工作推迟时间
+  > 输入：n<=20，表示工作数量接下来n行，每一行有两个数，表示第i项工作的deadline和cost
+  > 输出：最小的总的工作推出时间
+  > ```
+
+* 状压dp, $dp(x) = \min (dp(x - i) + \sum cost(x) - ddl(i))$
+
+* ```c++
+  for (int x = 1;x < (1 << n);x++) {
+      sum_cost[x] = 0;
+      for (int i = 0;i < n;i++) {
+          if (x & (1 << i)) {
+              sum_cost[x] += cost[i];
+          }
+      }
+      for (int i = 0;i < n;i++) {
+          if (x & (1 << i)) {
+              dp[x] = min(dp[x], dp[x - (1 << i)] + sum_cost[x] - deadline[i]);
+          }
+      }
+  }
+  ```
+
+
+
+### 小招喵的字符串
+
+* > ```
+  > 老板给了小招瞄一个由数字字符0-9和？组成的字符串。它想让小招瞄把所有的？用数字字符0-9填上，小招瞄想知道有多少种情况该字符串表示的数字摸13余数为5
+  > 老板允许舔出来的数字有前导，因为答案很大，输出对10^9+7取模的结果
+  > ```
+
+* 余数dp, 多加一个余数维
+
+* ```c++
+  for (int i = 0;i < s.size();i++) {
+      for (int j = 0;j < 13;j++) {
+          if (s[i] == '?') {
+              for (int k = 0;k < 10;k++) {
+                  dp[i + 1][(j * 10 + k) % 13] += dp[i][j];
+                  dp[i + 1][(j * 10 + k) % 13] %= mod;
+              }
+          } else {
+              int k = s[i] - '0';
+              dp[i + 1][(j * 10 + k) % 13] += dp[i][j];
+              dp[i + 1][(j * 10 + k) % 13] %= mod;
+          }
+      }
+  }
+  ```
+
+
+
+### 小招喵的树
+
+* 求子树最大边权和
+
+* 树形dp, $dp(i) = \max (0, dp(i), v(i), dp(j) + v(i) \text{ j is i's child })$
+
+* ```c++
+  vector<int> topo;
+  vector<int> parent;
+  void build() {
+      topo.push_back(1);
+      visited[1] = true;
+      for (int i = 0;i < topo.size();i++) {
+          int x = Q.front();
+          Q.pop();
+          for (auto edge: edges[x]) {
+              int y = edge[1];
+              if (!visited[y]) {
+                  parent[y] = x;
+                  topo.push_back(y);
+                  visited[y] = true;
+              }
+          }
+      }
+      for (auto x = topo.rbegin();x != topo.rend();x++) {
+          dp[x] = 0;
+          for (auto edge：edges[x]) {
+              if (edge[1] == parent[x]) {
+                  continue;
+              }
+              dp[x] = max(dp[x], edge[2]);
+              dp[x] = max(dp[x], edge[2] + dp[edge[1]]);
+          }
+      }
+  }
+  ```
+
+
+
+
+### 分组背包
+
+* > 题意：有n个人比赛，每个人都有一个权值，现在要将n个人分成两组，两组间的人数差<=1，问怎么分组可以使得两个组的人的权值和的差最小。
+  >
+  >  
+  >
+  > 第i个人的权值记为a[i]，令dp[i][j][k]表示只考虑前i个人，用j个人是否能将权值凑成k，如果可以则dp[i][j][k]=1,否则为0，那么转移就是如果dp[i-1][j][k]为1，那么dp[i][j+1][k+a[i]]也为1，否则为0，初始条件dp[0][0][0]=1。  
+
+
+
+### 异或配对和
+
+* > 题意：给出两个长度为n的数组a和b，然后求下面这个东西（n<=200000) 
+  >
+  > ```
+  > int sum=0;
+  > for(int i=0;i<n;i++){
+  >     for(int j=0;j<n;j++){
+  >         sum=sum^(a[i]+b[j]);
+  >     }
+  > }
+  > cout<<sum<<endl;
+  > ```
+
+* 异或 -> 统计位贡献
+* ![1569013145764](D:\OneDrive\Pictures\Typora\1569013145764.png)
+* 
+
+
+
+
+
+### 费用流 #1
+
+* ![1569013008888](D:\OneDrive\Pictures\Typora\1569013008888.png)
+* 找链环 -> 不存在, 可能环套链
+* 二分图权值匹配KM -> 爆复杂度
+* 最大费用网络流 队列优化BF -> 爆复杂度?
+
+
+
+
+
+### 机器人走路
+
+* 重复执行命令, 判断是否会遇到障碍
+
+* 对每个障碍对每个取模情况考虑
+
+* ```c++
+  class Solution {
+  public:
+      bool robot(string command, vector<vector<int>>& obstacles, int x, int y) {
+          int a=0,b=0,u=0,v=0;
+          for(auto i:command)if(i=='R')a++;
+          else b++;
+          bool c=0;
+          for(auto i:command)
+          {
+              for(auto j:obstacles)if(j[0]<=x&&j[1]<=y&&(j[0]-u)%a==0&&(j[1]-v)%b==0&&(j[0]-u)/a==(j[1]-v)/b)return 0;
+              if((x-u)%a==0&&(y-v)%b==0&&(x-u)/a==(y-v)/b)c=1;
+              if(i=='R')u++;
+              else v++;
+          }
+          return c;
+      }
+  };
+  ```
+
+
+
+### 多米诺骨牌
+
+* 带破损的多米诺最大个数
+
+* 数位dp, 连续的竖骨牌: `j&k == 0`, 连续的横骨牌 `k >> n == 0, k >> n+1 == 0`
+
+* ```c++
+  class Solution {
+  public:
+      int domino(int n, int m, vector<vector<int>>& broken) {
+          int a[10],f[10][256],ans=0,o[256],i,j,k;
+          memset(a,0,sizeof(a));
+          for(auto b:broken)a[b[0]]|=1<<b[1];
+          memset(f,128,sizeof(f));
+          f[0][(1<<m)-1]=0;
+          // number of 1s
+          for(i=1;i<1<<m;i++)
+              o[i]=o[i>>1]+(i&1);
+          for(i=0;i<n;i++)
+          {
+              for(j=0;j<1<<m;j++)
+                  f[i+1][0]=max(f[i+1][0],f[i][j]);
+              if(i)
+                  for(j=0;j<1<<m;j++)
+                      for(k=0;k<1<<m;k++)
+                          if(!(j&k)&&!(a[i-1]&k)&&!(a[i]&k))
+                              f[i+1][k]=max(f[i+1][k],f[i][j]+o[k]);
+              for(j=0;j+1<m;j++)
+                  if(!(a[i]>>j&1)&&!(a[i]>>j+1&1))
+                      for(k=0;k<1<<m;k++)
+                          if(!(k>>j&1)&&!(k>>j+1&1))
+                              f[i+1][k|1<<j|1<<j+1]=max(f[i+1][k|1<<j|1<<j+1],f[i+1][k]+1);
+          }
+          for(i=0;i<1<<m;i++)
+              ans=max(ans,f[n][i]);
+          return ans;
+      }
+  };
+  ```
+
+* 二分匹配 (i+j % 2 二部图匹配)
+
+* ```c++
+  class Solution {
+      int dx[4]={1,-1,0,0};
+      int dy[4]={0,0,-1,1};
+      bool use[20][20],broken[20][20],match[20][20];
+      int nn,mm;
+      pair<int,int> result[20][20];
+      bool dfs(int x,int y)
+      {
+          for (int a=0;a<4;a++)
+          {
+              int xx = x+dx[a];
+              int yy = y+dy[a];
+              if (xx<0 || xx>=nn || yy<0 || yy>=mm) continue;
+              if (!use[xx][yy] && !broken[xx][yy])
+              {
+                  use[xx][yy]=true;
+                  if (!match[xx][yy] || dfs(result[xx][yy].first,result[xx][yy].second))
+                  {
+                      match[xx][yy]=true;
+                      result[xx][yy] = make_pair(x,y);
+                      return true;
+                  }
+              }
+          }
+          return false;
+      }
+      int resu(int n,int m)
+      {
+          memset(match,false,sizeof(match));
+          int ans=0;
+          for (int a=0;a<n;a++)
+              for (int b=0;b<m;b++)
+                  if ((a+b)%2==0 && !broken[a][b])
+                  {
+                      memset(use,false,sizeof(use));
+                      if (dfs(a,b)) ans++;
+                  }
+          return ans;
+      }
+  public:
+      int domino(int n, int m, vector<vector<int>>& bro) {
+          nn=n;mm=m;
+          memset(broken,false,sizeof(broken));
+          for (int a=0;a<bro.size();a++)
+              broken[bro[a][0]][bro[a][1]]=true;
+          return resu(n,m);
+      }
+  };
+  ```
+
+* 二分匹配当然也可以网络流
+
+* ```c++
+  namespace dinic {
+  
+  	using F = int;
+  	const F INF = 1000000000;
+  
+  	const int N = 220000;
+  	const int M = 1100000;
+  
+  	int fst[N], nxt[M], to[M];
+  	F cap[M];
+  	int dis[N], q[N], ptr[N];
+  	int V, E;
+  
+  	void init(int n) {
+  		memset(fst, -1, sizeof fst);
+  		V = n;
+  		E = 0;
+  	}
+  	
+  	inline void add_edge(int u, int v, F c, F d = 0) {
+  		to[E] = v, cap[E] = c, nxt[E] = fst[u], fst[u] = E++;
+  		to[E] = u, cap[E] = d, nxt[E] = fst[v], fst[v] = E++;
+  	}
+  	inline bool bfs(int S, int T, int n) {
+  		memset(dis, -1, sizeof(int) * n);
+  		int h = 0, t = 0;
+  		dis[S] = 0, q[t++] = S;
+  		while (h < t) {
+  			int u = q[h++];
+  			for (int e = fst[u]; ~e; e = nxt[e]) if (cap[e] > 0 && dis[to[e]] == -1) {
+  				dis[to[e]] = dis[u] + 1, q[t++] = to[e];
+  				if (to[e] == T) return 1;
+  			}
+  		}
+  		return (dis[T] != -1);
+  	}
+  	F dfs(int u, int T, F f) {
+  		if (u == T) return f;
+  		for (int &e = ptr[u]; ~e; e = nxt[e]) if (cap[e] > 0 && dis[to[e]] > dis[u]) {
+  			F ret = dfs(to[e], T, min(f, cap[e]));
+  			if (ret > 0) {
+  				cap[e] -= ret, cap[e ^ 1] += ret;
+  				return ret;
+  			}
+  		}
+  		return 0;
+  	}
+  	F max_flow(int S, int T, int n = V) {
+  		F ret = 0;
+  		while (bfs(S, T, n)) {
+  			memcpy(ptr, fst, sizeof(int) * n);
+  			for (F cur; (cur = dfs(S, T, INF)) > 0; ret += cur);
+  		}
+  		return ret;
+  	}
+  }
+  
+  class Solution {
+  public:
+      int domino(int n, int m, vector<vector<int>>& broken) {
+          vector<vector<int>> a(n, vector<int>(m));
+          for (auto e : broken)
+          {
+              a[e[0]][e[1]] = 1;
+          }
+          int dx[] = {-1, 1, 0, 0};
+          int dy[] = {0, 0, -1, 1};
+          
+          int S = n*m+1, T = n*m+2;
+          dinic::init(n*m+5);
+          
+          auto place = [&](int x, int y)
+          {
+              return x*m+y+1;
+          };
+          
+          for (int i = 0; i < n; ++ i)
+              for (int j = 0; j < m; ++ j)
+              {
+                  if ((i+j)%2)
+                  {
+                      dinic::add_edge(place(i, j), T, 1);
+                      continue;
+                  }
+                  dinic::add_edge(S, place(i, j), 1);
+                  for (int k = 0; k < 4; ++ k)
+                  {
+                      int x = i+dx[k], y = j+dy[k];
+                      if (0 <= x && x < n && 0 <= y && y < m && !a[i][j] && !a[x][y])
+                      {
+                          dinic::add_edge(place(i, j), place(x, y), 1);
+                      }
+                  }
+              }
+          return dinic::max_flow(S, T, n*m+5);
+      }
+  };
+  
+  ```
+
+* 

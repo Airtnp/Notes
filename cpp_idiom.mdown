@@ -7,9 +7,9 @@
 * + [[noreturn]]
 * + - std::exit/terminate/abort, throw, infinite loop
 * + - never return to previous control flow, the next control flow never execute
-* __asm__ __volatile__ (
+* `__asm__ __volatile__ (
 , =A...
-) in __GNUC__
+)` in __GNUC__
 * __asm  {
 	out, in
 } in _MSC_VER
