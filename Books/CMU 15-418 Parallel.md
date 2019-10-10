@@ -12,6 +12,7 @@
 * S = N: Note, some notes
 * S = T: Todo, literally
 * S = R: Refer, cross reference
+* S = Q: Question, some questions, might be collected at the end
 
 
 
@@ -644,7 +645,7 @@
   > DRAM burst (detail of memory coalescing)
   >
   > multiple-gpu
-  
+
   
 
 ## Performance Optimization I: Work Distribution & Scheduling

@@ -176,3 +176,4 @@ Check EECS485/Lectures
   * weak consistency -> problems -> append-only
   * snapshot -> barely used
 * [Colossus](https://cloud.google.com/files/storage_architecture_and_challenges.pdf)
+

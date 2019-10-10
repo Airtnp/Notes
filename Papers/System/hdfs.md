@@ -152,3 +152,9 @@
 2. How to make consensus between `DataNode` block replicas?
    * extra consensus alg?
 3. Difference with GFS
+
+
+
+## Notes
+
+* 

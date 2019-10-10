@@ -16,13 +16,12 @@
 
 - Most of the computations involves applying a map operation to each logical record in our input in order to compute a set of intermediate key/value pairs, and then applying a reduce operation to all the values that shared the same key, in order to combine the derived data appropriately.
 - When the user-supplied map and reduce operators are deterministic functions of their input values, the distributed implementation produces same output as would have been produced by a non-faulting sequential execution of the entire program.
-- Restricting the programming model makes it easy to parallelize and distribute computations and to make such computations fault-tolerant. Network bandwidth
-  is a scarce resource. Redundant execution can be used to reduce the impact of slow machines, and to handle machine failures and data loss.
+- Restricting the programming model makes it easy to parallelize and distribute computations and to make such computations fault-tolerant. Network bandwidth is a scarce resource. Redundant execution can be used to reduce the impact of slow machines, and to handle machine failures and data loss.
 
 ### Notable Design Details/Strengths [Up to 2 details/strengths]
 
-- MapReduce takes advantage of the fact that the input data on GFS is stored on the local disks of the machines that make up the computational cluster. Thus it attempts to schedule a map task on a mchine that contains a replica of near a replica of the input data.
-- When a MapReduce operation is close to completation, the master schedules backup executions of the remaining in-progress tasks.
+- MapReduce takes advantage of the fact that the input data on GFS is stored on the local disks of the machines that make up the computational cluster. Thus it attempts to schedule a map task on a machine that contains a replica of near a replica of the input data.
+- When a MapReduce operation is close to completion, the master schedules backup executions of the remaining in-progress tasks.
 
 ### Limitations/Weaknesses [up to 2 weaknesses]
 
@@ -37,5 +36,5 @@
 
 ### Open Questions [Where to go from here?]
 
-- What's the common schema for a task that can be done by map and reduce operations? (Like the universal and expresiveness of fold)
+- What's the common schema for a task that can be done by map and reduce operations? (Like the universal and expressiveness of fold)
 - Do we have better options for faulting tolerance, parallelization, distribution on the choice of writing and renaming files?

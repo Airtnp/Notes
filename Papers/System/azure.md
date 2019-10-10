@@ -122,8 +122,8 @@
   * keeping a copy of an account's data in two locations for disaster recovery
   * migrating an account's data between stamps
   * focusing on replicating objects & transactions applied
-  * durability agianst geo-redundancy of geo-disasters
-  * acceptable levle of replication delay
+  * durability against geo-redundancy of geo-disasters
+  * acceptable level of replication delay
   * across data centers, location service controls & understand global object namespace across stamps
 
 
@@ -154,14 +154,14 @@
   * keep track of the stream namespace, extent arrangement in each stream, extent allocation across the Extent Nodes (EN).
   * standard Paxos cluster
   * off the critical path of client requests
-  * maintaining the stream namespac eand state of all active streams and extents
-  * monitoring the headlth of the ENs
+  * maintaining the stream namespace and state of all active streams and extents
+  * monitoring the health of the ENs
   * creating & assigning extents to ENs
   * performing the lazy re-replication of extent replicas lost due to hardware failure or unavailability
   * garbage collecting extents that are no longer pointed by any stream
   * scheduling the erasure coding of extent data according to stream policy
   * periodically poll (sync) the state of ENs and extents
-    * replicated few than expected -> re-prelication lazilly
+    * replicated few than expected -> replication lazily
     * randomly choose EN across different fault domains
   * in-memory state
   * only care about stream & extent
@@ -179,7 +179,7 @@
 * atomic append -> duplicate records
 * single atomic "multi-block append"
 * metadata & commit log duplicate -> sequence number
-* row data & blob data stream duplicate -> only last write will be pointed to by the `RangePartition`, the rest will be GCed.
+* row data & blob data stream duplicate -> only last write will be pointed to by the `RangePartition`, the rest will be GC-ed.
 * sealed extent: immutable, can do optimizations by stream layer (size > target size at a block boundary)
 
 
@@ -418,10 +418,10 @@
 
 #### Partition Layer Inter-Stamp Replication
 
-* primary stamp P: AccountName via DNS to a single location & storage stamp
+* primary stamp P: `AccountName` via DNS to a single location & storage stamp
 * secondary stamp S: assigned by Location Service
 * geo-replicate
-  * LS choose a stamp each location, register AccountName with both stamp
+  * LS choose a stamp each location, register `AccountName `with both stamp
   * P take live traffic, S take only inter-stamp replication traffic from P
   * LS update DNS to have hostname `AccountName.service.core.windows.net` point to P's VIP
   * write to P will be replicated using intra-stamp replication at stream layer
@@ -518,3 +518,27 @@
 * The availability of Azure is questionable.
 * Won't these level of abstractions harm performance?
 
+
+
+## Motivation
+
+- Microsoft needs a cloud storage system for its applications including social networking search and many more. Also Microsoft provides users with this cloud storage system. The cloud storage system needs to be scalable (high available), strongly consistent, global, durable and relatively low cost.
+
+## Summary
+
+- Windows Azure Storage (WAS) is Microsoft's scalable cloud storage system provides CAP (strong consistency, high availability and partition tolerance), global namespace and disaster recovery.
+- The storage forms are Blob (user-files), Tables (structured storage) and Queue (message delivery). The global namespace are split into AccountName, PartitionName, ObjectName. Blob is represented by PartitionName. Each table row is represented by (PartitionName, ObjectName). The Queue is represented by PartitionName and each message are uniquely identified as ObjectName.
+- The top-level architecture of WAS consists of Location Service managing account namespace and Storage Stamps managing storage node clusters. The Storage Stamp contains three layers: Stream Layer (bit-level storage, acts as a distributed file system, managing intra-stamp replication); Partition Layer (abstraction-level storage, namespace, transactions, inter-stamp replication); Front-End Later (stateless server serving requests).
+- Stream Layers manage bits in three level: Block (group of bits, minimum read/write unit), Extent (sequence of append blocks), Stream (ordered list of extent pointer). The Storage manager s control the stream namespace and does intra-stamp replication across extent nodes. The Extent Nodes maintain the storage for a set of extent replicas.
+- Partition Layer manage objects by a massive Object Table. The Object Table can behave as many kinds of tables including Account/Blob/Entity/Message/Schema/Partition Map Table. The Object Table will dynamically break into RangePartitions (Log-Strcutured Merge Tree). Partition Layer manage Object Tables with three components: Partition Server (store persistent state of partitions to streams, serve a set of RangePartition); Partition Manager (monitor/split Object Table into RangePartitions, assign RangePartition to Object Table); Lock Service (Paxos lock service for leader election for Partition Manager and lease for Partition Server).
+
+## Strength
+
+- The usage of erasure coding reduces the storage cost. [paper](https://www.cs.princeton.edu/courses/archive/spring13/cos598C/atc12-final181.pdf)
+- The design of two level replication provides high availability and high performance.
+
+## Limitation & Solution
+
+- The complexity of WAS is astonishing. The Stream Layer is a traditional distributed system and Partition Layer is a traditional distributed database system.
+  - Consider split it into two orthogonal parts? Like Spanner+Colossus
+- The simultaneously satisfying CAP assertion is questionable. Geo-replication is done asynchronously, so it's a AP system globally. Within a cluster, only one Partition Server is serving each RangePartition, so it's a CP system per cluster in Partition Layer. Finally it has   inconsistent append modification inside Stream Layer, which means a AP system.

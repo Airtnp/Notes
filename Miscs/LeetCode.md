@@ -6,6 +6,7 @@
 
 * 双指针 / 快慢指针
   * 有序数组, 逼近给定值
+  * 链表: 快慢指针找中点, 找环, 找环起始点, 找重复值
   * 自定义点: 运算(+), 双指针移动方式(++, --)
   * k-sum (closest)
   * 滑动窗口
@@ -136,6 +137,17 @@
 * AC自动机
 
   * Trie + 失配指针
+  
+* 链表
+
+  * dummy head, **p = &&dummy_head
+
+* 情况编码
+
+  * 数位dp
+  * 有限情况? => 循环节
+
+* 矩阵快速幂
 
 
 
@@ -1797,6 +1809,484 @@ public:
 
 
 
+### 321. Create Maximum Number
+
+* 将`k`分拆成`i`和`k-i`个分别到两个序列中找`n`个最大序列
+
+* 单调栈维护单调递减, 同时保持一个最大可`drop = size - n`数量, 为空或者`drop`为0超过上限则单调栈不再pop元素
+
+* 合并需要考虑相同情况向后寻找
+
+* ```c++
+  class Solution {
+  public:
+      vector<int> maxArray(vector<int>& nums, int k) {
+          int drop = nums.size() - k;
+          vector<int> st;
+          // monotonic stack
+          for (int n : nums) {
+              while (drop > 0 && !st.empty() && st.back() < n) {
+                  --drop;
+                  st.pop_back();
+              }
+              st.push_back(n);
+          }
+          // could be monotonically >k sequence
+          st.resize(k);
+          return st;
+      }
+      
+      template <typename It, typename Comp>
+      It equal_merge(It first1, It last1, It first2, It last2, It d_first, Comp cp) {
+          for (; first1 != last1; ++d_first) {
+              if (first2 == last2) {
+                  return std::copy(first1, last1, d_first);
+              }
+              It copy_first1 = first1;
+              It copy_first2 = first2;
+              while (copy_first1 != last1 && copy_first2 != last2) {
+                  if (cp(*copy_first2, *copy_first1)) {
+                      *d_first = *first2;
+                      ++first2;
+                      break;
+                  } else if (cp(*copy_first1, *copy_first2)) {
+                      *d_first = *first1;
+                      ++first1;
+                      break;
+                  }
+                  ++copy_first1;
+                  ++copy_first2;
+              }
+              if (copy_first1 == last1 || copy_first2 == last2) {
+                  if (copy_first1 == last1) {
+                      *d_first = *first2;
+                      ++first2;
+                  } else {
+                      *d_first = *first1;
+                      ++first1;
+                  }
+              }
+          }
+          return std::copy(first2, last2, d_first);
+      }
+      
+      vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
+          if (k == 0) return {};
+          int N = nums1.size();
+          int M = nums2.size();
+          auto comp = [k](const auto& l, const auto& r) {
+              for (int i = 0; i < k; ++i) {
+                  if (l[i] < r[i])
+                      return true;
+                  if (l[i] > r[i])
+                      return false;
+              }
+              return true;
+          };
+          vector<int> res(k, -1);
+          for (int i = 0; i <= k; ++i) {
+              if (i <= N && k - i <= M) {
+                  vector<int> p1 = maxArray(nums1, i);
+                  vector<int> p2 = maxArray(nums2, k - i);
+                  for (auto& i : p1)
+                      cout << i << ' ';
+                  cout << endl;
+                  for (auto& i : p2)
+                      cout << i << ' ';
+                  cout << endl;
+                  vector<int> temp(k);
+                  equal_merge(p1.begin(), p1.end(), p2.begin(), p2.end(), temp.begin(), greater<int>{});
+                  res = max(res, temp, comp);
+              }
+          }
+          return res;
+      }
+  };
+  ```
+
+* 其他`equal_merge`的实现
+
+* ```c++
+  vector<int> equal_merge(vector<int> nums1, vector<int> nums2) {
+      vector<int> out;
+      auto i1 = nums1.begin(), end1 = nums1.end();
+      auto i2 = nums2.begin(), end2 = nums2.end();
+      while (i1 != end1 || i2 != end2)
+          out.push_back(lexicographical_compare(i1, end1, i2, end2) ? *i2++ : *i1++);
+      return out;
+  }
+  
+  // vector是有built-in的比较operator的!!!!
+  vector<int> equal_merge(vector<int> nums1, vector<int> nums2) {
+      vector<int> out;
+      while (nums1.size() + nums2.size()) {
+          vector<int>& now = nums1 > nums2 ? nums1 : nums2;
+          out.push_back(now[0]);
+          now.erase(now.begin());
+      }
+      return out;
+  }
+  ```
+
+* 也可以贪心的求区间内的最大值, 因为是字典序比较, 每次限定可选范围然后取最早的最大值一定是总体最优. 
+
+* 再用一次RMQ?
+
+* ```c++
+  class Solution {
+  public:
+      pair<int,int> getBestIndex(vector<int>& nums, int start, int span) {
+  	// get index and maximum
+          int max_idx = 0, max_ = nums[start];
+          for (auto i = 1; i < span; i++) {
+              auto val = nums[start+i];
+              if (val > max_) {
+                  max_idx = i;
+                  max_ = val;
+                  if (max_ == 9) break;
+              }
+          }
+          return {max_idx, max_};
+      }
+      
+      vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
+          auto size = max(nums1.size(), nums2.size());
+          vector<int> best_seq;
+          vector<pair<int,int>> list_indices = {{0,0}};
+          while (k--) {
+              vector<pair<int,int>> next_list_indices;
+              int max_ = -1;
+              for (auto it = list_indices.begin(); it != list_indices.end(); it++) {
+                  int n1, n2;
+                  tie(n1, n2) = *it;
+                  int remaining = nums1.size() + nums2.size() - n1 - n2 - k;
+                  int idx1, max1 = -1, idx2, max2 = -1;
+                  int end1 = nums1.size(), end2 = nums2.size();
+                  if (it != list_indices.begin()) end1 = min(end1, (it-1)->first + 1);
+                  if (it+1 != list_indices.end()) end2 = min(end2, (it+1)->second + 1);
+                  auto remaining1 = min(remaining, end1 - n1);
+                  auto remaining2 = min(remaining, end2 - n2);
+                  // or just
+                  /*
+                  auto n1 = indices.first;
+                  auto n2 = indices.second;
+                  auto remaining = nums1.size() + nums2.size() - n1 - n2 - k;
+                  auto remaining1 = min(remaining, nums1.size() - n1);
+                  auto remaining2 = min(remaining, nums2.size() - n2);
+                  */
+                  if (remaining1)
+                      tie(idx1, max1) = getBestIndex(nums1, n1, remaining1);
+                  if (remaining2)
+                      tie(idx2, max2) = getBestIndex(nums2, n2, remaining2);
+                  auto max12 = max(max1, max2);
+                  if (max12 < max_) continue;
+                  if (max12 > max_) max_ = max12, next_list_indices.clear();
+                  if (max1 >= max2 && (it == list_indices.begin() || (it-1)->first != n1+idx1+1))
+                      next_list_indices.push_back({n1+idx1+1, n2});
+                  if (max1 <= max2) next_list_indices.push_back({n1, n2+idx2+1});
+              }
+              best_seq.emplace_back(max_);
+              list_indices = move(next_list_indices);
+          }
+          return best_seq;
+      }
+  }
+  ```
+
+* DP会超时
+
+* > Let `f(i,j,k)` represent maximum number of length k generated from nums1[1:i] and nums2[1:j].
+  >
+  >  the formula is: `f(i,j,k) = max{f(i-1,j,k), f(i,j-1,k), f(i-1,j,k-1) + [nums1[i]], f(i,j-1,k-1) + [nums2[j]] }`
+
+* ```python
+   def maxNumber(self, nums1, nums2, k):
+      """
+      :type nums1: List[int]
+      :type nums2: List[int]
+      :type k: int
+      :rtype: List[int]
+      """
+      m = len(nums1)
+      n = len(nums2)
+      if k > m + n or k <= 0:
+          return []
+      #kk = 0
+      pre_dp = [[[] for _ in xrange(n + 1)] for __ in xrange(m + 1)]
+      
+      for kk in xrange(1, k + 1):
+          #kk
+          dp = [[[] for _ in xrange(n + 1)] for __ in xrange(m + 1)]
+          #i >= kk, j = 0
+          for i in xrange(kk, m + 1):
+              dp[i][0] = max(pre_dp[i-1][0] + [nums1[i-1]], dp[i-1][0])
+              
+          #i = 0, j >= kk
+          for j in xrange(kk, n + 1):
+              dp[0][j] = max(pre_dp[0][j-1] + [nums2[j-1]], dp[0][j-1])
+          
+          #i > 0, j > 0
+          for i in xrange(1, m + 1):
+              for j in xrange(1, n + 1):
+                  if i + j < kk:
+                      continue
+                  dp[i][j] = max(dp[i-1][j], \
+                                  dp[i][j-1], \
+                                  pre_dp[i-1][j] + [nums1[i-1]], \
+                                  pre_dp[i][j-1] + [nums2[j-1]])
+          pre_dp, dp = dp, pre_dp
+      return pre_dp[m][n]
+  ```
+
+* 
+
+
+
+### 378. Kth Smallest Element in a Sorted Matrix
+
+* 二分结果并统计每列大于该元素的数量
+
+* ```c++
+  class Solution {
+  public:
+      int kthSmallest(vector<vector<int>>& matrix, int k) {
+          int n = matrix.size();
+          int l = matrix[0][0], r = matrix[n-1][n-1], mid;
+          while(l < r){
+              mid = l + (r - l) / 2;
+              int cnt = 0, j = n - 1;
+              for(int i = 0; i < n; ++i){
+                  while(j >= 0 && matrix[i][j] > mid)
+                      j--;
+                  cnt += j+1;
+              }
+              if(cnt < k)
+                  l = mid + 1;
+              else
+                  r = mid;
+          }
+          return l;
+      }
+  };
+  ```
+
+* ![1570297327462](D:\OneDrive\Pictures\Typora\1570297327462.png)
+
+* ![1570297343761](D:\OneDrive\Pictures\Typora\1570297343761.png)
+
+* ![1570297414638](D:\OneDrive\Pictures\Typora\1570297414638.png)
+
+* ![1570297424654](D:\OneDrive\Pictures\Typora\1570297424654.png)
+
+* ```c++
+  class Solution {
+  public:
+  	int kthSmallest(const std::vector<std::vector<int>> & matrix, int k)
+  	{
+  		if (k == 1) // guard for 1x1 matrix
+  		{
+  			return matrix.front().front();
+  		}
+  
+  		size_t n = matrix.size();
+  		std::vector<size_t> indices(n);
+  		std::iota(indices.begin(), indices.end(), 0);
+  		std::array<size_t, 2> ks = { k - 1, k - 1 }; // use zero-based indices
+  		std::array<int, 2> results = biSelect(matrix, indices, ks);
+  		return results[0];
+  	}
+  
+  private:
+  	// select two elements from four elements, recursively
+  	std::array<int, 2> biSelect(
+  		const std::vector<std::vector<int>> & matrix,
+  		const std::vector<size_t> & indices,
+  		const std::array<size_t, 2> & ks)
+  	// Select both ks[0]-th element and ks[1]-th element in the matrix,
+  	// where k0 = ks[0] and k1 = ks[1] and n = indices.size() satisfie
+  	// 0 <= k0 <= k1 < n*n  and  k1 - k0 <= 4n-4 = O(n)   and  n>=2
+  	{
+  		size_t n = indices.size();		
+  		if (n == 2u) // base case of resursion
+  		{			
+  			return biSelectNative(matrix, indices, ks);
+  		}
+  		
+  		// update indices
+  		std::vector<size_t> indices_;
+  		for (size_t idx = 0; idx < n; idx += 2)
+  		{
+  			indices_.push_back(indices[idx]);
+  		}
+  		if (n % 2 == 0) // ensure the last indice is included
+  		{
+  			indices_.push_back(indices.back());
+  		}
+  
+  		// update ks
+  		// the new interval [xs_[0], xs_[1]] should contain [xs[0], xs[1]]
+  		// but the length of the new interval should be as small as possible
+  		// therefore, ks_[0] is the largest possible index to ensure xs_[0] <= xs[0]
+  		// ks_[1] is the smallest possible index to ensure xs_[1] >= xs[1]
+  		std::array<size_t, 2> ks_ = { ks[0] / 4, 0 };
+  		if (n % 2 == 0) // even
+  		{
+  			ks_[1] = ks[1] / 4 + n + 1;
+  		}
+  		else // odd
+  		{
+  			ks_[1] = (ks[1] + 2 * n + 1) / 4;
+  		}
+  
+  		// call recursively
+  		std::array<int, 2> xs_ = biSelect(matrix, indices_, ks_);
+  
+  		// Now we partipate all elements into three parts:
+  		// Part 1: {e : e < xs_[0]}.  For this part, we only record its cardinality
+  		// Part 2: {e : xs_[0] <= e < xs_[1]}. We store the set elementsBetween
+  		// Part 3: {e : x >= xs_[1]}. No use. Discard.
+  		std::array<int, 2> numbersOfElementsLessThanX = { 0, 0 };
+  		std::vector<int> elementsBetween; // [xs_[0], xs_[1])
+  
+  		std::array<size_t, 2> cols = { n, n }; // column index such that elem >= x
+  		 // the first column where matrix(r, c) > b
+  		 // the first column where matrix(r, c) >= a
+  		for (size_t row = 0; row < n; ++row)
+  		{
+  			size_t row_indice = indices[row];
+  			for (size_t idx : {0, 1})
+  			{
+  				while ((cols[idx] > 0)
+  					&& (matrix[row_indice][indices[cols[idx] - 1]] >= xs_[idx]))
+  				{
+  					--cols[idx];
+  				}
+  				numbersOfElementsLessThanX[idx] += cols[idx];
+  			}
+  			for (size_t col = cols[0]; col < cols[1]; ++col)
+  			{
+  				elementsBetween.push_back(matrix[row_indice][indices[col]]);
+  			}
+  		}
+  
+  		std::array<int, 2> xs; // the return value
+  		for (size_t idx : {0, 1})
+  		{
+  			size_t k = ks[idx];
+  			if (k < numbersOfElementsLessThanX[0]) // in the Part 1
+  			{
+  				xs[idx] = xs_[0];
+  			}
+  			else if (k < numbersOfElementsLessThanX[1]) // in the Part 2
+  			{
+  				size_t offset = k - numbersOfElementsLessThanX[0];
+  				std::vector<int>::iterator nth = std::next(elementsBetween.begin(), offset);
+  				std::nth_element(elementsBetween.begin(), nth, elementsBetween.end());
+  				xs[idx] = (*nth);
+  			}
+  			else // in the Part 3
+  			{
+  				xs[idx] = xs_[1];
+  			}
+  		}
+  		return xs;
+  	}
+  
+  	// select two elements from four elements, using native way
+  	std::array<int, 2> biSelectNative(
+  		const std::vector<std::vector<int>> & matrix,
+  		const std::vector<size_t> & indices,
+  		const std::array<size_t, 2> & ks)
+  	{
+  		std::vector<int> allElements;
+  		for (size_t r : indices)
+  		{
+  			for (size_t c : indices)
+  			{
+  				allElements.push_back(matrix[r][c]);
+  			}
+  		}
+  		std::sort(allElements.begin(), allElements.end());
+  		std::array<int, 2> results;
+  		for (size_t idx : {0, 1})
+  		{
+  			results[idx] = allElements[ks[idx]];
+  		}
+  		return results;
+  	}
+  };
+  
+  class Solution(object):
+      def kthSmallest(self, matrix, k):
+  
+          # The median-of-medians selection function.
+          def pick(a, k):
+              if k == 1:
+                  return min(a)
+              groups = (a[i:i+5] for i in range(0, len(a), 5))
+              medians = [sorted(group)[len(group) / 2] for group in groups]
+              pivot = pick(medians, len(medians) / 2 + 1)
+              smaller = [x for x in a if x < pivot]
+              if k <= len(smaller):
+                  return pick(smaller, k)
+              k -= len(smaller) + a.count(pivot)
+              return pivot if k < 1 else pick([x for x in a if x > pivot], k)
+  
+          # Find the k1-th and k2th smallest entries in the submatrix.
+          def biselect(index, k1, k2):
+  
+              # Provide the submatrix.
+              n = len(index)
+              def A(i, j):
+                  return matrix[index[i]][index[j]]
+              
+              # Base case.
+              if n <= 2:
+                  nums = sorted(A(i, j) for i in range(n) for j in range(n))
+                  return nums[k1-1], nums[k2-1]
+  
+              # Solve the subproblem.
+              index_ = index[::2] + index[n-1+n%2:]
+              k1_ = (k1 + 2*n) / 4 + 1 if n % 2 else n + 1 + (k1 + 3) / 4
+              k2_ = (k2 + 3) / 4
+              a, b = biselect(index_, k1_, k2_)
+  
+              # Prepare ra_less, rb_more and L with saddleback search variants.
+              ra_less = rb_more = 0
+              L = []
+              jb = n   # jb is the first where A(i, jb) is larger than b.
+              ja = n   # ja is the first where A(i, ja) is larger than or equal to a.
+              for i in range(n):
+                  while jb and A(i, jb - 1) > b:
+                      jb -= 1
+                  while ja and A(i, ja - 1) >= a:
+                      ja -= 1
+                  ra_less += ja
+                  rb_more += n - jb
+                  L.extend(A(i, j) for j in range(jb, ja))
+                  
+              # Compute and return x and y.
+              x = a if ra_less <= k1 - 1 else \
+                  b if k1 + rb_more - n*n <= 0 else \
+                  pick(L, k1 + rb_more - n*n)
+              y = a if ra_less <= k2 - 1 else \
+                  b if k2 + rb_more - n*n <= 0 else \
+                  pick(L, k2 + rb_more - n*n)
+              return x, y
+  
+          # Set up and run the search.
+          n = len(matrix)
+          start = max(k - n*n + n-1, 0)
+          k -= n*n - (n - start)**2
+          return biselect(range(start, min(n, start+k)), k, k)[0]
+  ```
+
+* [Selection in X + Y and Matrices with sorted rows and columns](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf)
+
+
+
+
+
 ### 410. Split Array Largest Sum
 
 * 连续的数列, 有上下界的问题, 考虑二分 + 贪心
@@ -1886,6 +2376,43 @@ public:
       }
   };
   ```
+
+
+
+### 456. 132 Pattern
+
+* 倒着构造单调递减栈, 保存`a_k` 为单调栈最后一次弹出的元素, 则存在`a_i`小于`a_k`则单调栈中必定有比`a_k`大的且存在于`i, k`之间的`a_j`. 实际上`a_k`维护了栈中最大数的后继中比最大数小的最远数
+
+* ```c++
+  class Solution {
+  public:
+      bool find132pattern(vector<int>& nums) {
+          int s3 = INT_MIN;
+          stack<int> st;
+          for (int i = nums.size() - 1; i >= 0; --i) {
+              if (nums[i] < s3) return true;
+              else {
+                  while(!st.empty() && nums[i] > st.top()){ 
+                      s3 = st.top();
+                      st.pop(); 
+                  }
+              }
+              st.push(nums[i]);
+          }
+          return false;
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+
+
+
 
 
 
@@ -2354,6 +2881,72 @@ public:
               cur_x_sum = sum(x2 - x1 if c else 0 for x1, x2, c in zip(xs, xs[1:], count))
           return area % (10 ** 9 + 7)
   ```
+
+
+
+### 865. Smallest Subtree with all the Deepest Nodes
+
+* 一遍返回`(maxDepth, maxDepthNodesLCA)`
+
+* ```c++
+  class Solution {
+  public:
+      TreeNode* subtreeWithAllDeepest(TreeNode* root) {
+          return deep(root).second;
+      }
+  
+      pair<int, TreeNode*> deep(TreeNode* root) {
+          if (!root) return {0, NULL};
+          pair<int, TreeNode*> l = deep(root->left), r = deep(root->right);
+  
+          int d1 = l.first, d2 = r.first;
+          return {max(d1, d2) + 1, d1 == d2 ? root : d1 > d2 ? l.second : r.second};
+      }
+  };
+  ```
+
+* BFS得到最左最右的最深节点, 做LCA
+
+* ```c++
+  class Solution {
+  public:
+      TreeNode* lca( TreeNode* root, TreeNode* p, TreeNode* q ) {
+          if ( !root || root == p || root == q ) return root;
+          TreeNode *left = lca( root->left, p, q );
+          TreeNode *right = lca (root->right, p, q );
+  
+          return !left? right: !right? left: root;
+      }
+      
+      TreeNode* subtreeWithAllDeepest(TreeNode* root) {
+          if ( !root || !root->left && !root->right ) return root;
+          TreeNode *leftMost = NULL;
+          TreeNode *rightMost = NULL;
+          
+          queue<TreeNode*> q;
+          q.push(root);
+          while( !q.empty() ) {
+              int levelSize = q.size();
+              for(int level = 0; level < levelSize; level++ ) {
+                  TreeNode* node = q.front(); q.pop();
+                  if ( level == 0 ) leftMost = node;
+                  if ( level == levelSize - 1 ) rightMost = node;
+                  
+                  if (node->left) q.push(node->left);
+                  if (node->right) q.push(node->right);
+                  
+              }
+          }
+          return lca( root, leftMost, rightMost );
+      }
+  };
+  ```
+
+* 
+
+
+
+
 
 
 
@@ -3975,6 +4568,297 @@ public:
           return pq.top();
       }
   };
+  ```
+
+
+
+
+### 1210. Minimum Moves to Reach Target with Rotations
+
+* 对蛇尾位置和蛇方向`x, y, dir`三维BFS, 注意终止情况一定是蛇头向下
+
+* ```c++
+  class Solution {
+      const int INF = 1e9 + 5;
+      const int HORIZONTAL = 0, VERTICAL = 1;
+  
+      int R, C;
+      vector<vector<int>> grid;
+      vector<vector<vector<int>>> dist;
+  
+      bool valid(int r, int c) {
+          return 0 <= r && r < R && 0 <= c && c < C;
+      }
+  
+      void bfs_check(queue<pair<pair<int, int>, int>> &q, int r, int c, int dir, int current_dist) {
+          if (current_dist < dist[r][c][dir]) {
+              dist[r][c][dir] = current_dist;
+              q.push({{r, c}, dir});
+          }
+      }
+  
+      void grid_bfs() {
+          queue<pair<pair<int, int>, int>> q;
+          dist.assign(R, vector<vector<int>>(C, vector<int>(2, INF)));
+          bfs_check(q, 0, 0, HORIZONTAL, 0);
+  
+          while (!q.empty()) {
+              pair<pair<int, int>, int> top = q.front(); q.pop();
+              int r = top.first.first, c = top.first.second, dir = top.second;
+              int cur_dist = dist[r][c][dir];
+              int r2 = dir == HORIZONTAL ? r : r + 1;
+              int c2 = dir == HORIZONTAL ? c + 1 : c;
+  
+              if (valid(r, c + 1) && valid(r2, c2 + 1) && !grid[r][c + 1] && !grid[r2][c2 + 1])
+                  bfs_check(q, r, c + 1, dir, cur_dist + 1);
+  
+              if (valid(r + 1, c) && valid(r2 + 1, c2) && !grid[r + 1][c] && !grid[r2 + 1][c2])
+                  bfs_check(q, r + 1, c, dir, cur_dist + 1);
+  
+              if (dir == HORIZONTAL) {
+                  if (valid(r + 1, c) && valid(r + 1, c + 1) && !grid[r + 1][c] && !grid[r + 1][c + 1])
+                      bfs_check(q, r, c, VERTICAL, cur_dist + 1);
+              } else {
+                  if (valid(r, c + 1) && valid(r + 1, c + 1) && !grid[r][c + 1] && !grid[r + 1][c + 1])
+                      bfs_check(q, r, c, HORIZONTAL, cur_dist + 1);
+              }
+          }
+      }
+  public:
+      int minimumMoves(vector<vector<int>>& _grid) {
+          grid = _grid;
+          R = grid.size();
+          C = grid.empty() ? 0 : grid[0].size();
+          grid_bfs();
+          int answer = dist[R - 1][C - 2][HORIZONTAL];
+          return answer < INF ? answer : -1;
+      }
+  };
+  ```
+
+
+
+
+### 1219. Path with Maximum Gold
+
+* 练习一下数位DFS, `std::hash<bitset<N>>`
+
+* ```c++
+  vector<vector<int>> d = {
+      {1, 0},
+      {0, 1},
+      {-1, 0},
+      {0, -1}
+  };
+  class Solution {
+  public: 
+      map<pair<int, int>, unordered_map<bitset<256>, int>> m;
+      int helper(vector<vector<int>>& grid, bitset<256>&b, int x, int y, int N, int M) {
+          if (m.find(make_pair(x, y)) != m.end()) {
+              auto& um = m[make_pair(x, y)];
+              if (um.find(b) != um.end()) {
+                  return um[b];
+              }
+          }
+          int curmax = 0;
+          for (int i = 0; i < 4; ++i) {
+              auto& di = d[i];
+              int nx = x + di[0];
+              int ny = y + di[1];
+              if (nx >= 0 && nx < N && ny >= 0 && ny < M && grid[nx][ny] != 0 && !b[nx * 16 + ny]) {
+                  b[nx * 16 + ny] = true;
+                  int res = helper(grid, b, nx, ny, N, M);
+                  b[nx * 16 + ny] = false;
+                  curmax = max(curmax, res);
+              }
+          }
+          m[make_pair(x, y)][b] = curmax + grid[x][y];
+          return curmax + grid[x][y];
+      }
+      
+      
+      int getMaximumGold(vector<vector<int>>& grid) {
+          int N = grid.size();
+          int M = grid[0].size();
+          bitset<256> b;
+          int max1 = 0;
+          for (int i = 0; i < N; ++i) {
+              for (int j = 0; j < M; ++j) {
+                  if (grid[i][j] && !b[i * 16 + j]) {
+                      b[i * 16 + j] = true;
+                      max1 = max(max1, helper(grid, b, i, j, N, M));
+                      b[i * 16 + j] = false;
+                  }
+                  b.reset();
+              }
+          }
+          return max1;
+      }
+  };
+  
+  ```
+
+* 或者离散化+mask (小于25个)
+
+* ```c++
+  int N;
+  vector<int> gold;
+  vector<vector<int>> adj;
+  unordered_map<int, int> save;
+  
+  int solve(int current, int mask) {
+      int key = (current << N) + mask;
+  
+      if (save.find(key) != save.end())
+          return save[key];
+  
+      int answer = 0;
+  
+      for (int neighbor : adj[current])
+          if ((mask >> neighbor & 1) == 0)
+              answer = max(answer, gold[neighbor] + solve(neighbor, mask | 1 << neighbor));
+  
+      return save[key] = answer;
+  }
+  
+  class Solution {
+  public:
+      int getMaximumGold(vector<vector<int>>& grid) {
+          int R = grid.size(), C = grid.empty() ? 0 : grid[0].size();
+          vector<vector<int>> gold_index(R, vector<int>(C, -1));
+          gold.clear();
+          N = 0;
+  
+          for (int r = 0; r < R; r++)
+              for (int c = 0; c < C; c++)
+                  if (grid[r][c] > 0) {
+                      gold.push_back(grid[r][c]);
+                      gold_index[r][c] = N++;
+                  }
+  
+          adj.assign(N, {});
+  
+          for (int r = 0; r < R; r++)
+              for (int c = 0; c < C; c++) {
+                  int index = gold_index[r][c];
+  
+                  if (index < 0)
+                      continue;
+  
+                  if (r > 0 && grid[r - 1][c] > 0)
+                      adj[index].push_back(gold_index[r - 1][c]);
+  
+                  if (c > 0 && grid[r][c - 1] > 0)
+                      adj[index].push_back(gold_index[r][c - 1]);
+  
+                  if (r + 1 < R && grid[r + 1][c] > 0)
+                      adj[index].push_back(gold_index[r + 1][c]);
+  
+                  if (c + 1 < C && grid[r][c + 1] > 0)
+                      adj[index].push_back(gold_index[r][c + 1]);
+              }
+  
+          save.clear();
+          int best = 0;
+  
+          for (int i = 0; i < N; i++)
+              best = max(best, gold[i] + solve(i, 1 << i));
+  
+          return best;
+      }
+  };
+  ```
+
+* 主要是卡常...
+
+* ```c++
+  class Solution {
+  private:
+      int cur;
+      int ans;
+      static constexpr int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+      
+  public:
+      void dfs(vector<vector<int>>& grid, int m, int n, int i, int j) {
+          cur += grid[i][j];
+          grid[i][j] = -grid[i][j];
+          ans = max(ans, cur);
+          for (int k = 0; k < 4; ++k) {
+              int i0 = i + dirs[k][0];
+              int j0 = j + dirs[k][1];
+              if (i0 >= 0 && i0 < m && j0 >= 0 && j0 < n && grid[i0][j0] > 0) {
+                  dfs(grid, m, n, i0, j0);
+              }
+          }
+          cur += grid[i][j];
+          grid[i][j] = -grid[i][j];
+      }
+      
+      int getMaximumGold(vector<vector<int>>& grid) {
+          int m = grid.size();
+          int n = grid[0].size();
+          ans = 0;
+          for (int i = 0; i < m; ++i) {
+              for (int j = 0; j < n; ++j) {
+                  cur = 0;
+                  if (grid[i][j] > 0) {
+                      dfs(grid, m, n, i, j);
+                  }
+              }
+          }
+          return ans;
+      }
+  };
+  ```
+
+
+
+### 1220. Count Vowels Permutaton
+
+* 弱智dp, 学习一下矩阵快速幂
+
+* ```c++
+  class Solution {
+  public:
+      typedef long long ll;
+      typedef vector<ll> vec;
+      typedef vector<vec> mat;
+       
+      const int MODE = 1e9 + 7;
+       
+      mat multiply(mat& A, mat& B) {
+          int m = A.size(), n = B[0].size();
+          mat res(m, vec(n, 0));
+       
+          for(int i=0; i<m; i++)
+              for(int j=0; j<n; j++)
+                  for(int k=0; k<A[i].size(); k++)
+                      res[i][j] = (res[i][j] + A[i][k] * B[k][j]) % MODE;
+       
+          return res;
+      }
+       
+      mat pow(mat& A, long long n) {
+          mat res(A.size(), vec(A.size(), 0));
+          for(int i=0; i<A.size(); i++)
+              res[i][i] = 1;
+       
+          while(n > 0){
+              if((n&1) == 1) res = multiply(A, res);
+              n >>= 1;
+              A = multiply(A, A);
+          }
+          return res;
+      }
+  	static constexpr const mat grid{{0,1,0,0,0}, {1,0,1,0,0}, {1,1,0,1,1}, {0,0,1,0,1}, {1,0,0,0,0} };
+      int countVowelPermutation(int n) {
+          grid = pow(grid, n-1);
+          mat res{{1}, {1}, {1}, {1}, {1}};
+          res = multiply(grid, res);
+          for(int i=1; i<5; i++) res[i][0] += res[i-1][0];
+          return res.back().back() % MODE;
+      }
+  }
   ```
 
 * 

@@ -4,6 +4,96 @@
 
 ---
 
+
+
+[[S: Content]]
+
+- S = C: Check, random or related insights
+- S = N: Note, some notes
+- S = T: Todo, literally
+- S = R: Refer, cross reference
+- S = Q: Question, some questions, might be collected at the end
+
+
+
+
+
+## What appears in every paper
+
+* CAP (Consistency/Availability/Partition Tolerance)
+* ACID (Atomicity/Consistency/Isolation/Durability)
+* Data Model
+* Programming Model
+* Storage
+* Share
+  * Share nothing
+  * Share-Disk/Memory
+* Locality
+  * Temporal: Cache
+  * Spatial: Machine/Rack/Cluster/Datacenter
+* Pipeline (break dependency)
+  * Out-of-Order design
+* Communication
+  * Shared address space
+  * Message passing
+* Scheduling
+  * Thread pool
+  * Real time
+* Resource allocation
+  * Memory Management
+    * Cache/ObjectTable Eviction Policy
+* Fault Tolerance
+  * Checkpoint (E.g. database)
+  * Recomputing/Immutable
+    * Lineage (E.g. Spark)
+  * Error recovery
+* Availability/Replication
+  * Sync/Async update
+  * Master/Slave
+    * shadow master
+  * Leader/Coordinator/Participants Cluster
+* Consistency
+  * Consensus: Paxos/Raft/BPFT
+  * Single master
+  * Order
+    * Physical lock
+    * Logical lock
+    * Timestamp
+    * Version number
+* Identifier
+  * Global timestamp
+  * UUID
+  * URI + DNS (virtual IP)
+* Computation
+  * Sequential
+  * Parallel
+  * Graph computing (mostly DAG)
+* Expressiveness
+  * Functional programming
+* Event-driven vs. Message driven
+* Synchronous vs. Asynchronous
+* Blocking vs. Non-blocking
+* Mutable vs. Immutable
+* Latency vs Throughput
+  * Data-parallel
+* Distributed system
+  * Consensus: Paxos/Raft/BPFT
+* Heterogeneous system
+* Abstraction Layer
+* Coarse/Fine-grained
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Arch
 
 ### ASPLOS (April)
@@ -32,13 +122,15 @@
 
 ### OSDI/SOSP (Oct.)
 
-* [KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs](./Security/symbolic_execution.md)
-* [Failure Sketching: A Technique for Automated  Root Cause Diagnosis of In-Production Failures](./Security/symbolic_execution.md)
-* [Lazy Diagnosis of In-Production Concurrency Bugs](./Security/symbolic_execution.md)
-* [SOSP'03-The Google File System](./System/the_google_file_system.md)
+* [OSDI'08-KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs](./Security/symbolic_execution.md)
+* [SOSP'15-Failure Sketching: A Technique for Automated  Root Cause Diagnosis of In-Production Failures](./Security/symbolic_execution.md)
+* [SOSP'17-Lazy Diagnosis of In-Production Concurrency Bugs](./Security/symbolic_execution.md)
+* [SOSP'03-The Google File System](./System/gfs.md)
 * [OSDI'06-Bigtable: A Distributed Storage System for Structured Data](./System/bigtable.md)
 * [OSDI'12-Spanner: Google's Globally-Distributed Database](./System/spanner.md)
-* [SOSP'11-Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](./System/windows_azure_storage.md)
+* [SOSP'11-Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](./System/azure.md)
+* [OSDI'04-MapReduce: Simplified Data Processing on Large Clusters](./System/mapreduce.md)
+* [SOSP'09-Distributed Aggregation for Data-Parallel Computing: Interfaces and Implementations](./System/distributed_aggregation.md)
 
 
 
@@ -53,6 +145,8 @@
 
 
 ### EuroSys (May)
+
+* [EuroSys'07-Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks](./System/dryad.md)
 
 
 
@@ -85,6 +179,8 @@
 
 
 ### HotCloud (July)
+
+* [HotCloud'10-Spark: Cluster Computing with Working Sets](./System/spark.md)
 
 
 
@@ -158,6 +254,8 @@
 
 ### SIGMOD/PODS (July)
 
+* [SIGMOD'07-Map-Reduce-Merge: simplified relational data processing on large clusters](./System/mapreduce_merge.md)
+
 
 
 ### VLDB (Aug.)
@@ -173,6 +271,8 @@
 ## Network
 
 ### NSDI (Feb.)
+
+* [NSDI'12-Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
 
 
 
@@ -224,8 +324,8 @@
 ### CppCon (Sept.)
 
 * [CppCon2017](https://github.com/Airtnp/ACppLib/blob/master/notes/CppCon 2017/Notes.md)
-
 * [CppCon2018](../Miscs/CppCon2018.md)
+* [CppCon2019](../Miscs/CppCon2019.md)
 
 
 
