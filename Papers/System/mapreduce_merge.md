@@ -267,7 +267,9 @@
 
 * Map-Reduce-Merge Library
 * Map-Reduce-Merge Workflow
-* 
+  * customized workflow vs Map-Reduce (unskippable partitioning/sorting)
+  * ![1570738760443](D:\OneDrive\Pictures\Typora\1570738760443.png)
+  * 
 
 
 
@@ -289,11 +291,20 @@
 
 ## Motivation
 
+* Map-Reduce doesn't support heterogeneous datasets processing directly and the workflow of Map-Reduce is fixed with inevitable partition and sorting. The limitations make Map-Reduce not relational-complete (do all relational operations like databases).
+
 ## Summary
+
+* In this paper, the authors presents Map-Reduce-Merge model. The model adds a new Merge phase after Map-Reduce. The merger collects reduce results from heterogeneous datasets and processes them with customized `merge`, `processor`, partition selector, iterator manager functions. This merger phase, with some optimizations, can provide all relational primitives.
 
 ## Strength
 
+* Map-Reduce-Merge is strong to process heterogeneous datasets and its custom points are more than Map-Reduce such as the functions in the merger and workflow optimizations.
+
 ## Limitation & Solution
 
-
+* The paper lacks benchmarking results.
+  * Add test results in TPC-H comparing Map-Reduce with data source attribute and Map-Reduce-Merge
+* The reducer logic is complicated with user-defined partition select and `process` functions.
+  * Have a better abstraction rather than directly exposing mapper, reducer details to users.
 

@@ -4861,6 +4861,295 @@ public:
   }
   ```
 
+
+
+
+
+
+### 1224. Maximum Equal Frequency
+
+* 对每个数的出现次数计数, 同时对每种出现次数计数
+
+* 如果仅有一种次数, 则删除后成立为
+
+  * 该出现次数为1
+  * 只有一种元素 (该出现次数的计数为1)
+
+* 如果有两种, 则删除后成立为
+
+  * 其中一个出现次数为1, 且计数为1
+  * 两种出现次数只相差1, 且较高的计数为1
+
+* ```c++
+  class Solution {
+  public:
+      int maxEqualFreq(vector<int>& nums) {
+          map<int,int> m;
+          vector<int> cnt(1e5 + 1, 0);
+          int ans=0;
+          for(int i = 0; i < nums.size(); ++i) {
+              int num = nums[i];
+              if(cnt[num] != 0) {
+                  if(--m[cnt[num]] == 0) {
+                      m.erase(cnt[num]);
+                  }
+              }
+              ++cnt[num];
+              ++m[cnt[num]];
+              if (m.size() == 1) {
+                  if (m.find(1) != m.end()) 
+                      ans = i + 1;
+                  if (m.begin()->second == 1) 
+                      ans = i + 1;
+              }
+              else if (m.size() == 2) {
+                  if (m.find(1) != m.end() && m[1] == 1)
+                      ans = i + 1;
+                  if (m.begin()->first + 1 == m.rbegin()->first && m.rbegin()->second == 1) 
+                      ans = i + 1;
+              }
+          }
+          return ans;
+      }
+  };
+  ```
+
+
+
+
+### 1231. Divide Chocolate
+
+* 二分答案 + 贪心
+
+* ```c++
+  class Solution {
+      bool ok(vector<int>& s, int t, int k) {
+          int cnt = 0, sum = 0;
+          for (int i = 0; i < s.size(); ++i) {
+              if (sum + s[i] < t) {
+                  sum += s[i];
+              } else {
+                  sum = 0;
+                  ++cnt;
+              }
+          }
+          return cnt >= k + 1;
+      }
+  public:
+      int maximizeSweetness(vector<int>& s, int k) {
+          int l = 0, r = accumulate(s.begin(), s.end(), 0);
+          while (l < r) {
+              int mid = r - (r - l) / 2;
+              if (ok(s, mid, k)) {
+                  l = mid;
+              } else {
+                  r = mid - 1;
+              }
+          }
+          return l;
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+
+
+
+
+
+
+### 1235. Maximum Profit in Job Scheduling
+
+* 离散化 + DP, $dp(i) = max(dp(i - 1), dp(i), dp(start) + profit)$
+
+* ```c++
+  class Solution {
+  public:
+      int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
+          vector<int> all;
+          for (auto i : startTime) {
+              all.push_back(i);
+          }
+          for (auto i : endTime) {
+              all.push_back(i);
+          }
+          sort(all.begin(), all.end());
+          auto it = unique(all.begin(), all.end());
+          all.erase(it, all.end());
+          unordered_map<int, int> num_map;
+          for (int i = 0; i < all.size(); ++i) {
+              num_map[all[i]] = i;
+          }
+          for (auto& i : startTime) {
+              i = num_map[i];
+          }
+          for (auto& i : endTime) {
+              i = num_map[i];
+          }
+          unordered_map<int, vector<pair<int, int>>> end_map;
+          for (int i = 0; i < startTime.size(); ++i) {
+              end_map[endTime[i]].push_back(make_pair(startTime[i], profit[i]));
+          }
+          vector<int> dp(all.size() + 1, 0);
+          int prev = 0;
+          for (int i = 0; i < all.size(); ++i) {
+              if (i != 0)
+                  dp[i] = dp[i - 1];
+              if (end_map.count(i)) {
+                  for (auto& p : end_map[i]) {
+                      dp[i] = max(dp[i], dp[p.first] + p.second);
+                  }
+              }
+          }
+          return *max_element(dp.begin(), dp.end());
+      }
+  };
+  ```
+
+* 也可以只询问start区间内的endtime
+
+* ```c++
+  struct job {
+      int start, end, profit;
+  
+      bool operator<(const job &other) const {
+          return end < other.end;
+      }
+  };
+  
+  class Solution {
+  public:
+      int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
+          vector<int> times;
+          times.push_back(-1e9);
+  
+          for (int time : endTime)
+              times.push_back(time);
+  
+          sort(times.begin(), times.end());
+          times.resize(unique(times.begin(), times.end()) - times.begin());
+          int T = times.size();
+          int N = startTime.size();
+          vector<job> jobs;
+  
+          for (int i = 0; i < N; i++)
+              jobs.push_back({startTime[i], endTime[i], profit[i]});
+  
+          sort(jobs.begin(), jobs.end());
+          vector<long long> dp(T, 0);
+  
+          for (job jb : jobs) {
+              int start = jb.start;
+              int end = jb.end;
+  
+              start = upper_bound(times.begin(), times.end(), start) - times.begin() - 1;
+              end = lower_bound(times.begin(), times.end(), end) - times.begin();
+  
+              dp[end] = max(dp[end], dp[start] + jb.profit);
+  
+              if (end >= 0)
+                  dp[end] = max(dp[end], dp[end - 1]);
+          }
+  
+          return *max_element(dp.begin(), dp.end());
+      }
+  };
+  ```
+
+* 或者pq
+
+* ```c++
+  class Solution {
+  public:
+      int jobScheduling(vector<int>& s, vector<int>& e, vector<int>& p) {
+          vector<pair<pair<int, int>, int>> v;
+          int n = s.size();
+          for (int i = 0; i < n; i++) v.emplace_back(make_pair(s[i], e[i]), p[i]);
+          sort(v.begin(), v.end());
+          v.emplace_back(make_pair(INT_MAX, INT_MAX), 0);
+          int best = 0;
+          priority_queue<pair<int, int>,vector<pair<int, int>>, greater<pair<int, int>>> q;
+          for (auto& i : v) {
+              while (!q.empty() && q.top().first<=i.first.first) {
+                  best = max(best, q.top().second);
+                  q.pop();
+              }
+              q.emplace(i.first.second, best + i.second);
+          }
+          return best;
+      }
+  };
+  ```
+
+* 或者树状数组...
+
+* ```c++
+  struct Dwell {
+      int s, e, p;
+      Dwell(int _s, int _e, int _p): s(_s), e(_e), p(_p) {}
+      bool operator< (const Dwell& that) const {
+          return e < that.e;
+      }
+  };
+  
+  class Solution {
+  private:
+      int tree[100010];
+      
+  public:
+      int lowbit(int x) {
+          return x & (-x);
+      }
+      
+      int query(int x) {
+          int ret = 0;
+          while (x) {
+              ret = max(ret, tree[x]);
+              x -= lowbit(x);
+          }
+          return ret;
+      }
+      
+      void update(int x, int n, int dt) {
+          while (x <= n) {
+              tree[x] = max(tree[x], dt);
+              x += lowbit(x);
+          }
+      }
+      
+      int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
+          int n = startTime.size();
+          vector<int> dis;
+          for (int i = 0; i < n; ++i) {
+              dis.push_back(startTime[i]);
+              dis.push_back(endTime[i]);
+          }
+          sort(dis.begin(), dis.end());
+          vector<Dwell> v;
+          for (int i = 0; i < n; ++i) {
+              startTime[i] = lower_bound(dis.begin(), dis.end(), startTime[i]) - dis.begin() + 1;
+              endTime[i] = lower_bound(dis.begin(), dis.end(), endTime[i]) - dis.begin() + 1;
+              v.emplace_back(startTime[i], endTime[i], profit[i]);
+          }
+          sort(v.begin(), v.end());
+          
+          memset(tree, 0, sizeof(tree));
+          int ans = 0;
+          for (int i = 0; i < n; ++i) {
+              int q = query(v[i].s);
+              ans = max(ans, q + v[i].p);
+              update(v[i].e, n * 2, q + v[i].p);
+          }
+          return ans;
+      }
+  };
+  ```
+
 * 
 
 

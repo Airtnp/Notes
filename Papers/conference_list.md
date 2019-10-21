@@ -9,6 +9,7 @@
 [[S: Content]]
 
 - S = C: Check, random or related insights
+- S = I: Idea, random ideas or project thoughts
 - S = N: Note, some notes
 - S = T: Todo, literally
 - S = R: Refer, cross reference
@@ -23,7 +24,9 @@
 * CAP (Consistency/Availability/Partition Tolerance)
 * ACID (Atomicity/Consistency/Isolation/Durability)
 * Data Model
+  * data types
 * Programming Model
+  * language model
 * Storage
 * Share
   * Share nothing
@@ -47,6 +50,8 @@
   * Recomputing/Immutable
     * Lineage (E.g. Spark)
   * Error recovery
+  * Soft / Hard state
+    * reconstruction among slaves/components
 * Availability/Replication
   * Sync/Async update
   * Master/Slave
@@ -80,7 +85,12 @@
   * Consensus: Paxos/Raft/BPFT
 * Heterogeneous system
 * Abstraction Layer
+  * transparency
+  * illusion of model, hiding complexity (E.g. C++ machine)
+  * Control plane vs Data plane
 * Coarse/Fine-grained
+* Cloud
+  * multi-tenancy
 
 
 
@@ -131,6 +141,10 @@
 * [SOSP'11-Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](./System/azure.md)
 * [OSDI'04-MapReduce: Simplified Data Processing on Large Clusters](./System/mapreduce.md)
 * [SOSP'09-Distributed Aggregation for Data-Parallel Computing: Interfaces and Implementations](./System/distributed_aggregation.md)
+* [OSDI'08-DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language](./System/dryadlinq.md)
+* [OSDI'08-Improving MapReduce Performance in Heterogeneous Environments](./System/late.md)
+* [SOSP'13-Sparrow: Distributed, Low Latency Scheduling](./System/sparrow.md)
+* 
 
 
 
@@ -222,6 +236,8 @@
 
 ### PLDI (June)
 
+* [PLDI'10-FlumeJava: Easy, Efficient Data-Parallel Pipelines](./System/flumejava.md)
+
 
 
 ### ECOOP (July)
@@ -236,7 +252,7 @@
 
 
 
-### OOPSLA (Nov.)
+### OOPSLA/PACMPL (Nov.)
 
 
 
@@ -255,10 +271,14 @@
 ### SIGMOD/PODS (July)
 
 * [SIGMOD'07-Map-Reduce-Merge: simplified relational data processing on large clusters](./System/mapreduce_merge.md)
+* [SIGMOD'15-Spark SQL: Relational Data Processing in Spark](./System/spark_sql.md)
 
 
 
 ### VLDB (Aug.)
+
+* [VLDB'09-Hive - A Warehousing Solution Over a Map-Reduce Framework](./System/hive.md)
+* [VLDB'08-SCOPE: Easy and Efficient Parallel Processing of Massive Data Sets ](./System/scope.md)
 
 
 
@@ -273,6 +293,8 @@
 ### NSDI (Feb.)
 
 * [NSDI'12-Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
+* [NSDI'10-MapReduce Online](./System/mapreduce_online.md)
+* [NSDI'11-Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center](./System/mesos.md)
 
 
 
@@ -412,7 +434,7 @@
 ## Miscs
 
 * [MSST'10-The Hadoop Distributed File System](./System/the_hadoop_distributed_file_system.md)
-* 
+* [SoCC'13-Apache Hadoop YARN: Yet Another Resource Negotiator](./System/yarn.md)
 
 
 

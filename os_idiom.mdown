@@ -131,7 +131,7 @@
 * + - - hard for caching, limit flexibility
 * + [AFS-NFS-GFS](http://www.shuang0420.com/2016/12/10/Distributed%20Systems%E7%AC%94%E8%AE%B0%EF%BC%8DNFS%E3%80%81AFS%E3%80%81GFS/)
 * + NFS
-* + - [ref](https://csruiliu.github.io/blog/2017/11/17/nfs/)
+* + - [ref](https://csruiliu.github.io/blog/20171117-nfs/)
 * + - sharing
 * + - centralized administration
 * + - security
