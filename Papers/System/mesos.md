@@ -192,9 +192,9 @@
       virtual Status sendFrameworkMessage (const ExecutorID &executorId, const SlaveID &slaveId, const std::string &data);
       virtual Status reconcileTasks (const std::vector< TaskStatus > &statuses);
       virtual Status updateFramework (const FrameworkInfo &frameworkInfo, const std::vector< std::string > &suppressedRoles);
-    ```
+      ```
   
-    * 
+     
 
 
 
@@ -283,15 +283,15 @@
 * perform well when
   * framework scale up/down elastically
   * task durations are homogeneous
-  * frameworks perfer all nodes equally
+  * frameworks prefer all nodes equally
 * Mesos can emulate a centralized scheduler that performs fair sharing across frameworks
 * Mesos can handle heterogeneous task durations without impacting the performance of frameworks with short tasks
 * Framework incentives
 * _Framework ramp-up time_: time it takes a new framework to achieve its allocation
 * _Job completion time_: time it takes a job to complete, assuming 1 job per framework
-* _System utilization_: total cluster utilizaton
+* _System utilization_: total cluster utilization
 * _Scale up_: frameworks can elastically increase their allocation to take advantage of free resources
-* _Scale down_: frameworks can relinquish resources without significantlly impacting their performance
+* _Scale down_: frameworks can relinquish resources without significantly impacting their performance
 * _Minimum allocation_: frameworks require a certain minimum # of slots before they can start using their slots
 * _Task distribution_: distribution of the task duration
 * workload dimensions: elasticity (elastic vs rigid)s & task duration distribution (homogeneous vs heterogeneous)
@@ -335,7 +335,7 @@
     * 1 slot every $T/k$ on average
     * $kT/2$ computation time during first $T$ interval
     * the rest is $(\beta k -1/2 k)T / k$, so total is $(1/2+\beta)T$
-  * exponetial distribution: $(1+\beta)T$
+  * exponential distribution: $(1+\beta)T$
     * $(k - i) T/(k - i)$ computation lost per slots
     * total $kT$, amortized to having 1 more $T$ to $(1 + \beta)T$
 * system utilization: fully utilized, $1$
@@ -382,7 +382,7 @@
 * long tasks' mean can be significant longer than mean of short tasks
 * ensure there are enough short tasks on each node whose slots become available with high frequency
 * differentiate between short/long slots, bound # of long slots on each node
-* reserver some resources on each node for short tasks
+* reserve some resources on each node for short tasks
 * expose time limits with resources in offers to frameworks
 
 
@@ -396,10 +396,10 @@
 * no minimum allocation: use resources as soon as it allocates
   * lack of minimum allocation constraint implies the ability of the framework to scale up (adding more resources)
   * no wait for reaching a given minimum allocation, start/complete its job earlier
-* scale down: grab opprtunistically the available resources
+* scale down: grab opportunistically the available resources
   * release with little negative impact
 * do not accept unknown resources: not accept resources they cannot use
-  * most allocation policies will account for allthe resources that a framework owns when deciding which framework to offer resources to next
+  * most allocation policies will account for all the resources that a framework owns when deciding which framework to offer resources to next
     * [[N: not enforced...]]
 
 
@@ -436,7 +436,7 @@
       * if does, creates a new Mesos task for the slave that signals the TaskTracker (Mesos executor) to increase its # of total slots
       * next time TT sends a heartbeat, JT assign runnable map/reduce tasks to the new empty slot
       * TT finishes running, TT decrements its slot count, reports Mesos
-    * chaining map data to redujce
+    * chaining map data to reduce
       * shared file server on each node in the cluster
 * Torque & MPI port
   * Torque cluster resource manager: 3 lines to allow it to elastically scale up & down
@@ -451,7 +451,7 @@
   * long-lived nature of Mesos executor to cache a slice of the data set in memory at each executor
     * fault-tolerance by lineage
 * Elastic Web Server farm
-  * scheduler wrapper: haproxy load balancer, periodically monitors its web requjests statistics to decide when to launch/teardown servers
+  * scheduler wrapper: haproxy load balancer, periodically monitors its web requests statistics to decide when to launch/teardown servers
   * executor wrapper
 
 
@@ -485,7 +485,7 @@
 * `refuse_seconds`
 * `quota`
 * demand awareness
-* shared state - optimisitc concurrent
+* shared state - optimistic concurrent
 * random sorter
 * less critical section
 
@@ -542,6 +542,10 @@ batched interval allocation
 
 
 
+![1571710543556](D:\OneDrive\Pictures\Typora\1571710543556.png)
+
+
+
 
 
 ## Motivation
@@ -559,6 +563,7 @@ batched interval allocation
 * Mesos master is resilient to failures due to ZooKeeper election and soft state reconstruction.
 * The interface of Mesos is simple for only few functions.
 * The delay scheduling of frameworks behave well (accepting more proper offers)
+* Lightweight, low-level DC/OS
 
 ## Limitation & Solution
 
@@ -570,3 +575,34 @@ batched interval allocation
 * Only 1 scheduler per framework is online and the failure recovery on backup schedulers can be hard
   * Allow multiple same framework schedulers online.
 
+* No support for stateful service
+  * Persistent resource
+* Resource fragmentation
+
+
+
+
+
+|                      | Mesos (2011)                                                 | Yarn (2013)                                                  | Borg (2015)                                                  |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Parent               | Borg'? (2003)                                                | Hadoop MRv1 (2007?)                                          | Borg' (2006), cgroup (2006-), Omega (2013)                   |
+| Architecture         | Master/Slave                                                 | Master/Slave                                                 | Master/Slave                                                 |
+| Resource Granularity | CPU/Memory/IO/Network                                        | Application/Job                                              | Job + Tasks                                                  |
+| Scheduler            | DRF/Alloc Module                                             | FIFO/Fair/Capacity                                           | Feasibility + Scoring                                        |
+| Resource Scheduling  | Mesos Master + Framework <br />Centralized + Two-level       | Resource Manager <br />Centralized + Two-level               | BorgMaster <br />Centralized + Monolithic                    |
+| Task Scheduling      | Framework                                                    | Application Master                                           | BorgMaster scheduler threads                                 |
+| Task Executor        | Executor (Mesos/Docker)                                      | Node Manager + Container                                     | Borglet                                                      |
+| Task Delivery        | Framework - Master - Agent                                   | AM - NM                                                      | BorgMaster main threads - Borglet                            |
+| Agent Interaction    | Heartbeat <br />Match agents with tasks                      | Heartbeat <br />Match agents with tasks                      | Polling <br />Match tasks with agents                        |
+| Mechanism            | Resource Offer <br />Push-based                              | ResourceRequest <br />Pull-based                             | Job constraints + Task properties <br />Preemption           |
+| Fault Tolerance      | Soft state reconstruction <br />ZooKeeper election           | Persistent state recovery <br />Single master                | Checkpointing from Paxos store <br />Paxos election + Chubby lock |
+| Hadoop Support       | Coarse-grained <br />as Scheduler                            | Fine-grained (aware of app) <br />as Applicaton Master       |                                                              |
+| Features             | Good support for extensions <br />OS level scheduler         | Good support for Hadoop jobs <br />Application level scheduler | Good support for long/heterogeneous jobs <br />High scalability across Cells |
+| Problems             | Scalability, Fragmentation, Stateful service <br />Starvation, Community support | Scalability, Fault Tolerance, Starvation                     |                                                              |
+| Common Techniques    | Quota, Oversubscription<br />Multi-tenancy, Reservation      | Authentication<br />On/Off-line task separation              | Alloc, Preemption<br />Containerization                      |
+
+
+
+
+
+![img](D:\OneDrive\Pictures\Typora\image4-2.png)

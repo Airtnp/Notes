@@ -313,7 +313,8 @@
 
 Schema-aware computation
 
-* K-V/RDD/`PCollection<T>` (MapReduce, Hadoop, Spark, FlumeJava) -> Relation (SCOPE, Hive, DryadLINQ, SparkSQL)
+* K-V/RDD (MapReduce, Hadoop, Spark) -> Relation (SCOPE, Hive, DryadLINQ, SparkSQL)
+* ![1571702657163](D:\OneDrive\Pictures\Typora\1571702657163.png)
 
 
 

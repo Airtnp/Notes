@@ -28,24 +28,37 @@
 * Programming Model
   * language model
 * Storage
+  * file system
 * Share
   * Share nothing
   * Share-Disk/Memory
 * Locality
   * Temporal: Cache
   * Spatial: Machine/Rack/Cluster/Datacenter
+  * Push filter down
+  * Push computation down (in-chip computation)
 * Pipeline (break dependency)
   * Out-of-Order design
 * Communication
   * Shared address space
   * Message passing
+* Scalability
+  * utilization ratio
+  * dataset sharing
+  * randomization
+  * batching work
+  * reuse cached data
+  * push predicates down (filter)
 * Scheduling
   * Thread pool
   * Real time
 * Resource allocation
   * Memory Management
     * Cache/ObjectTable Eviction Policy
+  * Resource Management
+    * Monolithic, Two-level, Shared-state, Decentralized
 * Fault Tolerance
+  * Persistent storage
   * Checkpoint (E.g. database)
   * Recomputing/Immutable
     * Lineage (E.g. Spark)
@@ -88,6 +101,8 @@
   * transparency
   * illusion of model, hiding complexity (E.g. C++ machine)
   * Control plane vs Data plane
+  * lift -> inter-job, inter-procedural
+  * unlift -> fine-grained
 * Coarse/Fine-grained
 * Cloud
   * multi-tenancy
@@ -144,7 +159,7 @@
 * [OSDI'08-DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language](./System/dryadlinq.md)
 * [OSDI'08-Improving MapReduce Performance in Heterogeneous Environments](./System/late.md)
 * [SOSP'13-Sparrow: Distributed, Low Latency Scheduling](./System/sparrow.md)
-* 
+* [SOSP'13-Naiad: A Timely Dataflow System](./System/naiad.md)
 
 
 
@@ -161,6 +176,8 @@
 ### EuroSys (May)
 
 * [EuroSys'07-Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks](./System/dryad.md)
+* [EuroSys'15-Large-scale cluster management at Google with Borg](./System/borg.md)
+* 
 
 
 
@@ -272,6 +289,7 @@
 
 * [SIGMOD'07-Map-Reduce-Merge: simplified relational data processing on large clusters](./System/mapreduce_merge.md)
 * [SIGMOD'15-Spark SQL: Relational Data Processing in Spark](./System/spark_sql.md)
+* [SIGMOD'14-Storm@Twitter](./System/storm.md)
 
 
 
@@ -279,10 +297,13 @@
 
 * [VLDB'09-Hive - A Warehousing Solution Over a Map-Reduce Framework](./System/hive.md)
 * [VLDB'08-SCOPE: Easy and Efficient Parallel Processing of Massive Data Sets ](./System/scope.md)
+* [VLDB'14-Trill: A High-Performance Incremental Query Processor for Diverse Analytics](./System/trill.md)
 
 
 
 ### ICDE (April)
+
+* [ICDE'15-Apache Flink™: Stream and Batch Processing in a Single Engine](./System/flink.md)
 
 
 
@@ -435,6 +456,9 @@
 
 * [MSST'10-The Hadoop Distributed File System](./System/the_hadoop_distributed_file_system.md)
 * [SoCC'13-Apache Hadoop YARN: Yet Another Resource Negotiator](./System/yarn.md)
+* [SoCC'14-Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks](./System/tachyon.md)
+* [NetDB'11-Kafka: a Distributed Messaging System for Log Processing](./System/kafka.md)
+* [CACM'08-Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures](./HPC/roofline.md)
 
 
 

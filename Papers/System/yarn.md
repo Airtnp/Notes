@@ -13,7 +13,7 @@
   * centrailized handling of jobs' control flow, resulting in endless scalability concerns for the scheduler
 * next generation of Hadoop's compute platform: YARN
 * separating resource management function from the programming model
-* delegates many scheduling-lreated functions to per-job components
+* delegates many scheduling-related functions to per-job components
 
 
 
@@ -27,7 +27,7 @@
 * High cluster utilization [^R5]
 * Reliability / Availability [^R6]
   * fault tolerance
-  * minitoring workloads for dysfunctional jobs
+  * monitoring workloads for dysfunctional jobs
   * safeguards to protect its own availability (delay allocating fallow resources which will overwhelming JobTracer process)
 * Secure & auditable operation [^R7]
   * authorization model, strong/scalable authentication
@@ -87,7 +87,7 @@
     * encode an application-specific launch request with the lease
   * application-specific semantics are managed by each framework [^R3, R8]
 
-* RM as a daemon on a decidated machine
+* RM as a daemon on a dedicated machine
   * central authority arbitrating resources among various competing applications in the cluster
   * central & global view → fairness [^R10] , capacity [^R10], locality [^R4]
   * dynamically allocate leases (containers) to allocations run on particular nodes [^R4, R9]
@@ -128,7 +128,7 @@
 * extensions
   * RM symmetrically request resources back from AM
     * similar to `ResourceRequest` to capture locality preferences (revoking preferences)
-    * AM flexibily fulfills the preemption request (yielding containers) by checkpointing the state of tasks | migrating computations
+    * AM flexibly fulfills the preemption request (yielding containers) by checkpointing the state of tasks | migrating computations
     * allow AM to preserve work
     * non-collaborative AM? → instruct NM to terminate [[Q: same as fault recovery procedure?]]
 * not responsible for coordinate application execution | task fault-tolerance (AM part)
@@ -140,8 +140,8 @@
 
 * application: static set of processes | logical description of work | long-running service
 * per-application [[Q: why AM starts each time? GC-style?]]
-* AM coordinate the applicatione execution, AM itself runs in the cluster just like any other container
-* A component of RM negotitates for the container to spawn boostrap process
+* AM coordinate the application execution, AM itself runs in the cluster just like any other container
+* A component of RM negotiates for the container to spawn bootstrap process
 * periodically heartbeats to RM to affirm liveness & update the record of its demand
   * [[Q: so rolling up preferences until converge? When to final start?]]
   * encoding preferences & constraints in a heartbeat message to the RM
@@ -152,12 +152,12 @@
   * update resources asks to RM as the containers it receives affect both its present & future requirements
 * AM optimizes for locality among map tasks with identical resources requirements
   * receive container, match it against the set of pending map tasks, selecting a task with input data close to the container
-  * update requests to diminish weight on other k - 1 hosts (since not desireable)
+  * update requests to diminish weight on other k - 1 hosts (since not desirable)
   * opaque to RM
   * fail → updating demand to compensates
 * Some JobTracker services (job progress, interface) → AM or framework daemons
 * RM doesn't interpret the container status, AM determines the semantics of success/failure of the container exit status reported by NMs through the RM [[Q: why having extra communication?]]
-* AM handles fault-tolerance (betcause interwined with semantics)
+* AM handles fault-tolerance (because intertwined with semantics)
 
 
 
@@ -178,7 +178,7 @@
   * payloads for NM services
   * command necessary to create the process
   * [[R: compared to k8s?]]
-* After validation, NM configures the environment for the container, including initializing its monitoring subsystem with the resource constraints specfied in the lease
+* After validation, NM configures the environment for the container, including initializing its monitoring subsystem with the resource constraints specified in the lease
 * Copy necessary dependencies: data files, executables, tarballs to local storage
 * NM eventually garbage collects dependencies
   * [[Q: when? granularity?]]
@@ -193,9 +193,9 @@
   * local disks
   * admin configured scripts
   * hardware/software issues
-  * change state ot unhealthy → RM (killing, stopping allocations)
+  * change state to unhealthy → RM (killing, stopping allocations)
 * local services to containers running on that node
-  * log aggreagtion service uploading data written by the application to stdout/stderr to HDFS
+  * log aggregation service uploading data written by the application to stdout/stderr to HDFS
 * administrator configures the NM with a set of pluggable, auxiliary services
   * like pipelining intermediate results (delay cleanup)
   * in CLC payload
@@ -208,7 +208,7 @@
 * When RM starts the AM, register with the RM, periodically advertise its liveness and requirements over heartbeat protocol
 * Once the RM allocates a container, AM can construct a CLC to launch the container on the corresponding NM. Monitor the status of running container & stop it inside the container is strictly the AM's responsibility
 * Once the AM is done with its work, it should unregister from the RM & exit cleanly
-  * [[Q: But some AM/framework could hold it forever to hurt system? Force termination by RM? If AM is trustworthy, why AM needs tokens?]]
+  * [[Q: But some AM/framework could hold it forever to hurt system? Force termination by RM? If AM is trustworthy, why AM needs tokens? user-programs unreliable?]]
   * [[Q: so users submitting application+framework or application? RM knows AM?]]
 * Optionally, add control flow between own clients to report job status & expose control plane
 
@@ -248,7 +248,7 @@
   * B: ?
 * RM ~ AM
   * F: container leases (tokens), container exit status (from NMs)s, NM node failures, extensions (RequestResourceBack), kill requests (recovery), application(?)
-  * B: ResourceRequests (rolling up), heartbeats, registeration/unregisteration (framework-levle), extensions (re-sync operations)
+  * B: ResourceRequests (rolling up), heartbeats, registeration/unregisteration (framework-level), extensions (re-sync operations)
 * AM ~ NM
   * F: container leases, CLC (including monitoring code + application), kill work requests (no longer need)
   * B: no explicit channel, but communication mechanism contained in CLC?
