@@ -34,10 +34,10 @@
 * distributed dataflow engine
   * DAG of stateful operators connected with data streams
 * client: program code → dataflow graph → JobManager
-  * schema, serailizer, type/schema specific code
+  * schema, serializer, type/schema specific code
 * JobManager: coordinate the distributed execution
   * state/progress, scheduler, checkpoint/recovery
-  * minimal set of metadata at each checkpoing to a fault-tolerant storage
+  * minimal set of metadata at each checkpointing to a fault-tolerant storage
   * standby reconstruction
 * TaskManager: execute operators → streams
   * report status
@@ -57,7 +57,7 @@
     * 1+ stream partitions (1 partition per producing subtask)
 * Data exchange: intermediate data streams
   * logical handle to data
-  * pipelined & blocking data excahnge: 
+  * pipelined & blocking data exchange: 
     * pipelined intermediate streams
       * concurrently exchanging producer/consumers
       * propagate back pressure from consumers to producers
@@ -87,7 +87,7 @@
       * current position of the input stream at regular intervals
     * Asynchronous Barrier Snapshotting
       * ![image-20191026141053909](D:\OneDrive\Pictures\Typora\image-20191026141053909.png)
-      * operator receives barrier → alignement → write current state to durable storage → forward barrier downstream → global snapshot completed
+      * operator receives barrier → alignment → write current state to durable storage → forward barrier downstream → global snapshot completed
       * Chandy-Lamport algorithm 
   * partial re-execution
     * revert all operator states to their respective states taken from the last successful snapshot, restart the input stream starting from the latest barrier where snapshot is.
@@ -99,7 +99,7 @@
 * Iterative dataflows
   * iteration steps, special operators that themselves can contain an execution graph
   * iteration head/tail tasks implicitly connected with feedback edges
-  * Bult Synchronously Parallel model
+  * Bulk Synchronously Parallel model
   * ![image-20191026145410634](D:\OneDrive\Pictures\Typora\image-20191026145410634.png)
 
 
@@ -118,7 +118,7 @@
 
 * insert low watermark as global progress measure
 
-  * time attribute $t$, all events lower than $t$ have already entered an oeprator
+  * time attribute $t$, all events lower than $t$ have already entered an operator
   * watermark propagation
     * forward
     * minimum
@@ -129,8 +129,8 @@
   * counter, sum, classification tree, large sparse matrix
   * stream windows
   * providing
-    * operator interfaces or annotatons to statically register explicit local variables within the scope of an operator
-    * an operator-state abstraction for declaring partitoned k-v states & associated operations
+    * operator interfaces or annotations to statically register explicit local variables within the scope of an operator
+    * an operator-state abstraction for declaring partitioned k-v states & associated operations
   * configure
     * how state stored, checkpointed by `StateBackend`
 
@@ -138,7 +138,7 @@
 
   * assigner/window: assigning each record to logical windows
 
-  * trigger: when the operation associated with the window definition is performanced
+  * trigger: when the operation associated with the window definition is performed
 
   * evictor: which record to retain within each window
 
@@ -169,8 +169,8 @@
 * DataSet API
 * Query optimization layer
   * plan equivalence, cost modelling, interesting-property propagation
-  * UDF-heavy DAGs handing semantics → execution stratgies like repartition, broadcast data transfer, sort-based grouping, sort-/hash-based join
-  * enumerate different physical plans based on the concept of interesting properties propagation, using a cost-based approach to choose amoung multiple physical plans
+  * UDF-heavy DAGs handing semantics → execution strategies like repartition, broadcast data transfer, sort-based grouping, sort-/hash-based join
+  * enumerate different physical plans based on the concept of interesting properties propagation, using a cost-based approach to choose among multiple physical plans
 * Memory management
   * JVM heap
   * sort/join as much as possible on binary data directly
@@ -189,7 +189,7 @@
 
 ## Summary
 
-* In this paper, the authors present Apache Flink, which is a open-source distributed system for unifying the real-time streaming data and static batched data computation. Flink provides DataStream and DataSet API for streaming and batch data analysis. Flink employs stateful operators and data streams as directed acyclic graphs to distribtue and scale the computations. The control events are embedded into the data streams natively to provide fault tolerance.
+* In this paper, the authors present Apache Flink, which is a open-source distributed system for unifying the real-time streaming data and static batched data computation. Flink provides DataStream and DataSet API for streaming and batch data analysis. Flink employs stateful operators and data streams as directed acyclic graphs to distribute and scale the computations. The control events are embedded into the data streams natively to provide fault tolerance.
 
 ## Strength
 

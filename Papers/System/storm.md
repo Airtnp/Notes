@@ -32,7 +32,7 @@
 * _Nimbus_: master node, distributing, coordinating execution
   * Apache Thrift service, topology as Thrift objects
   * Summingbird: general stream processing abstraction
-    * separate logica lplanner for variety of stream processing & batch processing systems
+    * separate logical planner for variety of stream processing & batch processing systems
     * types, relationships between data processing
   * Summingbird → Storm topologies
   * user code as JAR
@@ -50,7 +50,7 @@
       * out queue
       * global transfer queue
   * Supervisor: communicate with Nimbus
-    * periodic haertbeat event (per 15sec)
+    * periodic heartbeat event (per 15sec)
       * main thread
       * topology, vacancy
     * Zookeeper
@@ -78,7 +78,7 @@
       * lineage for each tuple? large memory usage
       * bitwise XORs: acker bolt keeps track of all the tuples and XOR checksum until zero
         * failure → timeout
-  * at most once: each tuple is either processed once, or dopped in the case of a failure
+  * at most once: each tuple is either processed once, or dropped in the case of a failure
     * data source holding a tuple with timeout
 
 
@@ -89,7 +89,7 @@
   * augmented metric bolt
   * system metric
     * CPU, network, GC, memory
-  * topology metrix
+  * topology metric
     * tuples emitted/acks/fail/latency
 * how to use Zookeeper
   * [[T: some experience of Zookeeper]]
@@ -150,7 +150,7 @@
 
 ## Strength
 
-* Storm provides rich visualization tools for administors to diagnoize events.
+* Storm provides rich visualization tools for administrators to diagnose events.
 * Storm architecture is simple and scalable.
 
 ## Limitation & Solution
@@ -158,7 +158,7 @@
 * Nimbus is a single point of failure (availability) and limitation on scalability of Storm.
   * At least using Zookeeper for master election.
 * Nimbus scheduler is not mentioned in this paper.
-* Zookeeper replication writes limit the thoughput of the system.
+* Zookeeper replication writes limit the throughput of the system.
   * Use lineage-based Tachyon-like file system?
 * Storm has no backpressure mechanism, the downstream congestion may cause cascading failing affecting performance.
   * [Twitter Heron: Stream Processing at Scale](https://dl.acm.org/citation.cfm?id=2742788)

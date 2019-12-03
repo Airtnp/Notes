@@ -115,7 +115,7 @@
       * one can register a watcher on a path & get notified when children of a path or value of a path has changed
       * a path can be created as ephemeral, creating client gone → removed path
       * replicate data to multiple servers
-      * broker registray (hostname, port, topics, partitions, ephemeral) → Zookeeper
+      * broker registry (hostname, port, topics, partitions, ephemeral) → Zookeeper
       * consumer registry (consumer group, topics, ephemeral) → Zookeeper
       * consumer group with 1 ownership (ephemeral) registry + 1 offset (persistent) registry → Zookeeper
         * ownership: 1 path for every subscribed partition, path value is the id of the consumer currently consuming this partition (owns)
@@ -172,7 +172,7 @@
   * durability & data availability
   * support asynchronously & synchronous replication model
 * add stream processing capability
-  * pull filters from following real-time computatons
+  * pull filters from following real-time computations
 
 
 
@@ -186,7 +186,7 @@
 
 ## Motivation
 
-* Sizable internet companies often generate a large amount of log data. This log data includes user activity and operatonal metrics, which are tended to be used in production data pipeline. Therefore, large internet companies desire to have a real-time log collection / messaging systems. The existing messaging systems are mismatch of the features, having low throughputs, hard to distributed/scale or only suitable to offline data.
+* Sizable internet companies often generate a large amount of log data. This log data includes user activity and operational metrics, which are tended to be used in production data pipeline. Therefore, large internet companies desire to have a real-time log collection / messaging systems. The existing messaging systems are mismatch of the features, having low throughputs, hard to distributed/scale or only suitable to offline data.
 
 ## Summary
 

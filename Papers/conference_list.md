@@ -86,14 +86,21 @@
   * Sequential
   * Parallel
   * Graph computing (mostly DAG)
+    * vertice-centric
+    * edge-centric
+    * dense/sparse (mostly)
 * Expressiveness
   * Functional programming
 * Event-driven vs. Message driven
 * Synchronous vs. Asynchronous
+  * Resilient nature of programming model for asynchronous computation
 * Blocking vs. Non-blocking
 * Mutable vs. Immutable
 * Latency vs Throughput
   * Data-parallel
+  * Batch update
+    * Bulk Synchronous Model
+    * Operator Continuous Model
 * Distributed system
   * Consensus: Paxos/Raft/BPFT
 * Heterogeneous system
@@ -160,16 +167,29 @@
 * [OSDI'08-Improving MapReduce Performance in Heterogeneous Environments](./System/late.md)
 * [SOSP'13-Sparrow: Distributed, Low Latency Scheduling](./System/sparrow.md)
 * [SOSP'13-Naiad: A Timely Dataflow System](./System/naiad.md)
+* [SOSP'17-SVE: Distributed Video Processing at Facebook Scale](./System/sve.md)
+* [SOSP'17-Drizzle: Fast and Adaptable Stream Processing at Scale](./System/drizzle.md)
+* [OSDI'16-TensorFlow: A system for large-scale machine learning](./System/tensorflow.md)
+* [OSDI'12-GraphChi: Large-Scale Graph Computation on Just a PC](./System/graphchi.md)
+* [SOSP'13-X-Stream: Edge-centric Graph Processing using Streaming Partitions](./System/xstream.md)
+* [OSDI'14-Scaling Distributed Machine Learning with the Parameter Server](./System/parameter_server.md)
+* [OSDI'14-Project Adam: Building an Efficient and Scalable Deep Learning Training System](./System/project_adam.md)
+* [OSDI'18-Ray: A Distributed Framework for Emerging AI Applications](./System/ray.md)
+* [OSDI'18-TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](./System/tvm.md)
+* [OSDI'16-Yak: A High-Performance Big-Data-Friendly Garbage Collector](./System/yak.md)
 
 
 
 ### HotOS (May)
+
+* [HotOS'15-Broom: sweeping out Garbage Collection from Big Data systems](./System/broom.md)
 
 
 
 ### USENIX ATC (July)
 
 * Slides: [ATC'19](https://www.usenix.org/conference/atc19/technical-sessions)
+* [ATC'15-GridGraph: Large-Scale Graph Processing on a Single Machine Using 2-Level Hierarchical Partitioning](./System/gridgraph.md)
 
 
 
@@ -203,6 +223,8 @@
 
 ### PPoPP (Feb.)
 
+* [PPoPP'13-Ligra: A Lightweight Graph Processing Framework for Shared Memory](./HPC/Ligra.md)
+
 
 
 ### ICPP (Aug.)
@@ -220,6 +242,12 @@
 
 
 ### TACO (Trans.)
+
+
+
+### SC (Nov.)
+
+* [homepage](http://supercomputing.org/)
 
 
 
@@ -290,6 +318,8 @@
 * [SIGMOD'07-Map-Reduce-Merge: simplified relational data processing on large clusters](./System/mapreduce_merge.md)
 * [SIGMOD'15-Spark SQL: Relational Data Processing in Spark](./System/spark_sql.md)
 * [SIGMOD'14-Storm@Twitter](./System/storm.md)
+* [SIGMOD'18-Structured Streaming: A Declarative API for Real-Time Applications in Apache Spark](./System/structured_streaming.md)
+* [SIGMOD'10-Pregel: A System for Large-Scale Graph Processing](./System/pregel.md)
 
 
 
@@ -349,7 +379,7 @@
 
 ### ACCU (Nov.)
 
-* [ACCU2017](https://github.com/Airtnp/ACppLib/tree/master/notes/ACCU 2017)
+* [ACCU2017](https://github.com/Airtnp/ACppLib/tree/master/notes/ACCU%202017)
 
 * [ACCU2019](../Miscs/ACCU2019.md)
 
@@ -357,7 +387,7 @@
 
 ### CppNow (May)
 
-* [CppNow2017](https://github.com/Airtnp/ACppLib/tree/master/notes/CppNow 2017)
+* [CppNow2017](https://github.com/Airtnp/ACppLib/tree/master/notes/CppNow%202017)
 
 * [CppNow2018](../Miscs/CppNow2018.md)
 * [CppNow2019](../Miscs/CppNow2019.md)
@@ -366,7 +396,7 @@
 
 ### CppCon (Sept.)
 
-* [CppCon2017](https://github.com/Airtnp/ACppLib/blob/master/notes/CppCon 2017/Notes.md)
+* [CppCon2017](https://github.com/Airtnp/ACppLib/blob/master/notes/CppCon%202017/Notes.md)
 * [CppCon2018](../Miscs/CppCon2018.md)
 * [CppCon2019](../Miscs/CppCon2019.md)
 
@@ -450,15 +480,23 @@
 
 
 
+### Charm++ Workshop (May)
+
+* [homepage](https://charm.cs.illinois.edu/charmWorkshop/)
 
 
-## Miscs
+
+
+
+## Uncategorized
 
 * [MSST'10-The Hadoop Distributed File System](./System/the_hadoop_distributed_file_system.md)
 * [SoCC'13-Apache Hadoop YARN: Yet Another Resource Negotiator](./System/yarn.md)
 * [SoCC'14-Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks](./System/tachyon.md)
 * [NetDB'11-Kafka: a Distributed Messaging System for Log Processing](./System/kafka.md)
 * [CACM'08-Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures](./HPC/roofline.md)
+* [Cluster'18-CharmPy: A Python Parallel Programming Model](./HPC/charmpy.md)
+* [ISMM'13-A Bloat-Aware Design for Big Data Applications](./System/bloat_aware.md)
 
 
 

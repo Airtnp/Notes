@@ -5150,7 +5150,374 @@ public:
   };
   ```
 
+
+
+
+### 1238. Circular Permutaton in Binary Representation
+
+* Gray码
+
+* ```c++
+  class Solution {
+  public:
+      vector<int> circularPermutation(int n, int start) {
+          vector<int> res;
+          for (int i = 0; i < 1 << n; ++i)
+              res.push_back(start ^ i ^ i >> 1);
+          return res;
+      }
+  };
+  ```
+
+* ![image-20191101184106984](D:\OneDrive\Pictures\Typora\image-20191101184106984.png)
+
+* [Gray code]( https://cp-algorithms.com/algebra/gray-code.html )
+
+
+
+### 1239. Maximum Length of a Concatenated String with Unique Characters
+
+* 数位压缩计数
+
+* ```c++
+  class Solution {
+  public:
+      int maxLength(vector<string>& arr) {
+          int ret = 0;
+          int N = arr.size();
+          vector<int> mask(N, 0);
+          vector<bool> valid(N, true);
+          for (int i = 0; i < N; ++i) {
+              for (auto c : arr[i]) {
+                  int offset = 1 << (c - 'a');
+                  if ((mask[i] & offset) != 0) valid[i] = false;
+                  else mask[i] |= offset;
+              }
+          }
+          for (int i = 0; i < (1 << N); ++i) {
+              vector<int> cnt(26);
+              bool flg = true;
+              uint32_t bits = 0;
+              for (int j = 0; j < N; ++j) {
+                  if (i & (1 << j)) {
+                      if ((bits & mask[j]) == 0 && valid[j]) {
+                          bits |= mask[j];
+                      } else {
+                          flg = false;
+                          break;
+                      }
+                  }
+              }
+              if (!flg) continue;
+              ret = max(ret, __builtin_popcount(bits));
+          }
+          return ret;
+      }
+  };
+  ```
+
 * 
+
+
+
+### 1240. Tiling a Rectangle with the Fewest Squares
+
+* 矩形最少正方形覆盖
+
+* open problem
+
+* [squares]( http://int-e.eu/~bf3/squares/ ) 对$a \times b$ 矩阵 可能分割
+
+  *  a == b → 1 正方形
+  * (a, b) → (h, b) + (a - h, b) or (a, v) + (a, b - v)
+  * (a, b) → d * (a / d, b / d)
+  * 都不是, 比如(13, 11)
+
+* 爆搜, 唯一正确方法
+
+  * 用数组表示方块高度(当列剩余个数)
+  * 每次找剩下最多的列, 右斜上扩展(bottom-up), 从最大可能的宽度开始寻找
+  * 剪枝 + 回溯
+  * 记忆化
+
+* ```python
+  def tilingRectangle(self, width, height):
+  		
+  		
+          # use area_left as a heuristic function to eliminate unworthy search branches
+          # remove the memo used to cache best usedCount obtained for each skyline state,
+          # it seems that the collision is quite scarse compared to all the states we had to store.
+  
+          # The main idea is that, if there exists a solution,
+          # we can always fill in the squares from bottom up.
+          # That means any state during this "filling" process can
+          # be encoded as a skyline (array of heights at each position)
+          # NOTE
+          # y = skyline[x] contributes a line at y, from x to x + 1. This eliminates
+          # ambiguity at the edge, where there may be edges of 2 square at 1 x position.
+          # e.g.
+          # placing a 1x1 square at bottom left of 2x1 rectangle, 
+          # the skyline is [1, 0]
+  
+          # heuristic: given area left to be filled,
+          # calculate the least number of squares that can sum up to it.
+          # this will be the absolute lower bound for that area.
+          # store the result for faster access
+          total_area = width * height
+          dp = [-1 for i in range(total_area +1)]
+          dp[0] = 0
+          for i in range(1, total_area + 1):
+              # try each possible k
+              dp[i] = 1 + min(dp[i - k**2] for k in range(1, int(i ** 0.5) + 1))
+          self.res = total_area
+  
+  
+          def dfs(skyline, usedCount, area_left):
+              # [List Int], Int, Int -> Void
+              # - given state as skyline, 
+              # - the number of squares already used, 
+              # - area left to be filled
+              # try to find the min square tiling
+              # continuing from this point.
+  
+              # no need to search further if the best we can do with this path
+              # is no better than the best result so far
+              if usedCount + dp[area_left] >= self.res:
+                  return;
+  
+              # solution found iff skyline overlaps with the ceiling
+              filled = True
+              # the algorithm places squares at left first, so we consider heights only on right edge
+              # minimum height and the position.
+              min_pos = 0
+              min_height = skyline[0]
+              for pos in range(width):
+                  # not filled if any skyline doesn't touch the ceiling
+                  if (skyline[pos] < height):
+                      filled = False
+                  # update lowest spot
+                  if (skyline[pos] < min_height):
+                      min_pos = pos
+                      min_height = skyline[pos]
+  
+              # already filled, another solution found.
+              if filled:
+                  self.res = min(usedCount, self.res)
+                  return
+              
+              # try to fill the leftmost lowest void, find the maximum size of square
+              # we can put there. end represents the x-coordinate of right edge
+              # NOTE x = end is where the right edge of this newly placed square will be
+              end = min_pos + 1;
+              # in order to increment end:
+              # - right edge stays in the rectangle 
+              # - bottom edge must have same height
+              # - top edge stays in the rectangle
+              while (end < width and \
+                     skyline[end] == min_height and \
+                     (end - min_pos + 1 + min_height) <= height):  
+                  end += 1
+  
+              # try fill with larger square first, to exhaust more void
+              # and potentially yield better search.
+              for right_pos in range(end, min_pos, -1):
+                  # calcualte size of the square to be used
+                  sqr_height = right_pos - min_pos 
+  
+                  new_skyline = list(skyline)
+                  # increase the skyline at relavent positions
+                  for i in range(min_pos, right_pos):
+                      new_skyline[i] += sqr_height
+                  # continue dfs from here.
+                  dfs(new_skyline, usedCount + 1, area_left - sqr_height * sqr_height)
+          
+          skyline = [0 for i in range(width)]
+          dfs(skyline, 0, total_area)
+  
+          return self.res;
+  
+      # TODO more optimizations
+      # - store only (start_x, height) tuples instead, instead of the entire skyline
+      #   this is bascially compression. Hopefully saves memory and reduces iteration time.
+      # - Use A* algorithm. DFS with heuristics may still dives to unworthy states first.
+  ```
+
+* ```c++
+  class Solution {
+  public:
+      int tilingRectangle(int n, int m) {
+          if(n > m) swap(n, m);
+          vector<int> S;
+          for(int i = 0; i < n; i++) { S.push_back(m); }
+          maxDepth = max(n, m);
+          dfs(S, 0);
+          return maxDepth;
+      }
+      
+      int maxDepth;
+  	typedef long long Key;
+      unordered_map<Key, int> dp;
+      Key hash(vector<int>& vec) {
+          Key r = 0;
+          for(int n: vec) { r = (r << 4LL) + n; }
+          return r;
+      }
+      
+      void dfs(vector<int>& vec, int dfsDepth) {
+          Key h = hash(vec);
+          if(h == 0) {
+              maxDepth = min(maxDepth, dfsDepth);
+              return;
+          }
+          if(dfsDepth >= maxDepth or dp.count(h)) { return; }
+          
+          auto topLeft = max_element(vec.begin(), vec.end());
+          int width = 1;
+          for(auto top = topLeft + 1; top != vec.end() and *top == *topLeft; top++) {
+              width++;
+          }
+          
+          for(int w = min(width, *topLeft); w > 0; w--) {
+              for(int i = 0; i < w; i++) { *(topLeft + i) -= w; }
+              dfs(vec, dfsDepth + 1);
+              for(int i = 0; i < w; i++) { *(topLeft + i) += w; }
+          }
+      }
+  };
+  ```
+
+* [Cheat Table]( http://int-e.eu/~bf3/squares/young.txt ) or [OEIS-A219158]( https://oeis.org/A219158 )
+
+* [Mathematical Review]( https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/discuss/414804/A-Mathematical-Review%3A-Why-This-Problem-Is-a-Tip-of-the-Iceberg )
+
+* Two wrong answers by splitting & scaling
+
+* 还有遍历(1..x), (1..y)划分成4块
+
+* ```c++
+  // (Wrong!) DP, must handle special cases and cannot generalize to any (n, m)
+  // Credit: [@xiaogugu](https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/
+  // discuss/414246/Java-Straightforward-DP%3A-Top-Down-and-Bottom-up), with modifications
+  // Time Complexity: O(mn * max(m, n))
+  // Space Complexity: O(mn)
+  
+  int tilingRectangle(int n, int m) {
+      if ((n == 11 && m == 13) || (m == 11 && n == 13))
+  		return 6; // DP answer is 8
+      int dp[n + 1][m + 1] = {};
+      
+      for (int i = 1; i <= n; i++)
+          for (int j = 1; j <= m; j++){
+              if (i == j) {
+                  dp[i][j] = 1;
+                  continue;
+              }
+              dp[i][j] = i * j;
+              for (int k = 1; k <= i / 2; k++)
+                  dp[i][j] = min(dp[i][j], dp[i - k][j] + dp[k][j]);
+              for (int k = 1; k <= j / 2; k++)
+                  dp[i][j] = min(dp[i][j], dp[i][j - k] + dp[i][k]);
+          }
+      
+      return dp[n][m];
+  }
+  
+  // (Wrong!) greedy, must handle much more special cases and cannot generalize to any (n, m)
+  // You may wonder why I still apply seemingly less efficient algorithm.
+  // Since naive DP and greedy are both wrong, we can only
+  // use them as the upper bounds of the true answers in pruning DFS later.
+  // DP generates more accurate upper bounds in a slower rate, and
+  // greedy generates less accurate upper bounds in a faster rate. Here is the trade-off.
+  
+  // Hint: The Euclidean Algorithm
+  // Time Complexity: O(log(min(m, n)))
+  // Space Complexity: O(log(min(m, n)))
+  
+  int tilingRectangle(int n, int m) {
+  	if (n > m) swap(m, n);
+  	if (n == 5 && m == 6) return 5;     // greedy answer is 6
+  	if (n == 5 && m == 11) return 6;   // greedy answer is 7
+  	if (n == 6 && m == 7) return 5;     // greedy answer is 7
+  	if (n == 6 && m == 11) return 6;   // greedy answer is 7
+  	if (n == 6 && m == 13) ... You get the point. I will complete them if I have time.
+  
+      return m == n ? 1 : tilingRectangle(n, m - n) + 1;
+  }
+  ```
+
+* Dancing-Link-X implementaton
+
+* [Young tableaux]( http://int-e.eu/~bf3/squares/young.cc )
+
+
+
+### 1244. Design A Leaderboard
+
+* 支持修改的TopK结构 (`map` sorted by key -> `vector<pair<K, V>> + unordered_map<iterator>`)
+
+* ```c++
+  class Leaderboard {
+  public:
+      using storage_t = list<pair<int,int>>;
+      storage_t storage;
+      unordered_map<int, storage_t::iterator> lookup;
+      vector<storage_t::iterator> leaderboard;
+      
+      void addScore(int playerId, int score) {
+          if (!lookup.count(playerId)) {
+              storage.emplace_back(playerId, score);
+              auto it = --storage.end();
+              lookup[playerId] = it;
+              leaderboard.push_back(it);
+          } else lookup[playerId]->second += score;
+      }
+      
+      int top(int K) {
+          nth_element(leaderboard.begin(), leaderboard.begin() + K, leaderboard.end(), [](auto it1, auto it2) {
+              return it1->second > it2->second;
+          });
+          return accumulate(leaderboard.begin(), leaderboard.begin() + K, 0, 
+                            [](int prev, auto it){ return prev + it->second; });
+      }
+      
+      void reset(int playerId) {
+          lookup[playerId]->second = 0;
+      }
+  };
+  ```
+
+
+
+### 1246. Palindrome Removal
+
+* 和最长回文一摸一样, dp要么延伸, 要么分割
+
+* ```c++
+  class Solution {
+  public:
+      int minimumMoves(vector<int>& arr) {
+          int n = arr.size();
+          vector<vector<int>> dp(n, vector<int>(n, n));
+          for(int i = 0; i < n; i++) { dp[i][i] = 1; }
+          for(int i = 0; i < n - 1; i++) { dp[i][i + 1] = arr[i] == arr[i + 1] ? 1 : 2; }
+          for(int size = 3; size <= n; size++) {
+              for(int left = 0, right = left + size - 1; right < n; left++, right++) {
+                  if(arr[left] == arr[right]) { dp[left][right] = dp[left + 1][right - 1]; }
+                  for(int mid = left; mid < right; mid++) {
+                      dp[left][right] = min(dp[left][right], dp[left][mid] + dp[mid + 1][right]);
+                  }
+              }
+          }
+          return dp[0][n - 1];
+      }
+  };
+  ```
+
+* 
+
+
+
+
 
 
 

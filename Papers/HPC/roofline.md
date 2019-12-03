@@ -272,15 +272,15 @@
 
 
 
+![image-20191031152724520](C:\Users\xiaol\OneDrive\ASemesters\CS239B\Presentation\Pics\ceil_roofline.png)
 
 
 
+![image-20191031154719283](C:\Users\xiaol\OneDrive\ASemesters\CS239B\Presentation\Pics\tpu_peak.png)
 
+![image-20191031160153177](C:\Users\xiaol\OneDrive\ASemesters\CS239B\Presentation\Pics\tpu_kernel.png)
 
-
-
-
-
+![image-20191031160524739](C:\Users\xiaol\OneDrive\ASemesters\CS239B\Presentation\Pics\tpu_roofline.png)
 
 Dwarfs
 
@@ -292,7 +292,7 @@ GPU/CUDA
 
 TVM operators
 
-
+![image-20191031163145713](D:\OneDrive\Pictures\Typora\image-20191031163145713.png)
 
 
 
