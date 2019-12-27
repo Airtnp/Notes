@@ -69,3 +69,24 @@
   * Communication Isolation
     * 2 NICs for different paths 
 
+
+
+## Motivation
+
+* Large deep neural network is becoming popular due to state-of-the-art performance in many tasks. These models require time consuming computations and generate large amount of data for communication. We need a scalable, high performance, fault tolerant distribution solution for completing machine learning jobs.
+
+## Summary
+
+* In this paper, the authors present Project Adam, which is a Multi-Spert based large scale deep learning training framework. Project Adam consists of three parts, data serving machines (sharded data), model training machines (workers on local data) and a global parameter server (asynchronously shared model).  Project Adam employs many techniques, like multi-threading, lock-free data structures, NUMA-aware/cache-aware blocking/sharding, SIMD operations, batch updates, to improve the locality, throughput and reduce overhead on communications. Project Adam also implements fault tolerance by replication asynchronously.
+
+## Strength
+
+* Project Adam employs the resilient nature of machine learning models, to avoid synchronization and overhead lead by strong consistency (both local data race and global asynchronously update/write-back cache).
+* Project Adam can send activation and error gradient instead of weight updates, to balance the computation between workers and parameter servers.
+
+## Limitation & Solution
+
+* Project Adam limits the computation model to weights updates.
+* Project Adam has no method to limit the asynchronous nature as what Parameter Server does. Without vector clock timestamp, Project Adam can't do sequential, bounded delay updates.
+  * Add vector clock timestamp?
+* Project Adam doesn't specify how to elastically scale for worker/parameter server add/removal.

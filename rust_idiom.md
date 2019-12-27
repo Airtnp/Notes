@@ -46,13 +46,44 @@
   * slice: `&[T}`
   * slicing `n..m` `n..=m`
 * `Arc<T>`: atomic reference counting (thread-safe)
+* attributes
+  * `#[<name>]`: per item (inner)
+  * `#![<name>]`: whole crate (outer)
 
 
 
 ## B
 
 * builder idiom
+
 * `Box<T>`: owned pointer
+
+* benchmarks
+
+  * nightly: `#[bench]`: function as benchmark test
+
+  * `libtest` + `Bencher`
+
+  * ```rust
+    #[bench]
+    fn bench_nothing_slowly(b: &mut Bencher) {
+    	b.iter(|| do_nothing_slowly());
+    }
+    ```
+
+  * stable: `benches/` + `criterion`
+
+    * `[dev-dependencies] criterion = "..."`
+
+    * ```rust
+      fn fibonacci_benchmark(c: &mut Criterion) {
+      	c.bench_function("fibonacci 8", |b| b.iter(|| slow_fibonacci(8)));
+      } 
+      criterion_group!(fib_bench, fibonacci_benchmark);
+      criterion_main!(fib_bench);
+      ```
+
+    * 
 
 
 
@@ -60,21 +91,87 @@
 
 * `cargo`
   * `init`: start a project
+  
   * `build`: build a project
+  
   * `test` running tests and benchmarks
+  
   * `search`: searching crates: 3rd-party libraries
+  
   * `update`
+  
   * Cargo.toml
     * `^0.58`: at least 0.58
+    
     * `repo  = { git = "...", branch = "master", version = "1.2", optional = "true" }` (need `[features].default`)
-    * 
+    
+    * ```toml
+      # cargo_manifest_example/Cargo.toml
+      # We can write comments with `#` within a manifest file
+      [package]
+      name = "cargo-metadata-example"
+      version = "1.2.3"
+      description = "An example of Cargo metadata"
+      documentation = "https://docs.rs/dummy_crate"
+      license = "MIT"
+      readme = "README.md"
+      keywords = ["example", "cargo", "mastering"]
+      authors = ["Jack Daniels <jack@danie.ls>", "Iddie Ezzard <iddie@ezzy>"]
+      build = "build.rs"
+      edition = "2018"
+      [package.metadata.settings]
+      default-data-path = "/var/lib/example"
+      [features]
+      default=["mysql"]
+      [build-dependencies]
+      syntex = "^0.58"
+      [dependencies]
+      serde = "1.0"
+      serde_json = "1.0"
+      time = { git = "https://github.com/rust-lang/time", branch = "master" }
+      mysql = { version = "1.2", optional = true }
+      sqlite = { version = "2.5", optional = true }
+      ```
+    
+    * description: long, free-from text
+    
+    * license
+    
+    * readme: link a file in the project
+    
+    * keywords: crates.io
+    
+    * authors
+    
+    * build: piece of Rust code that is compiled & run before the rest of the program is compiled
+    
+    * edition: 2015/2018
+    
   * Cargo.lock
+  
+  * semantic versioning: major.minor.patch
+  
+  * cargo watch: cargo check -> recompile (watchman/nodemon from Node.js)
+  
+  * cargo edit: automatically add dependencies
+  
+  * cargo deb: create Debian packages
+  
+  * cargo outdated: show outdated crate dependencies
+  
+  * cargo install: `/home/user/.cargo/bin/directory`
+  
+  * create cargo-[cmd], set $PATH
+  
 * `cfg`
+
 * `const`: compile-time
+
 * `Cell`: internal mutability for `T: Copy`
   * multiple mutable reference
   * `fn get(&self) -> T`: copy interior value
   * `fn set(&self, T)`: replace interior value by memcpy, and drop old value (only exist if `T: Copy`)
+  
 * Closure
   * `|x: T| {}`
   * `move || {}`
@@ -83,17 +180,46 @@
   * `channel`: asynchronous, infinite buffer
   * `sync_channel(usize)`: synchronous, bounded buffer
   * `std::select`
+  
 * compiler plugin
   * `#![feature(plugin_registrar, rustc_private)]`
   * `fn name<'cx>(&mut ExtCtxt, Span, TokenStream) -> Box<dyn MacResult + 'cx>`
   * `ExtCtxt`: extension context, control execution, like `span_err`
   * `Span`: region of cod eused internally for making error messages
   * `MacResult`: abstracted forms of Rust code. 
+  
 * `chomp`: monad pattern
   * `parse!{input; ...; ret ...}`
     * alt: `<|>`
     * concat: normal `;` (`>>=`)
   * `parse_only(rule, str)`
+  
+* clippy: linter
+
+* continuous integration
+
+  * `.travis.yml`
+
+    * ```yaml
+      language: rust
+      rust:
+          - stable
+          - beta
+          - nightly
+      matrix:
+          allow_failures:
+          	- rust: nightly
+          fast_finish: true
+      cache: cargo
+      
+      script:
+      	- cargo build --verbose
+      	- cargo test --verbose
+      ```
+
+  * `[![Build Status]\(http://travis-ci.org/$USERNAME/$REPO_NAME.svg?branch=...)]`
+
+  * 
 
 
 
@@ -135,6 +261,37 @@
 
   * gdb
   * lldb
+  
+* Documentation
+
+  * item level
+    * structs/enum declarations/functions/trait constants...
+    * single-line: `///`
+    * multi-line: `/** ... */`
+    * equiv to `#[doc="..."]`
+    * `#[doc(hidden)]`: ignore generating docs
+    * `#[doc(include)]`: include documentation from other files
+  * module level
+    * root level, `*.rs`
+    * single-line: `//!`
+    * multi-line: `/*! ... */`
+    * `#![doc(html_logo_url = "image url")]`: add a logo to the top-left of your documentation page
+    * `#![doc(html_root_url = "...")]`: set URL of the documentation page
+    * `#![doc(html_playground_url = "...")]`: put a run button near the code examples
+  * `cargo doc`: generate `target/doc/`
+    * `--no-deps`
+    * spawn a HTTP server by navigating inside the `target/doc` directory
+    * `--open`: open documentation page
+  * docs.rs
+  * Github pages
+  * external website
+  * `mdbook`
+  
+* Dispatch
+
+  * static dispatch: early binding
+  * dynamic dispatch: vtable
+  * 
 
 
 
@@ -182,6 +339,8 @@
 
 
 ## I
+
+* `impl` blocks
 
 
 
@@ -303,7 +462,15 @@
       * `fn name(_item: TokenStream) -> TokenStream`
     * attribute macros: `#[name(attr)]`
       * `[proc_macro_attribute]` + `fn name(_attr: TokenStream, item: TokenStream) -> TokenStream`
-      * 
+    
+  * `unimplemented!()`
+  
+  * testing
+  
+    * `assert{_eq/_ne}!`
+    * `debug_assert!`: only effective on debug builds
+
+
 
 
 
@@ -348,7 +515,8 @@
 * `Rc<T>`: shared pointer
   * `fn clone() -> Rc<T>`
   * `fn downgrade(&self) -> Weak<T>`: convert to weak pointer, always success
-  * 
+* rustfmt: formatter
+* racer: lookup into standard libraries, code completion
 
 
 
@@ -380,6 +548,20 @@
   * `impl Trait`
   * `dyn Trait`
 
+* trait
+
+  * marker traits: `std::marker`
+    * `Copy, Send, Sync`
+  * `Default`
+  * `From<T>`, `Into<T>`
+  * associated type traits
+    * `Iterator<T>`
+  * inherited traits
+  * `[derive]`
+    * `Debug`: printing on the console for debugging purposes
+    * `PartialEq/Eq`: compare partial-ordereing/total-ordering
+    * `Copy/Clone`: create copy (`Copy`) and explicit `.clone` (`Clone`)
+
 * thread
 
   * ```rust
@@ -389,7 +571,19 @@
     		T: Send + 'static
     ```
 
-  * 
+* testing
+
+  * unit tests: `cargo test, mod tests, #[cfg(test)]`
+    * small portion of an application independently verifying behaviors, within a module
+    * `rustc --test ./unit_test.rs`
+    * `RUST_TEST_THREADS=N ./unit_test`
+    * `#[test]`: keep function out of release compilation
+    * `#[should_panic]`: `-> !`
+    * `#[ignore]`: ignore test functions when running `cargo test`
+      * but run individually with `--ignored`
+  * integration tests: `tests/`
+    * `#[test]`
+    * 
 
 
 
@@ -430,6 +624,17 @@
 
 
 ## V
+
+* `Vec<T>`
+
+  * ```rust
+    pub struct Vec<T> {
+        buf: RawVec<T>,
+        len: usize,
+    }
+    ```
+
+  * 
 
 
 
