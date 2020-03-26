@@ -1,6 +1,6 @@
-# Paper Name
+# Speculative Multithreaded Processors  
 
-**Author Name**
+**Gurindar S. Sohi, Amir Roth  **
 
 ---
 
@@ -8,7 +8,7 @@
 
 ## Introduction
 
-
+* 
 
 
 
@@ -32,20 +32,5 @@
 ## Methods & Results
 
 ## Personal Opinions
-
-
-
-
-
-* EECS582 Template
-
-## Motivation
-
-## Summary
-
-## Strength
-
-## Limitation & Solution
-
 
 

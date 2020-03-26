@@ -293,3 +293,19 @@ No Notes
 
 
 AKA VE489, Notes in OneDrive
+
+
+
+## Modern Programming Language, A Practical Introduction
+
+
+
+AKA COM SCI 131, Notes in OneDrive
+
+
+
+## Learning Rust With Entirely Too Many Linked Lists
+
+
+
+Notes in `Airtnp.github.io` repo

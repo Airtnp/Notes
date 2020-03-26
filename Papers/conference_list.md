@@ -130,17 +130,27 @@
 
 ### ASPLOS (April)
 
+* [ASPLOS'04-Continual Flow Pipelines](./Arch/continual_flow_pipelines.md)
+
 
 
 ### HPCA (Feb.)
+
+* [HPCA'13-Power Struggles: Revisiting the RISC vs. CISC Debate on Contemporary ARM and x86 Architectures](./Arch/revisiting_risc_cisc.md)
 
 
 
 ### ISCA (June)
 
+* [ISCA'90-Improving Direct-Mapped Cache Performance by the Addition of a Small Fully-Associative Cache and Prefetch Buffers](./Arch/improving_direct_mapped_cache.md)
+* [ISCA'18-Criticality Aware Tiered Cache Hierarchy: A Fundamental Relook at Multi-level Cache Hierarchies](./Arch/criticality_aware_cached_hierarchy.md)
+
 
 
 ### MICRO (Oct.)
+
+* [MICRO'05-NIAGARA: A 32-WAY MULTITHREADED SPARC PROCESSOR](./Arch/niagara.md)
+* [MICRO'08-Nvidia Tesla: A Unified Graphics And Computing Architecture](./Arch/tesla.md)
 
 
 
@@ -277,15 +287,20 @@
 
 ### POPL (Jan.)
 
+* [POPL'84-Efficient Implementation of the Smalltalk-80 System](./PLT/smalltalk80.md)
+
 
 
 ### PLDI (June)
 
 * [PLDI'10-FlumeJava: Easy, Efficient Data-Parallel Pipelines](./System/flumejava.md)
+* [PLDI'01-Ultra-fast Aliasing Analysis using CLA: A Million Lines of C Code in a Second](./PLT/fast_aliasing_analysis_cla.md)
 
 
 
 ### ECOOP (July)
+
+* [ECOOP'95-Optimization of Object-Oriented Programs Using Static Class Hierarchy Analysis](./PLT/class_hierarchy_optimization.md)
 
 
 
@@ -298,6 +313,10 @@
 
 
 ### OOPSLA/PACMPL (Nov.)
+
+* [OOPSLA'91-Object-Oriented Type Inference](./PLT/object_oriented_type_inference.md)
+* [OOPSLA'96-Fast Static Analysis of C++ Virtual Function Calls](./PLT/fast_static_analysis_c++_virtual.md)
+* [OOPSLA'00-Scalable Propagation-Based Call Graph Construction Algorithms](./PLT/scalable_propagation_call_graph.md)
 
 
 
@@ -497,6 +516,11 @@
 * [CACM'08-Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures](./HPC/roofline.md)
 * [Cluster'18-CharmPy: A Python Parallel Programming Model](./HPC/charmpy.md)
 * [ISMM'13-A Bloat-Aware Design for Big Data Applications](./System/bloat_aware.md)
+* [IEEETransComputer'90-Instruction Issue Logic for High-Performance, Interruptible, Multiple Functional Unit, Pipelined Computers](./Arch/instruction_issue_logic.md)
+* [TOPLAS'95-Closure Analysis in Constraint Form](./PLT/closure_analysis_in_constraint.md)
+* [IEEETransComputer'88-Implementing precise interrupts in pipelined processors](./Arch/implementation_precise_interrupt.md)
+* [APLAS'05-Register Allocation via Coloring of Chordal Graphs](./PLT/register_allocation_chordal.md)
+* [HIPC'00-Speculative Multithreaded Processors](./Arch/speculative_multithreaded_processor.md)
 
 
 
