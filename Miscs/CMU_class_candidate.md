@@ -10,8 +10,6 @@
 
 15349	Intro to Embedded System
 
-15411	Compiler Design
-
 15414	Automated Program Verification & Testing
 
 15417	HOT Compilation
@@ -45,6 +43,8 @@
 15816	Linear / Substructural Logic
 
 15819	Program Analysis / HoTT / Classic Papers in Programming Languages and Logic / Computational Type Theory / Quantitative Program Analysis
+
+15829	Performance Engineering of Software Systems
 
 17819	Program Analysis
 
