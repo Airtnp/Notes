@@ -1,0 +1,37 @@
+---
+typora-root-url: ..\..\OneDrive\Pictures\Typora
+---
+
+# What I randomly see
+
+## 2018-09
+
+### Miscs
+* `++x` and `x = x+1` not equal under atomic view
+* mmx registers can give 16-byte lock-free align
+* memory barrier is for non-atomic memory publishing / acquiring
+* `compare_exchange_weak` is like a TimedLock getting old value
+* lexer analysis =>(token stream)=> syntax analysis =>(AST)=> syntax tree => intermidiate representation => optimiziation
+* -----
+* Scala type system
+* + Nothing as bottom, subtype of everything, no instance
+* + Any as top, everything's base
+* + Unit <: Any, only holds itself, serves as void
+* + [unified-types](https://docs.scala-lang.org/tour/unified-types.html)
+> `object None extends Option[Nothing]`
+> Because Option is covariant in its type parameter and Nothing is a subtype of everything, Option[Nothing] is a subtype of Option[A] for every type A. So, we can make one object None which is a subtype of Option[A] for every  A. This is reasonable, since Nothing cannot be instantiated so Option[Nothing] will always be without a value.
+* unit as true, nothing as false in CH-iso (final object and init object)
+* covariance
+* + subtyping: A <: B => T[A] <: T[B]
+* + return value/haskell typeclass inheritance: a -> b => f a -> f b (Functor => Maybe fmap) (subclass function return type)
+* contravariance
+* + subtyping: A <: B => T[B] <: T[A]
+* + return value/haskell typeclass inheritance: a -> b => f b -> f a (subclass function argument type)
+* invariance: A <: B => T[A] ?? T[B]
+* bivariance
+* -----
+* #pragma gcc poison/bless begin[end]
+* -----
+* ARM literal: 4 bit ROR + 8 bit imm
+
+* 

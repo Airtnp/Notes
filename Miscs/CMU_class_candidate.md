@@ -40,7 +40,7 @@
 
 15815	Automated Theorem Proving
 
-15816	Linear / Substructural Logic
+15816	Linear / Substructural Logic / Automated Reasoning
 
 15819	Program Analysis / HoTT / Classic Papers in Programming Languages and Logic / Computational Type Theory / Quantitative Program Analysis
 

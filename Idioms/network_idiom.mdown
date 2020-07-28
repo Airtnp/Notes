@@ -1,0 +1,108 @@
+# Network Idioms
+
+## \#
+
+
+
+## A
+* [ARP request](http://blog.csdn.net/wenqian1991/article/details/44133039)
+
+## B
+
+
+
+## C
+* CA (certification authorities)
+
+## D
+* DCCP
+
+## E
+
+
+## F
+* FTP
+* + Active
+* + Passive
+* + [difference](https://stackoverflow.com/questions/1699145/what-is-the-difference-between-active-and-passive-ftp)
+* + SFTP (SSH File Transfer Protocol)
+* + FTPS (FTP over SSL/TLS)
+
+
+## G
+
+
+## H
+* http
+* + 短连接
+* + 长连接
+* + pipeline (redis http)
+* + http2
+
+## I
+
+
+
+## J
+
+
+
+## K
+
+
+## L
+
+
+
+## M
+
+
+
+## N
+
+
+
+## O
+
+
+## P
+
+
+
+## Q
+
+
+
+## R
+
+
+
+## S
+
+
+
+## T
+* TLS
+* TCP
+
+## U
+* UDP
+
+## V
+
+
+
+## W
+
+
+
+## X
+
+
+
+## Y
+
+
+
+## Z
+
