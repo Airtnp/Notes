@@ -357,15 +357,12 @@
       return ans
   ```
 
-* 
 
 
 
 
 
-
-
-### 39 &  & 216 Combinational Sum i & ii & iii
+### 39 & 216 Combinational Sum i & ii & iii
 
 * 经典NP-Hard
 
@@ -1763,7 +1760,79 @@ public:
 
 
 
+### 269. Alien Dictionary
 
+* 建图拓扑排序, 注意无成功建图则返回空
+
+* ```python
+  class Solution:
+      from collections import defaultdict, Counter, deque
+      def alienOrder(self, words: List[str]) -> str:
+      
+          # Step 0: create data structures + the in_degree of each unique letter to 0.
+          adj_list = defaultdict(set)
+          in_degree = Counter({c : 0 for word in words for c in word})
+  
+          # Step 1: We need to populate adj_list and in_degree.
+          # For each pair of adjacent words...
+          for first_word, second_word in zip(words, words[1:]):
+              for c, d in zip(first_word, second_word):
+                  if c != d:
+                      if d not in adj_list[c]:
+                          adj_list[c].add(d)
+                          in_degree[d] += 1
+                      break
+              else: # Check that second word isn't a prefix of first word.
+                  if len(second_word) < len(first_word): return ""
+  
+          # Step 2: We need to repeatedly pick off nodes with an indegree of 0.
+          output = []
+          queue = deque([c for c in in_degree if in_degree[c] == 0])
+          while queue:
+              c = queue.popleft()
+              output.append(c)
+              for d in adj_list[c]:
+                  in_degree[d] -= 1
+                  if in_degree[d] == 0:
+                      queue.append(d)
+  
+          # If not all letters are in output, that means there was a cycle and so
+          # no valid ordering. Return "" as per the problem description.
+          if len(output) < len(in_degree):
+              return ""
+          # Otherwise, convert the ordering we found into a string and return it.
+          return "".join(output)
+  ```
+
+* 神秘的拓扑排序写法 (过不了test, 但没啥问题)
+
+* ```python
+  class Solution:
+      from collections import defaultdict, Counter, deque
+      def alienOrder(self, words: List[str]) -> str:
+      
+          less = []
+          for pair in zip(words, words[1:]):
+              for a, b in zip(*pair):
+                  if a != b:
+                      less += a + b,
+                      break
+              else:
+                  if len(pair[1]) < len(pair[0]):
+                      return ""
+          chars = set(''.join(words))
+          order = []
+          while less:
+              free = chars - set(list(zip(*less))[1])
+              if not free:
+                  return ''
+              order += free
+              less = list(filter(free.isdisjoint, less))
+              chars -= free
+          return ''.join(order + list(chars))
+  ```
+
+* 
 
 
 
@@ -2985,6 +3054,52 @@ public:
 
 
 
+### 904. Fruit into Backets
+
+* "Start from any index, we can collect at most two types of fruits. What is the maximum amount" `=>` "Find out the longest length of subarrays with at most 2 different numbers"
+
+* > **Case 1** `c == b`:
+  > fruit `c` already in the basket,
+  > and it's same as the last type of fruit
+  > `cur += 1`
+  > `count_b += 1`
+  >
+  > 
+  >
+  > **Case 2** `c == a`:
+  > fruit `c` already in the basket,
+  > but it's not same as the last type of fruit
+  > `cur += 1`
+  > `count_b = 1`
+  > `a = b, b = c`
+  >
+  > 
+  >
+  > **Case 3** `c != b && c!= a`:
+  > fruit `c` not in the basket,
+  > `cur = count_b + 1`
+  > `count_b = 1`
+  > `a = b, b = c`
+
+* For-K elements `=>` sliding window
+
+* ```c++
+  unordered_map<int, int> count;
+  int i, j;
+  for (i = 0, j = 0; j < tree.size(); ++j) {
+      count[tree[j]]++;
+      if (count.size() > K) {
+          if (--count[tree[i]] == 0) count.erase(tree[i]);
+          i++;
+      }
+  }
+  return j - i;
+  ```
+
+* 
+
+
+
 
 ### 957. Prison Cells After N Days
 
@@ -3250,6 +3365,39 @@ public:
 
 
 
+
+### 975. Odd Even Jump
+
+* 简单的bottom-up DP
+
+* 用`map<int, int>`维护`value -> pos`, 并用来`logN`查询最大最小值
+
+* `lower[i]`: `i-th` 元素是否能找到`j > i, A[j] <= A[i]`
+
+* `higher[i]`: `i-th`元素是否能找到`j > i, A[j] <= A[i]`
+
+* ```c++
+  class Solution {
+  public:
+      int oddEvenJumps(vector<int>& A) {
+          int n  = A.size(), res = 1;
+          vector<int> higher(n), lower(n);
+          higher[n - 1] = lower[n - 1] = 1;
+          map<int, int> map;
+          map[A[n - 1]] = n - 1;
+          for (int i = n - 2; i >= 0; --i) {
+              auto hi = map.lower_bound(A[i]), lo = map.upper_bound(A[i]);
+              if (hi != map.end()) higher[i] = lower[hi->second];
+              if (lo != map.begin()) lower[i] = higher[(--lo)->second];
+              if (higher[i]) res++;
+              map[A[i]] = i;
+          }
+          return res;
+      }
+  };
+  ```
+
+* 
 
 
 
@@ -5513,6 +5661,112 @@ public:
   };
   ```
 
+
+
+
+### 1406. Stone Game III
+
+* 经典`dp`
+
+* [[C: 1140. Stone Game II]]
+
+* > Take `A[i]`, win `take - dp[i+1]`
+  > Take `A[i] + A[i+1]`, win `take - dp[i+2]`
+  > Take `A[i] + A[i+1] + A[i+2]`, win `take - dp[i+3]`
+  > dp[i] equals the best outcome of these three solutions.
+
+* ```c++
+  class Solution {
+  public:
+      string stoneGameIII(vector<int>& A) {
+          int n = A.size();
+          vector<int> dp(n, -1e9);
+          for (int i = n - 1; i >= 0; --i) {
+              for (int k = 0, take = 0; k < 3 && i + k < n; ++k) {
+                  take += A[i + k];
+                  dp[i] = max(dp[i], take - (i + k + 1 < n ? dp[i + k + 1] : 0));
+              }
+          }
+          if (dp[0] > 0) return "Alice";
+          if (dp[0] < 0) return "Bob";
+          return "Tie";
+      }
+  };
+  ```
+
+* 
+
+
+
+
+
+### 1444. Number of Ways of Cutting a Pizza
+
+* 前缀和 + 2D dp
+
+* `dp[i][j][k]`: the answer for the subproblem with `k` pieces and subarray from `A[i][j]` to `A[M-1][N-1]`.
+
+* Slice method
+
+  * Slice horizontally at row `t` where `i < t < M`. `dp[i][j][k] += sum( dp[t][j][k - 1] | i < t < M && slicing at row t is valid )`
+
+  * Slice vertically at column `t` where `j < t < N`. `dp[i][j][k] += sum( dp[i][t][k - 1] | j < t < N && slicing at column t is valid)`
+
+  * ```c++
+    dp[i][j][k] = sum( dp[t][j][k - 1] | i < t < M && slicing at row t is valid )
+                  + sum( dp[i][t][k - 1] | j < t < N && slicing at column t is valid)
+    dp[i][j][1] = 1   // if there are any apples in the rectangle from `A[i][j]` to `A[M-1][N-1]`
+                  0   // otherwise
+    ```
+
+* slicing valid: the L/R/U/D parts should contain at least one apple `=>` prefix sum
+
+  * for above/left, continue to right/below
+  * for right/below, just stop
+
+* ```c++
+  class Solution {
+  public:
+      constexpr static auto add_long = [](long long& a, long long& b) {
+          a = (a + b) % ((int)(1e9 + 7));
+      };
+  
+      template <typename T>
+      using V = vector<T>;
+      
+      int ways(vector<string>& pizza, int K) {
+          int M = pizza.size(), N = pizza[0].size();
+          V<V<long long>> cnt(M + 1, V<long long>(N + 1, 0));
+          for (int i = M - 1; i >= 0; --i) {
+              int s = 0;
+              for (int j = N - 1; j >= 0; --j) {
+                  s += pizza[i][j] == 'A';
+                  cnt[i][j] = cnt[i + 1][j] + s;
+              }
+          }        
+          V<V<V<long long>>> dp(M + 1, V<V<long long>>(N + 1, V<long long>(K + 1, 0)));
+          for (int i = M - 1; i >= 0; --i) {
+              for (int j = N - 1; j >= 0; --j) {
+                  dp[i][j][1] = cnt[i][j] > 0;
+                  for (int k = 2; k <= K; ++k) {
+                      for (int t = i + 1; t < M; ++t) {
+                          if (cnt[i][j] == cnt[t][j]) continue;
+                          if (cnt[t][j] == 0) break;
+                          add_long(dp[i][j][k], dp[t][j][k - 1]);
+                      }
+                      for (int t = j + 1; t < N; ++t) {
+                          if (cnt[i][j] == cnt[i][t]) continue;
+                          if (cnt[i][t] == 0) break;
+                          add_long(dp[i][j][k], dp[i][t][k - 1]);
+                      }
+                  }
+              }
+          }
+          return dp[0][0][K];
+      }
+  };
+  ```
+
 * 
 
 
@@ -6111,4 +6365,6 @@ public:
   
   ```
 
-* 
+
+
+

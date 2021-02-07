@@ -4,6 +4,8 @@
 
 ---
 
+[A y-combinator discussion](https://news.ycombinator.com/item?id=25867693)
+
 
 
 ## Introduction

@@ -1,4 +1,4 @@
-# Conference List
+#  Conference List
 
 [TOC]
 
@@ -113,6 +113,11 @@
 * Coarse/Fine-grained
 * Cloud
   * multi-tenancy
+* Incremental change
+* Dynamism
+  * rewriting mechanism
+  * immutable?
+* 
 
 
 
@@ -164,29 +169,30 @@
 
 ### OSDI/SOSP (Oct.)
 
-* [OSDI'08-KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs](./Security/symbolic_execution.md)
-* [SOSP'15-Failure Sketching: A Technique for Automated  Root Cause Diagnosis of In-Production Failures](./Security/symbolic_execution.md)
-* [SOSP'17-Lazy Diagnosis of In-Production Concurrency Bugs](./Security/symbolic_execution.md)
 * [SOSP'03-The Google File System](./System/gfs.md)
-* [OSDI'06-Bigtable: A Distributed Storage System for Structured Data](./System/bigtable.md)
-* [OSDI'12-Spanner: Google's Globally-Distributed Database](./System/spanner.md)
-* [SOSP'11-Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](./System/azure.md)
 * [OSDI'04-MapReduce: Simplified Data Processing on Large Clusters](./System/mapreduce.md)
-* [SOSP'09-Distributed Aggregation for Data-Parallel Computing: Interfaces and Implementations](./System/distributed_aggregation.md)
+* [OSDI'06-Bigtable: A Distributed Storage System for Structured Data](./System/bigtable.md)
+* [OSDI'08-KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs](./Security/symbolic_execution.md)
 * [OSDI'08-DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language](./System/dryadlinq.md)
 * [OSDI'08-Improving MapReduce Performance in Heterogeneous Environments](./System/late.md)
+* [SOSP'09-Distributed Aggregation for Data-Parallel Computing: Interfaces and Implementations](./System/distributed_aggregation.md)
+* [SOSP'11-Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](./System/azure.md)
+* [OSDI'12-Spanner: Google's Globally-Distributed Database](./System/spanner.md)
+* [OSDI'12-GraphChi: Large-Scale Graph Computation on Just a PC](./System/graphchi.md)
 * [SOSP'13-Sparrow: Distributed, Low Latency Scheduling](./System/sparrow.md)
 * [SOSP'13-Naiad: A Timely Dataflow System](./System/naiad.md)
-* [SOSP'17-SVE: Distributed Video Processing at Facebook Scale](./System/sve.md)
-* [SOSP'17-Drizzle: Fast and Adaptable Stream Processing at Scale](./System/drizzle.md)
-* [OSDI'16-TensorFlow: A system for large-scale machine learning](./System/tensorflow.md)
-* [OSDI'12-GraphChi: Large-Scale Graph Computation on Just a PC](./System/graphchi.md)
 * [SOSP'13-X-Stream: Edge-centric Graph Processing using Streaming Partitions](./System/xstream.md)
 * [OSDI'14-Scaling Distributed Machine Learning with the Parameter Server](./System/parameter_server.md)
 * [OSDI'14-Project Adam: Building an Efficient and Scalable Deep Learning Training System](./System/project_adam.md)
+* [SOSP'15-Failure Sketching: A Technique for Automated  Root Cause Diagnosis of In-Production Failures](./Security/symbolic_execution.md)
+* [OSDI'16-TensorFlow: A system for large-scale machine learning](./System/tensorflow.md)
+* [OSDI'16-Yak: A High-Performance Big-Data-Friendly Garbage Collector](./System/yak.md)
+* [OSDI'16-Efficient Network Reachability Analysis using a Succinct Control Plane Representation](./Network/ERA.md)
+* [SOSP'17-Lazy Diagnosis of In-Production Concurrency Bugs](./Security/symbolic_execution.md)
+* [SOSP'17-SVE: Distributed Video Processing at Facebook Scale](./System/sve.md)
+* [SOSP'17-Drizzle: Fast and Adaptable Stream Processing at Scale](./System/drizzle.md)
 * [OSDI'18-Ray: A Distributed Framework for Emerging AI Applications](./System/ray.md)
 * [OSDI'18-TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](./System/tvm.md)
-* [OSDI'16-Yak: A High-Performance Big-Data-Friendly Garbage Collector](./System/yak.md)
 
 
 
@@ -288,13 +294,15 @@
 ### POPL (Jan.)
 
 * [POPL'84-Efficient Implementation of the Smalltalk-80 System](./PLT/smalltalk80.md)
+* [POPL'16-Scaling Network Verification using Symmetry and Surgery](./Network/symmetry_scaling.md)
 
 
 
 ### PLDI (June)
 
-* [PLDI'10-FlumeJava: Easy, Efficient Data-Parallel Pipelines](./System/flumejava.md)
 * [PLDI'01-Ultra-fast Aliasing Analysis using CLA: A Million Lines of C Code in a Second](./PLT/fast_aliasing_analysis_cla.md)
+* [PLDI'10-FlumeJava: Easy, Efficient Data-Parallel Pipelines](./System/flumejava.md)
+* [PLDI'17-Network Configuration Synthesis with Abstract Topologies](./Network/propane.md)
 
 
 
@@ -362,13 +370,24 @@
 
 ### NSDI (Feb.)
 
-* [NSDI'12-Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
+* [NSDI'-05-Detecting BGP Configuration Faults with Static Analysis](./Network/rcc.md)
 * [NSDI'10-MapReduce Online](./System/mapreduce_online.md)
 * [NSDI'11-Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center](./System/mesos.md)
+* [NSDI'12-Header Space Analysis](./Network/header_space_analysis.md)
+* [NSDI'12-Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
+* [NSDI'13-Real Time Network Policy Checking Using Header Space Analysis](./Network/hsa_policy_checking.md)
+* [NSDI'14-Software Dataplane Verification](./Network/software_dataplane_verification.md)
+* [NSDI'15-A General Approach to Network Configuration Analysis](./Network/Batfish.md)
+* [NSDI'15-Checking Beliefs in Dynamic Networks](./Network/NoD.md)
+* [NSDI'15-Compiling Packet Programs to Reconfigurable Switches](./Network/packet_reconfigurable_switches.md) :construction:
 
-
+ 
 
 ### SIGCOMM (Aug.)
+
+* [SIGCOMM'11-Debugging the Data Plane with Anteater](./Network/Anteater.md)
+* [SIGCOMM'14-Control-Plane Protocol Interactions in Cellular Networks](./Network/cnet_verifier.md)
+* [SIGCOMM'17-A General Approach to Network Configuration Verification](./Network/minesweeper.md)
 
 
 
@@ -521,6 +540,8 @@
 * [IEEETransComputer'88-Implementing precise interrupts in pipelined processors](./Arch/implementation_precise_interrupt.md)
 * [APLAS'05-Register Allocation via Coloring of Chordal Graphs](./PLT/register_allocation_chordal.md)
 * [HIPC'00-Speculative Multithreaded Processors](./Arch/speculative_multithreaded_processor.md)
+* [ICNP'13-Real-time Verification of Network Properties using Atomic Predicates](./Network/verification_atomic_predicate.md)
+* [Co-NEXT'12-Automatic Test Packet Generation](./Network/ATPG.md)
 
 
 

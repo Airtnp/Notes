@@ -1,4 +1,4 @@
-# [Augur](https://www.youtube.com/watch?v=_rlPKcvzGx4)
+# [Augur: Internet-Wide Detection of Connectivity Disruptions](https://www.youtube.com/watch?v=_rlPKcvzGx4)
 
 ###### Paul Pearcey, Roya Ensafix, Frank Liy, Nick Feamster, Vern Paxson
 
